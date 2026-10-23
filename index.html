@@ -16,17 +16,15 @@
 
 <style>
   :root {
-    --bg: #080b11;
+    --bg: #070a10;
     --bg-soft: #111723;
     --card: #151d2c;
-    --card-light: #ffffff;
     --text: #f8fafc;
     --muted: #94a3b8;
     --accent: #10b981;
     --accent-glow: rgba(16, 185, 129, 0.25);
     --gold: #f59e0b;
     --border: rgba(255, 255, 255, 0.09);
-    --wa: #128C7E;
     --wa-bright: #25D366;
     --radius: 20px;
   }
@@ -51,12 +49,12 @@
   img { max-width: 100%; display: block; }
   .hidden { display: none !important; }
 
-  /* ================= HEADER PREMIUM AMPLIO Y DESPEJADO ================= */
+  /* ================= HEADER PREMIUM AMPLIO (NO SE CORTA NUNCA) ================= */
   header {
     position: sticky;
     top: 0;
     z-index: 80;
-    background: rgba(8, 11, 17, 0.94);
+    background: rgba(7, 10, 16, 0.95);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--border);
@@ -64,15 +62,16 @@
   .header-top {
     max-width: 720px;
     margin: 0 auto;
-    padding: 15px 18px 13px;
+    padding: 16px 16px 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 10px;
   }
   .brand {
     display: flex;
     align-items: center;
-    gap: 13px;
+    gap: 12px;
     user-select: none;
   }
   .brand-mark {
@@ -93,54 +92,63 @@
   }
   .brand-txt span {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 19px;
     letter-spacing: -0.02em;
     color: #ffffff;
     line-height: 1.15;
   }
   .brand-txt small {
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--accent);
     margin-top: 2px;
-    letter-spacing: 0.01em;
   }
 
-  /* ================= BARRA DE PROVEEDORES (TABS STICKY) ================= */
+  .btn-change-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 13px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  /* ================= GRILLA DE BOTONES DE PROVEEDORES (SIN CORTARSE EN EL BORDE) ================= */
   .prov-bar-wrap {
-    background: rgba(17, 23, 35, 0.96);
+    background: rgba(17, 23, 35, 0.98);
     border-bottom: 1px solid var(--border);
-    padding: 10px 0;
+    padding: 10px 12px;
   }
   .prov-bar-inner {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 14px;
     display: flex;
-    align-items: center;
-    gap: 9px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
   }
-  .prov-bar-inner::-webkit-scrollbar { display: none; }
   .prov-chip {
-    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 9px 17px;
-    border-radius: 999px;
-    font-size: 13.5px;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 13px;
+    border-radius: 11px;
+    font-size: 12.5px;
     font-weight: 700;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
     color: var(--muted);
     transition: 0.2s;
-    white-space: nowrap;
   }
   .prov-chip .cnt {
     font-size: 11px;
-    padding: 2px 8px;
+    padding: 1px 7px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.09);
     color: var(--text);
@@ -149,25 +157,107 @@
     background: var(--accent);
     color: #042f2e;
     border-color: var(--accent);
-    box-shadow: 0 4px 16px var(--accent-glow);
+    box-shadow: 0 3px 14px var(--accent-glow);
   }
   .prov-chip.active .cnt {
     background: rgba(4, 47, 46, 0.22);
     color: #042f2e;
   }
 
-  /* ================= FEED GIGANTE DE FOTOS (MAXIMO TAMAÑO EN PANTALLA) ================= */
+  /* ================= PORTADA DE SELECCIÓN DE CATÁLOGO (PARA ELEGIR POR SEPARADO O VER TODO) ================= */
+  .hub-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 18px 14px 10px;
+  }
+  .hub-title {
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .hub-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .hub-card.active {
+    border: 2px solid var(--accent);
+    box-shadow: 0 6px 20px var(--accent-glow);
+  }
+  .hub-card-thumb {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    object-position: top center;
+    background: #fff;
+  }
+  .hub-card-body {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .hub-card-name {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .hub-card-count {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--accent);
+    background: rgba(16, 185, 129, 0.14);
+    padding: 3px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .hub-btn-all {
+    grid-column: 1 / -1;
+    padding: 13px 16px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.18), rgba(245, 158, 11, 0.18));
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .hub-btn-all.active {
+    background: var(--accent);
+    color: #042f2e;
+    border-color: var(--accent);
+  }
+
+  /* ================= FEED GIGANTE DE FOTOS ================= */
   .catalog-container {
     max-width: 720px;
     margin: 0 auto;
-    padding: 10px 0 110px;
+    padding: 8px 0 110px;
     width: 100%;
   }
   .feed-status {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 16px 12px;
+    padding: 8px 16px 12px;
     font-size: 13.5px;
     color: var(--muted);
     font-weight: 600;
@@ -181,7 +271,6 @@
     width: 100%;
   }
 
-  /* TARJETA PREMIUM DE CADA FOTO (DE BORDE A BORDE EN CELULAR) */
   .feed-card {
     background: var(--card);
     border-top: 1px solid var(--border);
@@ -200,6 +289,36 @@
     }
   }
 
+  /* BARRA SUPERIOR DE CADA TARJETA (FUERA DE LA FOTO PARA NO TAPAR NADA) */
+  .card-top-bar {
+    padding: 9px 14px;
+    background: #101622;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .card-top-prov {
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-top-prov span.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .card-top-num {
+    color: var(--accent);
+    background: rgba(16, 185, 129, 0.14);
+    padding: 2px 9px;
+    border-radius: 6px;
+  }
+
   .feed-img-wrap {
     position: relative;
     width: 100%;
@@ -209,7 +328,6 @@
     justify-content: center;
     cursor: zoom-in;
   }
-  /* IMAGEN 100% GIGANTE Y COMPLETA SIN RECORTES */
   .feed-img-wrap img {
     width: 100%;
     height: auto;
@@ -217,35 +335,10 @@
     object-fit: contain;
     display: block;
   }
-  .badge-prov-top {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(8, 11, 17, 0.84);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    padding: 6px 13px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-  .badge-num-top {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(8, 11, 17, 0.80);
-    color: var(--accent);
-    padding: 5px 10px;
-    border-radius: 9px;
-    font-size: 12px;
-    font-weight: 800;
-  }
 
   /* PIE DE FOTO PREMIUM */
   .item-card-actions {
-    padding: 15px 16px;
+    padding: 14px 16px;
     background: var(--card);
     display: flex;
     align-items: center;
@@ -253,12 +346,9 @@
     gap: 12px;
     border-top: 1px solid var(--border);
   }
-  .item-info {
-    min-width: 0;
-    flex: 1;
-  }
+  .item-info { min-width: 0; flex: 1; }
   .item-title {
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 700;
     color: var(--text);
     white-space: nowrap;
@@ -277,12 +367,7 @@
     font-weight: 700;
   }
 
-  .action-btns {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
+  .action-btns { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
   .btn-select {
     display: inline-flex;
     align-items: center;
@@ -295,7 +380,6 @@
     color: var(--accent);
     font-weight: 800;
     font-size: 13.5px;
-    transition: 0.18s;
     white-space: nowrap;
   }
   .btn-select.selected {
@@ -331,7 +415,7 @@
     text-align: center;
   }
 
-  /* ================= BARRA FLOTANTE DE PEDIDO SELECCIONADO ================= */
+  /* ================= BARRA FLOTANTE DE PEDIDO ================= */
   .floating-order-bar {
     position: fixed;
     left: 12px;
@@ -350,10 +434,7 @@
     gap: 10px;
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
   }
-  .floating-order-bar .order-txt {
-    font-size: 14px;
-    font-weight: 800;
-  }
+  .floating-order-bar .order-txt { font-size: 14px; font-weight: 800; }
   .floating-order-bar .order-btn {
     background: #042f2e;
     color: #fff;
@@ -367,7 +448,7 @@
     white-space: nowrap;
   }
 
-  /* ================= ADMIN PANEL (OCULTO PARA CLIENTES) ================= */
+  /* ================= ADMIN PANEL ================= */
   .admin-wrap {
     max-width: 980px;
     margin: 20px auto 80px;
@@ -389,11 +470,7 @@
     align-items: center;
     gap: 8px;
   }
-  .admin-card p.sub {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 14px;
-  }
+  .admin-card p.sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
   .btn-top {
     display: inline-flex;
     align-items: center;
@@ -457,12 +534,7 @@
     letter-spacing: 0.04em;
     margin-bottom: 10px;
   }
-  .prov-quick-btns {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-  }
+  .prov-quick-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
   .prov-preset {
     padding: 8px 14px;
     border-radius: 10px;
@@ -540,16 +612,12 @@
   .batch-thumb-box img { width: 100%; height: 100%; object-fit: cover; }
   .batch-thumb-del {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 24px;
-    height: 24px;
+    top: 4px; right: 4px;
+    width: 24px; height: 24px;
     border-radius: 50%;
     background: rgba(220, 38, 38, 0.9);
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-size: 12px;
   }
 
@@ -567,33 +635,17 @@
     display: flex;
     flex-direction: column;
   }
-  .admin-item-card img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    background: #fff;
-  }
-  .admin-item-body {
-    padding: 8px;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
+  .admin-item-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #fff; }
+  .admin-item-body { padding: 8px; font-size: 12px; display: flex; flex-direction: column; gap: 4px; }
 
-  /* MODAL Y LIGHTBOX */
   .modal-overlay {
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background: rgba(0, 0, 0, 0.78);
     backdrop-filter: blur(5px);
     z-index: 120;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     padding: 14px;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0; pointer-events: none;
     transition: 0.2s;
   }
   .modal-overlay.open { opacity: 1; pointer-events: auto; }
@@ -601,58 +653,35 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
-    max-width: 480px;
-    width: 100%;
-    max-height: 88vh;
-    overflow-y: auto;
+    max-width: 480px; width: 100%;
+    max-height: 88vh; overflow-y: auto;
     padding: 18px;
   }
 
   .lightbox {
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background: rgba(0, 0, 0, 0.96);
     z-index: 200;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 10px;
   }
-  .lightbox img {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 8px;
-  }
+  .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; }
   .lightbox-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
+    position: absolute; top: 14px; right: 14px;
     background: rgba(255,255,255,0.15);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 13px;
+    color: #fff; padding: 8px 14px;
+    border-radius: 999px; font-weight: 700; font-size: 13px;
   }
 
   .toast {
-    position: fixed;
-    top: 76px;
-    left: 50%;
+    position: fixed; top: 76px; left: 50%;
     transform: translateX(-50%) translateY(-10px);
     z-index: 250;
-    background: var(--accent);
-    color: #042f2e;
-    padding: 11px 18px;
-    border-radius: 999px;
-    font-size: 13.5px;
-    font-weight: 800;
+    background: var(--accent); color: #042f2e;
+    padding: 11px 18px; border-radius: 999px;
+    font-size: 13.5px; font-weight: 800;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.25s;
+    opacity: 0; pointer-events: none; transition: 0.25s;
     white-space: nowrap;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -662,7 +691,7 @@
 
 <div id="toast" class="toast">Listo</div>
 
-<!-- ================= HEADER LIMPIO Y CENTRADO (SIN ADMIN NI LUPITA) ================= -->
+<!-- ================= HEADER LIMPIO (SIN ADMIN NI LUPITA) ================= -->
 <header id="clientHeader">
   <div class="header-top">
     <div class="brand" id="brandSecretTrigger">
@@ -672,30 +701,40 @@
         <small id="headerSub">Catálogo Oficial · Envíos a todo el país</small>
       </div>
     </div>
+    <button class="btn-change-cat hidden" id="btnShowHub">
+      <i data-lucide="grid" style="width:14px;height:14px"></i> Catálogos
+    </button>
   </div>
 
-  <!-- BARRA DE PROVEEDORES (PERMITE VER LOS 5 JUNTOS O FILTRAR 1) -->
+  <!-- BOTONES DE PROVEEDORES (ENVUELTOS PARA QUE NUNCA SE CORTEN EN EL BORDE) -->
   <div class="prov-bar-wrap" id="provBarWrap">
     <div class="prov-bar-inner" id="provChips"></div>
   </div>
 </header>
 
-<!-- ================= VISTA CATÁLOGO (FOTOS GIGANTES SCROLLEABLES) ================= -->
+<!-- ================= VISTA CATÁLOGO ================= -->
 <main id="viewCatalog">
+
+  <!-- TARJETAS VISUALES PARA ELEGIR CADA MAYORISTA POR SEPARADO O VER TODO JUNTO -->
+  <section class="hub-section" id="catalogHub">
+    <div class="hub-title">Seleccioná un catálogo por separado o mirá todo junto:</div>
+    <div class="hub-grid" id="hubGrid"></div>
+  </section>
+
   <div class="catalog-container">
     <div class="feed-status">
-      <span id="activeProvTitle">Mostrando: <b>Colección Completa</b></span>
+      <span id="activeProvTitle">Viendo: <b>Todos los catálogos juntos</b></span>
       <span id="totalPhotosBadge">0 prendas</span>
     </div>
 
     <!-- LISTA SCROLLEABLE GIGANTE -->
     <div class="photo-feed" id="photoFeed"></div>
 
-    <button id="btnLoadMore" class="load-more-btn hidden">Ver más prendas del catálogo ↓</button>
+    <button id="btnLoadMore" class="load-more-btn hidden">Ver más prendas de este catálogo ↓</button>
   </div>
 </main>
 
-<!-- ================= VISTA ADMIN (SE ACCEDE CON /#/admin O 5 TOQUES EN EL LOGO) ================= -->
+<!-- ================= VISTA ADMIN (ENTRANDO A /#/admin O 5 TOQUES EN EL LOGO) ================= -->
 <main id="viewAdmin" class="hidden">
   <div class="admin-wrap">
 
@@ -722,39 +761,43 @@
         </div>
       </div>
 
-      <!-- SECCIÓN 1: LINKS PARA ENVIAR AL CLIENTE (1 LINK CON LOS 5 O 1 POR PROVEEDOR) -->
+      <!-- SECCIÓN 1: LINKS PARA ENVIAR AL CLIENTE -->
       <div class="admin-card">
         <h3><i data-lucide="link-2" style="width:19px;height:19px;color:var(--accent)"></i> Links para mandar por WhatsApp</h3>
-        <p class="sub">Podés mandar <b>un solo link general</b> (el cliente ve los 5 proveedores ordenados por pestañas arriba) o copiar el <b>link directo de un proveedor puntual</b>:</p>
+        <p class="sub">Mandá el <b>Link General</b> (tiene los 5 mayoristas separados por botón + opción de ver todo junto) o mandá el link directo de uno solo:</p>
         <div class="links-grid" id="providerLinksGrid"></div>
       </div>
 
       <!-- SECCIÓN 2: SUBIR FOTOS ASIGNANDO EL PROVEEDOR -->
       <div class="admin-card">
-        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--accent)"></i> Subir lote de fotos (+500 imágenes por proveedor)</h3>
-        <p class="sub">Elegí primero a qué proveedor pertenecen las fotos y después seleccioná todas las imágenes juntas.</p>
+        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--accent)"></i> Subir nuevo Mayorista / Proveedor (+300 fotos)</h3>
+        <p class="sub">Elegí qué número o nombre de proveedor vas a cargar ahora para que quede separado de los anteriores.</p>
 
         <div class="step-box">
-          <div class="step-title">Paso 1: ¿De qué proveedor / catálogo son estas fotos?</div>
+          <div class="step-title">Paso 1: Elegí o escribí el nombre del Mayorista</div>
           <div class="prov-quick-btns" id="presetProvBtns">
-            <button type="button" class="prov-preset active" data-prov="Proveedor 1">Proveedor 1</button>
-            <button type="button" class="prov-preset" data-prov="Proveedor 2">Proveedor 2</button>
-            <button type="button" class="prov-preset" data-prov="Proveedor 3">Proveedor 3</button>
-            <button type="button" class="prov-preset" data-prov="Proveedor 4">Proveedor 4</button>
-            <button type="button" class="prov-preset" data-prov="Proveedor 5">Proveedor 5</button>
+            <button type="button" class="prov-preset active" data-prov="Mayorista 1">Mayorista 1</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 2">Mayorista 2</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 3">Mayorista 3</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 4">Mayorista 4</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 5">Mayorista 5</button>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <input type="text" id="batchProvInput" class="input-dark" value="Proveedor 1" placeholder="O escribí el nombre del proveedor / marca..." />
+            <input type="text" id="batchProvInput" class="input-dark" value="Mayorista 2" placeholder="Nombre del mayorista (ej: Comercial Marcela)..." />
             <input type="number" id="batchPriceInput" class="input-dark" placeholder="Precio general $ (opcional)" />
           </div>
+          <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--muted);cursor:pointer">
+            <input type="checkbox" id="chkAutoCrop" checked style="width:16px;height:16px;accent-color:var(--accent)" />
+            Recortar automáticamente bordes negros de capturas de pantalla (hora / batería del celular)
+          </label>
         </div>
 
         <div class="step-box" style="margin-bottom:0">
-          <div class="step-title">Paso 2: Seleccioná todas las imágenes</div>
+          <div class="step-title">Paso 2: Seleccioná todas las fotos de este Mayorista</div>
           <div class="dropzone" id="dropzone">
             <i data-lucide="images" style="width:40px;height:40px;color:var(--accent)"></i>
-            <h4>Tocá acá para seleccionar las fotos de este proveedor</h4>
-            <p>Podés elegir cientos de fotos juntas. Se suben en alta resolución para que el código y los talles de la imagen se lean perfecto.</p>
+            <h4>Tocá acá para seleccionar las 300+ fotos</h4>
+            <p>Se agruparán automáticamente dentro del mayorista que elegiste en el Paso 1.</p>
             <input type="file" id="fileInput" accept="image/*" multiple class="hidden" />
           </div>
 
@@ -774,19 +817,20 @@
 
             <button class="btn-big-upload" id="btnStartUpload">
               <i data-lucide="rocket" style="width:18px;height:18px"></i>
-              <span id="btnStartUploadTxt">Publicar todas en este proveedor ahora</span>
+              <span id="btnStartUploadTxt">Publicar todas en este mayorista ahora</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- SECCIÓN 3: ADMINISTRAR / BORRAR FOTOS POR PROVEEDOR -->
+      <!-- SECCIÓN 3: ADMINISTRAR / RENOMBRAR / BORRAR POR PROVEEDOR -->
       <div class="admin-card">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--accent)"></i> Fotos subidas (<span id="adminTotalCount">0</span>)</h3>
+          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--accent)"></i> Administrar Mayoristas Cargados (<span id="adminTotalCount">0</span> fotos)</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <select id="adminFilterProv" class="input-dark" style="width:auto;padding:8px 12px"></select>
-            <button class="btn-top" id="btnDeleteProvAll" style="color:#f87171;border-color:rgba(248,113,113,0.3)">Borrar todo el proveedor elegido</button>
+            <button class="btn-top" id="btnRenameProv" style="color:var(--accent);border-color:rgba(16,185,129,0.35)">Cambiar nombre a este catálogo</button>
+            <button class="btn-top" id="btnDeleteProvAll" style="color:#f87171;border-color:rgba(248,113,113,0.3)">Vaciar este catálogo</button>
           </div>
         </div>
         <div class="admin-list-grid" id="adminPhotosGrid"></div>
@@ -848,7 +892,7 @@ var state = {
   products: [],
   filtered: [],
   renderedCount: 0,
-  activeProv: "",
+  activeProv: "", // "" = Ver todos juntos
   batchFiles: [],
   cart: [],
   sb: null,
@@ -883,17 +927,15 @@ function getProviderUrl(provName){
   return base + "?prov=" + encodeURIComponent(provName);
 }
 
-function waSingleLink(p){
-  var prov = p.proveedor || p.categoria || "Catálogo";
-  var msg = "Hola! Quiero pedir esta prenda de *Mayorista Boliviano*:\n• *" + (p.nombre || "Prenda") + "*" +
-            (p.codigo ? " (" + p.codigo + ")" : "") +
-            "\n• Catálogo: " + prov +
+function waSingleLink(p, num){
+  var prov = getProvOf(p);
+  var msg = "Hola! Quiero pedir esta prenda de *Mayorista Boliviano*:\n• *" + prov + " — Prenda #" + num + "*" +
             (p.imagen && p.imagen.indexOf("http")===0 ? "\n• Ver foto: " + p.imagen : "");
   return "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
 }
 
 /* =========================================================
-   SUPABASE STORE (Trae hasta 10.000 fotos haciendo paginación)
+   SUPABASE STORE (Soporta miles de fotos sin límite de 1.000)
    ========================================================= */
 var Store = {
   init: async function(){
@@ -916,8 +958,8 @@ var Store = {
       state.products = all.filter(function(p){ return p.estado !== "oculto"; });
     }
   },
-  uploadAndInsert: async function(file, provName, priceVal, seqNum){
-    var blob = await compressToBlob(file, 1280, 0.85);
+  uploadAndInsert: async function(file, provName, priceVal, seqNum, autoCrop){
+    var blob = await compressAndCleanScreenshot(file, 1280, 0.85, autoCrop);
     var fname = "cat-" + Date.now() + "-" + seqNum + "-" + Math.random().toString(36).slice(2,7) + ".jpg";
     var imgUrl = "";
 
@@ -931,14 +973,9 @@ var Store = {
       imgUrl = await blobToDataURL(blob);
     }
 
-    var cleanName = file.name.replace(/\.[^.]+$/,"").replace(/[_-]+/g," ").trim();
-    if(/^(img|dsc|whatsapp|photo|image|screenshot|pxl)/i.test(cleanName)){
-      cleanName = provName + " · Prenda #" + seqNum;
-    }
-
     var payload = {
-      nombre: cleanName || (provName + " #" + seqNum),
-      codigo: "F-" + seqNum,
+      nombre: provName + " · Modelo #" + seqNum,
+      codigo: "M-" + seqNum,
       proveedor: provName,
       categoria: provName,
       precio: priceVal === "" ? null : Number(priceVal),
@@ -953,6 +990,16 @@ var Store = {
     }
     throw new Error(ins.error ? ins.error.message : "Error al guardar fila");
   },
+  renameProvider: async function(oldName, newName){
+    await state.sb.from(CONFIG.TABLE_NAME).update({proveedor: newName, categoria: newName}).eq("proveedor", oldName);
+    await state.sb.from(CONFIG.TABLE_NAME).update({proveedor: newName, categoria: newName}).eq("categoria", oldName);
+    state.products.forEach(function(p){
+      if(getProvOf(p) === oldName){
+        p.proveedor = newName;
+        p.categoria = newName;
+      }
+    });
+  },
   remove: async function(id){
     await state.sb.from(CONFIG.TABLE_NAME).delete().eq("id", id);
     state.products = state.products.filter(function(x){ return x.id !== id; });
@@ -964,19 +1011,71 @@ var Store = {
   }
 };
 
-function compressToBlob(file, maxW, quality){
+/* =========================================================
+   RECORTE AUTOMÁTICO DE BANDAS NEGRAS DE CAPTURAS DE CELULAR
+   ========================================================= */
+function compressAndCleanScreenshot(file, maxW, quality, autoCrop){
   return new Promise(function(resolve){
     var reader = new FileReader();
     reader.onload = function(e){
       var img = new Image();
       img.onload = function(){
-        var w = img.width, h = img.height;
-        if(w > maxW){ h = Math.round(h * maxW / w); w = maxW; }
-        var canvas = document.createElement("canvas");
-        canvas.width = w; canvas.height = h;
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, w, h);
-        canvas.toBlob(function(b){ resolve(b || file); }, "image/jpeg", quality || 0.85);
+        var origW = img.width, origH = img.height;
+        var tempCanvas = document.createElement("canvas");
+        tempCanvas.width = origW;
+        tempCanvas.height = origH;
+        var tCtx = tempCanvas.getContext("2d");
+        tCtx.drawImage(img, 0, 0);
+
+        var topY = 0, bottomY = origH;
+
+        if(autoCrop && origH > origW * 1.3){
+          try {
+            var data = tCtx.getImageData(0, 0, origW, origH).data;
+            // Busca si arriba hay franja negra de captura de pantalla (hasta 22% superior)
+            var maxTopScan = Math.floor(origH * 0.22);
+            for(var y = 0; y < maxTopScan; y += 2){
+              var brightPixels = 0;
+              for(var x = Math.floor(origW * 0.1); x < origW * 0.9; x += 8){
+                var idx = (y * origW + x) * 4;
+                if(data[idx] > 38 || data[idx+1] > 38 || data[idx+2] > 38) brightPixels++;
+              }
+              var totalSamples = Math.floor((origW * 0.8) / 8);
+              if(brightPixels > totalSamples * 0.25){
+                topY = y;
+                break;
+              }
+            }
+            // Busca si abajo hay barra negra de navegación de Android (hasta 18% inferior)
+            var minBottomScan = Math.floor(origH * 0.82);
+            for(var by = origH - 1; by > minBottomScan; by -= 2){
+              var brightBot = 0;
+              for(var bx = Math.floor(origW * 0.1); bx < origW * 0.9; bx += 8){
+                var bIdx = (by * origW + bx) * 4;
+                if(data[bIdx] > 38 || data[bIdx+1] > 38 || data[bIdx+2] > 38) brightBot++;
+              }
+              var botSamples = Math.floor((origW * 0.8) / 8);
+              if(brightBot > botSamples * 0.25){
+                bottomY = by + 1;
+                break;
+              }
+            }
+          } catch(err){}
+        }
+
+        var cropH = Math.max(100, bottomY - topY);
+        var outW = origW, outH = cropH;
+        if(outW > maxW){
+          outH = Math.round(outH * maxW / outW);
+          outW = maxW;
+        }
+
+        var finalCanvas = document.createElement("canvas");
+        finalCanvas.width = outW;
+        finalCanvas.height = outH;
+        var fCtx = finalCanvas.getContext("2d");
+        fCtx.drawImage(tempCanvas, 0, topY, origW, cropH, 0, 0, outW, outH);
+        finalCanvas.toBlob(function(b){ resolve(b || file); }, "image/jpeg", quality || 0.85);
       };
       img.onerror = function(){ resolve(file); };
       img.src = e.target.result;
@@ -994,37 +1093,67 @@ function blobToDataURL(blob){
 }
 
 function getProvOf(p){
-  return (p.proveedor || p.categoria || "Catálogo General").trim();
+  return (p.proveedor || p.categoria || "Mayorista 1").trim();
 }
 
 function getUniqueProviders(){
   var map = {};
+  var cover = {};
   state.products.forEach(function(p){
     var pv = getProvOf(p);
     map[pv] = (map[pv] || 0) + 1;
+    if(!cover[pv] && p.imagen) cover[pv] = p.imagen;
   });
-  return Object.keys(map).map(function(k){ return {name: k, count: map[k]}; });
+  return Object.keys(map).map(function(k){ return {name: k, count: map[k], thumb: cover[k] || ""}; });
 }
 
 /* =========================================================
-   RENDER: PESTAÑAS DE PROVEEDORES Y FEED DE FOTOS GIGANTES
+   RENDER: SELECTOR SEPARADO DE MAYORISTAS + BOTÓN VER TODO JUNTO
    ========================================================= */
 function renderProviderTabs(){
   var provs = getUniqueProviders();
   var total = state.products.length;
-  var html = '<button class="prov-chip'+(state.activeProv===""?" active":"")+'" data-p="">Todos los catálogos <span class="cnt">'+total+'</span></button>';
+
+  // 1. Barra superior compacta (envuelta para que nunca se corte)
+  var chipsHtml = '<button class="prov-chip'+(state.activeProv===""?" active":"")+'" data-p="">Ver Todo Junto <span class="cnt">'+total+'</span></button>';
   provs.forEach(function(pr){
-    html += '<button class="prov-chip'+(state.activeProv===pr.name?" active":"")+'" data-p="'+esc(pr.name)+'">'+esc(pr.name)+' <span class="cnt">'+pr.count+'</span></button>';
+    chipsHtml += '<button class="prov-chip'+(state.activeProv===pr.name?" active":"")+'" data-p="'+esc(pr.name)+'">'+esc(pr.name)+' <span class="cnt">'+pr.count+'</span></button>';
   });
-  $("provChips").innerHTML = html;
-  $("provChips").querySelectorAll(".prov-chip").forEach(function(btn){
+  $("provChips").innerHTML = chipsHtml;
+
+  // 2. Portada con Tarjetas Visuales para elegir cada Mayorista por separado o todo junto
+  if(provs.length <= 1){
+    $("catalogHub").classList.add("hidden");
+  } else {
+    $("catalogHub").classList.remove("hidden");
+    var hubHtml = provs.map(function(pr){
+      var isAct = state.activeProv === pr.name;
+      return '<button type="button" class="hub-card'+(isAct?" active":"")+'" data-p="'+esc(pr.name)+'">' +
+        (pr.thumb ? '<img class="hub-card-thumb" src="'+esc(pr.thumb)+'" loading="lazy" />' : '') +
+        '<div class="hub-card-body">' +
+          '<div class="hub-card-name">'+esc(pr.name)+'</div>' +
+          '<span class="hub-card-count">'+pr.count+' fotos</span>' +
+        '</div>' +
+      '</button>';
+    }).join("");
+
+    hubHtml += '<button type="button" class="hub-btn-all'+(state.activeProv===""?" active":"")+'" data-p="">' +
+      '<i data-lucide="layers" style="width:18px;height:18px"></i> Ver todos los mayoristas juntos ('+total+' prendas)' +
+    '</button>';
+    $("hubGrid").innerHTML = hubHtml;
+  }
+
+  document.querySelectorAll("[data-p]").forEach(function(btn){
     btn.addEventListener("click", function(){
       state.activeProv = btn.getAttribute("data-p");
       renderProviderTabs();
       applyFilterAndRender(true);
-      window.scrollTo({top: 0, behavior: "smooth"});
+      var feedEl = $("activeProvTitle");
+      if(feedEl) feedEl.scrollIntoView({behavior: "smooth", block: "start"});
     });
   });
+
+  refreshIcons();
 }
 
 function applyFilterAndRender(resetScroll){
@@ -1034,8 +1163,8 @@ function applyFilterAndRender(resetScroll){
   });
 
   $("activeProvTitle").innerHTML = state.activeProv
-    ? ('Viendo: <b>' + esc(state.activeProv) + '</b>')
-    : 'Mostrando: <b>Colección Completa</b>';
+    ? ('Catálogo seleccionado: <b>' + esc(state.activeProv) + '</b>')
+    : 'Viendo: <b>Todos los catálogos juntos</b>';
   $("totalPhotosBadge").textContent = state.filtered.length + (state.filtered.length === 1 ? " prenda" : " prendas");
 
   if(resetScroll){
@@ -1064,21 +1193,23 @@ function renderNextChunk(){
     var price = fmtPrice(p.precio);
     var sel = isInCart(p.id);
     return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
+      '<div class="card-top-bar">' +
+        '<span class="card-top-prov"><span class="dot"></span>'+esc(prov)+'</span>' +
+        '<span class="card-top-num">Prenda #'+num+'</span>' +
+      '</div>' +
       '<div class="feed-img-wrap" data-zoom="'+esc(p.imagen)+'">' +
-        '<span class="badge-prov-top">'+esc(prov)+'</span>' +
-        '<span class="badge-num-top">#'+num+'</span>' +
-        '<img src="'+esc(p.imagen)+'" alt="'+esc(p.nombre)+'" loading="lazy" />' +
+        '<img src="'+esc(p.imagen)+'" alt="Prenda #'+num+'" loading="lazy" />' +
       '</div>' +
       '<div class="item-card-actions">' +
         '<div class="item-info">' +
-          '<div class="item-title">'+esc(p.nombre || ("Modelo #" + num))+'</div>' +
+          '<div class="item-title">'+esc(prov)+' · Modelo #'+num+'</div>' +
           (price ? '<div class="item-price">AR$ '+price.replace("$ ","")+'</div>' : '<div class="item-price consult">Consultar por mayor</div>') +
         '</div>' +
         '<div class="action-btns">' +
           '<button class="btn-select'+(sel?' selected':'')+'" data-sel="'+esc(p.id)+'">' +
             (sel ? '✓ Elegida' : '+ Elegir') +
           '</button>' +
-          '<a class="btn-wa-card" href="'+waSingleLink(p)+'" target="_blank" rel="noopener">' +
+          '<a class="btn-wa-card" href="'+waSingleLink(p, num)+'" target="_blank" rel="noopener">' +
             '<i data-lucide="message-circle" style="width:15px;height:15px"></i> Pedir' +
           '</a>' +
         '</div>' +
@@ -1141,7 +1272,7 @@ function sendCartToWhatsApp(){
   state.cart.forEach(function(id, idx){
     var p = state.products.find(function(x){ return x.id === id; });
     if(p){
-      lines.push((idx+1) + ". *" + (p.nombre||"Prenda") + "* (" + getProvOf(p) + ")" + (p.imagen && p.imagen.indexOf("http")===0 ? "\n   Foto: " + p.imagen : ""));
+      lines.push((idx+1) + ". *" + getProvOf(p) + "*" + (p.imagen && p.imagen.indexOf("http")===0 ? "\n   Ver foto: " + p.imagen : ""));
     }
   });
   window.open("https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n")), "_blank");
@@ -1154,8 +1285,8 @@ function openOrderModal(){
     return '<div style="display:flex;align-items:center;gap:10px;background:var(--bg-soft);padding:8px;border-radius:10px">' +
       '<img src="'+esc(p.imagen)+'" style="width:48px;height:58px;object-fit:cover;border-radius:6px;background:#fff" />' +
       '<div style="flex:1;min-width:0">' +
-        '<div style="font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(p.nombre)+'</div>' +
-        '<div style="font-size:11.5px;color:var(--accent)">'+esc(getProvOf(p))+'</div>' +
+        '<div style="font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(getProvOf(p))+'</div>' +
+        '<div style="font-size:11.5px;color:var(--accent)">Prenda seleccionada</div>' +
       '</div>' +
       '<button class="btn-top" data-rmcart="'+idx+'" style="color:#f87171">Quitar</button>' +
     '</div>';
@@ -1182,10 +1313,10 @@ function renderAdminDashboard(){
 
   var linksHtml = '<div class="link-prov-item master">' +
     '<div>' +
-      '<div style="font-weight:800;font-size:14.5px;color:var(--accent)">🌟 LINK GENERAL (Los ' + (provs.length || 5) + ' proveedores juntos)</div>' +
-      '<div style="font-size:12px;color:var(--muted)">El cliente ve todas las fotos y puede cambiar de proveedor arriba</div>' +
+      '<div style="font-weight:800;font-size:14.5px;color:var(--accent)">🌟 LINK PRINCIPAL (Muestra todos los mayoristas por separado + botón Ver Todo)</div>' +
+      '<div style="font-size:12px;color:var(--muted)">Con este único link el cliente elige qué mayorista ver o mira todos juntos</div>' +
     '</div>' +
-    '<button class="btn-copy" data-copylink=""><i data-lucide="copy" style="width:14px;height:14px"></i> Copiar Link General</button>' +
+    '<button class="btn-copy" data-copylink=""><i data-lucide="copy" style="width:14px;height:14px"></i> Copiar Link Principal</button>' +
   '</div>';
 
   provs.forEach(function(pr){
@@ -1194,7 +1325,7 @@ function renderAdminDashboard(){
         '<div style="font-weight:800;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">📁 ' + esc(pr.name) + '</div>' +
         '<div style="font-size:11.5px;color:var(--muted)">' + pr.count + ' fotos cargadas</div>' +
       '</div>' +
-      '<button class="btn-copy" data-copylink="'+esc(pr.name)+'"><i data-lucide="link" style="width:13px;height:13px"></i> Copiar link</button>' +
+      '<button class="btn-copy" data-copylink="'+esc(pr.name)+'"><i data-lucide="link" style="width:13px;height:13px"></i> Link directo</button>' +
     '</div>';
   });
   $("providerLinksGrid").innerHTML = linksHtml;
@@ -1203,23 +1334,21 @@ function renderAdminDashboard(){
     btn.addEventListener("click", function(){
       var pv = btn.getAttribute("data-copylink");
       var url = getProviderUrl(pv);
-      copyText(url, pv ? ("Link de " + pv + " copiado") : "Link General copiado");
+      copyText(url, pv ? ("Link de " + pv + " copiado") : "Link Principal copiado");
     });
   });
 
-  if(provs.length > 0){
-    var existingNames = ["Proveedor 1","Proveedor 2","Proveedor 3","Proveedor 4","Proveedor 5"];
-    provs.forEach(function(p){ if(existingNames.indexOf(p.name)===-1) existingNames.unshift(p.name); });
-    $("presetProvBtns").innerHTML = existingNames.slice(0, 8).map(function(n){
-      var act = $("batchProvInput").value === n ? " active" : "";
-      return '<button type="button" class="prov-preset'+act+'" data-prov="'+esc(n)+'">'+esc(n)+'</button>';
-    }).join("");
-    bindPresetButtons();
-  }
+  var baseNames = ["Mayorista 1","Mayorista 2","Mayorista 3","Mayorista 4","Mayorista 5"];
+  provs.forEach(function(p){ if(baseNames.indexOf(p.name)===-1) baseNames.unshift(p.name); });
+  $("presetProvBtns").innerHTML = baseNames.slice(0, 8).map(function(n){
+    var act = $("batchProvInput").value === n ? " active" : "";
+    return '<button type="button" class="prov-preset'+act+'" data-prov="'+esc(n)+'">'+esc(n)+'</button>';
+  }).join("");
+  bindPresetButtons();
 
   var curFilter = $("adminFilterProv").value;
-  $("adminFilterProv").innerHTML = '<option value="">Todos los proveedores ('+state.products.length+')</option>' +
-    provs.map(function(p){ return '<option value="'+esc(p.name)+'">'+esc(p.name)+' ('+p.count+')</option>'; }).join("");
+  $("adminFilterProv").innerHTML = '<option value="">Seleccioná un mayorista ('+state.products.length+' total)</option>' +
+    provs.map(function(p){ return '<option value="'+esc(p.name)+'">'+esc(p.name)+' ('+p.count+' fotos)</option>'; }).join("");
   $("adminFilterProv").value = curFilter;
   renderAdminPhotosList();
   refreshIcons();
@@ -1227,13 +1356,12 @@ function renderAdminDashboard(){
 
 function renderAdminPhotosList(){
   var pf = $("adminFilterProv").value;
-  var list = state.products.filter(function(p){ return !pf || getProvOf(p) === pf; }).slice(0, 120);
+  var list = state.products.filter(function(p){ return !pf || getProvOf(p) === pf; }).slice(0, 100);
   $("adminPhotosGrid").innerHTML = list.map(function(p){
     return '<div class="admin-item-card">' +
       '<img src="'+esc(p.imagen)+'" loading="lazy" />' +
       '<div class="admin-item-body">' +
         '<div style="font-weight:800;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(getProvOf(p))+'</div>' +
-        '<div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(p.nombre)+'</div>' +
         '<button class="btn-top" data-delid="'+esc(p.id)+'" style="color:#f87171;justify-content:center;margin-top:4px;padding:5px">Borrar</button>' +
       '</div>' +
     '</div>';
@@ -1257,6 +1385,7 @@ function bindPresetButtons(){
       document.querySelectorAll(".prov-preset").forEach(function(b){ b.classList.remove("active"); });
       btn.classList.add("active");
       $("batchProvInput").value = btn.getAttribute("data-prov");
+      renderBatchPreview();
     });
   });
 }
@@ -1271,18 +1400,18 @@ function handleBatchSelect(files){
 function renderBatchPreview(){
   var total = state.batchFiles.length;
   $("batchSummary").classList.toggle("hidden", total === 0);
-  var prov = $("batchProvInput").value.trim() || "Proveedor 1";
-  $("batchCountLbl").textContent = total + " fotos listas para subir en \"" + prov + "\"";
-  $("btnStartUploadTxt").textContent = "Subir las " + total + " fotos a \"" + prov + "\" ahora";
+  var prov = $("batchProvInput").value.trim() || "Mayorista 1";
+  $("batchCountLbl").textContent = total + " fotos listas para cargar en \"" + prov + "\"";
+  $("btnStartUploadTxt").textContent = "Publicar las " + total + " fotos en \"" + prov + "\" ahora";
 
-  var previewSlice = state.batchFiles.slice(0, 40);
+  var previewSlice = state.batchFiles.slice(0, 36);
   $("batchPreviewGrid").innerHTML = previewSlice.map(function(f, idx){
     var url = URL.createObjectURL(f);
     return '<div class="batch-thumb-box">' +
       '<img src="'+url+'" />' +
       '<button type="button" class="batch-thumb-del" data-rmbatch="'+idx+'">✕</button>' +
     '</div>';
-  }).join("") + (total > 40 ? '<div style="display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--accent);padding:10px;text-align:center">+' + (total - 40) + ' fotos más listas</div>' : '');
+  }).join("") + (total > 36 ? '<div style="display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--accent);padding:10px;text-align:center">+' + (total - 36) + ' fotos más</div>' : '');
 
   $("batchPreviewGrid").querySelectorAll("[data-rmbatch]").forEach(function(b){
     b.addEventListener("click", function(){
@@ -1295,8 +1424,9 @@ function renderBatchPreview(){
 async function startMassUpload(){
   var total = state.batchFiles.length;
   if(total === 0) return;
-  var provName = $("batchProvInput").value.trim() || "Proveedor 1";
+  var provName = $("batchProvInput").value.trim() || "Mayorista 1";
   var priceVal = $("batchPriceInput").value.trim();
+  var autoCrop = $("chkAutoCrop").checked;
 
   $("progressBox").classList.remove("hidden");
   $("btnStartUpload").disabled = true;
@@ -1304,28 +1434,26 @@ async function startMassUpload(){
   var done = 0;
   var concurrency = 4;
   var queue = state.batchFiles.slice();
-  var baseSeq = state.products.length + 1;
+  var existingInProv = state.products.filter(function(p){ return getProvOf(p) === provName; }).length;
 
   async function worker(){
     while(queue.length > 0){
       var file = queue.shift();
-      var currentSeq = baseSeq + done;
+      done++;
+      var currentSeq = existingInProv + done;
       try {
-        await Store.uploadAndInsert(file, provName, priceVal, currentSeq);
+        await Store.uploadAndInsert(file, provName, priceVal, currentSeq, autoCrop);
       } catch(e) {
         console.warn("Error subiendo archivo:", e);
       }
-      done++;
       var pct = Math.round((done / total) * 100);
       $("progressBar").style.width = pct + "%";
-      $("progressText").textContent = "Subiendo a \"" + provName + "\": " + done + " de " + total + " fotos (" + pct + "%)...";
+      $("progressText").textContent = "Subiendo a \"" + provName + "\": " + done + " de " + total + " (" + pct + "%)...";
     }
   }
 
   var workers = [];
-  for(var w = 0; w < concurrency; w++){
-    workers.push(worker());
-  }
+  for(var w = 0; w < concurrency; w++) workers.push(worker());
   await Promise.all(workers);
 
   state.batchFiles = [];
@@ -1336,7 +1464,7 @@ async function startMassUpload(){
   renderProviderTabs();
   applyFilterAndRender(true);
   renderAdminDashboard();
-  showToast("¡Listo! Se subieron las " + total + " fotos en " + provName);
+  showToast("¡Se publicaron " + total + " fotos en " + provName + "!");
 }
 
 /* =========================================================
@@ -1374,7 +1502,7 @@ function bindEvents(){
   $("btnBackFromLogin").addEventListener("click", function(){ location.hash = "#/"; });
   window.addEventListener("hashchange", route);
 
-  // Acceso secreto para vos: 5 toques rápidos en el título "Mayorista Boliviano" abre el Admin
+  // Acceso secreto para vos: 5 toques seguidos en el logo "Mayorista Boliviano" abre el Admin
   var tapCount = 0, tapTimer = null;
   $("brandSecretTrigger").addEventListener("click", function(){
     tapCount++;
@@ -1387,7 +1515,6 @@ function bindEvents(){
     }
   });
 
-  // Scroll infinito automático al bajar el dedo
   $("btnLoadMore").addEventListener("click", renderNextChunk);
   window.addEventListener("scroll", function(){
     if($("viewCatalog").classList.contains("hidden")) return;
@@ -1398,11 +1525,9 @@ function bindEvents(){
     }
   });
 
-  // Lightbox Zoom
   $("btnCloseLightbox").addEventListener("click", function(){ $("lightbox").classList.add("hidden"); });
   $("lightbox").addEventListener("click", function(e){ if(e.target === $("lightbox")) $("lightbox").classList.add("hidden"); });
 
-  // Pedido WhatsApp
   $("btnSendOrderDirect").addEventListener("click", sendCartToWhatsApp);
   $("btnSendOrderFromModal").addEventListener("click", sendCartToWhatsApp);
   $("btnOpenOrderModal").addEventListener("click", openOrderModal);
@@ -1414,7 +1539,6 @@ function bindEvents(){
     applyFilterAndRender(true);
   });
 
-  // Login Admin
   $("btnLogin").addEventListener("click", function(){
     if($("loginUser").value.trim() === CONFIG.ADMIN_USER && $("loginPass").value === CONFIG.ADMIN_PASS){
       sessionStorage.setItem("catalogo_admin", "1");
@@ -1430,7 +1554,6 @@ function bindEvents(){
     location.hash = "#/";
   });
 
-  // Carga masiva por proveedor
   bindPresetButtons();
   $("batchProvInput").addEventListener("input", renderBatchPreview);
   var dz = $("dropzone"), fi = $("fileInput");
@@ -1446,15 +1569,29 @@ function bindEvents(){
   $("btnStartUpload").addEventListener("click", startMassUpload);
 
   $("adminFilterProv").addEventListener("change", renderAdminPhotosList);
+
+  // Botón para cambiarle el nombre a un catálogo entero (ej: de "Catálogo General" a "Mayorista 1")
+  $("btnRenameProv").addEventListener("click", async function(){
+    var pf = $("adminFilterProv").value;
+    if(!pf){ alert("Primero seleccioná en la lista desplegable cuál mayorista querés renombrar."); return; }
+    var nuevo = prompt("Escribí el nuevo nombre para \"" + pf + "\":", pf);
+    if(!nuevo || !nuevo.trim() || nuevo.trim() === pf) return;
+    await Store.renameProvider(pf, nuevo.trim());
+    renderProviderTabs();
+    applyFilterAndRender(true);
+    renderAdminDashboard();
+    showToast("Catálogo renombrado a " + nuevo.trim());
+  });
+
   $("btnDeleteProvAll").addEventListener("click", async function(){
     var pf = $("adminFilterProv").value;
-    if(!pf){ alert("Elegí primero qué proveedor querés vaciar en el selector de al lado."); return; }
+    if(!pf){ alert("Elegí primero qué mayorista querés vaciar en el selector."); return; }
     if(confirm("¿Seguro que querés borrar TODAS las fotos de \"" + pf + "\"?")){
       await Store.removeByProvider(pf);
       renderProviderTabs();
       applyFilterAndRender(true);
       renderAdminDashboard();
-      showToast("Se vació el proveedor " + pf);
+      showToast("Se vació " + pf);
     }
   });
 }
