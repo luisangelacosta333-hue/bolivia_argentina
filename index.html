@@ -16,17 +16,18 @@
 
 <style>
   :root {
-    --bg: #070a10;
-    --bg-soft: #111723;
-    --card: #151d2c;
-    --text: #f8fafc;
-    --muted: #94a3b8;
-    --accent: #10b981;
-    --accent-glow: rgba(16, 185, 129, 0.25);
-    --gold: #f59e0b;
-    --border: rgba(255, 255, 255, 0.09);
-    --wa-bright: #25D366;
-    --radius: 20px;
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --wa: #25D366;
+    --wa-dark: #128C7E;
+    --wa-deep: #075E54;
+    --wa-soft: #e8fbee;
+    --wa-border: rgba(37, 211, 102, 0.35);
+    --border: #e2e8f0;
+    --radius: 22px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -49,15 +50,16 @@
   img { max-width: 100%; display: block; }
   .hidden { display: none !important; }
 
-  /* ================= HEADER PREMIUM ================= */
+  /* ================= HEADER BLANCO PREMIUM ================= */
   header {
     position: sticky;
     top: 0;
     z-index: 80;
-    background: rgba(7, 10, 16, 0.95);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
   }
   .header-top {
     max-width: 720px;
@@ -74,37 +76,37 @@
     user-select: none;
   }
   .brand-mark {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
     flex-shrink: 0;
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: var(--wa);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #042f2e;
-    box-shadow: 0 4px 18px var(--accent-glow);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
   }
   .brand-txt { display: flex; flex-direction: column; }
   .brand-txt span {
     font-weight: 800;
     font-size: 19px;
     letter-spacing: -0.02em;
-    color: #ffffff;
+    color: var(--text);
     line-height: 1.15;
   }
   .brand-txt small {
     font-size: 12px;
-    font-weight: 600;
-    color: var(--accent);
+    font-weight: 700;
+    color: var(--wa-dark);
     margin-top: 2px;
   }
 
-  /* ================= BOTONES DE PROVEEDORES ================= */
+  /* ================= BOTONES DE PROVEEDORES EN FONDO CLARO ================= */
   .prov-bar-wrap {
-    background: rgba(17, 23, 35, 0.98);
+    background: #ffffff;
     border-bottom: 1px solid var(--border);
-    padding: 8px 10px;
+    padding: 8px 10px 10px;
   }
   .prov-bar-inner {
     max-width: 720px;
@@ -120,10 +122,10 @@
     justify-content: center;
     gap: 6px;
     padding: 8px 14px;
-    border-radius: 11px;
+    border-radius: 999px;
     font-size: 12.5px;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     color: var(--muted);
     transition: 0.2s;
@@ -132,18 +134,19 @@
     font-size: 11px;
     padding: 1px 7px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.09);
+    background: #e2e8f0;
     color: var(--text);
+    font-weight: 800;
   }
   .prov-chip.active {
-    background: var(--accent);
-    color: #042f2e;
-    border-color: var(--accent);
-    box-shadow: 0 3px 14px var(--accent-glow);
+    background: var(--wa);
+    color: #ffffff;
+    border-color: var(--wa);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
   }
   .prov-chip.active .cnt {
-    background: rgba(4, 47, 46, 0.22);
-    color: #042f2e;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
   }
 
   /* ================= PORTADA DE SELECCIÓN DE CATÁLOGO ================= */
@@ -151,6 +154,7 @@
     max-width: 720px;
     margin: 0 auto;
     padding: 12px 12px 6px;
+    background: #ffffff;
   }
   .hub-title {
     font-size: 13px;
@@ -165,24 +169,25 @@
     gap: 8px;
   }
   .hub-card {
-    background: var(--card);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     text-align: left;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
   }
   .hub-card.active {
-    border: 2px solid var(--accent);
-    box-shadow: 0 6px 20px var(--accent-glow);
+    border: 2px solid var(--wa);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.22);
   }
   .hub-card-thumb {
     width: 100%;
     height: 100px;
     object-fit: cover;
     object-position: top center;
-    background: #fff;
+    background: #f8fafc;
   }
   .hub-card-body {
     padding: 8px 10px;
@@ -191,23 +196,24 @@
     justify-content: space-between;
     gap: 6px;
   }
-  .hub-card-name { font-size: 13px; font-weight: 800; color: #fff; }
+  .hub-card-name { font-size: 13px; font-weight: 800; color: var(--text); }
   .hub-card-count {
     font-size: 11px;
     font-weight: 800;
-    color: var(--accent);
-    background: rgba(16, 185, 129, 0.14);
-    padding: 2px 7px;
+    color: var(--wa-dark);
+    background: var(--wa-soft);
+    padding: 2px 8px;
     border-radius: 999px;
     white-space: nowrap;
   }
 
-  /* ================= FEED GIGANTE DE FOTOS PEGADAS (CERO ESPACIO NEGRO) ================= */
+  /* ================= FEED GIGANTE DE FOTOS PEGADAS EN FONDO BLANCO ================= */
   .catalog-container {
     max-width: 720px;
     margin: 0 auto;
     padding: 0 0 100px;
     width: 100%;
+    background: #ffffff;
   }
   .feed-status {
     display: flex;
@@ -216,17 +222,18 @@
     padding: 8px 14px;
     font-size: 12.5px;
     color: var(--muted);
-    font-weight: 600;
+    font-weight: 700;
+    background: #ffffff;
   }
-  .feed-status b { color: var(--accent); }
+  .feed-status b { color: var(--wa-dark); }
 
-  /* FOTOS CONTINUAS Y PEGADAS (SOLO 2PX DE SEPARACIÓN) */
+  /* FOTOS CONTINUAS Y PEGADAS SIN ESPACIO NEGRO */
   .photo-feed {
     display: flex;
     flex-direction: column;
     gap: 2px;
     width: 100%;
-    background: #000;
+    background: #f1f5f9;
   }
 
   .feed-card {
@@ -249,23 +256,24 @@
     display: block;
   }
 
-  /* ETIQUETA SUTIL ARRIBA A LA DERECHA */
+  /* ETIQUETA SUTIL BLANCA ARRIBA A LA DERECHA */
   .float-num {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(7, 10, 16, 0.72);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(6px);
-    color: #fff;
+    color: var(--text);
     padding: 4px 10px;
     border-radius: 999px;
     font-size: 11.5px;
     font-weight: 800;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
     pointer-events: none;
   }
 
-  /* BARRA FLOTANTE SOBRE LA PARTE INFERIOR DE LA MISMA FOTO (NO OCUPA ESPACIO NEGRO AFUERA) */
+  /* BARRA FLOTANTE SOBRE LA MISMA FOTO (TARJETA BLANCA + VERDE WHATSAPP) */
   .float-bottom-bar {
     position: absolute;
     left: 10px;
@@ -278,14 +286,13 @@
     pointer-events: none;
   }
 
-  /* BOTÓN QUE ABRE EL SEGUNDO CARTEL CON PRECIO Y DETALLE */
   .btn-open-detail {
     pointer-events: auto;
-    background: rgba(7, 10, 16, 0.86);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--text);
+    border: 1px solid var(--border);
     padding: 9px 14px;
     border-radius: 999px;
     font-size: 12.5px;
@@ -293,11 +300,11 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.16);
     max-width: 58%;
   }
   .btn-open-detail span.price-pill {
-    color: var(--accent);
+    color: var(--wa-dark);
     font-weight: 800;
   }
   .btn-open-detail span.txt-trunc {
@@ -318,169 +325,267 @@
     justify-content: center;
     padding: 9px 13px;
     border-radius: 999px;
-    background: rgba(7, 10, 16, 0.86);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(16, 185, 129, 0.55);
-    color: var(--accent);
+    border: 1.5px solid var(--wa);
+    color: var(--wa-dark);
     font-weight: 800;
     font-size: 12.5px;
     white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.14);
   }
   .btn-select.selected {
-    background: var(--accent);
-    color: #042f2e;
-    border-color: var(--accent);
+    background: var(--wa);
+    color: #ffffff;
+    border-color: var(--wa);
   }
   .btn-wa-card {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 9px 15px;
+    padding: 9px 16px;
     border-radius: 999px;
-    background: var(--wa-bright);
-    color: #052e16;
+    background: var(--wa);
+    color: #ffffff;
     font-weight: 800;
     font-size: 12.5px;
     white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38);
   }
 
   .load-more-btn {
     width: calc(100% - 28px);
     margin: 18px 14px 0;
-    padding: 16px;
+    padding: 15px;
     border-radius: 14px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--accent);
+    background: var(--wa-soft);
+    border: 1px solid var(--wa-border);
+    color: var(--wa-dark);
     font-weight: 800;
     font-size: 14px;
     text-align: center;
   }
 
-  /* ================= SEGUNDO CARTEL (MODAL EMERGENTE DE PRECIO Y DETALLE AL TOCAR LA FOTO) ================= */
+  /* ================= TARJETA BLANCA UNIFICADA DE PRESENTACIÓN COMERCIAL ================= */
   .detail-sheet-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.82);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 160;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 14px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.22s ease;
+    transition: opacity 0.2s ease;
   }
   .detail-sheet-overlay.open {
     opacity: 1;
     pointer-events: auto;
   }
-  .detail-sheet-card {
-    background: linear-gradient(180deg, #172133 0%, #0f1623 100%);
-    border: 1px solid rgba(16, 185, 129, 0.35);
-    border-radius: 22px;
+
+  /* UNA SOLA TARJETA BLANCA, CLARA, UNIFICADA Y PREMIUM */
+  .white-product-card {
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 26px;
     max-width: 430px;
     width: 100%;
-    padding: 20px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
-    transform: translateY(14px) scale(0.97);
+    padding: 22px 20px 20px;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+    border: 1px solid #f1f5f9;
+    transform: translateY(12px) scale(0.98);
     transition: transform 0.22s ease;
+    max-height: 92vh;
+    overflow-y: auto;
   }
-  .detail-sheet-overlay.open .detail-sheet-card {
+  .detail-sheet-overlay.open .white-product-card {
     transform: translateY(0) scale(1);
   }
-  .sheet-head {
+
+  .wcard-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
   }
-  .sheet-badge {
-    background: rgba(16, 185, 129, 0.16);
-    color: var(--accent);
-    border: 1px solid rgba(16, 185, 129, 0.35);
-    padding: 4px 11px;
+  .wcard-thumb {
+    width: 68px;
+    height: 84px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    cursor: zoom-in;
+  }
+  .wcard-head-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .wcard-prov-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--wa-soft);
+    color: var(--wa-deep);
+    padding: 4px 10px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 800;
+    margin-bottom: 6px;
   }
-  .sheet-close {
+  .wcard-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+  }
+  .wcard-close {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--text);
+    background: #f1f5f9;
+    color: #475569;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 15px;
     font-weight: 800;
   }
-  .sheet-price-box {
-    background: rgba(7, 10, 16, 0.65);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 14px 16px;
-    margin-bottom: 12px;
+
+  /* CUERPO CONTINUO DE LA TARJETA BLANCA (SIN CAJAS SEPARADAS OSCURAS) */
+  .wcard-body {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .wcard-price-row {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed #e2e8f0;
   }
-  .sheet-price-lbl {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .sheet-price-val {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.02em;
-  }
-  .sheet-price-val.consult {
-    font-size: 16px;
-    color: var(--gold);
-  }
-  .sheet-detail-box {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 16px;
-  }
-  .sheet-detail-title {
+  .wcard-lbl {
     font-size: 11.5px;
     font-weight: 800;
-    color: var(--muted);
+    color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 5px;
+    letter-spacing: 0.05em;
   }
-  .sheet-detail-text {
-    font-size: 15px;
-    font-weight: 600;
-    color: #ffffff;
-    line-height: 1.5;
-    white-space: pre-wrap;
+  .wcard-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--wa-dark);
+    letter-spacing: -0.03em;
   }
-  .sheet-actions {
+  .wcard-price.consult {
+    font-size: 18px;
+    color: var(--wa-deep);
+  }
+
+  .wcard-specs-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
-  .sheet-row-btns {
+  .wcard-spec-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .wcard-spec-line span.k {
+    color: #64748b;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .wcard-spec-line span.v {
+    color: #0f172a;
+    font-weight: 800;
+    text-align: right;
+  }
+
+  .wcard-desc-section {
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+  }
+  .wcard-desc-text {
+    margin-top: 5px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.55;
+    white-space: pre-wrap;
+  }
+
+  .wcard-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 6px;
+  }
+  .btn-wa-main {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: var(--wa);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+  }
+  .wcard-secondary-btns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+  }
+  .btn-wcard-outline {
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1.5px solid var(--wa);
+    color: var(--wa-dark);
+    font-weight: 800;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-wcard-outline.selected {
+    background: var(--wa-soft);
+    color: var(--wa-deep);
+  }
+  .btn-wcard-soft {
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
   }
 
   /* ================= BARRA FLOTANTE DE PEDIDO ================= */
@@ -492,20 +597,20 @@
     max-width: 560px;
     margin: 0 auto;
     z-index: 90;
-    background: rgba(16, 185, 129, 0.98);
-    color: #042f2e;
+    background: var(--wa);
+    color: #ffffff;
     padding: 13px 16px;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 14px 36px rgba(37, 211, 102, 0.45);
   }
   .floating-order-bar .order-txt { font-size: 14px; font-weight: 800; }
   .floating-order-bar .order-btn {
-    background: #042f2e;
-    color: #fff;
+    background: #ffffff;
+    color: var(--wa-deep);
     padding: 10px 15px;
     border-radius: 11px;
     font-size: 13px;
@@ -516,7 +621,7 @@
     white-space: nowrap;
   }
 
-  /* ================= ADMIN PANEL ================= */
+  /* ================= ADMIN PANEL EN FONDO BLANCO CLARO ================= */
   .admin-wrap {
     max-width: 980px;
     margin: 20px auto 80px;
@@ -524,11 +629,12 @@
     width: 100%;
   }
   .admin-card {
-    background: var(--card);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 18px;
     margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
   }
   .admin-card h3 {
     font-size: 17px;
@@ -537,6 +643,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--text);
   }
   .admin-card p.sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
   .btn-top {
@@ -569,14 +676,14 @@
     gap: 10px;
   }
   .link-prov-item.master {
-    background: rgba(16, 185, 129, 0.12);
-    border-color: rgba(16, 185, 129, 0.4);
+    background: var(--wa-soft);
+    border-color: var(--wa-border);
     grid-column: 1 / -1;
   }
   .btn-copy {
-    background: var(--accent);
-    color: #042f2e;
-    padding: 8px 13px;
+    background: var(--wa);
+    color: #ffffff;
+    padding: 8px 14px;
     border-radius: 9px;
     font-size: 12.5px;
     font-weight: 800;
@@ -597,7 +704,7 @@
   .step-title {
     font-size: 13px;
     font-weight: 800;
-    color: var(--accent);
+    color: var(--wa-dark);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 10px;
@@ -606,48 +713,47 @@
   .prov-preset {
     padding: 8px 14px;
     border-radius: 10px;
-    background: var(--card);
+    background: #ffffff;
     border: 1px solid var(--border);
     font-size: 13px;
     font-weight: 700;
     color: var(--text);
   }
   .prov-preset.active {
-    background: var(--accent);
-    color: #042f2e;
-    border-color: var(--accent);
+    background: var(--wa);
+    color: #ffffff;
+    border-color: var(--wa);
   }
-  .input-dark {
+  .input-light {
     width: 100%;
     padding: 11px 13px;
     border-radius: 10px;
     border: 1px solid var(--border);
-    background: var(--bg);
+    background: #ffffff;
     color: var(--text);
     font-size: 14px;
     outline: none;
   }
-  .input-dark:focus { border-color: var(--accent); }
+  .input-light:focus { border-color: var(--wa); }
 
   .dropzone {
-    border: 2px dashed var(--accent);
+    border: 2px dashed var(--wa);
     border-radius: 16px;
     padding: 32px 16px;
     text-align: center;
-    background: rgba(16, 185, 129, 0.06);
+    background: var(--wa-soft);
     cursor: pointer;
     transition: 0.2s;
   }
-  .dropzone:hover { background: rgba(16, 185, 129, 0.12); }
-  .dropzone h4 { font-size: 16px; font-weight: 800; margin: 8px 0 4px; }
+  .dropzone h4 { font-size: 16px; font-weight: 800; margin: 8px 0 4px; color: var(--text); }
   .dropzone p { font-size: 13px; color: var(--muted); }
 
   .btn-big-upload {
     width: 100%;
     padding: 15px;
     border-radius: 13px;
-    background: var(--accent);
-    color: #042f2e;
+    background: var(--wa);
+    color: #ffffff;
     font-size: 15px;
     font-weight: 800;
     display: flex;
@@ -655,27 +761,27 @@
     justify-content: center;
     gap: 8px;
     margin-top: 14px;
-    box-shadow: 0 6px 20px var(--accent-glow);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
   }
   .btn-big-upload:disabled { opacity: 0.5; }
 
-  /* PREVIEW DE LOTE CON CAMPOS DE PRECIO Y DETALLE POR FOTO */
   .batch-preview-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
     gap: 10px;
     margin-top: 14px;
-    max-height: 420px;
+    max-height: 440px;
     overflow-y: auto;
     padding: 8px;
-    background: var(--bg);
+    background: #ffffff;
+    border: 1px solid var(--border);
     border-radius: 12px;
   }
   .batch-thumb-box {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    background: var(--card);
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
@@ -697,8 +803,8 @@
     padding: 6px 8px;
     border-radius: 7px;
     border: 1px solid var(--border);
-    background: var(--bg);
-    color: #fff;
+    background: #ffffff;
+    color: var(--text);
     font-size: 12px;
   }
   .batch-thumb-del {
@@ -714,26 +820,26 @@
 
   .admin-list-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 10px;
     margin-top: 12px;
   }
   .admin-item-card {
-    background: var(--bg-soft);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
   }
-  .admin-item-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #fff; }
+  .admin-item-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #f8fafc; }
   .admin-item-body { padding: 8px; font-size: 12px; display: flex; flex-direction: column; gap: 4px; }
 
   .modal-overlay {
     position: fixed; inset: 0;
-    background: rgba(0, 0, 0, 0.78);
+    background: rgba(15, 23, 42, 0.45);
     backdrop-filter: blur(5px);
-    z-index: 120;
+    z-index: 170;
     display: flex; align-items: center; justify-content: center;
     padding: 14px;
     opacity: 0; pointer-events: none;
@@ -741,17 +847,18 @@
   }
   .modal-overlay.open { opacity: 1; pointer-events: auto; }
   .modal {
-    background: var(--card);
+    background: #ffffff;
     border: 1px solid var(--border);
-    border-radius: 18px;
-    max-width: 480px; width: 100%;
+    border-radius: 22px;
+    max-width: 460px; width: 100%;
     max-height: 88vh; overflow-y: auto;
-    padding: 18px;
+    padding: 20px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
   }
 
   .lightbox {
     position: fixed; inset: 0;
-    background: rgba(0, 0, 0, 0.96);
+    background: rgba(255, 255, 255, 0.98);
     z-index: 200;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 10px;
@@ -759,19 +866,19 @@
   .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; }
   .lightbox-close {
     position: absolute; top: 14px; right: 14px;
-    background: rgba(255,255,255,0.15);
-    color: #fff; padding: 8px 14px;
-    border-radius: 999px; font-weight: 700; font-size: 13px;
+    background: #0f172a;
+    color: #fff; padding: 9px 16px;
+    border-radius: 999px; font-weight: 800; font-size: 13px;
   }
 
   .toast {
     position: fixed; top: 76px; left: 50%;
     transform: translateX(-50%) translateY(-10px);
     z-index: 250;
-    background: var(--accent); color: #042f2e;
+    background: var(--wa); color: #ffffff;
     padding: 11px 18px; border-radius: 999px;
     font-size: 13.5px; font-weight: 800;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
     opacity: 0; pointer-events: none; transition: 0.25s;
     white-space: nowrap;
   }
@@ -782,14 +889,14 @@
 
 <div id="toast" class="toast">Listo</div>
 
-<!-- ================= HEADER LIMPIO ================= -->
+<!-- ================= HEADER BLANCO LIMPIO ================= -->
 <header id="clientHeader">
   <div class="header-top">
     <div class="brand" id="brandSecretTrigger">
       <span class="brand-mark"><i data-lucide="shopping-bag" style="width:20px;height:20px"></i></span>
       <div class="brand-txt">
         <span id="headerTitle">Mayorista Boliviano</span>
-        <small id="headerSub">Catálogo Oficial · Tocá cualquier foto para ver precio y detalle</small>
+        <small id="headerSub">Catálogo Oficial · Tocá cualquier prenda para ver su ficha completa</small>
       </div>
     </div>
   </div>
@@ -815,39 +922,86 @@
       <span id="totalPhotosBadge"></span>
     </div>
 
-    <!-- LISTA DE FOTOS CONTINUAS SIN ESPACIO NEGRO -->
+    <!-- LISTA DE FOTOS CONTINUAS EN FONDO BLANCO -->
     <div class="photo-feed" id="photoFeed"></div>
 
     <button id="btnLoadMore" class="load-more-btn hidden">Ver más prendas de este catálogo ↓</button>
   </div>
 </main>
 
-<!-- ================= SEGUNDO CARTEL EMERGENTE (PRECIO + DETALLE AL TOCAR LA FOTO) ================= -->
+<!-- ================= TARJETA BLANCA UNIFICADA DE DETALLE COMERCIAL (AL TOCAR LA FOTO) ================= -->
 <div class="detail-sheet-overlay" id="detailSheet">
-  <div class="detail-sheet-card">
-    <div class="sheet-head">
-      <span class="sheet-badge" id="sheetProvBadge">Mayorista 1 · Prenda #1</span>
-      <button type="button" class="sheet-close" id="btnCloseSheet">✕</button>
-    </div>
-
-    <div class="sheet-price-box">
-      <span class="sheet-price-lbl">Precio Mayorista</span>
-      <span class="sheet-price-val" id="sheetPriceVal">Consultar</span>
-    </div>
-
-    <div class="sheet-detail-box">
-      <div class="sheet-detail-title">Detalle del Artículo</div>
-      <div class="sheet-detail-text" id="sheetDetailText">Curva completa disponible. Consultá colores y disponibilidad inmediata por WhatsApp.</div>
-    </div>
-
-    <div class="sheet-actions">
-      <a class="btn-wa-card" id="sheetWaBtn" href="#" target="_blank" rel="noopener" style="width:100%;padding:13px;font-size:14px">
-        <i data-lucide="message-circle" style="width:17px;height:17px"></i> Pedir este artículo por WhatsApp
-      </a>
-      <div class="sheet-row-btns">
-        <button type="button" class="btn-select" id="sheetSelectBtn" style="width:100%;padding:11px">+ Elegir para mi lista</button>
-        <button type="button" class="btn-top" id="sheetZoomBtn" style="width:100%;justify-content:center;padding:11px">🔍 Ampliar foto</button>
+  <div class="white-product-card">
+    <div class="wcard-header">
+      <img id="sheetThumb" class="wcard-thumb" src="" alt="Prenda" title="Tocá para ampliar foto" />
+      <div class="wcard-head-info">
+        <span class="wcard-prov-badge" id="sheetProvBadge">Mayorista 1 · Prenda #1</span>
+        <div class="wcard-title" id="sheetTitle">Ficha del Artículo</div>
       </div>
+      <button type="button" class="wcard-close" id="btnCloseSheet">✕</button>
+    </div>
+
+    <div class="wcard-body">
+      <div class="wcard-price-row">
+        <span class="wcard-lbl">Precio Mayorista</span>
+        <span class="wcard-price" id="sheetPriceVal">Consultar</span>
+      </div>
+
+      <div class="wcard-specs-list">
+        <div class="wcard-spec-line" id="sheetTallesRow">
+          <span class="k">Talles / Curva</span>
+          <span class="v" id="sheetTallesVal">Curva completa disponible</span>
+        </div>
+        <div class="wcard-spec-line" id="sheetColoresRow">
+          <span class="k">Colores</span>
+          <span class="v" id="sheetColoresVal">Varios tonos según foto</span>
+        </div>
+      </div>
+
+      <div class="wcard-desc-section">
+        <span class="wcard-lbl">Descripción y Detalles para el Comerciante</span>
+        <div class="wcard-desc-text" id="sheetDetailText">Mercadería directa de fábrica. Venta mayorista por curva o surtido con envíos a todo el país.</div>
+      </div>
+    </div>
+
+    <div class="wcard-footer">
+      <a class="btn-wa-main" id="sheetWaBtn" href="#" target="_blank" rel="noopener">
+        <i data-lucide="message-circle" style="width:18px;height:18px"></i> Pedir este artículo por WhatsApp
+      </a>
+      <div class="wcard-secondary-btns">
+        <button type="button" class="btn-wcard-outline" id="sheetSelectBtn">+ Sumar a mi pedido</button>
+        <button type="button" class="btn-wcard-soft" id="sheetZoomBtn">🔍 Ver foto gigante</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL PARA EDITAR FICHA BLANCA EN ADMIN ================= -->
+<div class="modal-overlay" id="editItemModal">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <h3 style="font-size:17px;font-weight:800">Editar Ficha del Artículo</h3>
+      <button class="btn-top" id="btnCloseEditModal">Cerrar</button>
+    </div>
+    <input type="hidden" id="editItemId" />
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div>
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Precio Mayorista $ (vacío = Consultar)</label>
+        <input type="number" id="editItemPrice" class="input-light" placeholder="Ej: 18500" />
+      </div>
+      <div>
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Talles / Curva</label>
+        <input type="text" id="editItemTalles" class="input-light" placeholder="Ej: M, L, XL, 2XL (Curva de 4)" />
+      </div>
+      <div>
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Colores disponibles</label>
+        <input type="text" id="editItemColores" class="input-light" placeholder="Ej: Blanco, Crema, Kaki, Negro" />
+      </div>
+      <div>
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Descripción / Tela / Detalle del artículo</label>
+        <textarea id="editItemDesc" class="input-light" rows="3" placeholder="Ej: Blusa de lino bordada importada, excelente caída..."></textarea>
+      </div>
+      <button type="button" class="btn-big-upload" id="btnSaveItemEdit" style="margin-top:6px">Guardar cambios en la ficha</button>
     </div>
   </div>
 </div>
@@ -858,13 +1012,13 @@
 
     <!-- LOGIN -->
     <div id="loginBlock" class="admin-card" style="max-width:400px;margin:40px auto">
-      <h3><i data-lucide="lock" style="width:18px;height:18px;color:var(--accent)"></i> Acceso Privado</h3>
+      <h3><i data-lucide="lock" style="width:18px;height:18px;color:var(--wa-dark)"></i> Acceso Privado</h3>
       <p class="sub">Entrá para subir los lotes de tus 5 proveedores.</p>
       <div style="display:flex;flex-direction:column;gap:10px">
-        <input type="text" id="loginUser" class="input-dark" value="admin" placeholder="Usuario" />
-        <input type="password" id="loginPass" class="input-dark" placeholder="Contraseña (admin123)" />
+        <input type="text" id="loginUser" class="input-light" value="admin" placeholder="Usuario" />
+        <input type="password" id="loginPass" class="input-light" placeholder="Contraseña (admin123)" />
         <button class="btn-big-upload" id="btnLogin" style="margin-top:4px">Ingresar al Panel</button>
-        <div id="loginError" style="color:#f87171;font-size:13px;font-weight:700"></div>
+        <div id="loginError" style="color:#dc2626;font-size:13px;font-weight:700"></div>
         <button class="btn-top" id="btnBackFromLogin" style="justify-content:center">← Volver al catálogo</button>
       </div>
     </div>
@@ -872,7 +1026,7 @@
     <!-- DASHBOARD -->
     <div id="dashboardBlock" class="hidden">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-        <h2 style="font-size:20px;font-weight:800">Panel de Proveedores y Precios</h2>
+        <h2 style="font-size:20px;font-weight:800">Panel de Proveedores y Fichas de Precios</h2>
         <div style="display:flex;gap:8px">
           <button class="btn-top" id="btnBackCatalog"><i data-lucide="eye" style="width:14px;height:14px"></i> Ver Catálogo</button>
           <button class="btn-top" id="btnLogout">Salir</button>
@@ -881,18 +1035,18 @@
 
       <!-- SECCIÓN 1: LINKS PARA ENVIAR AL CLIENTE -->
       <div class="admin-card">
-        <h3><i data-lucide="link-2" style="width:19px;height:19px;color:var(--accent)"></i> Links para mandar por WhatsApp</h3>
+        <h3><i data-lucide="link-2" style="width:19px;height:19px;color:var(--wa-dark)"></i> Links para mandar por WhatsApp</h3>
         <p class="sub">Mandá el <b>Link Principal</b> (muestra los 5 mayoristas separados + botón Ver Todo Junto) o mandá el link directo de uno solo:</p>
         <div class="links-grid" id="providerLinksGrid"></div>
       </div>
 
-      <!-- SECCIÓN 2: SUBIR FOTOS CON DETALLE Y PRECIO -->
+      <!-- SECCIÓN 2: SUBIR FOTOS CON DETALLE, TALLES Y PRECIO -->
       <div class="admin-card">
-        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--accent)"></i> Subir nuevo Mayorista / Proveedor</h3>
-        <p class="sub">Podés poner un precio/detalle general o escribirle el detalle y precio a cada foto antes de publicar.</p>
+        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir nuevo Mayorista / Proveedor</h3>
+        <p class="sub">Podés poner precio, talles y descripción general para todo el lote, o escribirlo en cada foto individual abajo.</p>
 
         <div class="step-box">
-          <div class="step-title">Paso 1: Elegí el Mayorista y valores por defecto (opcional)</div>
+          <div class="step-title">Paso 1: Elegí el Mayorista y datos generales (opcional)</div>
           <div class="prov-quick-btns" id="presetProvBtns">
             <button type="button" class="prov-preset" data-prov="Mayorista 1">Mayorista 1</button>
             <button type="button" class="prov-preset active" data-prov="Mayorista 2">Mayorista 2</button>
@@ -901,36 +1055,40 @@
             <button type="button" class="prov-preset" data-prov="Mayorista 5">Mayorista 5</button>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
-            <input type="text" id="batchProvInput" class="input-dark" value="Mayorista 2" placeholder="Nombre del mayorista..." />
-            <input type="number" id="batchPriceInput" class="input-dark" placeholder="Precio general $ (opcional)" />
+            <input type="text" id="batchProvInput" class="input-light" value="Mayorista 2" placeholder="Nombre del mayorista..." />
+            <input type="number" id="batchPriceInput" class="input-light" placeholder="Precio Mayorista $ (opcional)" />
           </div>
-          <input type="text" id="batchDetailInput" class="input-dark" placeholder="Detalle general (ej: Talles S al XXL · Varios colores) (opcional)" />
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+            <input type="text" id="batchTallesInput" class="input-light" placeholder="Talles (ej: M, L, XL, 2XL)" />
+            <input type="text" id="batchColoresInput" class="input-light" placeholder="Colores (ej: Blanco, Negro, Kaki)" />
+          </div>
+          <input type="text" id="batchDetailInput" class="input-light" placeholder="Descripción para el comerciante (ej: Tela lino importado, venta por curva)" />
           <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--muted);cursor:pointer">
-            <input type="checkbox" id="chkAutoCrop" checked style="width:16px;height:16px;accent-color:var(--accent)" />
+            <input type="checkbox" id="chkAutoCrop" checked style="width:16px;height:16px;accent-color:var(--wa)" />
             Recortar automáticamente bordes negros de capturas de pantalla
           </label>
         </div>
 
         <div class="step-box" style="margin-bottom:0">
-          <div class="step-title">Paso 2: Seleccioná las fotos (podés editar precio y detalle en cada una)</div>
+          <div class="step-title">Paso 2: Seleccioná las fotos</div>
           <div class="dropzone" id="dropzone">
-            <i data-lucide="images" style="width:40px;height:40px;color:var(--accent)"></i>
+            <i data-lucide="images" style="width:40px;height:40px;color:var(--wa-dark)"></i>
             <h4>Tocá acá para seleccionar las fotos</h4>
-            <p>Podés subir 1 foto con su detalle y precio o 300+ fotos juntas.</p>
+            <p>Podés subir 1 foto detallando su precio y talles, o subir 300+ fotos juntas.</p>
             <input type="file" id="fileInput" accept="image/*" multiple class="hidden" />
           </div>
 
           <div id="batchSummary" class="hidden">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
-              <span id="batchCountLbl" style="font-weight:800;font-size:14px;color:var(--accent)">0 fotos listas</span>
-              <button class="btn-top" id="btnClearBatch" style="color:#f87171">Limpiar selección</button>
+              <span id="batchCountLbl" style="font-weight:800;font-size:14px;color:var(--wa-dark)">0 fotos listas</span>
+              <button class="btn-top" id="btnClearBatch" style="color:#dc2626">Limpiar selección</button>
             </div>
             <div class="batch-preview-grid" id="batchPreviewGrid"></div>
 
-            <div id="progressBox" class="hidden" style="margin-top:14px;background:var(--bg);padding:14px;border-radius:12px;border:1px solid var(--border)">
+            <div id="progressBox" class="hidden" style="margin-top:14px;background:#ffffff;padding:14px;border-radius:12px;border:1px solid var(--border)">
               <div id="progressText" style="font-size:13.5px;font-weight:800;margin-bottom:8px">Subiendo fotos...</div>
-              <div style="height:10px;background:var(--card);border-radius:99px;overflow:hidden">
-                <div id="progressBar" style="height:100%;width:0%;background:var(--accent);transition:width 0.2s"></div>
+              <div style="height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden">
+                <div id="progressBar" style="height:100%;width:0%;background:var(--wa);transition:width 0.2s"></div>
               </div>
             </div>
 
@@ -942,14 +1100,14 @@
         </div>
       </div>
 
-      <!-- SECCIÓN 3: ADMINISTRAR / EDITAR PRECIO Y DETALLE DE FOTOS YA SUBIDAS -->
+      <!-- SECCIÓN 3: ADMINISTRAR / EDITAR FICHA DE FOTOS YA SUBIDAS -->
       <div class="admin-card">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--accent)"></i> Editar Precios / Detalles (<span id="adminTotalCount">0</span> fotos)</h3>
+          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--wa-dark)"></i> Editar Fichas / Precios (<span id="adminTotalCount">0</span> fotos)</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <select id="adminFilterProv" class="input-dark" style="width:auto;padding:8px 12px"></select>
-            <button class="btn-top" id="btnRenameProv" style="color:var(--accent);border-color:rgba(16,185,129,0.35)">Cambiar nombre</button>
-            <button class="btn-top" id="btnDeleteProvAll" style="color:#f87171;border-color:rgba(248,113,113,0.3)">Vaciar catálogo</button>
+            <select id="adminFilterProv" class="input-light" style="width:auto;padding:8px 12px"></select>
+            <button class="btn-top" id="btnRenameProv" style="color:var(--wa-dark);border-color:var(--wa-border)">Cambiar nombre</button>
+            <button class="btn-top" id="btnDeleteProvAll" style="color:#dc2626;border-color:#fecaca">Vaciar catálogo</button>
           </div>
         </div>
         <div class="admin-list-grid" id="adminPhotosGrid"></div>
@@ -961,9 +1119,9 @@
 
 <!-- ================= BARRA FLOTANTE DE PEDIDO ================= -->
 <div class="floating-order-bar hidden" id="floatingOrderBar">
-  <div class="order-txt"><span id="orderCount">0</span> prendas elegidas</div>
+  <div class="order-txt"><span id="orderCount">0</span> prendas en tu lista</div>
   <div style="display:flex;gap:6px">
-    <button class="order-btn" id="btnOpenOrderModal" style="background:rgba(4,47,46,0.18);color:#042f2e">Ver</button>
+    <button class="order-btn" id="btnOpenOrderModal" style="background:rgba(255,255,255,0.22);color:#ffffff">Ver lista</button>
     <button class="order-btn" id="btnSendOrderDirect">
       <i data-lucide="message-circle" style="width:15px;height:15px"></i> Enviar por WhatsApp
     </button>
@@ -979,7 +1137,7 @@
     </div>
     <div id="orderModalList" style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px"></div>
     <div style="display:flex;gap:8px">
-      <button class="btn-top" id="btnClearOrder" style="flex:1;justify-content:center;color:#f87171">Vaciar</button>
+      <button class="btn-top" id="btnClearOrder" style="flex:1;justify-content:center;color:#dc2626">Vaciar</button>
       <button class="btn-wa-card" id="btnSendOrderFromModal" style="flex:2;padding:12px">Enviar pedido por WhatsApp</button>
     </div>
   </div>
@@ -1012,7 +1170,7 @@ var state = {
   filtered: [],
   renderedCount: 0,
   activeProv: "",
-  batchItems: [], // [{file, price, detail}]
+  batchItems: [], // [{file, price, talles, colores, detail}]
   cart: [],
   sb: null,
   admin: false,
@@ -1047,22 +1205,45 @@ function getProviderUrl(provName){
   return base + "?prov=" + encodeURIComponent(provName);
 }
 
-function getDetailOf(p){
-  var n = (p.nombre || "").trim();
-  // Si tiene un detalle personalizado que escribió el dueño, lo devuelve
-  if(n && !/^(Mayorista|Proveedor|Catálogo|Prenda|Modelo)\s*\d*\s*·?\s*(Foto|Prenda|Modelo)?\s*#?\d*$/i.test(n)){
-    return n;
+/* =========================================================
+   LECTURA Y EMPAQUETADO INTELIGENTE DE TALLES, COLORES Y DESCRIPCIÓN
+   (Funciona incluso si la tabla en Supabase no tiene columnas extra)
+   ========================================================= */
+function parseItemMeta(p){
+  var rawName = (p.nombre || "").trim();
+  // Si el nombre es automático (ej: "989944" o "Mayorista 1 · Modelo #1") lo limpia
+  if(/^\d+$/.test(rawName) || /^(Mayorista|Proveedor|Catálogo|Prenda|Modelo)\s*\d*\s*·?\s*(Foto|Prenda|Modelo)?\s*#?\d*$/i.test(rawName)){
+    rawName = "";
   }
-  return "";
+  var parts = rawName.split(" || ");
+  var desc = (parts[0] || "").trim();
+  var talles = (p.talles || parts[1] || "").trim();
+  var colores = (p.colores || parts[2] || "").trim();
+  return {
+    desc: desc,
+    talles: talles,
+    colores: colores
+  };
+}
+
+function packItemName(desc, talles, colores, fallbackTitle){
+  var d = (desc || "").trim();
+  var t = (talles || "").trim();
+  var c = (colores || "").trim();
+  if(!d && !t && !c) return fallbackTitle;
+  if(!t && !c) return d;
+  return d + " || " + t + " || " + c;
 }
 
 function waSingleLink(p, num){
   var prov = getProvOf(p);
-  var det = getDetailOf(p);
+  var meta = parseItemMeta(p);
   var pr = fmtPrice(p.precio);
-  var msg = "Hola! Quiero pedir esta prenda de *Mayorista Boliviano*:\n• *" + prov + " — Prenda #" + num + "*" +
-            (det ? "\n• Detalle: " + det : "") +
-            (pr ? "\n• Precio: AR" + pr : "") +
+  var msg = "Hola! Quiero pedir este artículo de *Mayorista Boliviano*:\n• *" + prov + " — Prenda #" + num + "*" +
+            (pr ? "\n• Precio Mayorista: AR" + pr : "") +
+            (meta.talles ? "\n• Talles: " + meta.talles : "") +
+            (meta.colores ? "\n• Colores: " + meta.colores : "") +
+            (meta.desc ? "\n• Descripción: " + meta.desc : "") +
             (p.imagen && p.imagen.indexOf("http")===0 ? "\n• Ver foto: " + p.imagen : "");
   return "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
 }
@@ -1129,9 +1310,9 @@ var Store = {
       imgUrl = await blobToDataURL(blob);
     }
 
-    var customDetail = (item.detail || "").trim();
+    var packedName = packItemName(item.detail, item.talles, item.colores, provName + " · Modelo #" + seqNum);
     var payload = {
-      nombre: customDetail || (provName + " · Modelo #" + seqNum),
+      nombre: packedName,
       codigo: "M-" + seqNum,
       proveedor: provName,
       categoria: provName,
@@ -1147,16 +1328,19 @@ var Store = {
     }
     throw new Error(ins.error ? ins.error.message : "Error al guardar fila");
   },
-  updateItemInfo: async function(id, newPrice, newDetail){
+  updateItemInfo: async function(id, newPrice, newDesc, newTalles, newColores){
+    var p = state.products.find(function(x){ return x.id === id; });
+    var packed = packItemName(newDesc, newTalles, newColores, p ? (getProvOf(p) + " · Prenda") : "Prenda");
     var patch = {
       precio: newPrice === "" || newPrice == null ? null : Number(newPrice),
-      nombre: newDetail
+      nombre: packed
     };
     await state.sb.from(CONFIG.TABLE_NAME).update(patch).eq("id", id);
-    var p = state.products.find(function(x){ return x.id === id; });
     if(p){
       p.precio = patch.precio;
       p.nombre = patch.nombre;
+      p.talles = newTalles;
+      p.colores = newColores;
     }
   },
   renameProvider: async function(oldName, newName){
@@ -1272,7 +1456,7 @@ function getUniqueProviders(){
 }
 
 /* =========================================================
-   RENDER: PESTAÑAS + FOTOS PEGADAS + SEGUNDO CARTEL AL TOCAR
+   RENDER: PESTAÑAS + FOTOS PEGADAS + FICHA BLANCA AL TOCAR
    ========================================================= */
 function renderProviderTabs(){
   var provs = getUniqueProviders();
@@ -1341,7 +1525,7 @@ function isInCart(id){
 function renderNextChunk(){
   var feed = $("photoFeed");
   if(state.filtered.length === 0){
-    feed.innerHTML = '<div style="text-align:center;padding:60px 20px;margin:14px;background:var(--card);border-radius:18px;border:1px dashed var(--border)"><p style="font-size:16px;font-weight:800;margin-bottom:6px">Todavía no hay fotos cargadas</p><p style="font-size:13px;color:var(--muted)">Tocá 5 veces el logo de arriba para abrir el panel y subir tus fotos.</p></div>';
+    feed.innerHTML = '<div style="text-align:center;padding:60px 20px;margin:14px;background:#ffffff;border-radius:18px;border:1px dashed var(--border)"><p style="font-size:16px;font-weight:800;margin-bottom:6px">Todavía no hay fotos cargadas</p><p style="font-size:13px;color:var(--muted)">Tocá 5 veces el logo de arriba para abrir el panel y subir tus fotos.</p></div>';
     $("btnLoadMore").classList.add("hidden");
     return;
   }
@@ -1350,11 +1534,12 @@ function renderNextChunk(){
   var html = nextSlice.map(function(p, idx){
     var num = state.renderedCount + idx + 1;
     var price = fmtPrice(p.precio);
-    var det = getDetailOf(p);
+    var meta = parseItemMeta(p);
     var sel = isInCart(p.id);
+    var summaryTxt = meta.desc || meta.talles || "Ver ficha y precio";
     var labelBtn = price
-      ? ('<span class="price-pill">AR' + price + '</span> · <span class="txt-trunc">' + esc(det || "Ver detalle") + '</span>')
-      : ('<span class="txt-trunc">🔍 ' + esc(det || "Ver precio y detalle") + '</span>');
+      ? ('<span class="price-pill">AR' + price + '</span> · <span class="txt-trunc">' + esc(summaryTxt) + '</span>')
+      : ('<span class="txt-trunc">📋 ' + esc(summaryTxt) + '</span>');
 
     return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
       '<div class="feed-img-wrap" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
@@ -1392,9 +1577,12 @@ function openDetailSheet(id, num){
 
   var prov = getProvOf(p);
   var price = fmtPrice(p.precio);
-  var det = getDetailOf(p);
+  var meta = parseItemMeta(p);
 
-  $("sheetProvBadge").textContent = prov + " · Prenda #" + num;
+  $("sheetThumb").src = p.imagen || "";
+  $("sheetProvBadge").textContent = prov + " · Artículo #" + num;
+  $("sheetTitle").textContent = meta.desc ? meta.desc.split("\n")[0].slice(0, 48) : ("Modelo #" + num + " — " + prov);
+
   if(price){
     $("sheetPriceVal").textContent = "AR" + price;
     $("sheetPriceVal").classList.remove("consult");
@@ -1403,11 +1591,13 @@ function openDetailSheet(id, num){
     $("sheetPriceVal").classList.add("consult");
   }
 
-  $("sheetDetailText").textContent = det || "Artículo disponible por mayor y curva. Tocá el botón de WhatsApp para consultar talles y colores disponibles.";
+  $("sheetTallesVal").textContent = meta.talles || "Curva completa disponible";
+  $("sheetColoresVal").textContent = meta.colores || "Surtido según catálogo";
+  $("sheetDetailText").textContent = meta.desc || "Mercadería directa para comerciantes y revendedores. Consultanos disponibilidad inmediata y envío por WhatsApp.";
   $("sheetWaBtn").href = waSingleLink(p, num);
 
   var sel = isInCart(p.id);
-  $("sheetSelectBtn").textContent = sel ? "✓ Elegida en tu lista" : "+ Elegir para mi lista";
+  $("sheetSelectBtn").textContent = sel ? "✓ Elegida en mi pedido" : "+ Sumar a mi pedido";
   $("sheetSelectBtn").classList.toggle("selected", sel);
 
   $("detailSheet").classList.add("open");
@@ -1466,9 +1656,9 @@ function sendCartToWhatsApp(){
   state.cart.forEach(function(id, idx){
     var p = state.products.find(function(x){ return x.id === id; });
     if(p){
-      var det = getDetailOf(p);
+      var meta = parseItemMeta(p);
       var pr = fmtPrice(p.precio);
-      lines.push((idx+1) + ". *" + getProvOf(p) + "*" + (det ? " — " + det : "") + (pr ? " (AR" + pr + ")" : "") + (p.imagen && p.imagen.indexOf("http")===0 ? "\n   Ver foto: " + p.imagen : ""));
+      lines.push((idx+1) + ". *" + getProvOf(p) + "*" + (meta.desc ? " — " + meta.desc : "") + (meta.talles ? " [Talles: " + meta.talles + "]" : "") + (pr ? " (AR" + pr + ")" : "") + (p.imagen && p.imagen.indexOf("http")===0 ? "\n   Ver foto: " + p.imagen : ""));
     }
   });
   window.open("https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n")), "_blank");
@@ -1478,13 +1668,14 @@ function openOrderModal(){
   var html = state.cart.map(function(id, idx){
     var p = state.products.find(function(x){ return x.id === id; });
     if(!p) return "";
-    return '<div style="display:flex;align-items:center;gap:10px;background:var(--bg-soft);padding:8px;border-radius:10px">' +
+    var meta = parseItemMeta(p);
+    return '<div style="display:flex;align-items:center;gap:10px;background:var(--bg-soft);padding:8px;border-radius:10px;border:1px solid var(--border)">' +
       '<img src="'+esc(p.imagen)+'" style="width:48px;height:58px;object-fit:cover;border-radius:6px;background:#fff" />' +
       '<div style="flex:1;min-width:0">' +
         '<div style="font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(getProvOf(p))+'</div>' +
-        '<div style="font-size:11.5px;color:var(--accent)">'+esc(getDetailOf(p) || fmtPrice(p.precio) || "Prenda seleccionada")+'</div>' +
+        '<div style="font-size:11.5px;color:var(--wa-dark);font-weight:700">'+esc(meta.desc || fmtPrice(p.precio) || "Prenda seleccionada")+'</div>' +
       '</div>' +
-      '<button class="btn-top" data-rmcart="'+idx+'" style="color:#f87171">Quitar</button>' +
+      '<button class="btn-top" data-rmcart="'+idx+'" style="color:#dc2626">Quitar</button>' +
     '</div>';
   }).join("");
   $("orderModalList").innerHTML = html;
@@ -1501,7 +1692,7 @@ function openOrderModal(){
 }
 
 /* =========================================================
-   ADMIN: CARGA CON DETALLE/PRECIO + EDITOR DE FOTOS SUBIDAS
+   ADMIN: CARGA CON FICHA + EDITOR COMPLETO DE FICHA BLANCA
    ========================================================= */
 function renderAdminDashboard(){
   var provs = getUniqueProviders();
@@ -1509,7 +1700,7 @@ function renderAdminDashboard(){
 
   var linksHtml = '<div class="link-prov-item master">' +
     '<div>' +
-      '<div style="font-weight:800;font-size:14.5px;color:var(--accent)">🌟 LINK PRINCIPAL (Muestra todos los mayoristas separados + opción Ver Todo)</div>' +
+      '<div style="font-weight:800;font-size:14.5px;color:var(--wa-deep)">🌟 LINK PRINCIPAL (Muestra todos los mayoristas separados + opción Ver Todo)</div>' +
       '<div style="font-size:12px;color:var(--muted)">Mandá siempre este link para que vean todo</div>' +
     '</div>' +
     '<button class="btn-copy" data-copylink=""><i data-lucide="copy" style="width:14px;height:14px"></i> Copiar Link Principal</button>' +
@@ -1554,32 +1745,31 @@ function renderAdminPhotosList(){
   var pf = $("adminFilterProv").value;
   var list = state.products.filter(function(p){ return !pf || getProvOf(p) === pf; }).slice(0, 100);
   $("adminPhotosGrid").innerHTML = list.map(function(p){
-    var pr = fmtPrice(p.precio) || "Sin precio";
-    var det = getDetailOf(p) || "Sin detalle";
+    var pr = fmtPrice(p.precio) || "Consultar";
+    var meta = parseItemMeta(p);
     return '<div class="admin-item-card">' +
       '<img src="'+esc(p.imagen)+'" loading="lazy" />' +
       '<div class="admin-item-body">' +
-        '<div style="font-weight:800;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(pr)+'</div>' +
-        '<div style="color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(det)+'</div>' +
-        '<button class="btn-top" data-editid="'+esc(p.id)+'" style="color:var(--accent);justify-content:center;margin-top:4px;padding:5px">✏️ Precio / Detalle</button>' +
-        '<button class="btn-top" data-delid="'+esc(p.id)+'" style="color:#f87171;justify-content:center;padding:5px">Borrar</button>' +
+        '<div style="font-weight:800;color:var(--wa-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(pr)+'</div>' +
+        '<div style="color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(meta.talles || meta.desc || "Sin detalle")+'</div>' +
+        '<button class="btn-top" data-editid="'+esc(p.id)+'" style="color:var(--wa-deep);border-color:var(--wa-border);background:var(--wa-soft);justify-content:center;margin-top:4px;padding:6px">✏️ Editar Ficha</button>' +
+        '<button class="btn-top" data-delid="'+esc(p.id)+'" style="color:#dc2626;justify-content:center;padding:5px">Borrar</button>' +
       '</div>' +
     '</div>';
   }).join("");
 
   $("adminPhotosGrid").querySelectorAll("[data-editid]").forEach(function(btn){
-    btn.addEventListener("click", async function(){
+    btn.addEventListener("click", function(){
       var id = btn.getAttribute("data-editid");
       var p = state.products.find(function(x){ return x.id === id; });
       if(!p) return;
-      var newPrice = prompt("Precio del artículo (solo números, o dejá vacío para 'Consultar'):", p.precio || "");
-      if(newPrice === null) return;
-      var newDetail = prompt("Detalle del artículo (ej: Tela Lurex · Talles M al XXL · Colores):", getDetailOf(p) || "");
-      if(newDetail === null) return;
-      await Store.updateItemInfo(id, newPrice.trim(), newDetail.trim() || (getProvOf(p) + " · Prenda"));
-      applyFilterAndRender(true);
-      renderAdminPhotosList();
-      showToast("Precio y detalle actualizados");
+      var meta = parseItemMeta(p);
+      $("editItemId").value = p.id;
+      $("editItemPrice").value = p.precio || "";
+      $("editItemTalles").value = meta.talles || "";
+      $("editItemColores").value = meta.colores || "";
+      $("editItemDesc").value = meta.desc || "";
+      $("editItemModal").classList.add("open");
     });
   });
 
@@ -1610,11 +1800,15 @@ function handleBatchSelect(files){
   var arr = Array.from(files).filter(function(f){ return f.type.indexOf("image/") === 0; });
   if(arr.length === 0) return;
   var defPrice = $("batchPriceInput").value.trim();
+  var defTalles = $("batchTallesInput").value.trim();
+  var defColores = $("batchColoresInput").value.trim();
   var defDetail = $("batchDetailInput").value.trim();
   arr.forEach(function(f){
     state.batchItems.push({
       file: f,
       price: defPrice,
+      talles: defTalles,
+      colores: defColores,
       detail: defDetail
     });
   });
@@ -1635,11 +1829,12 @@ function renderBatchPreview(){
       '<img src="'+url+'" />' +
       '<div class="batch-thumb-inputs">' +
         '<input type="number" data-bfield="price" placeholder="Precio $ (opcional)" value="'+esc(item.price)+'" />' +
-        '<input type="text" data-bfield="detail" placeholder="Detalle / talles / tela..." value="'+esc(item.detail)+'" />' +
+        '<input type="text" data-bfield="talles" placeholder="Talles (ej: M al 2XL)" value="'+esc(item.talles)+'" />' +
+        '<input type="text" data-bfield="detail" placeholder="Descripción / tela..." value="'+esc(item.detail)+'" />' +
       '</div>' +
       '<button type="button" class="batch-thumb-del" data-rmbatch="'+idx+'">✕</button>' +
     '</div>';
-  }).join("") + (total > 36 ? '<div style="display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--accent);padding:10px;text-align:center">+' + (total - 36) + ' fotos más</div>' : '');
+  }).join("") + (total > 36 ? '<div style="display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--wa-dark);padding:10px;text-align:center">+' + (total - 36) + ' fotos más</div>' : '');
 
   $("batchPreviewGrid").querySelectorAll("[data-bfield]").forEach(function(inp){
     inp.addEventListener("input", function(){
@@ -1662,12 +1857,15 @@ async function startMassUpload(){
   if(total === 0) return;
   var provName = $("batchProvInput").value.trim() || "Mayorista 2";
   var defPrice = $("batchPriceInput").value.trim();
+  var defTalles = $("batchTallesInput").value.trim();
+  var defColores = $("batchColoresInput").value.trim();
   var defDetail = $("batchDetailInput").value.trim();
   var autoCrop = $("chkAutoCrop").checked;
 
-  // Si el usuario escribió un precio o detalle general a último momento, se lo aplica a las que estén vacías
   state.batchItems.forEach(function(it){
     if(it.price === "" && defPrice !== "") it.price = defPrice;
+    if(it.talles === "" && defTalles !== "") it.talles = defTalles;
+    if(it.colores === "" && defColores !== "") it.colores = defColores;
     if(it.detail === "" && defDetail !== "") it.detail = defDetail;
   });
 
@@ -1764,7 +1962,7 @@ function bindEvents(){
     }
   });
 
-  // Eventos del Segundo Cartel (Modal de Detalle y Precio)
+  // Eventos de la Tarjeta Blanca de Detalle
   $("btnCloseSheet").addEventListener("click", function(){ $("detailSheet").classList.remove("open"); });
   $("detailSheet").addEventListener("click", function(e){
     if(e.target === $("detailSheet")) $("detailSheet").classList.remove("open");
@@ -1774,14 +1972,32 @@ function bindEvents(){
     var id = state.currentSheetItem.p.id;
     toggleCartId(id);
     var sel = isInCart(id);
-    $("sheetSelectBtn").textContent = sel ? "✓ Elegida en tu lista" : "+ Elegir para mi lista";
+    $("sheetSelectBtn").textContent = sel ? "✓ Elegida en mi pedido" : "+ Sumar a mi pedido";
     $("sheetSelectBtn").classList.toggle("selected", sel);
   });
-  $("sheetZoomBtn").addEventListener("click", function(){
+  var openZoomFromSheet = function(){
     if(!state.currentSheetItem) return;
     $("detailSheet").classList.remove("open");
     $("lightboxImg").src = state.currentSheetItem.p.imagen;
     $("lightbox").classList.remove("hidden");
+  };
+  $("sheetZoomBtn").addEventListener("click", openZoomFromSheet);
+  $("sheetThumb").addEventListener("click", openZoomFromSheet);
+
+  // Modal de Edición en Admin
+  $("btnCloseEditModal").addEventListener("click", function(){ $("editItemModal").classList.remove("open"); });
+  $("btnSaveItemEdit").addEventListener("click", async function(){
+    var id = $("editItemId").value;
+    if(!id) return;
+    var pr = $("editItemPrice").value.trim();
+    var ta = $("editItemTalles").value.trim();
+    var co = $("editItemColores").value.trim();
+    var de = $("editItemDesc").value.trim();
+    await Store.updateItemInfo(id, pr, de, ta, co);
+    $("editItemModal").classList.remove("open");
+    applyFilterAndRender(true);
+    renderAdminPhotosList();
+    showToast("Ficha blanca actualizada");
   });
 
   $("btnCloseLightbox").addEventListener("click", function(){ $("lightbox").classList.add("hidden"); });
