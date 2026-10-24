@@ -50,7 +50,7 @@
   img { max-width: 100%; display: block; }
   .hidden { display: none !important; }
 
-  /* ================= HEADER BLANCO COMPACTO (DEJA TODA LA PANTALLA A LAS FOTOS AL BAJAR) ================= */
+  /* ================= HEADER LIMPIO Y DESPEJADO ================= -->
   header {
     position: relative;
     z-index: 80;
@@ -60,7 +60,7 @@
   .header-top {
     max-width: 720px;
     margin: 0 auto;
-    padding: 11px 14px 8px;
+    padding: 14px 16px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,13 +68,13 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     user-select: none;
   }
   .brand-mark {
-    width: 38px;
-    height: 38px;
-    border-radius: 11px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
     flex-shrink: 0;
     background: var(--wa);
     display: flex;
@@ -86,7 +86,7 @@
   .brand-txt { display: flex; flex-direction: column; }
   .brand-txt span {
     font-weight: 800;
-    font-size: 18px;
+    font-size: 18.5px;
     letter-spacing: -0.02em;
     color: var(--text);
     line-height: 1.15;
@@ -95,10 +95,10 @@
     font-size: 11.5px;
     font-weight: 700;
     color: var(--wa-dark);
-    margin-top: 1px;
+    margin-top: 2px;
   }
 
-  /* ================= BOTONES DE PROVEEDORES PEGADOS ARRIBA AL SCROLLEAR ================= */
+  /* ================= BOTONES DE PROVEEDORES (PEGAJOSOS AL SCROLLEAR) ================= -->
   .prov-bar-wrap {
     position: sticky;
     top: 0;
@@ -107,7 +107,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 7px 8px;
+    padding: 8px 10px;
   }
   .prov-bar-inner {
     max-width: 720px;
@@ -150,11 +150,11 @@
     color: #ffffff;
   }
 
-  /* ================= PORTADA DE SELECCIÓN DE CATÁLOGO ================= */
+  /* ================= PORTADA DE SELECCIÓN DE CATÁLOGO ================= -->
   .hub-section {
     max-width: 720px;
     margin: 0 auto;
-    padding: 10px 10px 4px;
+    padding: 12px 12px 4px;
     background: #ffffff;
   }
   .hub-title {
@@ -208,11 +208,11 @@
     white-space: nowrap;
   }
 
-  /* ================= FEED PANTALLA COMPLETA (CADA FOTO OCUPA CASI TODO EL CELULAR) ================= */
+  /* ================= FEED GIGANTE (FOTOS ULTRA GRANDES Y LIMPIAS) ================= -->
   .catalog-container {
     max-width: 760px;
     margin: 0 auto;
-    padding: 0 0 100px;
+    padding: 0 0 110px;
     width: 100%;
     background: #ffffff;
   }
@@ -243,7 +243,6 @@
     overflow: hidden;
   }
 
-  /* HACE QUE LA FOTO SEA GIGANTE Y OCUPE CASI TODA LA PANTALLA VERTICAL DEL CELULAR */
   .feed-img-wrap {
     position: relative;
     width: 100%;
@@ -263,7 +262,6 @@
     display: block;
   }
 
-  /* ETIQUETA SUTIL BLANCA ARRIBA A LA DERECHA */
   .float-num {
     position: absolute;
     top: 12px;
@@ -273,23 +271,22 @@
     color: var(--text);
     padding: 5px 12px;
     border-radius: 999px;
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 800;
     border: 1px solid var(--border);
     box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
     pointer-events: none;
   }
 
-  /* BARRA FLOTANTE SOBRE LA MISMA FOTO */
+  /* BOTÓN ÚNICO INFERIOR (CERO REPETICIÓN DE FUNCIONES) */
   .float-bottom-bar {
     position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 7px;
+    justify-content: center;
     pointer-events: none;
   }
 
@@ -299,66 +296,19 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: var(--text);
-    border: 1px solid var(--border);
-    padding: 10px 14px;
+    border: 1.5px solid var(--wa);
+    padding: 12px 22px;
     border-radius: 999px;
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
-    max-width: 56%;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
   }
   .btn-open-detail span.price-pill {
     color: var(--wa-dark);
     font-weight: 800;
-  }
-  .btn-open-detail span.txt-trunc {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .float-right-btns {
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .btn-select {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 13px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(10px);
-    border: 1.5px solid var(--wa);
-    color: var(--wa-dark);
-    font-weight: 800;
-    font-size: 12.5px;
-    white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.16);
-  }
-  .btn-select.selected {
-    background: var(--wa);
-    color: #ffffff;
-    border-color: var(--wa);
-  }
-  .btn-wa-card {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px 16px;
-    border-radius: 999px;
-    background: var(--wa);
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 12.5px;
-    white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42);
   }
 
   .load-more-btn {
@@ -374,7 +324,7 @@
     text-align: center;
   }
 
-  /* ================= TARJETA BLANCA UNIFICADA DE PRESENTACIÓN COMERCIAL ================= */
+  /* ================= TARJETA BLANCA UNIFICADA DE PRESENTACIÓN COMERCIAL ================= -->
   .detail-sheet-overlay {
     position: fixed;
     inset: 0;
@@ -448,7 +398,7 @@
     margin-bottom: 6px;
   }
   .wcard-title {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.25;
@@ -593,40 +543,40 @@
     gap: 6px;
   }
 
-  /* ================= BARRA FLOTANTE DE PEDIDO ================= */
+  /* ================= BARRA FLOTANTE DE PEDIDO COMPACTA Y ELEGANTE ================= -->
   .floating-order-bar {
     position: fixed;
-    left: 12px;
-    right: 12px;
-    bottom: 14px;
-    max-width: 560px;
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+    max-width: 480px;
     margin: 0 auto;
     z-index: 90;
     background: var(--wa);
     color: #ffffff;
-    padding: 13px 16px;
-    border-radius: 16px;
+    padding: 10px 14px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    box-shadow: 0 14px 36px rgba(37, 211, 102, 0.45);
+    gap: 8px;
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
   }
-  .floating-order-bar .order-txt { font-size: 14px; font-weight: 800; }
+  .floating-order-bar .order-txt { font-size: 13px; font-weight: 800; }
   .floating-order-bar .order-btn {
     background: #ffffff;
     color: var(--wa-deep);
-    padding: 10px 15px;
-    border-radius: 11px;
-    font-size: 13px;
+    padding: 8px 13px;
+    border-radius: 9px;
+    font-size: 12px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     white-space: nowrap;
   }
 
-  /* ================= ADMIN PANEL EN FONDO BLANCO CLARO ================= */
+  /* ================= ADMIN PANEL CLARO ================= -->
   .admin-wrap {
     max-width: 980px;
     margin: 20px auto 80px;
@@ -907,7 +857,7 @@
   </div>
 </header>
 
-<!-- BOTONES DE PROVEEDORES -->
+<!-- BOTONES DE PROVEEDORES PEGAGOSOS -->
 <div class="prov-bar-wrap" id="provBarWrap">
   <div class="prov-bar-inner" id="provChips"></div>
 </div>
@@ -915,7 +865,6 @@
 <!-- ================= VISTA CATÁLOGO ================= -->
 <main id="viewCatalog">
 
-  <!-- TARJETAS VISUALES PARA ELEGIR CADA MAYORISTA POR SEPARADO -->
   <section class="hub-section hidden" id="catalogHub">
     <div class="hub-title">Tocá un mayorista para verlo por separado:</div>
     <div class="hub-grid" id="hubGrid"></div>
@@ -1011,11 +960,10 @@
   </div>
 </div>
 
-<!-- ================= VISTA ADMIN (ENTRANDO A /#/admin O 5 TOQUES EN EL LOGO) ================= -->
+<!-- ================= VISTA ADMIN (ACCESO CON 5 TOQUES EN EL LOGO) ================= -->
 <main id="viewAdmin" class="hidden">
   <div class="admin-wrap">
 
-    <!-- LOGIN -->
     <div id="loginBlock" class="admin-card" style="max-width:400px;margin:40px auto">
       <h3><i data-lucide="lock" style="width:18px;height:18px;color:var(--wa-dark)"></i> Acceso Privado</h3>
       <p class="sub">Entrá para subir los lotes de tus 5 proveedores.</p>
@@ -1028,7 +976,6 @@
       </div>
     </div>
 
-    <!-- DASHBOARD -->
     <div id="dashboardBlock" class="hidden">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
         <h2 style="font-size:20px;font-weight:800">Panel de Proveedores y Fichas de Precios</h2>
@@ -1038,14 +985,12 @@
         </div>
       </div>
 
-      <!-- SECCIÓN 1: LINKS PARA ENVIAR AL CLIENTE -->
       <div class="admin-card">
         <h3><i data-lucide="link-2" style="width:19px;height:19px;color:var(--wa-dark)"></i> Links para mandar por WhatsApp</h3>
         <p class="sub">Mandá el <b>Link Principal</b> (muestra los 5 mayoristas separados + botón Ver Todo Junto) o mandá el link directo de uno solo:</p>
         <div class="links-grid" id="providerLinksGrid"></div>
       </div>
 
-      <!-- SECCIÓN 2: SUBIR FOTOS CON DETALLE, TALLES Y PRECIO -->
       <div class="admin-card">
         <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir nuevo Mayorista / Proveedor</h3>
         <p class="sub">Podés poner precio, talles y descripción general para todo el lote, o escribirlo en cada foto individual abajo.</p>
@@ -1105,7 +1050,6 @@
         </div>
       </div>
 
-      <!-- SECCIÓN 3: ADMINISTRAR / EDITAR FICHA DE FOTOS YA SUBIDAS -->
       <div class="admin-card">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
           <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--wa-dark)"></i> Editar Fichas / Precios (<span id="adminTotalCount">0</span> fotos)</h3>
@@ -1512,10 +1456,6 @@ function applyFilterAndRender(resetScroll){
   }
 }
 
-function isInCart(id){
-  return state.cart.some(function(x){ return x === id; });
-}
-
 function renderNextChunk(){
   var feed = $("photoFeed");
   if(state.filtered.length === 0){
@@ -1528,12 +1468,7 @@ function renderNextChunk(){
   var html = nextSlice.map(function(p, idx){
     var num = state.renderedCount + idx + 1;
     var price = fmtPrice(p.precio);
-    var meta = parseItemMeta(p);
-    var sel = isInCart(p.id);
-    var summaryTxt = meta.desc || meta.talles || "Ver ficha y precio";
-    var labelBtn = price
-      ? ('<span class="price-pill">AR' + price + '</span> · <span class="txt-trunc">' + esc(summaryTxt) + '</span>')
-      : ('<span class="txt-trunc">📋 ' + esc(summaryTxt) + '</span>');
+    var labelBtn = price ? ('<span class="price-pill">AR' + price + '</span> · Ver ficha y precio') : '📋 Ver ficha y precio';
 
     return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
       '<div class="feed-img-wrap" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
@@ -1543,14 +1478,6 @@ function renderNextChunk(){
           '<button type="button" class="btn-open-detail" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
             labelBtn +
           '</button>' +
-          '<div class="float-right-btns">' +
-            '<button type="button" class="btn-select'+(sel?' selected':'')+'" data-sel="'+esc(p.id)+'">' +
-              (sel ? '✓ Elegida' : '+ Elegir') +
-            '</button>' +
-            '<a class="btn-wa-card" href="'+waSingleLink(p, num)+'" target="_blank" rel="noopener">' +
-              '<i data-lucide="message-circle" style="width:14px;height:14px"></i> Pedir' +
-            '</a>' +
-          '</div>' +
         '</div>' +
       '</div>' +
     '</article>';
@@ -1603,23 +1530,16 @@ function bindFeedEvents(){
     if(el.dataset.bound) return;
     el.dataset.bound = "1";
     el.addEventListener("click", function(e){
-      if(e.target.closest("[data-sel]") || e.target.closest(".btn-wa-card")) return;
       e.stopPropagation();
       var id = el.getAttribute("data-opensheet");
       var num = el.getAttribute("data-num") || "1";
       openDetailSheet(id, num);
     });
   });
+}
 
-  document.querySelectorAll("[data-sel]").forEach(function(btn){
-    if(btn.dataset.bound) return;
-    btn.dataset.bound = "1";
-    btn.addEventListener("click", function(e){
-      e.stopPropagation();
-      var id = btn.getAttribute("data-sel");
-      toggleCartId(id);
-    });
-  });
+function isInCart(id){
+  return state.cart.some(function(x){ return x === id; });
 }
 
 function toggleCartId(id){
@@ -1632,10 +1552,6 @@ function toggleCartId(id){
     added = true;
     showToast("Prenda sumada a tu pedido");
   }
-  document.querySelectorAll('[data-sel="'+id+'"]').forEach(function(b){
-    b.classList.toggle("selected", added);
-    b.textContent = added ? "✓ Elegida" : "+ Elegir";
-  });
   updateOrderBar();
 }
 
@@ -1811,7 +1727,7 @@ function renderBatchPreview(){
   $("batchSummary").classList.toggle("hidden", total === 0);
   var prov = $("batchProvInput").value.trim() || "Mayorista 2";
   $("batchCountLbl").textContent = total + " fotos listas para cargar en \"" + prov + "\"";
-  $("btnStartUploadTxt").textContent = "Publicar las " + total + " fotos en \"" + prov + "\" ahora";
+  $("btnStartUploadTxt").textContent = "Publicar las " + total + " fotos a \"" + prov + "\" ahora";
 
   var previewSlice = state.batchItems.slice(0, 36);
   $("batchPreviewGrid").innerHTML = previewSlice.map(function(item, idx){
