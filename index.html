@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <title>Mayorista Boliviano — Catálogo Oficial</title>
-<meta name="description" content="Mayorista Boliviano. Catálogo mayorista de indumentaria. Envíos desde Tucumán a todo el país. Pedidos por WhatsApp." />
+<meta name="description" content="Mayorista Boliviano. Catálogo mayorista. Envíos desde Tucumán a todo el país. Pedidos por WhatsApp." />
 <!--__SB_INJECT__-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,11 +31,9 @@
     --gold-soft: #f7f0df;
     --border: #e6e9e5;
     --radius: 22px;
-    --glass: rgba(255, 255, 255, 0.72);
-    --glass-strong: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.65);
+    --glass: rgba(255, 255, 255, 0.78);
+    --glass-strong: rgba(255, 255, 255, 0.92);
     --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.08);
-    --shadow-glow: 0 10px 34px rgba(24, 168, 94, 0.28);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -56,7 +54,7 @@
   .serif { font-family: 'Playfair Display', Georgia, serif; }
   a { color: inherit; text-decoration: none; }
   button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-  input, select, textarea { font-family: inherit; font-size: 14px; color: var(--text); }
+  input, select, textarea { font-family: inherit; font-size: 15px; color: var(--text); }
   img { max-width: 100%; display: block; }
   .hidden { display: none !important; }
 
@@ -73,7 +71,7 @@
   .header-top {
     max-width: 720px;
     margin: 0 auto;
-    padding: 16px 16px 13px;
+    padding: 14px 14px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,13 +80,13 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 11px;
     user-select: none;
     min-width: 0;
   }
   .brand-mark {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 13px;
     flex-shrink: 0;
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
@@ -103,7 +101,7 @@
   .brand-txt span {
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 700;
-    font-size: 21px;
+    font-size: 20px;
     letter-spacing: 0.01em;
     color: #0f172a;
     line-height: 1.2;
@@ -116,13 +114,11 @@
     font-weight: 700;
     color: var(--gold-deep);
     margin-top: 2px;
-    letter-spacing: 0.02em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* BOTON CARRITO EN EL HEADER ESTILO TIENDA NUBE */
   .header-cart-btn {
     position: relative;
     display: inline-flex;
@@ -154,7 +150,7 @@
     justify-content: center;
   }
 
-  /* ================= BOTONES DE PROVEEDORES PEGADOS ARRIBA AL SCROLLEAR ================= */
+  /* ================= BARRA DE PROVEEDORES ================= */
   .prov-bar-wrap {
     position: sticky;
     top: 0;
@@ -163,7 +159,7 @@
     backdrop-filter: blur(20px) saturate(170%);
     -webkit-backdrop-filter: blur(20px) saturate(170%);
     border-bottom: 1px solid rgba(201, 169, 97, 0.18);
-    padding: 9px 10px;
+    padding: 8px 10px;
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
   }
   .prov-bar-inner {
@@ -171,7 +167,7 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 6px;
     justify-content: center;
   }
   .prov-chip {
@@ -179,11 +175,11 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 8px 15px;
+    padding: 7px 14px;
     border-radius: 999px;
     font-size: 12px;
     font-weight: 700;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.8);
     border: 1px solid rgba(15, 23, 42, 0.08);
     color: var(--muted);
     transition: 0.25s cubic-bezier(.2,.8,.2,1);
@@ -201,7 +197,7 @@
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
     color: #ffffff;
     border-color: transparent;
-    box-shadow: 0 6px 18px rgba(13, 122, 74, 0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+    box-shadow: 0 6px 18px rgba(13, 122, 74, 0.35);
   }
   .prov-chip.active .cnt {
     background: rgba(255, 255, 255, 0.28);
@@ -213,7 +209,6 @@
     max-width: 720px;
     margin: 0 auto;
     padding: 10px 10px 4px;
-    background: transparent;
   }
   .hub-title {
     font-size: 12.5px;
@@ -230,7 +225,6 @@
   .hub-card {
     background: var(--glass);
     backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255,255,255,0.6);
     border-radius: 16px;
     overflow: hidden;
@@ -270,13 +264,12 @@
     white-space: nowrap;
   }
 
-  /* ================= FEED PANTALLA COMPLETA ================= */
+  /* ================= FEED DE CATÁLOGO ================= */
   .catalog-container {
     max-width: 760px;
     margin: 0 auto;
-    padding: 0 0 110px;
+    padding: 0 0 140px;
     width: 100%;
-    background: transparent;
   }
   .feed-status {
     display: flex;
@@ -286,14 +279,13 @@
     font-size: 12px;
     color: var(--muted);
     font-weight: 700;
-    background: transparent;
   }
   .feed-status b { color: var(--wa-dark); }
 
   .photo-feed {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     width: 100%;
     background: linear-gradient(180deg, #f3efe6 0%, #eef4f0 100%);
   }
@@ -308,7 +300,7 @@
   .feed-img-wrap {
     position: relative;
     width: 100%;
-    min-height: 86vh;
+    min-height: 82vh;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -317,7 +309,7 @@
   }
   .feed-img-wrap img {
     width: 100%;
-    min-height: 86vh;
+    min-height: 82vh;
     height: auto;
     object-fit: cover;
     object-position: center top;
@@ -328,85 +320,106 @@
     position: absolute;
     top: 14px;
     right: 14px;
-    background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(14px) saturate(160%);
-    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    background: rgba(15, 23, 42, 0.62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     color: #ffffff;
     padding: 6px 14px;
     border-radius: 999px;
     font-size: 12.5px;
     font-weight: 800;
     letter-spacing: 0.04em;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
     pointer-events: none;
   }
 
-  /* BARRA FLOTANTE SOBRE LA MISMA FOTO (VER FICHA + AGREGAR AL CARRITO DIRECTO) */
+  .badge-new {
+    position: absolute; top: 14px; left: 14px; z-index: 5; pointer-events: none;
+    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
+    color: #ffffff; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 999px;
+    box-shadow: 0 5px 14px rgba(168,134,63,0.45);
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  /* BADGE DE VIDEO EN LA FOTO */
+  .badge-video {
+    position: absolute; top: 50px; left: 14px; z-index: 5;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(10px);
+    color: #f8dfa1; font-size: 11px; font-weight: 800;
+    padding: 6px 12px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 5px;
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.3);
+  }
+
+  /* BARRA INFERIOR DE CADA FOTO (BOTONES COMODOS Y ALINEADOS) */
   .float-bottom-bar {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 12px;
+    right: 12px;
     bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     pointer-events: none;
-    padding: 0 12px;
-    flex-wrap: wrap;
   }
 
   .btn-open-detail {
     pointer-events: auto;
-    background: var(--glass-strong);
-    backdrop-filter: blur(18px) saturate(170%);
-    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     color: var(--text);
-    border: 1px solid rgba(201, 169, 97, 0.45);
-    padding: 11px 16px;
+    border: 1px solid rgba(201, 169, 97, 0.55);
+    padding: 12px 18px;
     border-radius: 999px;
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.22), inset 0 1px 0 rgba(255,255,255,0.6);
-    max-width: 65%;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.24);
+    max-width: 58%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: transform 0.2s cubic-bezier(.2,.8,.2,1);
   }
-  .btn-open-detail:active { transform: scale(0.97); }
+  .btn-open-detail:active { transform: scale(0.96); }
   .btn-open-detail span.price-pill {
     color: var(--wa-dark);
     font-weight: 800;
-    white-space: nowrap;
   }
   .btn-open-detail span.txt-trunc {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-width: 0;
-    max-width: 34vw;
   }
 
-  /* BOTON AGREGAR Y STEPPER DE CANTIDAD SOBRE LA FOTO */
   .feed-cart-action {
     pointer-events: auto;
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
   }
   .btn-quick-add {
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
     color: #ffffff;
-    padding: 11px 16px;
+    padding: 12px 20px;
     border-radius: 999px;
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.4), inset 0 1px 0 rgba(255,255,255,0.28);
-    border: 1px solid rgba(255,255,255,0.3);
+    gap: 7px;
+    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.45);
+    border: 1px solid rgba(255,255,255,0.35);
     white-space: nowrap;
     transition: transform 0.18s ease;
   }
@@ -415,47 +428,32 @@
   .feed-qty-pill {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     background: #075E54;
     color: #ffffff;
-    padding: 4px 6px;
+    padding: 5px 8px;
     border-radius: 999px;
-    box-shadow: 0 10px 26px rgba(7, 94, 84, 0.45);
-    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 26px rgba(7, 94, 84, 0.5);
+    border: 1.5px solid rgba(255,255,255,0.35);
   }
   .feed-qty-btn {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.2);
     color: #ffffff;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-  .feed-qty-btn:active { background: rgba(255,255,255,0.35); }
+  .feed-qty-btn:active { background: rgba(255,255,255,0.4); }
   .feed-qty-val {
-    min-width: 26px;
+    min-width: 34px;
     text-align: center;
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 800;
-  }
-
-  .btn-wa-card {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px 16px;
-    border-radius: 999px;
-    background: var(--wa);
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 12.5px;
-    white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42);
   }
 
   .load-more-btn {
@@ -464,7 +462,6 @@
     padding: 15px;
     border-radius: 14px;
     background: var(--glass-strong);
-    backdrop-filter: blur(14px);
     border: 1px solid rgba(201, 169, 97, 0.4);
     color: var(--wa-deep);
     font-weight: 800;
@@ -473,18 +470,101 @@
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   }
 
-  /* ================= TARJETA BLANCA UNIFICADA DE DETALLE COMERCIAL ================= */
+  /* ================= BARRA FLOTANTE INFERIOR PREMIUM (SIN TEXTO COMPRIMIDO) ================= */
+  .floating-order-bar {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    width: calc(100% - 20px);
+    max-width: 480px;
+    z-index: 95;
+    background: linear-gradient(165deg, rgba(8, 68, 55, 0.97) 0%, rgba(5, 46, 37, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 18px 42px rgba(5, 46, 37, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
+    border: 1px solid rgba(201, 169, 97, 0.45);
+  }
+  .fbar-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0 2px;
+  }
+  .fbar-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.14);
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #f7e2b4;
+    white-space: nowrap;
+  }
+  .fbar-subtotal-val {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fbar-buttons-row {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 8px;
+  }
+  .fbar-btn-cart {
+    padding: 11px 12px;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .fbar-btn-wa {
+    padding: 11px 14px;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #22c36b 0%, #0f8a52 100%);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(15, 138, 82, 0.45);
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+
+  /* ================= FICHA BLANCA DE DETALLE COMERCIAL + VIDEO ================= */
   .detail-sheet-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 160;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -502,10 +582,9 @@
     width: 100%;
     padding: 10px 20px 24px;
     box-shadow: 0 -10px 50px rgba(15, 23, 42, 0.35), inset 0 3px 0 0 var(--gold);
-    border: 1px solid rgba(201, 169, 97, 0.25);
-    border-bottom: none;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
     transform: translateY(102%);
-    transition: transform 0.42s cubic-bezier(.2,.85,.25,1);
+    transition: transform 0.38s cubic-bezier(.2,.85,.25,1);
     max-height: 90vh;
     overflow-y: auto;
   }
@@ -524,7 +603,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding-bottom: 16px;
+    padding-bottom: 14px;
     border-bottom: 1px solid #f1f5f9;
     position: relative;
   }
@@ -538,10 +617,7 @@
     flex-shrink: 0;
     cursor: zoom-in;
   }
-  .wcard-head-info {
-    flex: 1;
-    min-width: 0;
-  }
+  .wcard-head-info { flex: 1; min-width: 0; padding-right: 34px; }
   .wcard-prov-badge {
     display: inline-flex;
     align-items: center;
@@ -552,14 +628,14 @@
     border-radius: 999px;
     font-size: 11.5px;
     font-weight: 800;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
   .wcard-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     color: #0f172a;
-    line-height: 1.3;
+    line-height: 1.28;
   }
   .wcard-close {
     position: absolute;
@@ -578,16 +654,16 @@
   }
 
   .wcard-body {
-    padding: 16px 0;
+    padding: 14px 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 13px;
   }
   .wcard-price-row {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 1px dashed #e2e8f0;
   }
   .wcard-lbl {
@@ -598,23 +674,46 @@
     letter-spacing: 0.05em;
   }
   .wcard-price {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 800;
-    background: linear-gradient(135deg, #0d7a4a 0%, #c9a961 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
+    color: var(--wa-dark);
   }
   .wcard-price.consult {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--wa-deep);
+  }
+
+  /* CAJA DE VIDEO EN LA FICHA */
+  .wcard-video-box {
+    background: #0f172a;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  }
+  .wcard-video-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 13px;
+    background: rgba(255,255,255,0.06);
+    color: #f8dfa1;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .wcard-video-box video,
+  .wcard-video-box iframe {
+    width: 100%;
+    max-height: 320px;
+    display: block;
+    background: #000;
+    border: none;
   }
 
   .wcard-specs-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
   }
   .wcard-spec-line {
     display: flex;
@@ -640,15 +739,14 @@
     border-top: 1px solid #f1f5f9;
   }
   .wcard-desc-text {
-    margin-top: 5px;
-    font-size: 14.5px;
+    margin-top: 4px;
+    font-size: 14px;
     font-weight: 600;
     color: #1e293b;
-    line-height: 1.55;
+    line-height: 1.5;
     white-space: pre-wrap;
   }
 
-  /* SELECTOR DE CANTIDAD DENTRO DE LA FICHA (ESTILO TIENDA NUBE) */
   .wcard-qty-box {
     display: flex;
     align-items: center;
@@ -704,11 +802,8 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.4), inset 0 1px 0 rgba(255,255,255,0.25);
-    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.38);
   }
-  .btn-add-to-cart-main:active { transform: scale(0.98); }
-
   .wcard-secondary-btns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -726,7 +821,6 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    text-align: center;
   }
   .btn-wcard-soft {
     padding: 11px 12px;
@@ -742,93 +836,19 @@
     gap: 6px;
   }
 
-  /* ================= BARRA INFERIOR DE CARRITO (ESTILO TIENDA NUBE CON SUBTOTAL) ================= */
-  .floating-order-bar {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 14px;
-    width: calc(100% - 24px);
-    max-width: 520px;
-    z-index: 90;
-    background: rgba(7, 64, 52, 0.94);
-    backdrop-filter: blur(20px) saturate(170%);
-    -webkit-backdrop-filter: blur(20px) saturate(170%);
-    color: #ffffff;
-    padding: 10px 12px 10px 16px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    box-shadow: 0 14px 36px rgba(7, 64, 52, 0.45), inset 0 1px 0 rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.22);
-  }
-  .floating-bar-info {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    cursor: pointer;
-  }
-  .floating-bar-top {
-    font-size: 11.5px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.82);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .floating-bar-top #orderCount {
-    color: #f0d9a8;
-    font-weight: 800;
-    font-size: 13px;
-  }
-  .floating-bar-total {
-    font-size: 15px;
-    font-weight: 800;
-    color: #ffffff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .floating-bar-actions {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-  }
-  .floating-order-bar .order-btn {
-    background: rgba(255,255,255,0.16);
-    color: #ffffff;
-    padding: 9px 13px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-    border: 1px solid rgba(255,255,255,0.22);
-  }
-  .floating-order-bar .order-btn#btnSendOrderDirect {
-    background: linear-gradient(145deg, #1db965, #0d7a4a);
-    border-color: transparent;
-    box-shadow: 0 4px 12px rgba(13, 122, 74, 0.45);
-  }
-
-  /* ================= DRAWER LATERAL DE CARRITO ESTILO TIENDA NUBE ================= */
+  /* ================= CARRITO MEJORADO (SCROLL COMPLETO, NO SE TAPA CON EL TECLADO) ================= */
   .cart-drawer-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    z-index: 185;
+    z-index: 190;
     display: flex;
     justify-content: flex-end;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.28s ease;
+    transition: opacity 0.26s ease;
   }
   .cart-drawer-overlay.open {
     opacity: 1;
@@ -836,25 +856,27 @@
   }
   .cart-drawer {
     width: 100%;
-    max-width: 430px;
+    max-width: 450px;
     height: 100%;
-    background: #ffffff;
+    max-height: 100dvh;
+    background: #f8faf9;
     display: flex;
     flex-direction: column;
-    box-shadow: -12px 0 44px rgba(15, 23, 42, 0.25);
+    box-shadow: -12px 0 44px rgba(15, 23, 42, 0.3);
     transform: translateX(102%);
-    transition: transform 0.34s cubic-bezier(.2,.85,.25,1);
+    transition: transform 0.32s cubic-bezier(.2,.85,.25,1);
   }
   .cart-drawer-overlay.open .cart-drawer {
     transform: translateX(0);
   }
   .cart-drawer-header {
-    padding: 16px 18px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fbf9f4;
+    background: #ffffff;
+    flex-shrink: 0;
   }
   .cart-drawer-title {
     display: flex;
@@ -868,42 +890,75 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: #e2e8f0;
+    background: #f1f5f9;
     color: #334155;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .cart-drawer-body {
+
+  /* CONTENEDOR UNICO SCROLLEABLE (LOS ITEMS + TOTAL + NOTA VAN EN FILA ADENTRO) */
+  .cart-drawer-scroll {
     flex: 1;
     overflow-y: auto;
-    padding: 14px 16px;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 14px 28px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
-  .cart-empty-box {
-    text-align: center;
-    padding: 48px 18px;
+
+  .cart-section-label {
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
   }
+
+  .cart-items-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* FILA COMPACTA DE CADA ARTÍCULO EN EL CARRITO */
   .cart-item-row {
     display: flex;
-    gap: 11px;
-    padding: 11px;
-    border-radius: 14px;
-    background: var(--bg-soft);
-    border: 1px solid var(--border);
     align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    position: relative;
+  }
+  .cart-item-index {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--wa-soft);
+    color: var(--wa-deep);
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
   .cart-item-row img {
-    width: 60px;
-    height: 76px;
+    width: 52px;
+    height: 64px;
     object-fit: cover;
-    border-radius: 10px;
-    background: #ffffff;
+    border-radius: 9px;
+    background: #f8fafc;
     border: 1px solid var(--border);
     flex-shrink: 0;
   }
@@ -912,17 +967,31 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
+  }
+  .cart-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
   }
   .cart-item-prov {
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 800;
     color: var(--wa-dark);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
+  .cart-item-del {
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: #fef2f2;
+  }
   .cart-item-name {
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 800;
     color: var(--text);
     white-space: nowrap;
@@ -930,7 +999,7 @@
     text-overflow: ellipsis;
   }
   .cart-item-unit {
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--muted);
     font-weight: 600;
   }
@@ -938,99 +1007,122 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 6px;
+    margin-top: 5px;
     gap: 8px;
   }
   .cart-qty-box {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: #ffffff;
+    gap: 5px;
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: 2px 6px;
+    padding: 2px 5px;
   }
   .cart-qty-btn {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: var(--wa-soft);
+    background: #ffffff;
     color: var(--wa-deep);
     font-weight: 800;
-    font-size: 15px;
+    font-size: 14px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
   .cart-qty-num {
-    min-width: 22px;
+    min-width: 20px;
     text-align: center;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 800;
   }
   .cart-item-subtotal {
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-weight: 800;
-    color: var(--text);
+    color: var(--wa-deep);
     text-align: right;
   }
-  .cart-item-del {
-    color: #dc2626;
-    font-size: 11.5px;
-    font-weight: 700;
-    padding: 4px 6px;
-  }
 
-  .cart-drawer-footer {
-    border-top: 1px solid var(--border);
-    padding: 14px 16px 18px;
-    background: #fbf9f4;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  /* CAJA DE TOTALES DENTRO DEL SCROLL */
   .cart-summary-box {
     background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 12px 14px;
+    border: 1.5px solid rgba(201, 169, 97, 0.35);
+    border-radius: 16px;
+    padding: 13px 14px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
   }
   .cart-summary-line {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     font-size: 13px;
     color: var(--muted);
     font-weight: 700;
   }
   .cart-summary-line.total {
-    font-size: 16.5px;
+    font-size: 15.5px;
     font-weight: 800;
     color: var(--text);
-    padding-top: 6px;
+    padding-top: 8px;
     border-top: 1px dashed var(--border);
   }
   .cart-summary-line.total span:last-child {
     color: var(--wa-dark);
+    text-align: right;
   }
-  .cart-buyer-notes {
+
+  /* CAJA DE DATOS Y NOTA DEL CLIENTE (NO LA TAPA EL TECLADO) */
+  .cart-buyer-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 13px 14px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 9px;
   }
-  .cart-buyer-notes input {
+  .cart-buyer-card label {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .cart-buyer-card input,
+  .cart-buyer-card textarea {
     width: 100%;
-    padding: 10px 12px;
+    padding: 11px 12px;
     border-radius: 10px;
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--border);
+    background: #fcfdfd;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .cart-buyer-card input:focus,
+  .cart-buyer-card textarea:focus {
+    border-color: var(--wa);
     background: #ffffff;
-    font-size: 13px;
+  }
+
+  /* BARRA FIJA INFERIOR DEL DRAWER (SOLO EL BOTON DE ENVIAR) */
+  .cart-drawer-bottom-bar {
+    padding: 11px 14px 14px;
+    background: #ffffff;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
   }
   .btn-wa-checkout {
     width: 100%;
-    padding: 15px 16px;
+    padding: 14px 16px;
     border-radius: 14px;
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
     color: #ffffff;
@@ -1043,7 +1135,7 @@
     box-shadow: 0 8px 24px rgba(13, 122, 74, 0.35);
   }
 
-  /* ================= ADMIN PANEL EN FONDO BLANCO CLARO ================= */
+  /* ================= ADMIN PANEL ================= */
   .admin-wrap {
     max-width: 980px;
     margin: 20px auto 80px;
@@ -1161,7 +1253,7 @@
   .dropzone {
     border: 2px dashed var(--wa);
     border-radius: 16px;
-    padding: 32px 16px;
+    padding: 28px 16px;
     text-align: center;
     background: var(--wa-soft);
     cursor: pointer;
@@ -1189,10 +1281,10 @@
 
   .batch-preview-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 10px;
     margin-top: 14px;
-    max-height: 440px;
+    max-height: 480px;
     overflow-y: auto;
     padding: 8px;
     background: #ffffff;
@@ -1210,12 +1302,12 @@
   }
   .batch-thumb-box img {
     width: 100%;
-    height: 150px;
+    height: 145px;
     object-fit: cover;
     background: #fff;
   }
   .batch-thumb-inputs {
-    padding: 7px;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -1228,6 +1320,20 @@
     background: #ffffff;
     color: var(--text);
     font-size: 12px;
+  }
+  .btn-attach-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 8px;
+    border-radius: 7px;
+    background: var(--gold-soft);
+    border: 1px dashed var(--gold-deep);
+    color: var(--gold-deep);
+    font-size: 11.5px;
+    font-weight: 800;
+    cursor: pointer;
   }
   .batch-thumb-del {
     position: absolute;
@@ -1242,7 +1348,7 @@
 
   .admin-list-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     gap: 10px;
     margin-top: 12px;
   }
@@ -1253,15 +1359,16 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   .admin-item-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #f8fafc; }
   .admin-item-body { padding: 8px; font-size: 12px; display: flex; flex-direction: column; gap: 4px; }
 
   .modal-overlay {
     position: fixed; inset: 0;
-    background: rgba(15, 23, 42, 0.45);
+    background: rgba(15, 23, 42, 0.5);
     backdrop-filter: blur(5px);
-    z-index: 170;
+    z-index: 195;
     display: flex; align-items: center; justify-content: center;
     padding: 14px;
     opacity: 0; pointer-events: none;
@@ -1273,44 +1380,43 @@
     border: 1px solid var(--border);
     border-radius: 22px;
     max-width: 460px; width: 100%;
-    max-height: 88vh; overflow-y: auto;
+    max-height: 90vh; overflow-y: auto;
     padding: 20px;
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
   }
 
   .lightbox {
     position: fixed; inset: 0;
-    background: rgba(255, 255, 255, 0.98);
-    z-index: 200;
+    background: rgba(15, 23, 42, 0.96);
+    z-index: 210;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 10px;
   }
-  .lightbox img { max-width: 100%; max-height: 92vh; object-fit: contain; border-radius: 8px; }
+  .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; }
   .lightbox-close {
     position: absolute; top: 14px; right: 14px;
-    background: #0f172a;
-    color: #fff; padding: 9px 16px;
+    background: #ffffff;
+    color: #0f172a; padding: 9px 16px;
     border-radius: 999px; font-weight: 800; font-size: 13px;
   }
 
   .toast {
-    position: fixed; top: 76px; left: 50%;
+    position: fixed; top: 72px; left: 50%;
     transform: translateX(-50%) translateY(-10px);
-    z-index: 250;
-    background: var(--wa); color: #ffffff;
+    z-index: 260;
+    background: var(--wa-deep); color: #ffffff;
     padding: 11px 18px; border-radius: 999px;
-    font-size: 13.5px; font-weight: 800;
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    font-size: 13px; font-weight: 800;
+    box-shadow: 0 10px 30px rgba(7, 94, 84, 0.4);
     opacity: 0; pointer-events: none; transition: 0.25s;
     white-space: nowrap;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* ================= SUPER PREMIUM: SPLASH, PROGRESO, ANIMACIONES, BADGES ================= */
   #scrollProgress {
     position: fixed; top: 0; left: 0; height: 3px; width: 0%;
     background: linear-gradient(90deg, var(--gold-deep), #e8cf94, var(--gold));
-    z-index: 220; box-shadow: 0 0 12px rgba(201,169,97,0.7);
+    z-index: 220;
     transition: width 0.12s linear;
   }
   #splash {
@@ -1324,81 +1430,51 @@
     width: 96px; height: 96px; border-radius: 50%;
     border: 1.5px solid var(--gold);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 12px 34px rgba(201,169,97,0.28), inset 0 0 0 7px rgba(201,169,97,0.08);
-    animation: splashPulse 2.2s ease-in-out infinite;
+    box-shadow: 0 12px 34px rgba(201,169,97,0.28);
   }
   .splash-mono {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 36px; font-weight: 700; color: var(--gold-deep); letter-spacing: 0.06em;
+    font-size: 36px; font-weight: 700; color: var(--gold-deep);
   }
   .splash-name {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 23px; font-weight: 700; color: #0f172a; letter-spacing: 0.02em;
+    font-size: 23px; font-weight: 700; color: #0f172a;
   }
   .splash-sub {
     font-size: 10.5px; letter-spacing: 0.34em; text-transform: uppercase;
     color: var(--gold-deep); font-weight: 800;
   }
-  @keyframes splashPulse {
-    0%,100% { transform: scale(1); box-shadow: 0 12px 34px rgba(201,169,97,0.28), inset 0 0 0 7px rgba(201,169,97,0.08); }
-    50% { transform: scale(1.06); box-shadow: 0 18px 44px rgba(201,169,97,0.42), inset 0 0 0 7px rgba(201,169,97,0.15); }
-  }
-  @keyframes feedUp {
-    from { opacity: 0; transform: translateY(24px) scale(0.99); }
-    to { opacity: 1; transform: none; }
-  }
-  .feed-card { animation: feedUp 0.6s cubic-bezier(.2,.8,.2,1) both; }
   @keyframes pop {
     0% { transform: scale(1); }
     40% { transform: scale(1.35); }
     100% { transform: scale(1); }
   }
   .pop { display: inline-block; animation: pop 0.42s cubic-bezier(.34,1.56,.64,1); }
-  @keyframes barRise {
-    from { opacity: 0; transform: translate(-50%, 24px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
-  }
-  .floating-order-bar:not(.hidden) { animation: barRise 0.42s cubic-bezier(.2,.85,.25,1) both; }
-  .badge-new {
-    position: absolute; top: 14px; left: 14px; z-index: 5; pointer-events: none;
-    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
-    color: #ffffff; font-size: 10px; font-weight: 800;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 999px;
-    box-shadow: 0 5px 14px rgba(168,134,63,0.45);
-    border: 1px solid rgba(255,255,255,0.35);
-  }
 
-  /* ================= PREMIUM EXTRA: VOLVER ARRIBA, COMO COMPRAR, LIGHTBOX NAV ================= */
   .back-to-top {
-    position: fixed; right: 16px; bottom: 88px; z-index: 85;
-    width: 46px; height: 46px; border-radius: 50%;
+    position: fixed; right: 14px; bottom: 118px; z-index: 85;
+    width: 44px; height: 44px; border-radius: 50%;
     background: var(--glass-strong); backdrop-filter: blur(14px);
     border: 1px solid rgba(201,169,97,0.5); color: var(--gold-deep);
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 8px 24px rgba(15,23,42,0.15); cursor: pointer;
-    transition: transform 0.25s cubic-bezier(.2,.8,.2,1), opacity 0.25s;
-    padding: 0;
   }
-  .back-to-top:active { transform: scale(0.9); }
-  .back-to-top.hidden { opacity: 0; pointer-events: none; transform: translateY(12px); }
+  .back-to-top.hidden { opacity: 0; pointer-events: none; }
 
   .how-to-buy { max-width: 720px; margin: 36px auto 12px; padding: 0 16px; }
   .htb-title { font-family: 'Playfair Display', Georgia, serif; font-size: 23px; font-weight: 700; text-align: center; color: #0f172a; margin-bottom: 20px; }
-  .htb-title::after { content:''; display:block; width: 52px; height: 2px; background: linear-gradient(90deg, var(--gold-deep), var(--gold)); margin: 10px auto 0; border-radius: 2px; }
   .htb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   @media (max-width: 560px){ .htb-grid { grid-template-columns: 1fr; gap: 18px; } }
-  .htb-step { background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.65); border-radius: 18px; padding: 22px 16px 16px; text-align: center; position: relative; box-shadow: 0 8px 24px rgba(15,23,42,0.07); }
-  .htb-num { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(145deg, #d4b876, var(--gold-deep)); color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(168,134,63,0.45); border: 1px solid rgba(255,255,255,0.4); }
+  .htb-step { background: var(--glass); border: 1px solid rgba(255,255,255,0.65); border-radius: 18px; padding: 22px 16px 16px; text-align: center; position: relative; box-shadow: 0 8px 24px rgba(15,23,42,0.07); }
+  .htb-num { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(145deg, #d4b876, var(--gold-deep)); color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
   .htb-ico { color: var(--wa-dark); margin: 4px 0 10px; display: flex; justify-content: center; }
   .htb-txt { font-size: 12.5px; color: var(--muted); font-weight: 600; line-height: 1.55; }
   .htb-txt b { color: var(--wa-deep); font-weight: 800; }
 
-  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.16); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; display: flex; align-items: center; justify-content: center; z-index: 6; cursor: pointer; padding: 0; }
-  .lb-nav:active { background: rgba(255,255,255,0.35); }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.2); color: #ffffff; display: flex; align-items: center; justify-content: center; z-index: 6; cursor: pointer; }
   #lbPrev { left: 14px; }
   #lbNext { right: 14px; }
-  .lb-counter { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); color: #ffffff; font-size: 12.5px; font-weight: 700; background: rgba(15,23,42,0.5); padding: 6px 16px; border-radius: 999px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 6; letter-spacing: 0.08em; border: 1px solid rgba(255,255,255,0.2); }
+  .lb-counter { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); color: #ffffff; font-size: 12.5px; font-weight: 700; background: rgba(15,23,42,0.6); padding: 6px 16px; border-radius: 999px; z-index: 6; }
 </style>
 </head>
 <body>
@@ -1411,19 +1487,19 @@
 
 <div id="toast" class="toast">Listo</div>
 
-<!-- ================= HEADER BLANCO LIMPIO CON BOTÓN DE CARRITO ================= -->
+<!-- ================= HEADER ================= -->
 <header id="clientHeader">
   <div class="header-top">
     <div class="brand" id="brandSecretTrigger">
       <span class="brand-mark"><i data-lucide="shopping-bag" style="width:20px;height:20px"></i></span>
       <div class="brand-txt">
         <span id="headerTitle">Mayorista Boliviano</span>
-        <small id="headerSub">Catálogo Oficial · Sumá prendas a tu carrito mayorista</small>
+        <small id="headerSub">Catálogo Oficial · Sumá artículos a tu pedido</small>
       </div>
     </div>
     <button type="button" class="header-cart-btn" id="btnHeaderCart" aria-label="Abrir carrito">
       <i data-lucide="shopping-cart" style="width:17px;height:17px;color:var(--wa-dark)"></i>
-      <span>Carrito</span>
+      <span>Pedido</span>
       <span class="header-cart-badge" id="headerCartBadge">0</span>
     </button>
   </div>
@@ -1436,10 +1512,8 @@
 
 <!-- ================= VISTA CATÁLOGO ================= -->
 <main id="viewCatalog">
-
-  <!-- TARJETAS VISUALES PARA ELEGIR CADA MAYORISTA POR SEPARADO -->
   <section class="hub-section hidden" id="catalogHub">
-    <div class="hub-title">Tocá un mayorista para verlo por separado:</div>
+    <div class="hub-title">Tocá un catálogo mayorista para verlo por separado:</div>
     <div class="hub-grid" id="hubGrid"></div>
   </section>
 
@@ -1449,28 +1523,27 @@
       <span id="totalPhotosBadge"></span>
     </div>
 
-    <!-- LISTA DE FOTOS GIGANTES QUE OCUPAN CASI TODA LA PANTALLA -->
     <div class="photo-feed" id="photoFeed"></div>
 
-    <button id="btnLoadMore" class="load-more-btn hidden">Ver más prendas de este catálogo ↓</button>
+    <button id="btnLoadMore" class="load-more-btn hidden">Ver más artículos de este catálogo ↓</button>
 
     <div class="how-to-buy">
-      <div class="htb-title">Cómo comprar</div>
+      <div class="htb-title">Cómo armar tu pedido</div>
       <div class="htb-grid">
         <div class="htb-step">
           <div class="htb-num">1</div>
           <div class="htb-ico"><i data-lucide="shopping-cart" style="width:26px;height:26px"></i></div>
-          <div class="htb-txt">Tocá <b>+ Agregar</b> en cada artículo y elegí las cantidades que quieras sumar</div>
+          <div class="htb-txt">Tocá <b>+ Agregar</b> en cada artículo para ir sumando a tu fila de pedido</div>
         </div>
         <div class="htb-step">
           <div class="htb-num">2</div>
-          <div class="htb-ico"><i data-lucide="receipt" style="width:26px;height:26px"></i></div>
-          <div class="htb-txt">Abrí <b>Ver Carrito</b> para revisar el subtotal, las unidades y el total de tu compra</div>
+          <div class="htb-ico"><i data-lucide="list-checks" style="width:26px;height:26px"></i></div>
+          <div class="htb-txt">Abrí <b>Ver mi pedido</b> para revisar todos tus artículos en fila y agregar una nota</div>
         </div>
         <div class="htb-step">
           <div class="htb-num">3</div>
           <div class="htb-ico"><i data-lucide="message-circle" style="width:26px;height:26px"></i></div>
-          <div class="htb-txt">Tocá <b>Iniciar pedido por WhatsApp</b> y coordinamos pago y envío al instante</div>
+          <div class="htb-txt">Tocá <b>Enviar a WhatsApp</b> y coordinamos pago y envío directo</div>
         </div>
       </div>
     </div>
@@ -1481,14 +1554,14 @@
   </div>
 </main>
 
-<!-- ================= TARJETA BLANCA UNIFICADA DE DETALLE COMERCIAL ================= -->
+<!-- ================= FICHA BLANCA DE DETALLE + VIDEO ================= -->
 <div class="detail-sheet-overlay" id="detailSheet">
   <div class="white-product-card">
     <div class="sheet-handle"></div>
     <div class="wcard-header">
-      <img id="sheetThumb" class="wcard-thumb" src="" alt="Prenda" title="Tocá para ampliar foto" />
+      <img id="sheetThumb" class="wcard-thumb" src="" alt="Artículo" title="Tocá para ampliar foto" />
       <div class="wcard-head-info">
-        <span class="wcard-prov-badge" id="sheetProvBadge">Mayorista 1 · Prenda #1</span>
+        <span class="wcard-prov-badge" id="sheetProvBadge">Mayorista 1 · Artículo #1</span>
         <div class="wcard-title" id="sheetTitle">Ficha del Artículo</div>
       </div>
       <button type="button" class="wcard-close" id="btnCloseSheet">✕</button>
@@ -1500,26 +1573,33 @@
         <span class="wcard-price" id="sheetPriceVal">Consultar</span>
       </div>
 
+      <!-- CAJA DE VIDEO DEL ARTÍCULO (SE MUESTRA SI TIENE VIDEO) -->
+      <div class="wcard-video-box hidden" id="sheetVideoBox">
+        <div class="wcard-video-head">
+          <span>▶ Video demostrativo del artículo</span>
+        </div>
+        <div id="sheetVideoContainer"></div>
+      </div>
+
       <div class="wcard-specs-list">
         <div class="wcard-spec-line" id="sheetTallesRow">
-          <span class="k">Talles / Curva</span>
-          <span class="v" id="sheetTallesVal">Curva completa disponible</span>
+          <span class="k">Talles / Presentación</span>
+          <span class="v" id="sheetTallesVal">Disponible</span>
         </div>
         <div class="wcard-spec-line" id="sheetColoresRow">
-          <span class="k">Colores</span>
+          <span class="k">Colores / Variedad</span>
           <span class="v" id="sheetColoresVal">Surtido según catálogo</span>
         </div>
       </div>
 
       <div class="wcard-desc-section">
-        <span class="wcard-lbl">Descripción y Detalles para el Comerciante</span>
-        <div class="wcard-desc-text" id="sheetDetailText">Mercadería directa de fábrica. Venta mayorista por curva o surtido con envíos a todo el país.</div>
+        <span class="wcard-lbl">Descripción y Detalles</span>
+        <div class="wcard-desc-text" id="sheetDetailText">Mercadería directa mayorista.</div>
       </div>
 
-      <!-- SELECTOR DE CANTIDAD EN LA FICHA -->
       <div class="wcard-qty-box">
         <div>
-          <div style="font-size:13px;font-weight:800;color:var(--text)">Cantidad para agregar</div>
+          <div style="font-size:13px;font-weight:800;color:var(--text)">Cantidad a sumar</div>
           <div id="sheetInCartHint" style="font-size:11.5px;color:var(--wa-dark);font-weight:700"></div>
         </div>
         <div class="wcard-qty-controls">
@@ -1533,19 +1613,19 @@
     <div class="wcard-footer">
       <button type="button" class="btn-add-to-cart-main" id="sheetAddToCartBtn">
         <i data-lucide="shopping-cart" style="width:18px;height:18px"></i>
-        <span id="sheetAddToCartTxt">Agregar al carrito</span>
+        <span id="sheetAddToCartTxt">Agregar al pedido</span>
       </button>
       <div class="wcard-secondary-btns">
         <button type="button" class="btn-wcard-outline" id="sheetOpenCartBtn">
-          🛒 Ver carrito y total
+          📋 Ver fila de mi pedido
         </button>
-        <button type="button" class="btn-wcard-soft" id="sheetZoomBtn">🔍 Ver foto gigante</button>
+        <button type="button" class="btn-wcard-soft" id="sheetZoomBtn">🔍 Ampliar foto</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ================= DRAWER LATERAL DEL CARRITO (ESTILO TIENDA NUBE) ================= -->
+<!-- ================= DRAWER DEL CARRITO (TODO EN FILA + SCROLL LIBRE DE TECLADO) ================= -->
 <div class="cart-drawer-overlay" id="cartDrawerOverlay">
   <div class="cart-drawer">
     <div class="cart-drawer-header">
@@ -1556,68 +1636,88 @@
       <button type="button" class="cart-drawer-close" id="btnCloseCartDrawer">✕</button>
     </div>
 
-    <div class="cart-drawer-body" id="cartDrawerList"></div>
+    <!-- TODO ESTE CUERPO HACE SCROLL JUNTO PARA QUE EL TECLADO NUNCA TAPE LAS NOTAS NI LA LISTA -->
+    <div class="cart-drawer-scroll" id="cartDrawerScroll">
+      <div class="cart-section-label" id="cartListHeaderLbl">
+        <span>Artículos en tu pedido (en fila)</span>
+        <button type="button" id="btnClearOrder" style="color:#dc2626;font-weight:800;font-size:11.5px">Vaciar todo</button>
+      </div>
 
-    <div class="cart-drawer-footer" id="cartDrawerFooter">
-      <div class="cart-summary-box">
-        <div class="cart-summary-line">
-          <span>Artículos / Unidades</span>
-          <span id="cartSummaryUnits">0 unidades</span>
-        </div>
-        <div class="cart-summary-line">
-          <span>Subtotal</span>
-          <span id="cartSummarySubtotal">$ 0</span>
-        </div>
-        <div class="cart-summary-line" id="cartSummaryConsultRow" style="display:none;color:var(--gold-deep)">
-          <span>Prendas con precio a confirmar</span>
-          <span id="cartSummaryConsultCnt">0</span>
-        </div>
-        <div class="cart-summary-line total">
-          <span>Total estimado</span>
-          <span id="cartSummaryTotal">$ 0</span>
+      <!-- FILA NUMERADA DE TODOS LOS ARTÍCULOS PEDIDOS -->
+      <div class="cart-items-stack" id="cartDrawerList"></div>
+
+      <!-- RESUMEN DE SUBTOTAL Y TOTAL -->
+      <div id="cartSummarySection">
+        <div class="cart-summary-box">
+          <div class="cart-summary-line">
+            <span>Total de artículos</span>
+            <span id="cartSummaryUnits">0 unidades</span>
+          </div>
+          <div class="cart-summary-line">
+            <span>Subtotal</span>
+            <span id="cartSummarySubtotal">$ 0</span>
+          </div>
+          <div class="cart-summary-line" id="cartSummaryConsultRow" style="display:none;color:var(--gold-deep)">
+            <span>Artículos con precio a confirmar</span>
+            <span id="cartSummaryConsultCnt">0 u.</span>
+          </div>
+          <div class="cart-summary-line total">
+            <span>Total estimado</span>
+            <span id="cartSummaryTotal">$ 0</span>
+          </div>
         </div>
       </div>
 
-      <div class="cart-buyer-notes">
-        <input type="text" id="cartBuyerName" placeholder="Tu nombre o comercio (opcional)" />
-        <input type="text" id="cartBuyerNote" placeholder="Aclaración de talles, colores o envío (opcional)" />
+      <!-- CAJA DE NOMBRE Y NOTA DEL PEDIDO (SE DESPLAZA SUAVEMENTE AL ABRIR TECLADO) -->
+      <div class="cart-buyer-card" id="cartNotesSection">
+        <div>
+          <label for="cartBuyerName">👤 Tu Nombre o Comercio (opcional)</label>
+          <input type="text" id="cartBuyerName" placeholder="Ej: Marcela - Tienda Norte" />
+        </div>
+        <div>
+          <label for="cartBuyerNote">📝 Nota o aclaración de tu pedido (opcional)</label>
+          <textarea id="cartBuyerNote" rows="2" placeholder="Escribí acá colores, talles, transporte o cualquier detalle para coordinar..."></textarea>
+        </div>
       </div>
+    </div>
 
+    <!-- BOTON FIJO ABAJO -->
+    <div class="cart-drawer-bottom-bar" id="cartDrawerBottomBar">
       <button type="button" class="btn-wa-checkout" id="btnSendOrderFromModal">
         <i data-lucide="message-circle" style="width:19px;height:19px"></i>
-        <span>Enviar pedido por WhatsApp</span>
+        <span>Enviar pedido completo a WhatsApp</span>
       </button>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:2px">
-        <button type="button" class="btn-top" id="btnContinueShopping" style="font-size:12px">← Seguir viendo catálogo</button>
-        <button type="button" class="btn-top" id="btnClearOrder" style="color:#dc2626;font-size:12px">Vaciar carrito</button>
-      </div>
+      <button type="button" class="btn-top" id="btnContinueShopping" style="justify-content:center;font-size:12px">
+        ← Seguir viendo el catálogo
+      </button>
     </div>
   </div>
 </div>
 
-<!-- ================= BARRA FLOTANTE DE PEDIDO (CON SUBTOTAL EN VIVO) ================= -->
+<!-- ================= BARRA FLOTANTE INFERIOR REDISEÑADA (2 FILAS LIMPIAS, CERO TEXTO APRETADO) ================= -->
 <div class="floating-order-bar hidden" id="floatingOrderBar">
-  <div class="floating-bar-info" id="floatingBarInfoArea">
-    <div class="floating-bar-top">
-      <i data-lucide="shopping-bag" style="width:13px;height:13px"></i>
-      <span><span id="orderCount">0</span> u. en tu carrito</span>
-    </div>
-    <div class="floating-bar-total" id="floatingSubtotalTxt">Subtotal: $ 0</div>
+  <div class="fbar-summary-row" id="floatingBarInfoArea">
+    <span class="fbar-badge-pill">
+      <i data-lucide="shopping-bag" style="width:14px;height:14px"></i>
+      <span><span id="orderCount">0</span> en tu pedido</span>
+    </span>
+    <span class="fbar-subtotal-val" id="floatingSubtotalTxt">Subtotal: A confirmar</span>
   </div>
-  <div class="floating-bar-actions">
-    <button class="order-btn" id="btnOpenOrderModal">Ver carrito</button>
-    <button class="order-btn" id="btnSendOrderDirect">
-      <i data-lucide="message-circle" style="width:15px;height:15px"></i> Pedir por WhatsApp
+  <div class="fbar-buttons-row">
+    <button type="button" class="fbar-btn-cart" id="btnOpenOrderModal">
+      <i data-lucide="list" style="width:15px;height:15px"></i> Ver mi pedido
+    </button>
+    <button type="button" class="fbar-btn-wa" id="btnSendOrderDirect">
+      <i data-lucide="message-circle" style="width:16px;height:16px"></i> Enviar WhatsApp
     </button>
   </div>
 </div>
 
-<!-- ================= MODAL PARA EDITAR FICHA BLANCA EN ADMIN ================= -->
+<!-- ================= MODAL PARA EDITAR FICHA Y VIDEO EN ADMIN ================= -->
 <div class="modal-overlay" id="editItemModal">
   <div class="modal">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-      <h3 style="font-size:17px;font-weight:800">Editar Ficha del Artículo</h3>
+      <h3 style="font-size:17px;font-weight:800">Editar Ficha y Video del Artículo</h3>
       <button class="btn-top" id="btnCloseEditModal">Cerrar</button>
     </div>
     <input type="hidden" id="editItemId" />
@@ -1627,30 +1727,37 @@
         <input type="number" id="editItemPrice" class="input-light" placeholder="Ej: 18500" />
       </div>
       <div>
-        <label style="font-size:12px;font-weight:700;color:var(--muted)">Talles / Curva</label>
-        <input type="text" id="editItemTalles" class="input-light" placeholder="Ej: 2XL-3XL-4XL-5XL" />
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Talles / Presentación</label>
+        <input type="text" id="editItemTalles" class="input-light" placeholder="Ej: Caja x 24 u. / Curva S al XL" />
       </div>
       <div>
-        <label style="font-size:12px;font-weight:700;color:var(--muted)">Colores disponibles</label>
-        <input type="text" id="editItemColores" class="input-light" placeholder="Ej: Negro, Blanco, Crema, Visón" />
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Colores / Variedad disponible</label>
+        <input type="text" id="editItemColores" class="input-light" placeholder="Ej: Surtido frutal / Negro, Blanco" />
       </div>
       <div>
-        <label style="font-size:12px;font-weight:700;color:var(--muted)">Descripción / Tela / Detalle del artículo</label>
-        <textarea id="editItemDesc" class="input-light" rows="3" placeholder="Ej: Blusa lino bordado en mangas · Código 186234-5C..."></textarea>
+        <label style="font-size:12px;font-weight:700;color:var(--muted)">Descripción del artículo</label>
+        <textarea id="editItemDesc" class="input-light" rows="3" placeholder="Detalle para el cliente..."></textarea>
+      </div>
+      <div style="background:var(--gold-soft);padding:10px;border-radius:12px;border:1px solid var(--gold)">
+        <label style="font-size:12px;font-weight:800;color:var(--gold-deep);display:block;margin-bottom:5px">🎬 Video del Artículo (Link o subir archivo MP4)</label>
+        <input type="text" id="editItemVideoUrl" class="input-light" placeholder="Pegá link de video o subí archivo abajo..." style="margin-bottom:6px" />
+        <label class="btn-attach-video">
+          <i data-lucide="video" style="width:15px;height:15px"></i>
+          <span id="editVideoFileLbl">Seleccionar video desde el celular</span>
+          <input type="file" id="editItemVideoFile" accept="video/*" class="hidden" />
+        </label>
       </div>
       <button type="button" class="btn-big-upload" id="btnSaveItemEdit" style="margin-top:6px">Guardar cambios en la ficha</button>
     </div>
   </div>
 </div>
 
-<!-- ================= VISTA ADMIN (ENTRANDO A /#/admin O 5 TOQUES EN EL LOGO) ================= -->
+<!-- ================= VISTA ADMIN ================= -->
 <main id="viewAdmin" class="hidden">
   <div class="admin-wrap">
-
-    <!-- LOGIN -->
     <div id="loginBlock" class="admin-card" style="max-width:400px;margin:40px auto">
       <h3><i data-lucide="lock" style="width:18px;height:18px;color:var(--wa-dark)"></i> Acceso Privado</h3>
-      <p class="sub">Entrá para subir los lotes de tus 5 proveedores.</p>
+      <p class="sub">Entrá para administrar tus catálogos, precios y videos.</p>
       <div style="display:flex;flex-direction:column;gap:10px">
         <input type="text" id="loginUser" class="input-light" value="admin" placeholder="Usuario" />
         <input type="password" id="loginPass" class="input-light" placeholder="Contraseña (admin123)" />
@@ -1660,20 +1767,19 @@
       </div>
     </div>
 
-    <!-- DASHBOARD -->
     <div id="dashboardBlock" class="hidden">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-        <h2 style="font-size:20px;font-weight:800">Panel de Proveedores y Fichas de Precios</h2>
+        <h2 style="font-size:20px;font-weight:800">Panel de Proveedores, Precios y Videos</h2>
         <div style="display:flex;gap:8px">
           <button class="btn-top" id="btnBackCatalog"><i data-lucide="eye" style="width:14px;height:14px"></i> Ver Catálogo</button>
           <button class="btn-top" id="btnLogout">Salir</button>
         </div>
       </div>
 
-      <!-- SECCIÓN: PERSONALIZAR MARCA -->
+      <!-- PERSONALIZAR MARCA -->
       <div class="admin-card">
         <h3><i data-lucide="store" style="width:19px;height:19px;color:var(--gold-deep)"></i> Nombre de tu negocio</h3>
-        <p class="sub">Este título aparece en el encabezado, la pantalla de apertura, la pestaña del navegador y los mensajes de WhatsApp. Se guarda automáticamente.</p>
+        <p class="sub">Aparece en el encabezado y en el mensaje de pedido de WhatsApp.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
           <input type="text" id="storeNameInput" class="input-light" style="flex:1;min-width:220px" placeholder="Ej: Mayorista Boliviano" maxlength="40" />
           <button class="btn-top" id="btnSaveStoreName" style="background:linear-gradient(145deg,#1db965,#0d7a4a);color:#fff;border:none">Guardar</button>
@@ -1681,17 +1787,17 @@
         </div>
       </div>
 
-      <!-- SECCIÓN 1: LINKS PARA ENVIAR AL CLIENTE -->
+      <!-- LINKS -->
       <div class="admin-card">
         <h3><i data-lucide="link-2" style="width:19px;height:19px;color:var(--wa-dark)"></i> Links para mandar por WhatsApp</h3>
-        <p class="sub">Mandá el <b>Link Principal</b> (muestra los 5 mayoristas separados + botón Ver Todo Junto) o mandá el link directo de uno solo:</p>
+        <p class="sub">Copiá el link general o el de cada mayorista individual:</p>
         <div class="links-grid" id="providerLinksGrid"></div>
       </div>
 
-      <!-- SECCIÓN 2: SUBIR FOTOS CON DETALLE, TALLES Y PRECIO -->
+      <!-- SUBIR FOTOS + CAJA DE VIDEO OPCIONAL -->
       <div class="admin-card">
-        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir nuevo Mayorista / Proveedor</h3>
-        <p class="sub">Podés poner precio, talles y descripción general para todo el lote, o escribirlo en cada foto individual abajo.</p>
+        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir Artículos (con opción de Video en cada uno)</h3>
+        <p class="sub">Podés cargar datos generales para el lote o agregarle precio, descripción y <b>video</b> individual a cada artículo abajo antes de publicar.</p>
 
         <div class="step-box">
           <div class="step-title">Paso 1: Elegí el Mayorista y datos generales (opcional)</div>
@@ -1707,10 +1813,11 @@
             <input type="number" id="batchPriceInput" class="input-light" placeholder="Precio Mayorista $ (opcional)" />
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
-            <input type="text" id="batchTallesInput" class="input-light" placeholder="Talles (ej: 2XL al 5XL)" />
-            <input type="text" id="batchColoresInput" class="input-light" placeholder="Colores (ej: Blanco, Negro, Kaki)" />
+            <input type="text" id="batchTallesInput" class="input-light" placeholder="Talles / Presentación" />
+            <input type="text" id="batchColoresInput" class="input-light" placeholder="Colores / Variedad" />
           </div>
-          <input type="text" id="batchDetailInput" class="input-light" placeholder="Descripción para el comerciante (ej: Tela lino importado, venta por curva)" />
+          <input type="text" id="batchDetailInput" class="input-light" placeholder="Descripción general (opcional)" style="margin-bottom:8px" />
+          <input type="text" id="batchVideoInput" class="input-light" placeholder="🎬 Link de video general opcional (YouTube, TikTok o MP4)" />
           <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--muted);cursor:pointer">
             <input type="checkbox" id="chkAutoCrop" checked style="width:16px;height:16px;accent-color:var(--wa)" />
             Recortar automáticamente bordes negros de capturas de pantalla
@@ -1718,11 +1825,11 @@
         </div>
 
         <div class="step-box" style="margin-bottom:0">
-          <div class="step-title">Paso 2: Seleccioná las fotos</div>
+          <div class="step-title">Paso 2: Seleccioná las fotos (y agregá video si querés)</div>
           <div class="dropzone" id="dropzone">
             <i data-lucide="images" style="width:40px;height:40px;color:var(--wa-dark)"></i>
-            <h4>Tocá acá para seleccionar las fotos</h4>
-            <p>Podés subir 1 foto detallando su precio y talles, o subir 300+ fotos juntas.</p>
+            <h4>Tocá acá para elegir las fotos de los artículos</h4>
+            <p>Abajo de cada foto te aparecerá la caja para ponerle precio y adjuntarle un video.</p>
             <input type="file" id="fileInput" accept="image/*" multiple class="hidden" />
           </div>
 
@@ -1734,7 +1841,7 @@
             <div class="batch-preview-grid" id="batchPreviewGrid"></div>
 
             <div id="progressBox" class="hidden" style="margin-top:14px;background:#ffffff;padding:14px;border-radius:12px;border:1px solid var(--border)">
-              <div id="progressText" style="font-size:13.5px;font-weight:800;margin-bottom:8px">Subiendo fotos...</div>
+              <div id="progressText" style="font-size:13.5px;font-weight:800;margin-bottom:8px">Subiendo artículos...</div>
               <div style="height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden">
                 <div id="progressBar" style="height:100%;width:0%;background:var(--wa);transition:width 0.2s"></div>
               </div>
@@ -1742,16 +1849,16 @@
 
             <button class="btn-big-upload" id="btnStartUpload">
               <i data-lucide="rocket" style="width:18px;height:18px"></i>
-              <span id="btnStartUploadTxt">Publicar todas en este mayorista ahora</span>
+              <span id="btnStartUploadTxt">Publicar en este mayorista ahora</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- SECCIÓN 3: ADMINISTRAR / EDITAR FICHA DE FOTOS YA SUBIDAS -->
+      <!-- EDITAR ARTÍCULOS SUBIDOS -->
       <div class="admin-card">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--wa-dark)"></i> Editar Fichas / Precios (<span id="adminTotalCount">0</span> fotos)</h3>
+          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--wa-dark)"></i> Editar Fichas / Precios / Videos (<span id="adminTotalCount">0</span> fotos)</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <select id="adminFilterProv" class="input-light" style="width:auto;padding:8px 12px"></select>
             <button class="btn-top" id="btnRenameProv" style="color:var(--wa-dark);border-color:var(--wa-border)">Cambiar nombre</button>
@@ -1760,12 +1867,11 @@
         </div>
         <div class="admin-list-grid" id="adminPhotosGrid"></div>
       </div>
-
     </div>
   </div>
 </main>
 
-<!-- ================= VISOR ZOOM PANTALLA COMPLETA ================= -->
+<!-- VISOR ZOOM -->
 <div class="lightbox hidden" id="lightbox">
   <button class="lightbox-close" id="btnCloseLightbox">✕ Cerrar zoom</button>
   <span class="lb-counter" id="lbCounter">1 / 1</span>
@@ -1798,7 +1904,6 @@ var state = {
   renderedCount: 0,
   activeProv: "",
   batchItems: [],
-  // Cada item en cart: { id: "string", qty: number }
   cart: [],
   sb: null,
   admin: false,
@@ -1818,12 +1923,12 @@ function getStoreName(){
 }
 function applyStoreName(name){
   name = (name || "").trim() || (CONFIG.BRAND || "Mayorista Boliviano");
-  var ht = document.getElementById("headerTitle");
+  var ht = $("headerTitle");
   if(ht) ht.textContent = name;
   var sn = document.querySelector(".splash-name");
   if(sn) sn.textContent = name;
   document.title = name + " · Catálogo Oficial";
-  var si = document.getElementById("storeNameInput");
+  var si = $("storeNameInput");
   if(si) si.value = name;
 }
 
@@ -1831,7 +1936,7 @@ function showToast(msg){
   var t = $("toast");
   t.textContent = msg;
   t.classList.add("show");
-  setTimeout(function(){ t.classList.remove("show"); }, 2400);
+  setTimeout(function(){ t.classList.remove("show"); }, 2300);
 }
 
 function copyText(text, msg){
@@ -1851,6 +1956,7 @@ function getProviderUrl(provName){
   return base + "?prov=" + encodeURIComponent(provName);
 }
 
+/* SOPORTE DE METADATOS + VIDEO (GUARDADO EN EL CAMPO NOMBRE SEPARADO POR || ) */
 function parseItemMeta(p){
   var rawName = (p.nombre || "").trim();
   if(/^\d+$/.test(rawName) || /^(Mayorista|Proveedor|Catálogo|Prenda|Modelo)\s*\d*\s*·?\s*(Foto|Prenda|Modelo)?\s*#?\d*$/i.test(rawName)){
@@ -1860,20 +1966,33 @@ function parseItemMeta(p){
   var desc = (parts[0] || "").trim();
   var talles = (p.talles || parts[1] || "").trim();
   var colores = (p.colores || parts[2] || "").trim();
+  var video = (p.video || parts[3] || "").trim();
   return {
     desc: desc,
     talles: talles,
-    colores: colores
+    colores: colores,
+    video: video
   };
 }
 
-function packItemName(desc, talles, colores, fallbackTitle){
+function packItemName(desc, talles, colores, video, fallbackTitle){
   var d = (desc || "").trim();
   var t = (talles || "").trim();
   var c = (colores || "").trim();
-  if(!d && !t && !c) return fallbackTitle;
-  if(!t && !c) return d;
-  return d + " || " + t + " || " + c;
+  var v = (video || "").trim();
+  if(!d && !t && !c && !v) return fallbackTitle;
+  if(!t && !c && !v) return d;
+  return d + " || " + t + " || " + c + (v ? (" || " + v) : "");
+}
+
+function renderVideoEmbedHtml(videoUrl){
+  if(!videoUrl) return "";
+  var u = videoUrl.trim();
+  var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+  if(ytMatch){
+    return '<iframe height="260" src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'" allowfullscreen></iframe>';
+  }
+  return '<video controls playsinline preload="metadata" src="'+esc(u)+'"></video>';
 }
 
 function getProvOf(p){
@@ -1884,7 +2003,7 @@ function getProvOf(p){
   return raw;
 }
 
-/* ================= FUNCIONES DEL CARRITO ESTILO TIENDA NUBE ================= */
+/* ================= CARRITO ESTILO TIENDA NUBE ================= */
 function loadSavedCart(){
   try {
     var raw = localStorage.getItem(CONFIG.CART_STORAGE_KEY);
@@ -1923,7 +2042,7 @@ function setCartQty(id, newQty, silent){
     } else {
       state.cart.push({ id: sid, qty: q });
     }
-    if(!silent) showToast("Carrito actualizado (" + q + " u.)");
+    if(!silent) showToast("Pedido actualizado (" + q + " u.)");
   }
 
   saveCart();
@@ -1938,7 +2057,7 @@ function addToCart(id, addQty){
   var current = getCartQty(id);
   var next = current + Math.max(1, Number(addQty) || 1);
   setCartQty(id, next, true);
-  showToast("¡Agregado al carrito! (" + next + " u.)");
+  showToast("✓ Sumado a tu pedido (" + next + " u.)");
 }
 
 function calculateCartTotals(){
@@ -1969,7 +2088,7 @@ function renderFeedCartControlHtml(id){
   var qty = getCartQty(id);
   if(qty <= 0){
     return '<button type="button" class="btn-quick-add" data-qadd="'+esc(id)+'">' +
-      '<i data-lucide="shopping-cart" style="width:14px;height:14px"></i> + Agregar' +
+      '<i data-lucide="shopping-cart" style="width:15px;height:15px"></i> + Agregar' +
     '</button>';
   }
   return '<div class="feed-qty-pill">' +
@@ -2019,12 +2138,12 @@ function bindCartButtonsIn(root){
 
 function updateOrderBar(){
   var totals = calculateCartTotals();
-  $("orderCount").textContent = totals.totalUnits;
+  $("orderCount").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades");
   $("headerCartBadge").textContent = totals.totalUnits;
 
   var subTxt = totals.subtotalMoney > 0
-    ? ("Subtotal: AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " + a confirmar" : ""))
-    : "Precio a confirmar por mayor";
+    ? ("Subtotal: AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " + a conf." : ""))
+    : "Total a confirmar por mayor";
   $("floatingSubtotalTxt").textContent = subTxt;
 
   $("floatingOrderBar").classList.toggle("hidden", totals.totalUnits === 0);
@@ -2047,23 +2166,29 @@ function closeCartDrawer(){
 
 function renderCartDrawer(){
   var listEl = $("cartDrawerList");
-  var footerEl = $("cartDrawerFooter");
+  var summarySec = $("cartSummarySection");
+  var notesSec = $("cartNotesSection");
+  var headerLbl = $("cartListHeaderLbl");
   var totals = calculateCartTotals();
 
   if(state.cart.length === 0){
-    listEl.innerHTML = '<div class="cart-empty-box">' +
-      '<i data-lucide="shopping-bag" style="width:44px;height:44px;margin:0 auto 10px;opacity:0.45"></i>' +
-      '<div style="font-size:16px;font-weight:800;color:var(--text);margin-bottom:4px">Tu carrito está vacío</div>' +
-      '<div style="font-size:13px">Recorré el catálogo y tocá <b>+ Agregar</b> en las prendas que quieras pedir.</div>' +
+    headerLbl.classList.add("hidden");
+    summarySec.classList.add("hidden");
+    notesSec.classList.add("hidden");
+    listEl.innerHTML = '<div style="text-align:center;padding:50px 18px;color:var(--muted)">' +
+      '<i data-lucide="shopping-bag" style="width:46px;height:46px;margin:0 auto 10px;opacity:0.4"></i>' +
+      '<div style="font-size:16px;font-weight:800;color:var(--text);margin-bottom:4px">Tu carrito de pedido está vacío</div>' +
+      '<div style="font-size:13px">Tocá <b>+ Agregar</b> en cada artículo del catálogo para ir armando tu fila de compra.</div>' +
     '</div>';
-    footerEl.classList.add("hidden");
     refreshIcons();
     return;
   }
 
-  footerEl.classList.remove("hidden");
+  headerLbl.classList.remove("hidden");
+  summarySec.classList.remove("hidden");
+  notesSec.classList.remove("hidden");
 
-  var html = state.cart.map(function(item){
+  var html = state.cart.map(function(item, index){
     var p = state.products.find(function(x){ return String(x.id) === String(item.id); });
     if(!p) return "";
     var meta = parseItemMeta(p);
@@ -2071,17 +2196,18 @@ function renderCartDrawer(){
     var unitNumber = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
     var unitLabel = unitNumber > 0 ? ("AR" + fmtMoney(unitNumber) + " c/u") : "Precio a consultar";
     var lineSubtotal = unitNumber > 0 ? ("AR" + fmtMoney(unitNumber * item.qty)) : "A confirmar";
-    var title = meta.desc || meta.talles || ("Artículo " + (p.codigo || ""));
+    var title = meta.desc || meta.talles || ("Artículo " + (p.codigo || "#" + (index + 1)));
 
     return '<div class="cart-item-row">' +
-      '<img src="'+esc(p.imagen)+'" alt="Prenda" />' +
+      '<div class="cart-item-index">' + (index + 1) + '</div>' +
+      '<img src="'+esc(p.imagen)+'" alt="Artículo" />' +
       '<div class="cart-item-info">' +
-        '<div style="display:flex;justify-content:space-between;align-items:center">' +
+        '<div class="cart-item-top">' +
           '<span class="cart-item-prov">'+esc(prov)+'</span>' +
-          '<button type="button" class="cart-item-del" data-delcart="'+esc(p.id)+'">Eliminar</button>' +
+          '<button type="button" class="cart-item-del" data-delcart="'+esc(p.id)+'">Quitar</button>' +
         '</div>' +
         '<div class="cart-item-name">'+esc(title)+'</div>' +
-        '<div class="cart-item-unit">'+esc(unitLabel)+(meta.talles ? ' · Talles: '+esc(meta.talles) : '')+'</div>' +
+        '<div class="cart-item-unit">'+esc(unitLabel)+(meta.talles ? ' · '+esc(meta.talles) : '')+'</div>' +
         '<div class="cart-item-controls">' +
           '<div class="cart-qty-box">' +
             '<button type="button" class="cart-qty-btn" data-dminus="'+esc(p.id)+'">−</button>' +
@@ -2096,7 +2222,7 @@ function renderCartDrawer(){
 
   listEl.innerHTML = html;
 
-  $("cartSummaryUnits").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades") + " (" + totals.totalItems + (totals.totalItems === 1 ? " modelo" : " modelos") + ")";
+  $("cartSummaryUnits").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades") + " (" + totals.totalItems + (totals.totalItems === 1 ? " artículo" : " artículos") + ")";
   $("cartSummarySubtotal").textContent = totals.subtotalMoney > 0 ? ("AR" + fmtMoney(totals.subtotalMoney)) : "A confirmar";
 
   if(totals.consultCount > 0){
@@ -2126,14 +2252,14 @@ function renderCartDrawer(){
     b.addEventListener("click", function(){
       var id = b.getAttribute("data-delcart");
       setCartQty(id, 0, true);
-      showToast("Artículo quitado del carrito");
+      showToast("Artículo quitado de tu fila");
     });
   });
 }
 
 function sendCartToWhatsApp(){
   if(state.cart.length === 0){
-    showToast("Agregá al menos una prenda al carrito");
+    showToast("Agregá al menos un artículo a tu pedido");
     return;
   }
 
@@ -2145,7 +2271,7 @@ function sendCartToWhatsApp(){
   lines.push("Hola! 👋 Quiero realizar el siguiente pedido en *" + getStoreName() + "*:");
   if(buyerName) lines.push("👤 Cliente: *" + buyerName + "*");
   lines.push("");
-  lines.push("🛒 *DETALLE DEL PEDIDO:*");
+  lines.push("📋 *LISTA DE ARTÍCULOS PEDIDOS:*");
 
   state.cart.forEach(function(item, idx){
     var p = state.products.find(function(x){ return String(x.id) === String(item.id); });
@@ -2158,9 +2284,9 @@ function sendCartToWhatsApp(){
     var prov = getProvOf(p);
     var unitPrice = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
     var subPrice = unitPrice * qty;
+    var title = meta.desc || ("Artículo " + (p.codigo || "#" + (idx + 1)));
 
-    var itemLine = (idx + 1) + ". *" + prov + "*";
-    if(meta.desc) itemLine += " — " + meta.desc;
+    var itemLine = (idx + 1) + ". *" + prov + "* — " + title;
     itemLine += "\n   • Cantidad: *" + qty + (qty === 1 ? " unidad*" : " unidades*");
     if(meta.talles) itemLine += " | Talles: " + meta.talles;
     if(meta.colores) itemLine += " | Colores: " + meta.colores;
@@ -2177,24 +2303,24 @@ function sendCartToWhatsApp(){
 
   lines.push("");
   lines.push("────────────────────");
-  lines.push("📦 *Total de prendas:* " + totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades") + " (" + totals.totalItems + " ref.)");
+  lines.push("📦 *Total pedido:* " + totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades") + " (" + totals.totalItems + (totals.totalItems === 1 ? " artículo" : " artículos") + ")");
   if(totals.subtotalMoney > 0){
     lines.push("💰 *SUBTOTAL:* AR" + fmtMoney(totals.subtotalMoney));
-    lines.push("✅ *TOTAL A COORDINAR:* AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " (+ " + totals.consultCount + " u. a confirmar precio)" : ""));
+    lines.push("✅ *TOTAL ESTIMADO:* AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " (+ " + totals.consultCount + " u. a confirmar)" : ""));
   } else {
-    lines.push("💰 *TOTAL:* A confirmar precios mayoristas");
+    lines.push("💰 *TOTAL:* A confirmar por WhatsApp");
   }
   if(buyerNote){
-    lines.push("📝 *Nota:* " + buyerNote);
+    lines.push("📝 *Nota del cliente:* " + buyerNote);
   }
   lines.push("");
-  lines.push("Quedo a la espera para coordinar disponibilidad, pago y envío. ¡Muchas gracias!");
+  lines.push("Quedo a la espera para coordinar la compra. ¡Muchas gracias!");
 
   var msg = lines.join("\n");
   window.open("https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
 }
 
-/* ================= SUPABASE STORE ================= */
+/* ================= SUPABASE STORE (+ SUBIDA DE VIDEOS) ================= */
 var Store = {
   init: async function(){
     if(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY && window.supabase){
@@ -2232,6 +2358,19 @@ var Store = {
       from += step;
     }
   },
+  uploadVideoFile: async function(videoFile){
+    if(!videoFile || !state.sb) return "";
+    var ext = (videoFile.name.split(".").pop() || "mp4").toLowerCase();
+    var vname = "vid-" + Date.now() + "-" + Math.random().toString(36).slice(2,7) + "." + ext;
+    var up = await state.sb.storage.from(CONFIG.BUCKET_NAME).upload(vname, videoFile, {
+      contentType: videoFile.type || "video/mp4",
+      upsert: true
+    });
+    if(!up.error){
+      return state.sb.storage.from(CONFIG.BUCKET_NAME).getPublicUrl(vname).data.publicUrl;
+    }
+    throw new Error(up.error.message || "No se pudo subir el video");
+  },
   uploadAndInsert: async function(item, provName, seqNum, autoCrop){
     var blob = await compressAndCleanScreenshot(item.file, 1280, 0.85, autoCrop);
     var fname = "cat-" + Date.now() + "-" + seqNum + "-" + Math.random().toString(36).slice(2,7) + ".jpg";
@@ -2247,7 +2386,16 @@ var Store = {
       imgUrl = await blobToDataURL(blob);
     }
 
-    var packedName = packItemName(item.detail, item.talles, item.colores, provName + " · Modelo #" + seqNum);
+    var finalVideoUrl = (item.videoUrl || "").trim();
+    if(item.videoFile){
+      try {
+        finalVideoUrl = await this.uploadVideoFile(item.videoFile);
+      } catch(err){
+        console.warn("Error subiendo video:", err);
+      }
+    }
+
+    var packedName = packItemName(item.detail, item.talles, item.colores, finalVideoUrl, provName + " · Modelo #" + seqNum);
     var payload = {
       nombre: packedName,
       codigo: "M-" + seqNum,
@@ -2265,9 +2413,9 @@ var Store = {
     }
     throw new Error(ins.error ? ins.error.message : "Error al guardar fila");
   },
-  updateItemInfo: async function(id, newPrice, newDesc, newTalles, newColores){
+  updateItemInfo: async function(id, newPrice, newDesc, newTalles, newColores, newVideoUrl){
     var p = state.products.find(function(x){ return String(x.id) === String(id); });
-    var packed = packItemName(newDesc, newTalles, newColores, p ? (getProvOf(p) + " · Prenda") : "Prenda");
+    var packed = packItemName(newDesc, newTalles, newColores, newVideoUrl, p ? (getProvOf(p) + " · Artículo") : "Artículo");
     var patch = {
       precio: newPrice === "" || newPrice == null ? null : Number(newPrice),
       nombre: packed
@@ -2278,6 +2426,7 @@ var Store = {
       p.nombre = patch.nombre;
       p.talles = newTalles;
       p.colores = newColores;
+      p.video = newVideoUrl;
     }
   },
   renameProvider: async function(oldName, newName){
@@ -2443,7 +2592,7 @@ function applyFilterAndRender(resetScroll){
   $("activeProvTitle").innerHTML = state.activeProv
     ? ('Viendo: <b>' + esc(state.activeProv) + '</b>')
     : 'Viendo: <b>Todos los catálogos juntos</b>';
-  $("totalPhotosBadge").textContent = state.filtered.length + (state.filtered.length === 1 ? " prenda" : " prendas");
+  $("totalPhotosBadge").textContent = state.filtered.length + (state.filtered.length === 1 ? " artículo" : " artículos");
 
   if(resetScroll){
     state.renderedCount = 0;
@@ -2465,17 +2614,18 @@ function renderNextChunk(){
     var num = state.renderedCount + idx + 1;
     var price = fmtPrice(p.precio);
     var meta = parseItemMeta(p);
-    var summaryTxt = meta.desc || meta.talles || "Ver ficha";
+    var hasVideo = Boolean(meta.video);
+    var summaryTxt = meta.desc || "Ver ficha";
     var labelBtn = price
-      ? ('<i data-lucide="tag" style="width:14px;height:14px;color:var(--wa-dark);flex-shrink:0"></i><span class="price-pill">AR' + price + '</span> · <span class="txt-trunc">' + esc(summaryTxt) + '</span>')
+      ? ('<i data-lucide="tag" style="width:14px;height:14px;color:var(--wa-dark);flex-shrink:0"></i><span class="price-pill">AR' + price + '</span>')
       : ('<i data-lucide="file-text" style="width:14px;height:14px;color:var(--gold-deep);flex-shrink:0"></i><span class="txt-trunc">' + esc(summaryTxt) + '</span>');
 
-    var delay = Math.min(idx, 8) * 70;
-    return '<article class="feed-card" style="animation-delay:'+delay+'ms" data-id="'+esc(p.id)+'">' +
+    return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
       '<div class="feed-img-wrap" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
         (num <= 12 ? '<span class="badge-new">Nuevo</span>' : '') +
+        (hasVideo ? '<span class="badge-video">▶ VIDEO</span>' : '') +
         '<span class="float-num">#'+num+'</span>' +
-        '<img src="'+esc(p.imagen)+'" alt="Prenda #'+num+'" loading="lazy" />' +
+        '<img src="'+esc(p.imagen)+'" alt="Artículo #'+num+'" loading="lazy" />' +
         '<div class="float-bottom-bar">' +
           '<button type="button" class="btn-open-detail" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
             labelBtn +
@@ -2503,16 +2653,16 @@ function updateSheetCartStatus(){
   $("sheetQtyVal").textContent = state.sheetTempQty;
 
   if(inCartQty > 0){
-    $("sheetInCartHint").textContent = "Ya tenés " + inCartQty + " u. en tu carrito";
+    $("sheetInCartHint").textContent = "Ya tenés " + inCartQty + " u. en tu fila de pedido";
   } else {
-    $("sheetInCartHint").textContent = "Elegí cuántas unidades querés sumar";
+    $("sheetInCartHint").textContent = "Seleccioná cuántas unidades sumar";
   }
 
   var unitPrice = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
   if(unitPrice > 0){
-    $("sheetAddToCartTxt").textContent = "Agregar " + state.sheetTempQty + " u. al carrito (AR" + fmtMoney(unitPrice * state.sheetTempQty) + ")";
+    $("sheetAddToCartTxt").textContent = "Sumar " + state.sheetTempQty + " u. al pedido (AR" + fmtMoney(unitPrice * state.sheetTempQty) + ")";
   } else {
-    $("sheetAddToCartTxt").textContent = "Agregar " + state.sheetTempQty + (state.sheetTempQty === 1 ? " unidad" : " unidades") + " al carrito";
+    $("sheetAddToCartTxt").textContent = "Sumar " + state.sheetTempQty + (state.sheetTempQty === 1 ? " unidad" : " unidades") + " al pedido";
   }
 }
 
@@ -2528,7 +2678,7 @@ function openDetailSheet(id, num){
 
   $("sheetThumb").src = p.imagen || "";
   $("sheetProvBadge").textContent = prov + " · Artículo #" + num;
-  $("sheetTitle").textContent = meta.desc ? meta.desc.split("\n")[0].slice(0, 48) : ("Modelo #" + num + " — " + prov);
+  $("sheetTitle").textContent = meta.desc ? meta.desc.split("\n")[0].slice(0, 48) : ("Artículo #" + num + " — " + prov);
 
   if(price){
     $("sheetPriceVal").textContent = "AR" + price;
@@ -2538,13 +2688,26 @@ function openDetailSheet(id, num){
     $("sheetPriceVal").classList.add("consult");
   }
 
-  $("sheetTallesVal").textContent = meta.talles || "Curva completa disponible";
+  if(meta.video){
+    $("sheetVideoBox").classList.remove("hidden");
+    $("sheetVideoContainer").innerHTML = renderVideoEmbedHtml(meta.video);
+  } else {
+    $("sheetVideoBox").classList.add("hidden");
+    $("sheetVideoContainer").innerHTML = "";
+  }
+
+  $("sheetTallesVal").textContent = meta.talles || "Disponible";
   $("sheetColoresVal").textContent = meta.colores || "Surtido según catálogo";
-  $("sheetDetailText").textContent = meta.desc || "Mercadería directa para comerciantes y revendedores. Agregá este artículo a tu carrito para armar tu pedido completo.";
+  $("sheetDetailText").textContent = meta.desc || "Mercadería directa mayorista. Sumá este artículo a tu carrito para armar tu pedido completo.";
 
   updateSheetCartStatus();
   $("detailSheet").classList.add("open");
   refreshIcons();
+}
+
+function closeDetailSheet(){
+  $("detailSheet").classList.remove("open");
+  $("sheetVideoContainer").innerHTML = "";
 }
 
 function bindFeedEvents(){
@@ -2563,25 +2726,26 @@ function bindFeedEvents(){
   bindCartButtonsIn($("photoFeed"));
 }
 
+/* ================= ADMIN PANEL ================= */
 function renderAdminDashboard(){
   var provs = getUniqueProviders();
   $("adminTotalCount").textContent = state.products.length;
 
   var linksHtml = '<div class="link-prov-item master">' +
     '<div>' +
-      '<div style="font-weight:800;font-size:14.5px;color:var(--wa-deep)">🌟 LINK PRINCIPAL (Muestra todos los mayoristas separados + opción Ver Todo)</div>' +
-      '<div style="font-size:12px;color:var(--muted)">Mandá siempre este link para que vean todo</div>' +
+      '<div style="font-weight:800;font-size:14.5px;color:var(--wa-deep)">🌟 LINK PRINCIPAL (Muestra todos los mayoristas)</div>' +
+      '<div style="font-size:12px;color:var(--muted)">Mandá este link para que vean todo el catálogo</div>' +
     '</div>' +
-    '<button class="btn-copy" data-copylink=""><i data-lucide="copy" style="width:14px;height:14px"></i> Copiar Link Principal</button>' +
+    '<button class="btn-copy" data-copylink=""><i data-lucide="copy" style="width:14px;height:14px"></i> Copiar Link</button>' +
   '</div>';
 
   provs.forEach(function(pr){
     linksHtml += '<div class="link-prov-item">' +
       '<div style="min-width:0">' +
         '<div style="font-weight:800;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">📁 ' + esc(pr.name) + '</div>' +
-        '<div style="font-size:11.5px;color:var(--muted)">' + pr.count + ' fotos cargadas</div>' +
+        '<div style="font-size:11.5px;color:var(--muted)">' + pr.count + ' artículos</div>' +
       '</div>' +
-      '<button class="btn-copy" data-copylink="'+esc(pr.name)+'"><i data-lucide="link" style="width:13px;height:13px"></i> Link directo</button>' +
+      '<button class="btn-copy" data-copylink="'+esc(pr.name)+'"><i data-lucide="link" style="width:13px;height:13px"></i> Copiar link</button>' +
     '</div>';
   });
   $("providerLinksGrid").innerHTML = linksHtml;
@@ -2603,7 +2767,7 @@ function renderAdminDashboard(){
   bindPresetButtons();
 
   var curFilter = $("adminFilterProv").value;
-  $("adminFilterProv").innerHTML = '<option value="">Seleccioná un mayorista ('+state.products.length+' total)</option>' +
+  $("adminFilterProv").innerHTML = '<option value="">Todos los mayoristas ('+state.products.length+' total)</option>' +
     provs.map(function(p){ return '<option value="'+esc(p.name)+'">'+esc(p.name)+' ('+p.count+' fotos)</option>'; }).join("");
   $("adminFilterProv").value = curFilter;
   renderAdminPhotosList();
@@ -2617,11 +2781,12 @@ function renderAdminPhotosList(){
     var pr = fmtPrice(p.precio) || "Consultar";
     var meta = parseItemMeta(p);
     return '<div class="admin-item-card">' +
+      (meta.video ? '<span style="position:absolute;top:6px;left:6px;background:#0f172a;color:#f8dfa1;font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px">▶ CON VIDEO</span>' : '') +
       '<img src="'+esc(p.imagen)+'" loading="lazy" />' +
       '<div class="admin-item-body">' +
-        '<div style="font-weight:800;color:var(--wa-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(pr)+'</div>' +
-        '<div style="color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(meta.talles || meta.desc || "Sin detalle")+'</div>' +
-        '<button class="btn-top" data-editid="'+esc(p.id)+'" style="color:var(--wa-deep);border-color:var(--wa-border);background:var(--wa-soft);justify-content:center;margin-top:4px;padding:6px">✏️ Editar Ficha</button>' +
+        '<div style="font-weight:800;color:var(--wa-dark)">'+esc(pr)+'</div>' +
+        '<div style="color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(meta.desc || meta.talles || "Sin descripción")+'</div>' +
+        '<button class="btn-top" data-editid="'+esc(p.id)+'" style="color:var(--wa-deep);border-color:var(--wa-border);background:var(--wa-soft);justify-content:center;margin-top:4px;padding:6px">✏️ Ficha / Video</button>' +
         '<button class="btn-top" data-delid="'+esc(p.id)+'" style="color:#dc2626;justify-content:center;padding:5px">Borrar</button>' +
       '</div>' +
     '</div>';
@@ -2638,7 +2803,11 @@ function renderAdminPhotosList(){
       $("editItemTalles").value = meta.talles || "";
       $("editItemColores").value = meta.colores || "";
       $("editItemDesc").value = meta.desc || "";
+      $("editItemVideoUrl").value = meta.video || "";
+      $("editItemVideoFile").value = "";
+      $("editVideoFileLbl").textContent = "Seleccionar video desde el celular";
       $("editItemModal").classList.add("open");
+      refreshIcons();
     });
   });
 
@@ -2649,7 +2818,7 @@ function renderAdminPhotosList(){
       renderProviderTabs();
       applyFilterAndRender(true);
       renderAdminDashboard();
-      showToast("Foto eliminada");
+      showToast("Artículo eliminado");
     });
   });
 }
@@ -2672,13 +2841,16 @@ function handleBatchSelect(files){
   var defTalles = $("batchTallesInput").value.trim();
   var defColores = $("batchColoresInput").value.trim();
   var defDetail = $("batchDetailInput").value.trim();
+  var defVideo = $("batchVideoInput").value.trim();
   arr.forEach(function(f){
     state.batchItems.push({
       file: f,
       price: defPrice,
       talles: defTalles,
       colores: defColores,
-      detail: defDetail
+      detail: defDetail,
+      videoUrl: defVideo,
+      videoFile: null
     });
   });
   renderBatchPreview();
@@ -2688,18 +2860,24 @@ function renderBatchPreview(){
   var total = state.batchItems.length;
   $("batchSummary").classList.toggle("hidden", total === 0);
   var prov = $("batchProvInput").value.trim() || "Mayorista 2";
-  $("batchCountLbl").textContent = total + " fotos listas para cargar en \"" + prov + "\"";
-  $("btnStartUploadTxt").textContent = "Publicar las " + total + " fotos en \"" + prov + "\" ahora";
+  $("batchCountLbl").textContent = total + " artículos listos para subir a \"" + prov + "\"";
+  $("btnStartUploadTxt").textContent = "Publicar " + total + " artículos en \"" + prov + "\"";
 
   var previewSlice = state.batchItems.slice(0, 36);
   $("batchPreviewGrid").innerHTML = previewSlice.map(function(item, idx){
     var url = URL.createObjectURL(item.file);
+    var vFileName = item.videoFile ? ("✓ " + item.videoFile.name.slice(0, 18)) : "🎬 Adjuntar archivo de video";
     return '<div class="batch-thumb-box" data-bidx="'+idx+'">' +
       '<img src="'+url+'" />' +
       '<div class="batch-thumb-inputs">' +
         '<input type="number" data-bfield="price" placeholder="Precio $ (opcional)" value="'+esc(item.price)+'" />' +
-        '<input type="text" data-bfield="talles" placeholder="Talles (ej: M al 2XL)" value="'+esc(item.talles)+'" />' +
-        '<input type="text" data-bfield="detail" placeholder="Descripción / tela..." value="'+esc(item.detail)+'" />' +
+        '<input type="text" data-bfield="talles" placeholder="Talles / Presentación" value="'+esc(item.talles)+'" />' +
+        '<input type="text" data-bfield="detail" placeholder="Descripción..." value="'+esc(item.detail)+'" />' +
+        '<input type="text" data-bfield="videoUrl" placeholder="Link de video (opcional)" value="'+esc(item.videoUrl)+'" />' +
+        '<label class="btn-attach-video">' +
+          '<span>'+esc(vFileName)+'</span>' +
+          '<input type="file" accept="video/*" data-bvideo="'+idx+'" class="hidden" />' +
+        '</label>' +
       '</div>' +
       '<button type="button" class="batch-thumb-del" data-rmbatch="'+idx+'">✕</button>' +
     '</div>';
@@ -2710,6 +2888,17 @@ function renderBatchPreview(){
       var idx = Number(inp.closest("[data-bidx]").getAttribute("data-bidx"));
       var field = inp.getAttribute("data-bfield");
       state.batchItems[idx][field] = inp.value;
+    });
+  });
+
+  $("batchPreviewGrid").querySelectorAll("[data-bvideo]").forEach(function(fInp){
+    fInp.addEventListener("change", function(e){
+      var idx = Number(fInp.getAttribute("data-bvideo"));
+      if(e.target.files && e.target.files[0]){
+        state.batchItems[idx].videoFile = e.target.files[0];
+        renderBatchPreview();
+        showToast("Video adjuntado al artículo #" + (idx + 1));
+      }
     });
   });
 
@@ -2729,6 +2918,7 @@ async function startMassUpload(){
   var defTalles = $("batchTallesInput").value.trim();
   var defColores = $("batchColoresInput").value.trim();
   var defDetail = $("batchDetailInput").value.trim();
+  var defVideo = $("batchVideoInput").value.trim();
   var autoCrop = $("chkAutoCrop").checked;
 
   state.batchItems.forEach(function(it){
@@ -2736,13 +2926,14 @@ async function startMassUpload(){
     if(it.talles === "" && defTalles !== "") it.talles = defTalles;
     if(it.colores === "" && defColores !== "") it.colores = defColores;
     if(it.detail === "" && defDetail !== "") it.detail = defDetail;
+    if(it.videoUrl === "" && defVideo !== "") it.videoUrl = defVideo;
   });
 
   $("progressBox").classList.remove("hidden");
   $("btnStartUpload").disabled = true;
 
   var done = 0;
-  var concurrency = 4;
+  var concurrency = 3;
   var queue = state.batchItems.slice();
   var existingInProv = state.products.filter(function(p){ return getProvOf(p) === provName; }).length;
 
@@ -2774,7 +2965,7 @@ async function startMassUpload(){
   renderProviderTabs();
   applyFilterAndRender(true);
   renderAdminDashboard();
-  showToast("¡Se publicaron " + total + " fotos en " + provName + "!");
+  showToast("¡Se publicaron " + total + " artículos en " + provName + "!");
 }
 
 function route(){
@@ -2839,12 +3030,11 @@ function bindEvents(){
   });
   $("backToTop").addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
 
-  $("btnCloseSheet").addEventListener("click", function(){ $("detailSheet").classList.remove("open"); });
+  $("btnCloseSheet").addEventListener("click", closeDetailSheet);
   $("detailSheet").addEventListener("click", function(e){
-    if(e.target === $("detailSheet")) $("detailSheet").classList.remove("open");
+    if(e.target === $("detailSheet")) closeDetailSheet();
   });
 
-  // Controles de cantidad dentro de la ficha
   $("sheetQtyMinus").addEventListener("click", function(){
     state.sheetTempQty = Math.max(1, state.sheetTempQty - 1);
     updateSheetCartStatus();
@@ -2860,8 +3050,19 @@ function bindEvents(){
     updateSheetCartStatus();
   });
   $("sheetOpenCartBtn").addEventListener("click", function(){
-    $("detailSheet").classList.remove("open");
+    closeDetailSheet();
     openCartDrawer();
+  });
+
+  // Auto-scroll suave cuando el cliente toca la caja de nombre o nota para que el teclado nunca lo tape
+  ["cartBuyerName", "cartBuyerNote"].forEach(function(inpId){
+    var el = $(inpId);
+    if(!el) return;
+    el.addEventListener("focus", function(){
+      setTimeout(function(){
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 280);
+    });
   });
 
   // Lightbox zoom
@@ -2878,8 +3079,9 @@ function bindEvents(){
   }
   var openZoomFromSheet = function(){
     if(!state.currentSheetItem) return;
-    $("detailSheet").classList.remove("open");
-    var idx = state.filtered.findIndex(function(x){ return String(x.id) === String(state.currentSheetItem.p.id); });
+    var currentId = state.currentSheetItem.p.id;
+    closeDetailSheet();
+    var idx = state.filtered.findIndex(function(x){ return String(x.id) === String(currentId); });
     state.lbIndex = idx >= 0 ? idx : 0;
     updateLightboxImg();
     $("lightbox").classList.remove("hidden");
@@ -2898,20 +3100,42 @@ function bindEvents(){
     if(Math.abs(dx) > 50){ lbNav(dx > 0 ? -1 : 1); }
   });
 
+  // Edición de artículo y subida de video desde modal Admin
+  $("editItemVideoFile").addEventListener("change", function(e){
+    if(e.target.files && e.target.files[0]){
+      $("editVideoFileLbl").textContent = "✓ Video listo: " + e.target.files[0].name;
+    }
+  });
+
   $("btnCloseEditModal").addEventListener("click", function(){ $("editItemModal").classList.remove("open"); });
   $("btnSaveItemEdit").addEventListener("click", async function(){
     var id = $("editItemId").value;
     if(!id) return;
-    var pr = $("editItemPrice").value.trim();
-    var ta = $("editItemTalles").value.trim();
-    var co = $("editItemColores").value.trim();
-    var de = $("editItemDesc").value.trim();
-    await Store.updateItemInfo(id, pr, de, ta, co);
-    $("editItemModal").classList.remove("open");
-    applyFilterAndRender(true);
-    updateOrderBar();
-    renderAdminPhotosList();
-    showToast("Ficha blanca actualizada");
+    var btn = $("btnSaveItemEdit");
+    btn.disabled = true;
+    btn.textContent = "Guardando...";
+    try {
+      var pr = $("editItemPrice").value.trim();
+      var ta = $("editItemTalles").value.trim();
+      var co = $("editItemColores").value.trim();
+      var de = $("editItemDesc").value.trim();
+      var vidUrl = $("editItemVideoUrl").value.trim();
+      var vidFile = $("editItemVideoFile").files && $("editItemVideoFile").files[0];
+      if(vidFile){
+        showToast("Subiendo video...");
+        vidUrl = await Store.uploadVideoFile(vidFile);
+      }
+      await Store.updateItemInfo(id, pr, de, ta, co, vidUrl);
+      $("editItemModal").classList.remove("open");
+      applyFilterAndRender(true);
+      updateOrderBar();
+      renderAdminPhotosList();
+      showToast("Ficha y video actualizados ✓");
+    } catch(err){
+      alert("Error al guardar: " + (err.message || err));
+    }
+    btn.disabled = false;
+    btn.textContent = "Guardar cambios en la ficha";
   });
 
   $("btnCloseLightbox").addEventListener("click", function(){ $("lightbox").classList.add("hidden"); });
@@ -2933,9 +3157,9 @@ function bindEvents(){
     state.cart = [];
     saveCart();
     updateOrderBar();
-    closeCartDrawer();
+    renderCartDrawer();
     applyFilterAndRender(true);
-    showToast("Carrito vaciado");
+    showToast("Pedido vaciado");
   });
 
   $("btnSaveStoreName").addEventListener("click", function(){
