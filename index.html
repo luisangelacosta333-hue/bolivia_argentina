@@ -31,8 +31,8 @@
     --gold-soft: #f7f0df;
     --border: #e6e9e5;
     --radius: 22px;
-    --glass: rgba(255, 255, 255, 0.78);
-    --glass-strong: rgba(255, 255, 255, 0.92);
+    --glass: rgba(255, 255, 255, 0.82);
+    --glass-strong: rgba(255, 255, 255, 0.94);
     --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.08);
   }
 
@@ -69,7 +69,7 @@
     box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
   }
   .header-top {
-    max-width: 720px;
+    max-width: 740px;
     margin: 0 auto;
     padding: 14px 14px 12px;
     display: flex;
@@ -150,7 +150,7 @@
     justify-content: center;
   }
 
-  /* ================= BARRA DE PROVEEDORES ================= */
+  /* ================= BARRA DE PROVEEDORES + BUSCADOR RÁPIDO ================= */
   .prov-bar-wrap {
     position: sticky;
     top: 0;
@@ -159,11 +159,11 @@
     backdrop-filter: blur(20px) saturate(170%);
     -webkit-backdrop-filter: blur(20px) saturate(170%);
     border-bottom: 1px solid rgba(201, 169, 97, 0.18);
-    padding: 9px 10px;
+    padding: 9px 10px 10px;
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
   }
   .prov-bar-inner {
-    max-width: 720px;
+    max-width: 740px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -179,7 +179,7 @@
     border-radius: 999px;
     font-size: 14px;
     font-weight: 700;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     border: 1px solid rgba(15, 23, 42, 0.08);
     color: var(--muted);
     transition: 0.25s cubic-bezier(.2,.8,.2,1);
@@ -204,79 +204,150 @@
     color: #ffffff;
   }
 
-  /* ================= PORTADA DE SELECCIÓN DE CATÁLOGO ================= */
+  /* BUSCADOR INSTANTÁNEO */
+  .search-bar-box {
+    max-width: 740px;
+    margin: 8px auto 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-bar-box i.search-ico {
+    position: absolute;
+    left: 14px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .search-input {
+    width: 100%;
+    padding: 10px 38px 10px 40px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(201, 169, 97, 0.35);
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text);
+    outline: none;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    transition: border-color 0.2s;
+  }
+  .search-input:focus {
+    border-color: var(--wa);
+    background: #ffffff;
+  }
+  .search-clear-btn {
+    position: absolute;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ================= PORTADA DE CATÁLOGOS MAYORISTAS (MÁS GRANDES Y VISUALES) ================= */
   .hub-section {
-    max-width: 720px;
+    max-width: 740px;
     margin: 0 auto;
-    padding: 10px 10px 4px;
+    padding: 12px 12px 6px;
   }
   .hub-title {
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 800;
     text-align: center;
-    color: var(--muted);
-    margin-bottom: 8px;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
   }
   .hub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 11px;
   }
   .hub-card {
-    background: var(--glass);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.6);
-    border-radius: 16px;
+    position: relative;
+    background: #ffffff;
+    border: 1.5px solid rgba(201, 169, 97, 0.28);
+    border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     text-align: left;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.07);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
     transition: 0.25s cubic-bezier(.2,.8,.2,1);
   }
+  .hub-card:active { transform: scale(0.98); }
   .hub-card.active {
-    border: 2px solid var(--gold);
-    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.3);
+    border: 2.5px solid var(--wa);
+    box-shadow: 0 12px 30px rgba(24, 168, 94, 0.28);
     transform: translateY(-2px);
   }
   .hub-card-thumb {
     width: 100%;
-    height: 100px;
+    height: 185px;
     object-fit: cover;
-    object-position: top center;
+    object-position: center;
     background: #f8fafc;
   }
+  .hub-card-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
   .hub-card-body {
-    padding: 8px 11px;
+    padding: 11px 13px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbf9f4 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 6px;
+    border-top: 1px solid rgba(201, 169, 97, 0.18);
   }
-  .hub-card-name { font-size: 14.5px; font-weight: 800; color: var(--text); }
-  .hub-card-count {
-    font-size: 12px;
+  .hub-card-name {
+    font-size: 15.5px;
     font-weight: 800;
-    color: var(--wa-dark);
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .hub-card-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     background: var(--wa-soft);
-    padding: 3px 8px;
-    border-radius: 999px;
-    white-space: nowrap;
+    color: var(--wa-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
   }
 
-  /* ================= FEED DE CATÁLOGO ================= */
+  /* ================= FEED DE CATÁLOGO (IMÁGENES IMPONENTES + VIDEO IN-PLACE) ================= */
   .catalog-container {
     max-width: 760px;
     margin: 0 auto;
-    padding: 0 0 150px;
+    padding: 0 0 155px;
     width: 100%;
   }
   .feed-status {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 14px;
-    font-size: 13.5px;
+    padding: 11px 14px;
+    font-size: 14px;
     color: var(--muted);
     font-weight: 700;
   }
@@ -285,9 +356,8 @@
   .photo-feed {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
     width: 100%;
-    background: linear-gradient(180deg, #f3efe6 0%, #eef4f0 100%);
   }
 
   .feed-card {
@@ -295,32 +365,83 @@
     width: 100%;
     background: #ffffff;
     overflow: hidden;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
   }
 
   .feed-img-wrap {
     position: relative;
     width: 100%;
-    min-height: 82vh;
-    background: #ffffff;
+    min-height: 85vh;
+    background: #f8fafc;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    overflow: hidden;
   }
-  .feed-img-wrap img {
+  .feed-img-wrap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 170px;
+    background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.58) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .feed-img-wrap img.feed-main-img {
     width: 100%;
-    min-height: 82vh;
+    min-height: 85vh;
+    max-height: 94vh;
     height: auto;
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
     display: block;
+  }
+
+  /* CONTENEDOR DE VIDEO DIRECTO EN LA TARJETA (SIN PANTALLA NEGRA APARTE) */
+  .feed-inline-video-wrap {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+  }
+  .feed-inline-video-wrap video,
+  .feed-inline-video-wrap iframe {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+    display: block;
+    border: none;
+  }
+  .btn-close-inline-video {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.94);
+    color: #0f172a;
+    padding: 8px 15px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .float-num {
     position: absolute;
     top: 14px;
     right: 14px;
-    background: rgba(15, 23, 42, 0.65);
+    z-index: 5;
+    background: rgba(15, 23, 42, 0.68);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     color: #ffffff;
@@ -329,7 +450,7 @@
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 0.04em;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
     pointer-events: none;
   }
@@ -344,28 +465,68 @@
     border: 1px solid rgba(255,255,255,0.35);
   }
 
-  /* BOTÓN FLOTANTE DE VIDEO EN LA FOTO (ABRE EN PANTALLA COMPLETA 9:16 AL TOCARLO) */
+  /* BOTÓN DE PLAY DIRECTO SOBRE LA FOTO */
   .badge-video {
     position: absolute; top: 52px; left: 14px; z-index: 6;
-    background: rgba(15, 23, 42, 0.88);
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.92));
     backdrop-filter: blur(10px);
-    color: #f8dfa1; font-size: 13px; font-weight: 800;
-    padding: 8px 15px; border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 6px;
-    border: 1.5px solid rgba(201, 169, 97, 0.75);
-    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.4);
+    color: #f8dfa1; font-size: 13.5px; font-weight: 800;
+    padding: 9px 16px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1.5px solid rgba(201, 169, 97, 0.85);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.45);
     cursor: pointer;
     pointer-events: auto;
     transition: transform 0.18s ease;
   }
   .badge-video:active { transform: scale(0.94); }
 
-  /* BARRA INFERIOR DE CADA FOTO */
-  .float-bottom-bar {
+  /* ZONA INFERIOR DE LA FOTO: INFO DEL PRODUCTO + BOTONES DE COMPRA */
+  .float-bottom-stack {
     position: absolute;
     left: 12px;
     right: 12px;
     bottom: 16px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    pointer-events: none;
+  }
+
+  /* CÁPSULA DE TÍTULO Y PRESENTACIÓN SIEMPRE VISIBLE SOBRE LA FOTO */
+  .feed-info-pill {
+    pointer-events: auto;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    padding: 7px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    max-width: 96%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  }
+  .feed-info-pill .f-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .feed-info-pill .f-sub {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f8dfa1;
+  }
+
+  .float-bottom-bar {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,8 +549,8 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.24);
-    max-width: 58%;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
+    max-width: 56%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -399,11 +560,6 @@
   .btn-open-detail span.price-pill {
     color: var(--wa-dark);
     font-weight: 800;
-  }
-  .btn-open-detail span.txt-trunc {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .feed-cart-action {
@@ -422,8 +578,8 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.45);
-    border: 1.5px solid rgba(255,255,255,0.38);
+    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.48);
+    border: 1.5px solid rgba(255,255,255,0.4);
     white-space: nowrap;
     transition: transform 0.18s ease;
   }
@@ -474,7 +630,7 @@
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   }
 
-  /* ================= BARRA FLOTANTE INFERIOR CORREGIDA Y CENTRADA AL 100% ================= */
+  /* ================= BARRA FLOTANTE INFERIOR CENTRADA ================= */
   .floating-order-bar {
     position: fixed;
     left: 50%;
@@ -567,7 +723,7 @@
     border: 1px solid rgba(255,255,255,0.28);
   }
 
-  /* ================= FICHA BLANCA DE DETALLE COMERCIAL + BOTON VIDEO 9:16 ================= */
+  /* ================= FICHA BLANCA DE DETALLE COMERCIAL + VIDEO INTEGRADO ================= */
   .detail-sheet-overlay {
     position: fixed;
     inset: 0;
@@ -696,148 +852,23 @@
     color: var(--wa-deep);
   }
 
-  /* TARJETA DE VIDEO EN LA FICHA (AL TOCARLA ABRE EL VIDEO EN FORMATO TIKTOK 9:16 GIGANTE) */
-  .wcard-video-launch {
+  /* VIDEO 9:16 REPRODUCIENDOSE DIRECTO ADENTRO DE LA FICHA SIN PANTALLA NEGRA */
+  .wcard-inline-video {
     width: 100%;
-    background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
-    border-radius: 16px;
-    padding: 14px 16px;
-    border: 1.5px solid var(--gold);
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    color: #ffffff;
-    cursor: pointer;
-    text-align: left;
-    transition: transform 0.18s ease;
-  }
-  .wcard-video-launch:active { transform: scale(0.98); }
-  .wcard-video-play-ico {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.45);
-  }
-  .wcard-video-txt {
-    flex: 1;
-    min-width: 0;
-  }
-  .wcard-video-txt strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 800;
-    color: #f8dfa1;
-  }
-  .wcard-video-txt span {
-    font-size: 12.5px;
-    color: #cbd5e1;
-    font-weight: 600;
-  }
-
-  /* ================= REPRODUCTOR VERTICAL 9:16 FULLSCREEN (ESTILO TIKTOK SIN ROTAR AL COSTADO) ================= */
-  .tiktok-video-modal {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100dvh;
-    background: #000000;
-    z-index: 350;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border-radius: 18px;
     overflow: hidden;
+    border: 2px solid var(--gold);
+    background: #f8fafc;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
   }
-  .tiktok-video-top {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    right: 14px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    pointer-events: none;
-  }
-  .tiktok-video-badge {
-    pointer-events: auto;
-    background: rgba(15, 23, 42, 0.72);
-    backdrop-filter: blur(12px);
-    color: #f8dfa1;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 13.5px;
-    font-weight: 800;
-    border: 1px solid rgba(201, 169, 97, 0.5);
-    max-width: 68%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .tiktok-video-close {
-    pointer-events: auto;
-    background: rgba(255, 255, 255, 0.95);
-    color: #0f172a;
-    padding: 9px 16px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 800;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  }
-  .tiktok-video-stage {
+  .wcard-inline-video video,
+  .wcard-inline-video iframe {
     width: 100%;
-    height: 100%;
-    max-width: 480px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background: #000;
-  }
-  .tiktok-video-stage video,
-  .tiktok-video-stage iframe {
-    width: 100%;
-    height: 100%;
-    max-height: 100dvh;
-    object-fit: cover;
     aspect-ratio: 9 / 16;
-    border: none;
-    background: #000;
+    max-height: 62vh;
+    object-fit: cover;
     display: block;
-  }
-  .tiktok-video-bottom {
-    position: absolute;
-    bottom: 20px;
-    left: 16px;
-    right: 16px;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-  }
-  .tiktok-video-add-btn {
-    pointer-events: auto;
-    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
-    color: #ffffff;
-    padding: 14px 24px;
-    border-radius: 999px;
-    font-size: 15.5px;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    border: 1.5px solid rgba(255,255,255,0.4);
+    border: none;
   }
 
   .wcard-specs-list {
@@ -966,7 +997,7 @@
     gap: 6px;
   }
 
-  /* ================= CARRITO MEJORADO (CAJAS PERFECTAS SIN SALIRSE A LA DERECHA) ================= */
+  /* ================= CARRITO MEJORADO ================= */
   .cart-drawer-overlay {
     position: fixed;
     inset: 0;
@@ -1060,7 +1091,6 @@
     width: 100%;
   }
 
-  /* TARJETA DE CADA ARTÍCULO CONTENIDA AL 100% DENTRO DE SU BORDE */
   .cart-item-row {
     width: 100%;
     display: flex;
@@ -1198,7 +1228,6 @@
     max-width: 100%;
   }
 
-  /* CAJA DE TOTALES DENTRO DEL SCROLL */
   .cart-summary-box {
     background: #ffffff;
     border: 1.5px solid rgba(201, 169, 97, 0.45);
@@ -1229,7 +1258,6 @@
     text-align: right;
   }
 
-  /* CAJA DE DATOS Y NOTA DEL CLIENTE */
   .cart-buyer-card {
     background: #ffffff;
     border: 1px solid var(--border);
@@ -1658,9 +1686,14 @@
   </div>
 </header>
 
-<!-- BOTONES DE PROVEEDORES -->
+<!-- BOTONES DE PROVEEDORES + BUSCADOR INSTANTÁNEO -->
 <div class="prov-bar-wrap" id="provBarWrap">
   <div class="prov-bar-inner" id="provChips"></div>
+  <div class="search-bar-box">
+    <i data-lucide="search" class="search-ico" style="width:17px;height:17px"></i>
+    <input type="search" id="catalogSearchInput" class="search-input" placeholder="Buscar artículo, nombre o #número..." />
+    <button type="button" id="btnClearSearch" class="search-clear-btn hidden" aria-label="Limpiar búsqueda">✕</button>
+  </div>
 </div>
 
 <!-- ================= VISTA CATÁLOGO ================= -->
@@ -1707,7 +1740,7 @@
   </div>
 </main>
 
-<!-- ================= FICHA BLANCA DE DETALLE + LANZADOR DE VIDEO 9:16 ================= -->
+<!-- ================= FICHA BLANCA DE DETALLE + VIDEO DIRECTO INTEGRADO ================= -->
 <div class="detail-sheet-overlay" id="detailSheet">
   <div class="white-product-card">
     <div class="sheet-handle"></div>
@@ -1726,14 +1759,8 @@
         <span class="wcard-price" id="sheetPriceVal">Consultar</span>
       </div>
 
-      <!-- BOTON GRANDE QUE ABRE EL VIDEO DIRECTO EN TAMAÑO 9:16 TIKTOK VERTICAL -->
-      <button type="button" class="wcard-video-launch hidden" id="sheetVideoLaunchBtn">
-        <div class="wcard-video-play-ico">▶</div>
-        <div class="wcard-video-txt">
-          <strong>Ver Video del Artículo (9:16)</strong>
-          <span>Tocá acá para reproducir en pantalla grande vertical</span>
-        </div>
-      </button>
+      <!-- VIDEO REPRODUCIÉNDOSE DIRECTO EN LA FICHA SIN FONDO NEGRO -->
+      <div class="wcard-inline-video hidden" id="sheetInlineVideoBox"></div>
 
       <div class="wcard-specs-list">
         <div class="wcard-spec-line" id="sheetTallesRow">
@@ -1776,21 +1803,6 @@
         <button type="button" class="btn-wcard-soft" id="sheetZoomBtn">🔍 Ampliar foto</button>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ================= REPRODUCTOR VERTICAL 9:16 TIKTOK A PANTALLA COMPLETA ================= -->
-<div class="tiktok-video-modal hidden" id="tiktokVideoModal">
-  <div class="tiktok-video-top">
-    <div class="tiktok-video-badge" id="tiktokVideoTitle">Video del artículo</div>
-    <button type="button" class="tiktok-video-close" id="btnCloseTiktokVideo">✕ Cerrar video</button>
-  </div>
-  <div class="tiktok-video-stage" id="tiktokVideoStage"></div>
-  <div class="tiktok-video-bottom">
-    <button type="button" class="tiktok-video-add-btn" id="btnAddFromTiktokVideo">
-      <i data-lucide="shopping-cart" style="width:18px;height:18px"></i>
-      <span>+ Sumar este artículo a mi pedido</span>
-    </button>
   </div>
 </div>
 
@@ -2073,12 +2085,12 @@ var state = {
   filtered: [],
   renderedCount: 0,
   activeProv: "",
+  searchQuery: "",
   batchItems: [],
   cart: [],
   sb: null,
   admin: false,
   currentSheetItem: null,
-  currentVideoItemId: null,
   sheetTempQty: 1,
   lbIndex: 0
 };
@@ -2155,32 +2167,56 @@ function packItemName(desc, talles, colores, video, fallbackTitle){
   return d + " || " + t + " || " + c + (v ? (" || " + v) : "");
 }
 
-/* REPRODUCTOR VERTICAL 9:16 FULLSCREEN (ESTILO TIKTOK, NO ROTA LA PANTALLA AL COSTADO) */
-function openVerticalVideoModal(id){
+/* CONSTRUYE EL ELEMENTO DE VIDEO PARA REPRODUCIR AHÍ MISMO SIN FONDO NEGRO */
+function buildInlineVideoPlayerHtml(videoUrl){
+  var u = (videoUrl || "").trim();
+  var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+  if(ytMatch){
+    return '<iframe src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  }
+  return '<video src="'+esc(u)+'" controls autoplay playsinline webkit-playsinline controlslist="nofullscreen"></video>';
+}
+
+/* REPRODUCE EL VIDEO DIRECTO EN EL MISMO LUGAR DE LA FOTO */
+function playVideoInPlaceOnCard(id){
   var p = state.products.find(function(x){ return String(x.id) === String(id); });
   if(!p) return;
   var meta = parseItemMeta(p);
   if(!meta.video) return;
 
-  state.currentVideoItemId = p.id;
-  var prov = getProvOf(p);
-  $("tiktokVideoTitle").textContent = prov + (meta.desc ? (" · " + meta.desc) : "");
+  var card = document.querySelector('.feed-card[data-id="'+String(id)+'"]');
+  if(!card) return;
+  var imgWrap = card.querySelector(".feed-img-wrap");
+  if(!imgWrap) return;
 
-  var u = meta.video.trim();
-  var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
-  if(ytMatch){
-    $("tiktokVideoStage").innerHTML = '<iframe src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-  } else {
-    $("tiktokVideoStage").innerHTML = '<video src="'+esc(u)+'" controls autoplay playsinline webkit-playsinline controlslist="nofullscreen"></video>';
-  }
+  // Pausar cualquier otro video activo en el feed
+  document.querySelectorAll(".feed-inline-video-wrap").forEach(function(vw){
+    vw.remove();
+  });
+  document.querySelectorAll(".feed-main-img.hidden, .badge-video.hidden").forEach(function(el){
+    el.classList.remove("hidden");
+  });
 
-  $("tiktokVideoModal").classList.remove("hidden");
-  refreshIcons();
-}
+  var mainImg = imgWrap.querySelector(".feed-main-img");
+  var vidBtn = imgWrap.querySelector(".badge-video");
+  if(mainImg) mainImg.classList.add("hidden");
+  if(vidBtn) vidBtn.classList.add("hidden");
 
-function closeVerticalVideoModal(){
-  $("tiktokVideoModal").classList.add("hidden");
-  $("tiktokVideoStage").innerHTML = "";
+  var holder = document.createElement("div");
+  holder.className = "feed-inline-video-wrap";
+  holder.innerHTML =
+    '<button type="button" class="btn-close-inline-video">✕ Volver a la foto</button>' +
+    buildInlineVideoPlayerHtml(meta.video);
+
+  holder.addEventListener("click", function(e){ e.stopPropagation(); });
+  holder.querySelector(".btn-close-inline-video").addEventListener("click", function(e){
+    e.stopPropagation();
+    holder.remove();
+    if(mainImg) mainImg.classList.remove("hidden");
+    if(vidBtn) vidBtn.classList.remove("hidden");
+  });
+
+  imgWrap.insertBefore(holder, imgWrap.firstChild);
 }
 
 function getProvOf(p){
@@ -2752,10 +2788,11 @@ function renderProviderTabs(){
     var hubHtml = provs.map(function(pr){
       var isAct = state.activeProv === pr.name;
       return '<button type="button" class="hub-card'+(isAct?" active":"")+'" data-p="'+esc(pr.name)+'">' +
+        '<span class="hub-card-count">'+pr.count+' artículos</span>' +
         (pr.thumb ? '<img class="hub-card-thumb" src="'+esc(pr.thumb)+'" loading="lazy" />' : '') +
         '<div class="hub-card-body">' +
           '<div class="hub-card-name">'+esc(pr.name)+'</div>' +
-          '<span class="hub-card-count">'+pr.count+' fotos</span>' +
+          '<span class="hub-card-arrow">→</span>' +
         '</div>' +
       '</button>';
     }).join("");
@@ -2774,8 +2811,15 @@ function renderProviderTabs(){
 }
 
 function applyFilterAndRender(resetScroll){
-  state.filtered = state.products.filter(function(p){
+  var q = (state.searchQuery || "").toLowerCase().trim();
+
+  state.filtered = state.products.filter(function(p, idx){
     if(state.activeProv && getProvOf(p) !== state.activeProv) return false;
+    if(q){
+      var meta = parseItemMeta(p);
+      var haystack = (getProvOf(p) + " " + meta.desc + " " + meta.talles + " " + meta.colores + " " + (p.codigo || "") + " #" + (idx + 1)).toLowerCase();
+      if(haystack.indexOf(q) === -1) return false;
+    }
     return true;
   });
 
@@ -2794,7 +2838,7 @@ function applyFilterAndRender(resetScroll){
 function renderNextChunk(){
   var feed = $("photoFeed");
   if(state.filtered.length === 0){
-    feed.innerHTML = '<div style="text-align:center;padding:60px 20px;margin:14px;background:#ffffff;border-radius:18px;border:1px dashed var(--border)"><p style="font-size:17px;font-weight:800;margin-bottom:6px">Todavía no hay fotos cargadas</p><p style="font-size:14px;color:var(--muted)">Tocá 5 veces el logo de arriba para abrir el panel y subir tus fotos.</p></div>';
+    feed.innerHTML = '<div style="text-align:center;padding:60px 20px;margin:14px;background:#ffffff;border-radius:18px;border:1px dashed var(--border)"><p style="font-size:17px;font-weight:800;margin-bottom:6px">No se encontraron artículos</p><p style="font-size:14px;color:var(--muted)">Probá con otra palabra o limpiá el buscador.</p></div>';
     $("btnLoadMore").classList.add("hidden");
     return;
   }
@@ -2805,23 +2849,36 @@ function renderNextChunk(){
     var price = fmtPrice(p.precio);
     var meta = parseItemMeta(p);
     var hasVideo = Boolean(meta.video);
-    var summaryTxt = meta.desc || "Ver ficha";
+    var hasInfoPill = Boolean(meta.desc || meta.talles || price);
     var labelBtn = price
-      ? ('<i data-lucide="tag" style="width:15px;height:15px;color:var(--wa-dark);flex-shrink:0"></i><span class="price-pill">AR' + price + '</span>')
-      : ('<i data-lucide="file-text" style="width:15px;height:15px;color:var(--gold-deep);flex-shrink:0"></i><span class="txt-trunc">' + esc(summaryTxt) + '</span>');
+      ? ('<i data-lucide="tag" style="width:15px;height:15px;color:var(--wa-dark);flex-shrink:0"></i><span class="price-pill">AR' + price + '</span> · Ficha')
+      : ('<i data-lucide="file-text" style="width:15px;height:15px;color:var(--gold-deep);flex-shrink:0"></i><span>Ver ficha</span>');
+
+    var infoPillHtml = "";
+    if(hasInfoPill){
+      var titlePart = meta.desc ? meta.desc.split("\n")[0].slice(0, 52) : (getProvOf(p) + " · Art. #" + num);
+      var subPart = meta.talles ? (" · " + meta.talles) : "";
+      infoPillHtml = '<div class="feed-info-pill" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
+        '<span class="f-title">' + esc(titlePart) + '</span>' +
+        (subPart ? '<span class="f-sub">' + esc(subPart) + '</span>' : '') +
+      '</div>';
+    }
 
     return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
       '<div class="feed-img-wrap" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
         (num <= 12 ? '<span class="badge-new">Nuevo</span>' : '') +
-        (hasVideo ? '<button type="button" class="badge-video" data-openvideo="'+esc(p.id)+'">▶ VER VIDEO</button>' : '') +
+        (hasVideo ? '<button type="button" class="badge-video" data-openvideo="'+esc(p.id)+'">▶ Reproducir Video</button>' : '') +
         '<span class="float-num">#'+num+'</span>' +
-        '<img src="'+esc(p.imagen)+'" alt="Artículo #'+num+'" loading="lazy" />' +
-        '<div class="float-bottom-bar">' +
-          '<button type="button" class="btn-open-detail" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
-            labelBtn +
-          '</button>' +
-          '<div class="feed-cart-action" data-cartwrap="'+esc(p.id)+'">' +
-            renderFeedCartControlHtml(p.id) +
+        '<img class="feed-main-img" src="'+esc(p.imagen)+'" alt="Artículo #'+num+'" loading="lazy" />' +
+        '<div class="float-bottom-stack">' +
+          infoPillHtml +
+          '<div class="float-bottom-bar">' +
+            '<button type="button" class="btn-open-detail" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
+              labelBtn +
+            '</button>' +
+            '<div class="feed-cart-action" data-cartwrap="'+esc(p.id)+'">' +
+              renderFeedCartControlHtml(p.id) +
+            '</div>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -2879,9 +2936,11 @@ function openDetailSheet(id, num){
   }
 
   if(meta.video){
-    $("sheetVideoLaunchBtn").classList.remove("hidden");
+    $("sheetInlineVideoBox").classList.remove("hidden");
+    $("sheetInlineVideoBox").innerHTML = buildInlineVideoPlayerHtml(meta.video);
   } else {
-    $("sheetVideoLaunchBtn").classList.add("hidden");
+    $("sheetInlineVideoBox").classList.add("hidden");
+    $("sheetInlineVideoBox").innerHTML = "";
   }
 
   $("sheetTallesVal").textContent = meta.talles || "Disponible";
@@ -2895,6 +2954,7 @@ function openDetailSheet(id, num){
 
 function closeDetailSheet(){
   $("detailSheet").classList.remove("open");
+  $("sheetInlineVideoBox").innerHTML = "";
 }
 
 function bindFeedEvents(){
@@ -2903,7 +2963,7 @@ function bindFeedEvents(){
     vbtn.dataset.bound = "1";
     vbtn.addEventListener("click", function(e){
       e.stopPropagation();
-      openVerticalVideoModal(vbtn.getAttribute("data-openvideo"));
+      playVideoInPlaceOnCard(vbtn.getAttribute("data-openvideo"));
     });
   });
 
@@ -2911,7 +2971,7 @@ function bindFeedEvents(){
     if(el.dataset.bound) return;
     el.dataset.bound = "1";
     el.addEventListener("click", function(e){
-      if(e.target.closest(".feed-cart-action") || e.target.closest("[data-openvideo]")) return;
+      if(e.target.closest(".feed-cart-action") || e.target.closest("[data-openvideo]") || e.target.closest(".feed-inline-video-wrap")) return;
       e.stopPropagation();
       var id = el.getAttribute("data-opensheet");
       var num = el.getAttribute("data-num") || "1";
@@ -3210,6 +3270,21 @@ function bindEvents(){
     }
   });
 
+  // Buscador instantáneo
+  var sInp = $("catalogSearchInput");
+  var sClear = $("btnClearSearch");
+  sInp.addEventListener("input", function(){
+    state.searchQuery = sInp.value;
+    sClear.classList.toggle("hidden", !state.searchQuery);
+    applyFilterAndRender(true);
+  });
+  sClear.addEventListener("click", function(){
+    sInp.value = "";
+    state.searchQuery = "";
+    sClear.classList.add("hidden");
+    applyFilterAndRender(true);
+  });
+
   $("btnLoadMore").addEventListener("click", renderNextChunk);
   window.addEventListener("scroll", function(){
     var h = document.documentElement;
@@ -3229,18 +3304,6 @@ function bindEvents(){
   $("btnCloseSheet").addEventListener("click", closeDetailSheet);
   $("detailSheet").addEventListener("click", function(e){
     if(e.target === $("detailSheet")) closeDetailSheet();
-  });
-
-  // Lanzar video vertical 9:16 desde la ficha
-  $("sheetVideoLaunchBtn").addEventListener("click", function(){
-    if(!state.currentSheetItem) return;
-    openVerticalVideoModal(state.currentSheetItem.p.id);
-  });
-  $("btnCloseTiktokVideo").addEventListener("click", closeVerticalVideoModal);
-  $("btnAddFromTiktokVideo").addEventListener("click", function(){
-    if(!state.currentVideoItemId) return;
-    addToCart(state.currentVideoItemId, 1);
-    updateSheetCartStatus();
   });
 
   $("sheetQtyMinus").addEventListener("click", function(){
