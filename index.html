@@ -474,7 +474,7 @@
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   }
 
-  /* ================= BARRA FLOTANTE INFERIOR PREMIUM ================= */
+  /* ================= BARRA FLOTANTE INFERIOR CORREGIDA Y CENTRADA AL 100% ================= */
   .floating-order-bar {
     position: fixed;
     left: 50%;
@@ -487,13 +487,14 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     color: #ffffff;
-    padding: 13px 15px;
+    padding: 12px;
     border-radius: 22px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
     box-shadow: 0 18px 42px rgba(5, 46, 37, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
     border: 1px solid rgba(201, 169, 97, 0.45);
+    overflow: hidden;
   }
   .fbar-summary-row {
     display: flex;
@@ -502,57 +503,65 @@
     gap: 8px;
     cursor: pointer;
     padding: 0 2px;
+    width: 100%;
   }
   .fbar-badge-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     background: rgba(255, 255, 255, 0.16);
-    padding: 5px 13px;
+    padding: 5px 11px;
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     color: #f7e2b4;
     white-space: nowrap;
+    flex-shrink: 0;
   }
   .fbar-subtotal-val {
-    font-size: 15.5px;
+    font-size: 14px;
     font-weight: 800;
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: right;
   }
   .fbar-buttons-row {
     display: grid;
-    grid-template-columns: 1fr 1.35fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
+    width: 100%;
   }
   .fbar-btn-cart {
-    padding: 13px 12px;
+    width: 100%;
+    padding: 12px 8px;
     border-radius: 13px;
     background: rgba(255, 255, 255, 0.16);
     border: 1px solid rgba(255, 255, 255, 0.28);
     color: #ffffff;
-    font-size: 14.5px;
+    font-size: 13.5px;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 5px;
+    text-align: center;
     white-space: nowrap;
   }
   .fbar-btn-wa {
-    padding: 13px 14px;
+    width: 100%;
+    padding: 12px 8px;
     border-radius: 13px;
     background: linear-gradient(145deg, #22c36b 0%, #0f8a52 100%);
     color: #ffffff;
-    font-size: 15px;
+    font-size: 13.5px;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 5px;
+    text-align: center;
     white-space: nowrap;
     box-shadow: 0 6px 18px rgba(15, 138, 82, 0.45);
     border: 1px solid rgba(255,255,255,0.28);
@@ -1687,7 +1696,7 @@
         <div class="htb-step">
           <div class="htb-num">3</div>
           <div class="htb-ico"><i data-lucide="message-circle" style="width:26px;height:26px"></i></div>
-          <div class="htb-txt">Tocá <b>Enviar a WhatsApp</b> y coordinamos pago y envío directo</div>
+          <div class="htb-txt">Tocá <b>Enviar WhatsApp</b> y coordinamos pago y envío directo</div>
         </div>
       </div>
     </div>
@@ -1853,21 +1862,23 @@
   </div>
 </div>
 
-<!-- ================= BARRA FLOTANTE INFERIOR ================= -->
+<!-- ================= BARRA FLOTANTE INFERIOR CENTRADA ================= -->
 <div class="floating-order-bar hidden" id="floatingOrderBar">
   <div class="fbar-summary-row" id="floatingBarInfoArea">
     <span class="fbar-badge-pill">
-      <i data-lucide="shopping-bag" style="width:15px;height:15px"></i>
+      <i data-lucide="shopping-bag" style="width:14px;height:14px;flex-shrink:0"></i>
       <span><span id="orderCount">0</span> en tu pedido</span>
     </span>
     <span class="fbar-subtotal-val" id="floatingSubtotalTxt">Subtotal: A confirmar</span>
   </div>
   <div class="fbar-buttons-row">
     <button type="button" class="fbar-btn-cart" id="btnOpenOrderModal">
-      <i data-lucide="list" style="width:16px;height:16px"></i> Ver mi pedido
+      <i data-lucide="list" style="width:15px;height:15px;flex-shrink:0"></i>
+      <span>Ver mi pedido</span>
     </button>
     <button type="button" class="fbar-btn-wa" id="btnSendOrderDirect">
-      <i data-lucide="message-circle" style="width:17px;height:17px"></i> Enviar WhatsApp
+      <i data-lucide="message-circle" style="width:15px;height:15px;flex-shrink:0"></i>
+      <span>Enviar WhatsApp</span>
     </button>
   </div>
 </div>
@@ -2160,7 +2171,6 @@ function openVerticalVideoModal(id){
   if(ytMatch){
     $("tiktokVideoStage").innerHTML = '<iframe src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
   } else {
-    // controlslist="nofullscreen" evita que el navegador gire el celular a horizontal
     $("tiktokVideoStage").innerHTML = '<video src="'+esc(u)+'" controls autoplay playsinline webkit-playsinline controlslist="nofullscreen"></video>';
   }
 
@@ -2316,12 +2326,12 @@ function bindCartButtonsIn(root){
 
 function updateOrderBar(){
   var totals = calculateCartTotals();
-  $("orderCount").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades");
+  $("orderCount").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " u." : " u.");
   $("headerCartBadge").textContent = totals.totalUnits;
 
   var subTxt = totals.subtotalMoney > 0
     ? ("Subtotal: AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " + a conf." : ""))
-    : "Total a confirmar por mayor";
+    : "Subtotal: A confirmar";
   $("floatingSubtotalTxt").textContent = subTxt;
 
   $("floatingOrderBar").classList.toggle("hidden", totals.totalUnits === 0);
