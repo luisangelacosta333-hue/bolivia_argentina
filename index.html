@@ -31,8 +31,8 @@
     --gold-soft: #f7f0df;
     --border: #e6e9e5;
     --radius: 22px;
-    --glass: rgba(255, 255, 255, 0.82);
-    --glass-strong: rgba(255, 255, 255, 0.94);
+    --glass: rgba(255, 255, 255, 0.85);
+    --glass-strong: rgba(255, 255, 255, 0.95);
     --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.08);
   }
 
@@ -71,7 +71,7 @@
   .header-top {
     max-width: 740px;
     margin: 0 auto;
-    padding: 14px 14px 12px;
+    padding: 13px 14px 11px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -85,8 +85,8 @@
     min-width: 0;
   }
   .brand-mark {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 13px;
     flex-shrink: 0;
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
@@ -101,7 +101,7 @@
   .brand-txt span {
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 21px;
     letter-spacing: 0.01em;
     color: #0f172a;
     line-height: 1.2;
@@ -110,7 +110,7 @@
     text-overflow: ellipsis;
   }
   .brand-txt small {
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--gold-deep);
     margin-top: 2px;
@@ -124,7 +124,7 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 10px 16px;
+    padding: 9px 15px;
     border-radius: 999px;
     background: #ffffff;
     border: 1.5px solid rgba(24, 168, 94, 0.35);
@@ -139,15 +139,114 @@
   .header-cart-badge {
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
     color: #ffffff;
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 800;
-    min-width: 24px;
-    height: 24px;
+    min-width: 23px;
+    height: 23px;
     padding: 0 6px;
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* ================= TARJETA DE PRESENTACIÓN OFICIAL DEL COMERCIO ================= */
+  .business-card-section {
+    max-width: 740px;
+    margin: 12px auto 4px;
+    padding: 0 12px;
+  }
+  .business-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fcf9f2 100%);
+    border: 1.5px solid rgba(201, 169, 97, 0.45);
+    border-radius: 20px;
+    padding: 15px 16px;
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06), inset 0 2px 0 0 var(--gold);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .bcard-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .bcard-title-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+  .bcard-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--wa-soft);
+    color: var(--wa-deep);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 5px;
+  }
+  .bcard-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .bcard-desc {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 4px;
+    line-height: 1.45;
+  }
+  .bcard-wa-direct {
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    padding: 9px 13px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(13, 122, 74, 0.3);
+    flex-shrink: 0;
+  }
+  .bcard-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding-top: 9px;
+    border-top: 1px dashed rgba(201, 169, 97, 0.35);
+  }
+  @media (max-width: 480px) {
+    .bcard-pills-grid { grid-template-columns: 1fr; gap: 6px; }
+  }
+  .bcard-info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .bcard-info-item i {
+    color: var(--wa-dark);
+    flex-shrink: 0;
+  }
+  .bcard-info-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* ================= BARRA DE PROVEEDORES + BUSCADOR RÁPIDO ================= */
@@ -159,7 +258,7 @@
     backdrop-filter: blur(20px) saturate(170%);
     -webkit-backdrop-filter: blur(20px) saturate(170%);
     border-bottom: 1px solid rgba(201, 169, 97, 0.18);
-    padding: 9px 10px 10px;
+    padding: 8px 10px 9px;
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
   }
   .prov-bar-inner {
@@ -167,7 +266,7 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 6px;
     justify-content: center;
   }
   .prov-chip {
@@ -175,9 +274,9 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 9px 16px;
+    padding: 8px 15px;
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     background: rgba(255,255,255,0.88);
     border: 1px solid rgba(15, 23, 42, 0.08);
@@ -186,8 +285,8 @@
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   }
   .prov-chip .cnt {
-    font-size: 12px;
-    padding: 1px 8px;
+    font-size: 11.5px;
+    padding: 1px 7px;
     border-radius: 999px;
     background: rgba(15, 23, 42, 0.07);
     color: var(--text);
@@ -207,7 +306,7 @@
   /* BUSCADOR INSTANTÁNEO */
   .search-bar-box {
     max-width: 740px;
-    margin: 8px auto 0;
+    margin: 7px auto 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -220,11 +319,11 @@
   }
   .search-input {
     width: 100%;
-    padding: 10px 38px 10px 40px;
+    padding: 9px 38px 9px 40px;
     border-radius: 999px;
     border: 1.5px solid rgba(201, 169, 97, 0.35);
     background: rgba(255, 255, 255, 0.95);
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text);
     outline: none;
@@ -250,104 +349,101 @@
     justify-content: center;
   }
 
-  /* ================= PORTADA DE CATÁLOGOS MAYORISTAS (MÁS GRANDES Y VISUALES) ================= */
+  /* ================= PORTADA DE CATÁLOGOS MAYORISTAS (TAMAÑO EQUILIBRADO) ================= */
   .hub-section {
     max-width: 740px;
     margin: 0 auto;
-    padding: 12px 12px 6px;
+    padding: 10px 12px 4px;
   }
   .hub-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     text-align: center;
-    color: var(--text);
-    margin-bottom: 10px;
-    letter-spacing: 0.01em;
+    color: var(--muted);
+    margin-bottom: 8px;
   }
   .hub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 11px;
+    gap: 9px;
   }
   .hub-card {
     position: relative;
     background: #ffffff;
     border: 1.5px solid rgba(201, 169, 97, 0.28);
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     text-align: left;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
-    transition: 0.25s cubic-bezier(.2,.8,.2,1);
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.06);
+    transition: 0.22s ease;
   }
   .hub-card:active { transform: scale(0.98); }
   .hub-card.active {
-    border: 2.5px solid var(--wa);
-    box-shadow: 0 12px 30px rgba(24, 168, 94, 0.28);
-    transform: translateY(-2px);
+    border: 2px solid var(--wa);
+    box-shadow: 0 8px 22px rgba(24, 168, 94, 0.24);
   }
   .hub-card-thumb {
     width: 100%;
-    height: 185px;
+    height: 120px;
     object-fit: cover;
     object-position: center;
     background: #f8fafc;
   }
   .hub-card-count {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 12px;
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
     font-weight: 800;
     color: #ffffff;
     background: rgba(15, 23, 42, 0.72);
     backdrop-filter: blur(8px);
-    padding: 4px 10px;
+    padding: 3px 9px;
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.25);
   }
   .hub-card-body {
-    padding: 11px 13px;
-    background: linear-gradient(180deg, #ffffff 0%, #fbf9f4 100%);
+    padding: 8px 11px;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 6px;
-    border-top: 1px solid rgba(201, 169, 97, 0.18);
   }
   .hub-card-name {
-    font-size: 15.5px;
+    font-size: 14px;
     font-weight: 800;
     color: var(--text);
-    line-height: 1.25;
+    line-height: 1.2;
   }
   .hub-card-arrow {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: var(--wa-soft);
     color: var(--wa-dark);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
     font-weight: 800;
     flex-shrink: 0;
   }
 
-  /* ================= FEED DE CATÁLOGO (IMÁGENES IMPONENTES + VIDEO IN-PLACE) ================= */
+  /* ================= FEED DE CATÁLOGO (IMÁGENES MÁS CHICAS Y ENMARCADAS SIN CORTARSE) ================= */
   .catalog-container {
-    max-width: 760px;
+    max-width: 680px;
     margin: 0 auto;
-    padding: 0 0 155px;
+    padding: 0 10px 155px;
     width: 100%;
   }
   .feed-status {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 11px 14px;
-    font-size: 14px;
+    padding: 9px 4px;
+    font-size: 13.5px;
     color: var(--muted);
     font-weight: 700;
   }
@@ -356,7 +452,7 @@
   .photo-feed {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
     width: 100%;
   }
 
@@ -364,47 +460,39 @@
     position: relative;
     width: 100%;
     background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(201, 169, 97, 0.25);
     overflow: hidden;
-    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   }
 
+  /* LA IMAGEN SE VE COMPLETA Y MÁS COMPACTA (NO SE CORTAN LOS BORDES) */
   .feed-img-wrap {
     position: relative;
     width: 100%;
-    min-height: 85vh;
-    background: #f8fafc;
+    background: #f8faf9;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     overflow: hidden;
-  }
-  .feed-img-wrap::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 170px;
-    background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.58) 100%);
-    pointer-events: none;
-    z-index: 2;
+    padding-bottom: 66px; /* Espacio limpio abajo para los botones sin tapar la foto */
   }
   .feed-img-wrap img.feed-main-img {
     width: 100%;
-    min-height: 85vh;
-    max-height: 94vh;
+    max-height: 56vh;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
+    background: #ffffff;
   }
 
-  /* CONTENEDOR DE VIDEO DIRECTO EN LA TARJETA (SIN PANTALLA NEGRA APARTE) */
+  /* CONTENEDOR DE VIDEO DIRECTO EN LA TARJETA */
   .feed-inline-video-wrap {
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    height: 58vh;
     background: #0f172a;
     display: flex;
     align-items: center;
@@ -414,21 +502,21 @@
   .feed-inline-video-wrap video,
   .feed-inline-video-wrap iframe {
     width: 100%;
-    height: 85vh;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     display: block;
     border: none;
   }
   .btn-close-inline-video {
     position: absolute;
-    top: 14px;
-    left: 14px;
+    top: 12px;
+    left: 12px;
     z-index: 10;
     background: rgba(255, 255, 255, 0.94);
     color: #0f172a;
-    padding: 8px 15px;
+    padding: 7px 14px;
     border-radius: 999px;
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 800;
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     display: inline-flex;
@@ -438,89 +526,81 @@
 
   .float-num {
     position: absolute;
-    top: 14px;
-    right: 14px;
-    z-index: 5;
-    background: rgba(15, 23, 42, 0.68);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    color: #ffffff;
-    padding: 7px 15px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
-    pointer-events: none;
-  }
-
-  .badge-new {
-    position: absolute; top: 14px; left: 14px; z-index: 5; pointer-events: none;
-    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
-    color: #ffffff; font-size: 11px; font-weight: 800;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 6px 13px; border-radius: 999px;
-    box-shadow: 0 5px 14px rgba(168,134,63,0.45);
-    border: 1px solid rgba(255,255,255,0.35);
-  }
-
-  /* BOTÓN DE PLAY DIRECTO SOBRE LA FOTO */
-  .badge-video {
-    position: absolute; top: 52px; left: 14px; z-index: 6;
-    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.92));
-    backdrop-filter: blur(10px);
-    color: #f8dfa1; font-size: 13.5px; font-weight: 800;
-    padding: 9px 16px; border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 7px;
-    border: 1.5px solid rgba(201, 169, 97, 0.85);
-    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.45);
-    cursor: pointer;
-    pointer-events: auto;
-    transition: transform 0.18s ease;
-  }
-  .badge-video:active { transform: scale(0.94); }
-
-  /* ZONA INFERIOR DE LA FOTO: INFO DEL PRODUCTO + BOTONES DE COMPRA */
-  .float-bottom-stack {
-    position: absolute;
-    left: 12px;
+    top: 12px;
     right: 12px;
-    bottom: 16px;
-    z-index: 6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 9px;
-    pointer-events: none;
-  }
-
-  /* CÁPSULA DE TÍTULO Y PRESENTACIÓN SIEMPRE VISIBLE SOBRE LA FOTO */
-  .feed-info-pill {
-    pointer-events: auto;
+    z-index: 5;
     background: rgba(15, 23, 42, 0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: #ffffff;
-    padding: 7px 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    pointer-events: none;
+  }
+
+  .badge-new {
+    position: absolute; top: 12px; left: 12px; z-index: 5; pointer-events: none;
+    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
+    color: #ffffff; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(168,134,63,0.4);
+  }
+
+  .badge-video {
+    position: absolute; top: 46px; left: 12px; z-index: 6;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.92));
+    backdrop-filter: blur(10px);
+    color: #f8dfa1; font-size: 12.5px; font-weight: 800;
+    padding: 7px 14px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1.5px solid rgba(201, 169, 97, 0.85);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .badge-video:active { transform: scale(0.95); }
+
+  /* ZONA INFERIOR DE CADA TARJETA */
+  .float-bottom-stack {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+  }
+
+  .feed-info-pill {
+    pointer-events: auto;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 5px 13px;
+    border-radius: 11px;
     max-width: 96%;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    gap: 5px;
   }
   .feed-info-pill .f-title {
-    font-size: 14.5px;
+    font-size: 13.5px;
     font-weight: 800;
     color: #ffffff;
   }
   .feed-info-pill .f-sub {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     color: #f8dfa1;
   }
@@ -530,31 +610,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     pointer-events: none;
   }
 
   .btn-open-detail {
     pointer-events: auto;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: #ffffff;
     color: var(--text);
-    border: 1.5px solid rgba(201, 169, 97, 0.6);
-    padding: 13px 20px;
+    border: 1.5px solid rgba(201, 169, 97, 0.65);
+    padding: 11px 18px;
     border-radius: 999px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.28);
-    max-width: 56%;
+    gap: 6px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.14);
+    max-width: 55%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: transform 0.2s cubic-bezier(.2,.8,.2,1);
   }
   .btn-open-detail:active { transform: scale(0.96); }
   .btn-open-detail span.price-pill {
@@ -571,17 +648,16 @@
   .btn-quick-add {
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
     color: #ffffff;
-    padding: 13px 22px;
+    padding: 11px 20px;
     border-radius: 999px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.48);
-    border: 1.5px solid rgba(255,255,255,0.4);
+    gap: 6px;
+    box-shadow: 0 6px 18px rgba(13, 122, 74, 0.35);
+    border: 1px solid rgba(255,255,255,0.4);
     white-space: nowrap;
-    transition: transform 0.18s ease;
   }
   .btn-quick-add:active { transform: scale(0.95); }
 
@@ -591,35 +667,33 @@
     gap: 6px;
     background: #075E54;
     color: #ffffff;
-    padding: 5px 9px;
+    padding: 4px 8px;
     border-radius: 999px;
-    box-shadow: 0 10px 26px rgba(7, 94, 84, 0.5);
-    border: 1.5px solid rgba(255,255,255,0.4);
+    box-shadow: 0 6px 18px rgba(7, 94, 84, 0.4);
   }
   .feed-qty-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: rgba(255,255,255,0.22);
     color: #ffffff;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-  .feed-qty-btn:active { background: rgba(255,255,255,0.4); }
   .feed-qty-val {
-    min-width: 38px;
+    min-width: 34px;
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 800;
   }
 
   .load-more-btn {
-    width: calc(100% - 28px);
-    margin: 18px 14px 0;
-    padding: 16px;
+    width: 100%;
+    margin: 18px 0 0;
+    padding: 15px;
     border-radius: 14px;
     background: var(--glass-strong);
     border: 1px solid rgba(201, 169, 97, 0.4);
@@ -852,7 +926,6 @@
     color: var(--wa-deep);
   }
 
-  /* VIDEO 9:16 REPRODUCIENDOSE DIRECTO ADENTRO DE LA FICHA SIN PANTALLA NEGRA */
   .wcard-inline-video {
     width: 100%;
     border-radius: 18px;
@@ -865,7 +938,7 @@
   .wcard-inline-video iframe {
     width: 100%;
     aspect-ratio: 9 / 16;
-    max-height: 62vh;
+    max-height: 56vh;
     object-fit: cover;
     display: block;
     border: none;
@@ -1686,6 +1759,42 @@
   </div>
 </header>
 
+<!-- ================= TARJETA DE PRESENTACIÓN OFICIAL DEL LOCAL EN PÁGINA PRINCIPAL ================= -->
+<section class="business-card-section" id="businessCardSection">
+  <div class="business-card">
+    <div class="bcard-top">
+      <div class="bcard-title-wrap">
+        <span class="bcard-verified">
+          <i data-lucide="shield-check" style="width:13px;height:13px"></i> Mayorista Verificado
+        </span>
+        <div class="bcard-name" id="bcardName">Mayorista Boliviano</div>
+        <div class="bcard-desc" id="bcardDesc">Venta mayorista directa. Surtido completo, presentaciones cerradas y atención personalizada por WhatsApp.</div>
+      </div>
+      <a href="#" target="_blank" rel="noopener" class="bcard-wa-direct" id="bcardWaBtn">
+        <i data-lucide="message-circle" style="width:15px;height:15px"></i> Consultar
+      </a>
+    </div>
+    <div class="bcard-pills-grid">
+      <div class="bcard-info-item" id="bcardAddressBox">
+        <i data-lucide="map-pin" style="width:16px;height:16px"></i>
+        <span id="bcardAddress">Tucumán, Argentina</span>
+      </div>
+      <div class="bcard-info-item" id="bcardPhoneBox">
+        <i data-lucide="phone" style="width:16px;height:16px"></i>
+        <span id="bcardPhone">+54 9 381 511-0171</span>
+      </div>
+      <div class="bcard-info-item" id="bcardShippingBox">
+        <i data-lucide="truck" style="width:16px;height:16px"></i>
+        <span id="bcardShipping">Envíos a todo el país</span>
+      </div>
+      <div class="bcard-info-item" id="bcardPresBox">
+        <i data-lucide="package-check" style="width:16px;height:16px"></i>
+        <span id="bcardPres">Venta por mayor y bulto cerrado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BOTONES DE PROVEEDORES + BUSCADOR INSTANTÁNEO -->
 <div class="prov-bar-wrap" id="provBarWrap">
   <div class="prov-bar-inner" id="provChips"></div>
@@ -1806,7 +1915,7 @@
   </div>
 </div>
 
-<!-- ================= DRAWER DEL CARRITO (CAJAS ALINEADAS AL 100%) ================= -->
+<!-- ================= DRAWER DEL CARRITO ================= -->
 <div class="cart-drawer-overlay" id="cartDrawerOverlay">
   <div class="cart-drawer">
     <div class="cart-drawer-header">
@@ -1823,10 +1932,8 @@
         <button type="button" id="btnClearOrder" style="color:#dc2626;font-weight:800;font-size:13px">Vaciar todo</button>
       </div>
 
-      <!-- FILA NUMERADA DE TODOS LOS ARTÍCULOS PEDIDOS -->
       <div class="cart-items-stack" id="cartDrawerList"></div>
 
-      <!-- RESUMEN DE SUBTOTAL Y TOTAL -->
       <div id="cartSummarySection">
         <div class="cart-summary-box">
           <div class="cart-summary-line">
@@ -1848,7 +1955,6 @@
         </div>
       </div>
 
-      <!-- CAJA DE NOMBRE Y NOTA DEL PEDIDO -->
       <div class="cart-buyer-card" id="cartNotesSection">
         <div>
           <label for="cartBuyerName">👤 Tu Nombre o Comercio (opcional)</label>
@@ -1861,7 +1967,6 @@
       </div>
     </div>
 
-    <!-- BOTON FIJO ABAJO -->
     <div class="cart-drawer-bottom-bar" id="cartDrawerBottomBar">
       <button type="button" class="btn-wa-checkout" id="btnSendOrderFromModal">
         <i data-lucide="message-circle" style="width:20px;height:20px;flex-shrink:0"></i>
@@ -1939,7 +2044,7 @@
   <div class="admin-wrap">
     <div id="loginBlock" class="admin-card" style="max-width:400px;margin:40px auto">
       <h3><i data-lucide="lock" style="width:18px;height:18px;color:var(--wa-dark)"></i> Acceso Privado</h3>
-      <p class="sub">Entrá para administrar tus catálogos, precios y videos.</p>
+      <p class="sub">Entrá para administrar tus datos del local, catálogos, precios y videos.</p>
       <div style="display:flex;flex-direction:column;gap:10px">
         <input type="text" id="loginUser" class="input-light" value="admin" placeholder="Usuario" />
         <input type="password" id="loginPass" class="input-light" placeholder="Contraseña (admin123)" />
@@ -1951,21 +2056,50 @@
 
     <div id="dashboardBlock" class="hidden">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-        <h2 style="font-size:20px;font-weight:800">Panel de Proveedores, Precios y Videos</h2>
+        <h2 style="font-size:20px;font-weight:800">Panel de Administración y Datos del Local</h2>
         <div style="display:flex;gap:8px">
           <button class="btn-top" id="btnBackCatalog"><i data-lucide="eye" style="width:14px;height:14px"></i> Ver Catálogo</button>
           <button class="btn-top" id="btnLogout">Salir</button>
         </div>
       </div>
 
-      <!-- PERSONALIZAR MARCA -->
-      <div class="admin-card">
-        <h3><i data-lucide="store" style="width:19px;height:19px;color:var(--gold-deep)"></i> Nombre de tu negocio</h3>
-        <p class="sub">Aparece en el encabezado y en el mensaje de pedido de WhatsApp.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-          <input type="text" id="storeNameInput" class="input-light" style="flex:1;min-width:220px" placeholder="Ej: Mayorista Boliviano" maxlength="40" />
-          <button class="btn-top" id="btnSaveStoreName" style="background:linear-gradient(145deg,#1db965,#0d7a4a);color:#fff;border:none">Guardar</button>
-          <button class="btn-top" id="btnResetStoreName">Restablecer</button>
+      <!-- SECCIÓN: DATOS PERSONALES Y TARJETA DE PRESENTACIÓN DEL LOCAL -->
+      <div class="admin-card" style="border:1.5px solid var(--gold)">
+        <h3><i data-lucide="store" style="width:20px;height:20px;color:var(--gold-deep)"></i> Datos de tu Local y Tarjeta de Presentación (Página Principal)</h3>
+        <p class="sub">Cargá acá el nombre de tu negocio, dirección, celular, envíos y presentaciones. Aparecerá arriba de todo en la portada para todos tus clientes.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));gap:10px;margin-bottom:10px">
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Nombre de tu Local / Mayorista</label>
+            <input type="text" id="storeNameInput" class="input-light" placeholder="Ej: Mayorista Boliviano" maxlength="50" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Tu Celular / WhatsApp (con código país)</label>
+            <input type="text" id="storePhoneInput" class="input-light" placeholder="Ej: +54 9 381 511-0171" maxlength="35" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Dirección del Local / Ciudad</label>
+            <input type="text" id="storeAddressInput" class="input-light" placeholder="Ej: San Miguel de Tucumán, Argentina" maxlength="70" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Información de Envíos</label>
+            <input type="text" id="storeShippingInput" class="input-light" placeholder="Ej: Envíos a todo el país por transporte" maxlength="70" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Presentaciones / Modalidad de Venta</label>
+            <input type="text" id="storePresInput" class="input-light" placeholder="Ej: Venta por mayor, cajas y bulto cerrado" maxlength="70" />
+          </div>
+        </div>
+        <div style="margin-bottom:12px">
+          <label style="font-size:12px;font-weight:800;color:var(--muted)">Mensaje de presentación para tus clientes</label>
+          <textarea id="storeDescInput" class="input-light" rows="2" placeholder="Ej: Importadores directos. Surtido completo en golosinas, bazar, bicicletas e indumentaria. Atención inmediata por WhatsApp."></textarea>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn-top" id="btnSaveStoreProfile" style="background:linear-gradient(145deg,#1db965,#0d7a4a);color:#fff;border:none;padding:11px 20px;font-weight:800">
+            💾 Guardar Datos del Local en Portada
+          </button>
+          <button class="btn-top" id="btnResetStoreName">Restablecer valores por defecto</button>
         </div>
       </div>
 
@@ -2067,6 +2201,15 @@
 (function(){
 "use strict";
 
+var DEFAULT_PROFILE = {
+  name: "Mayorista Boliviano",
+  phone: "+54 9 381 511-0171",
+  address: "Tucumán, Argentina",
+  shipping: "Envíos a todo el país",
+  pres: "Venta por mayor y bulto cerrado",
+  desc: "Venta mayorista directa. Surtido completo, presentaciones cerradas y atención personalizada por WhatsApp."
+};
+
 var CONFIG = {
   BRAND: "Mayorista Boliviano",
   WHATSAPP: "5493815110171",
@@ -2077,7 +2220,8 @@ var CONFIG = {
   TABLE_NAME: "bolivia_argentina",
   BUCKET_NAME: "bolivia_argentina",
   PAGE_SIZE: 30,
-  CART_STORAGE_KEY: "mb_tiendanube_cart_v1"
+  CART_STORAGE_KEY: "mb_tiendanube_cart_v1",
+  PROFILE_STORAGE_KEY: "mb_business_profile_v1"
 };
 
 var state = {
@@ -2088,6 +2232,8 @@ var state = {
   searchQuery: "",
   batchItems: [],
   cart: [],
+  profile: Object.assign({}, DEFAULT_PROFILE),
+  profileRowId: null,
   sb: null,
   admin: false,
   currentSheetItem: null,
@@ -2100,19 +2246,60 @@ function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){ re
 function fmtPrice(p){ if(p==null||p===""||Number(p)===0) return null; return "$ " + Number(p).toLocaleString("es-AR",{maximumFractionDigits:0}); }
 function fmtMoney(n){ return "$ " + Number(n||0).toLocaleString("es-AR",{maximumFractionDigits:0}); }
 
-function getStoreName(){
-  try { return (localStorage.getItem("mb_store_name") || CONFIG.BRAND || "Mayorista Boliviano").trim(); }
-  catch(e){ return (CONFIG.BRAND || "Mayorista Boliviano").trim(); }
+function cleanDigits(phoneStr){
+  var d = String(phoneStr || "").replace(/\D+/g, "");
+  return d.length >= 8 ? d : CONFIG.WHATSAPP;
 }
-function applyStoreName(name){
-  name = (name || "").trim() || (CONFIG.BRAND || "Mayorista Boliviano");
-  var ht = $("headerTitle");
-  if(ht) ht.textContent = name;
+
+function getStoreName(){
+  return (state.profile && state.profile.name) || CONFIG.BRAND;
+}
+
+function getActiveWaNumber(){
+  return cleanDigits(state.profile && state.profile.phone);
+}
+
+function loadLocalProfile(){
+  try {
+    var raw = localStorage.getItem(CONFIG.PROFILE_STORAGE_KEY);
+    if(raw){
+      var parsed = JSON.parse(raw);
+      state.profile = Object.assign({}, DEFAULT_PROFILE, parsed);
+    } else {
+      var legacyName = localStorage.getItem("mb_store_name");
+      if(legacyName) state.profile.name = legacyName;
+    }
+  } catch(e){}
+}
+
+function applyProfileToUI(){
+  var p = state.profile || DEFAULT_PROFILE;
+  var name = (p.name || DEFAULT_PROFILE.name).trim();
+
+  if($("headerTitle")) $("headerTitle").textContent = name;
   var sn = document.querySelector(".splash-name");
   if(sn) sn.textContent = name;
   document.title = name + " · Catálogo Oficial";
-  var si = $("storeNameInput");
-  if(si) si.value = name;
+
+  if($("bcardName")) $("bcardName").textContent = name;
+  if($("bcardDesc")) $("bcardDesc").textContent = p.desc || DEFAULT_PROFILE.desc;
+  if($("bcardAddress")) $("bcardAddress").textContent = p.address || DEFAULT_PROFILE.address;
+  if($("bcardPhone")) $("bcardPhone").textContent = p.phone || DEFAULT_PROFILE.phone;
+  if($("bcardShipping")) $("bcardShipping").textContent = p.shipping || DEFAULT_PROFILE.shipping;
+  if($("bcardPres")) $("bcardPres").textContent = p.pres || DEFAULT_PROFILE.pres;
+
+  var waNum = getActiveWaNumber();
+  if($("bcardWaBtn")){
+    $("bcardWaBtn").href = "https://wa.me/" + waNum + "?text=" + encodeURIComponent("Hola! Vi el catálogo de *" + name + "* y quiero hacer una consulta mayorista.");
+  }
+
+  // Rellenar inputs en el Admin
+  if($("storeNameInput")) $("storeNameInput").value = p.name || "";
+  if($("storePhoneInput")) $("storePhoneInput").value = p.phone || "";
+  if($("storeAddressInput")) $("storeAddressInput").value = p.address || "";
+  if($("storeShippingInput")) $("storeShippingInput").value = p.shipping || "";
+  if($("storePresInput")) $("storePresInput").value = p.pres || "";
+  if($("storeDescInput")) $("storeDescInput").value = p.desc || "";
 }
 
 function showToast(msg){
@@ -2167,7 +2354,6 @@ function packItemName(desc, talles, colores, video, fallbackTitle){
   return d + " || " + t + " || " + c + (v ? (" || " + v) : "");
 }
 
-/* CONSTRUYE EL ELEMENTO DE VIDEO PARA REPRODUCIR AHÍ MISMO SIN FONDO NEGRO */
 function buildInlineVideoPlayerHtml(videoUrl){
   var u = (videoUrl || "").trim();
   var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
@@ -2177,7 +2363,6 @@ function buildInlineVideoPlayerHtml(videoUrl){
   return '<video src="'+esc(u)+'" controls autoplay playsinline webkit-playsinline controlslist="nofullscreen"></video>';
 }
 
-/* REPRODUCE EL VIDEO DIRECTO EN EL MISMO LUGAR DE LA FOTO */
 function playVideoInPlaceOnCard(id){
   var p = state.products.find(function(x){ return String(x.id) === String(id); });
   if(!p) return;
@@ -2189,7 +2374,6 @@ function playVideoInPlaceOnCard(id){
   var imgWrap = card.querySelector(".feed-img-wrap");
   if(!imgWrap) return;
 
-  // Pausar cualquier otro video activo en el feed
   document.querySelectorAll(".feed-inline-video-wrap").forEach(function(vw){
     vw.remove();
   });
@@ -2543,10 +2727,10 @@ function sendCartToWhatsApp(){
   lines.push("Quedo a la espera para coordinar la compra. ¡Muchas gracias!");
 
   var msg = lines.join("\n");
-  window.open("https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
+  window.open("https://wa.me/" + getActiveWaNumber() + "?text=" + encodeURIComponent(msg), "_blank");
 }
 
-/* ================= SUPABASE STORE ================= */
+/* ================= SUPABASE STORE (+ SINCRONIZACIÓN DE DATOS DEL LOCAL) ================= */
 var Store = {
   init: async function(){
     if(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY && window.supabase){
@@ -2558,10 +2742,57 @@ var Store = {
         .range(0, 499);
 
       if(!first.error && first.data){
-        state.products = first.data.filter(function(p){ return p.estado !== "oculto"; });
+        this.extractProfileAndProducts(first.data, true);
         if(first.data.length === 500){
           this.loadRemaining(500);
         }
+      }
+    }
+  },
+  extractProfileAndProducts: function(rows, reset){
+    var valid = [];
+    rows.forEach(function(r){
+      if(r.codigo === "__STORE_PROFILE__"){
+        state.profileRowId = r.id;
+        try {
+          var remoteProf = JSON.parse(r.nombre || "{}");
+          state.profile = Object.assign({}, DEFAULT_PROFILE, remoteProf);
+          localStorage.setItem(CONFIG.PROFILE_STORAGE_KEY, JSON.stringify(state.profile));
+          applyProfileToUI();
+        } catch(e){}
+      } else if(r.estado !== "oculto"){
+        valid.push(r);
+      }
+    });
+    if(reset){
+      state.products = valid;
+    } else {
+      state.products = state.products.concat(valid);
+    }
+  },
+  saveStoreProfileToCloud: async function(profileObj){
+    state.profile = Object.assign({}, DEFAULT_PROFILE, profileObj);
+    try {
+      localStorage.setItem(CONFIG.PROFILE_STORAGE_KEY, JSON.stringify(state.profile));
+    } catch(e){}
+    applyProfileToUI();
+
+    if(!state.sb) return;
+    var payload = {
+      nombre: JSON.stringify(state.profile),
+      codigo: "__STORE_PROFILE__",
+      proveedor: "__SYSTEM__",
+      categoria: "__SYSTEM__",
+      precio: 0,
+      imagen: "",
+      estado: "oculto"
+    };
+    if(state.profileRowId){
+      await state.sb.from(CONFIG.TABLE_NAME).update(payload).eq("id", state.profileRowId);
+    } else {
+      var ins = await state.sb.from(CONFIG.TABLE_NAME).insert(payload).select();
+      if(!ins.error && ins.data && ins.data[0]){
+        state.profileRowId = ins.data[0].id;
       }
     }
   },
@@ -2575,8 +2806,7 @@ var Store = {
         .order("created_at", {ascending: false})
         .range(from, from + step - 1);
       if(res.error || !res.data || res.data.length === 0) break;
-      var valid = res.data.filter(function(p){ return p.estado !== "oculto"; });
-      state.products = state.products.concat(valid);
+      this.extractProfileAndProducts(res.data, false);
       renderProviderTabs();
       applyFilterAndRender(false);
       updateOrderBar();
@@ -2984,6 +3214,7 @@ function bindFeedEvents(){
 
 /* ================= ADMIN PANEL ================= */
 function renderAdminDashboard(){
+  applyProfileToUI();
   var provs = getUniqueProviders();
   $("adminTotalCount").textContent = state.products.length;
 
@@ -3229,6 +3460,7 @@ function route(){
   if(hash.indexOf("#/admin") === 0){
     $("viewCatalog").classList.add("hidden");
     $("clientHeader").classList.add("hidden");
+    $("businessCardSection").classList.add("hidden");
     $("provBarWrap").classList.add("hidden");
     $("viewAdmin").classList.remove("hidden");
     if(sessionStorage.getItem("catalogo_admin") === "1"){
@@ -3243,6 +3475,7 @@ function route(){
   } else {
     $("viewCatalog").classList.remove("hidden");
     $("clientHeader").classList.remove("hidden");
+    $("businessCardSection").classList.remove("hidden");
     $("provBarWrap").classList.remove("hidden");
     $("viewAdmin").classList.add("hidden");
   }
@@ -3433,17 +3666,33 @@ function bindEvents(){
     showToast("Pedido vaciado");
   });
 
-  $("btnSaveStoreName").addEventListener("click", function(){
-    var v = ($("storeNameInput").value || "").trim();
-    if(!v){ showToast("Escribí un nombre para tu negocio"); return; }
-    try { localStorage.setItem("mb_store_name", v); } catch(e){}
-    applyStoreName(v);
-    showToast("Nombre guardado ✓");
+  // Guardar todos los Datos del Local en Portada y en Supabase
+  $("btnSaveStoreProfile").addEventListener("click", async function(){
+    var newProf = {
+      name: ($("storeNameInput").value || "").trim() || DEFAULT_PROFILE.name,
+      phone: ($("storePhoneInput").value || "").trim() || DEFAULT_PROFILE.phone,
+      address: ($("storeAddressInput").value || "").trim() || DEFAULT_PROFILE.address,
+      shipping: ($("storeShippingInput").value || "").trim() || DEFAULT_PROFILE.shipping,
+      pres: ($("storePresInput").value || "").trim() || DEFAULT_PROFILE.pres,
+      desc: ($("storeDescInput").value || "").trim() || DEFAULT_PROFILE.desc
+    };
+    var btn = $("btnSaveStoreProfile");
+    btn.disabled = true;
+    btn.textContent = "Guardando...";
+    try {
+      await Store.saveStoreProfileToCloud(newProf);
+      showToast("Datos del local guardados en portada ✓");
+    } catch(e){
+      showToast("Guardado en este dispositivo ✓");
+    }
+    btn.disabled = false;
+    btn.textContent = "💾 Guardar Datos del Local en Portada";
   });
-  $("btnResetStoreName").addEventListener("click", function(){
-    try { localStorage.removeItem("mb_store_name"); } catch(e){}
-    applyStoreName(CONFIG.BRAND);
-    showToast("Nombre restablecido");
+
+  $("btnResetStoreName").addEventListener("click", async function(){
+    try { localStorage.removeItem(CONFIG.PROFILE_STORAGE_KEY); } catch(e){}
+    await Store.saveStoreProfileToCloud(DEFAULT_PROFILE);
+    showToast("Datos restablecidos");
   });
 
   $("btnLogin").addEventListener("click", function(){
@@ -3503,7 +3752,8 @@ function bindEvents(){
 }
 
 async function init(){
-  applyStoreName(getStoreName());
+  loadLocalProfile();
+  applyProfileToUI();
   loadSavedCart();
   bindEvents();
   await Store.init();
