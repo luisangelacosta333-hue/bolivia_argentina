@@ -344,19 +344,23 @@
     border: 1px solid rgba(255,255,255,0.35);
   }
 
-  /* BADGE DE VIDEO EN LA FOTO */
+  /* BOTÓN FLOTANTE DE VIDEO EN LA FOTO (ABRE EN PANTALLA COMPLETA 9:16 AL TOCARLO) */
   .badge-video {
-    position: absolute; top: 52px; left: 14px; z-index: 5;
-    background: rgba(15, 23, 42, 0.82);
+    position: absolute; top: 52px; left: 14px; z-index: 6;
+    background: rgba(15, 23, 42, 0.88);
     backdrop-filter: blur(10px);
-    color: #f8dfa1; font-size: 12px; font-weight: 800;
-    padding: 6px 13px; border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 5px;
-    border: 1px solid rgba(201, 169, 97, 0.6);
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.3);
+    color: #f8dfa1; font-size: 13px; font-weight: 800;
+    padding: 8px 15px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1.5px solid rgba(201, 169, 97, 0.75);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.4);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.18s ease;
   }
+  .badge-video:active { transform: scale(0.94); }
 
-  /* BARRA INFERIOR DE CADA FOTO (BOTONES GRANDES Y ALINEADOS) */
+  /* BARRA INFERIOR DE CADA FOTO */
   .float-bottom-bar {
     position: absolute;
     left: 12px;
@@ -470,7 +474,7 @@
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   }
 
-  /* ================= BARRA FLOTANTE INFERIOR PREMIUM (SIN TEXTO COMPRIMIDO) ================= */
+  /* ================= BARRA FLOTANTE INFERIOR PREMIUM ================= */
   .floating-order-bar {
     position: fixed;
     left: 50%;
@@ -554,7 +558,7 @@
     border: 1px solid rgba(255,255,255,0.28);
   }
 
-  /* ================= FICHA BLANCA DE DETALLE COMERCIAL + VIDEO ================= */
+  /* ================= FICHA BLANCA DE DETALLE COMERCIAL + BOTON VIDEO 9:16 ================= */
   .detail-sheet-overlay {
     position: fixed;
     inset: 0;
@@ -683,31 +687,148 @@
     color: var(--wa-deep);
   }
 
-  /* CAJA DE VIDEO EN LA FICHA */
-  .wcard-video-box {
-    background: #0f172a;
+  /* TARJETA DE VIDEO EN LA FICHA (AL TOCARLA ABRE EL VIDEO EN FORMATO TIKTOK 9:16 GIGANTE) */
+  .wcard-video-launch {
+    width: 100%;
+    background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
     border-radius: 16px;
-    overflow: hidden;
+    padding: 14px 16px;
     border: 1.5px solid var(--gold);
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
-  }
-  .wcard-video-head {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 9px 14px;
-    background: rgba(255,255,255,0.06);
-    color: #f8dfa1;
-    font-size: 13px;
-    font-weight: 800;
+    gap: 12px;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.18s ease;
   }
-  .wcard-video-box video,
-  .wcard-video-box iframe {
-    width: 100%;
-    max-height: 320px;
+  .wcard-video-launch:active { transform: scale(0.98); }
+  .wcard-video-play-ico {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(201, 169, 97, 0.45);
+  }
+  .wcard-video-txt {
+    flex: 1;
+    min-width: 0;
+  }
+  .wcard-video-txt strong {
     display: block;
+    font-size: 15px;
+    font-weight: 800;
+    color: #f8dfa1;
+  }
+  .wcard-video-txt span {
+    font-size: 12.5px;
+    color: #cbd5e1;
+    font-weight: 600;
+  }
+
+  /* ================= REPRODUCTOR VERTICAL 9:16 FULLSCREEN (ESTILO TIKTOK SIN ROTAR AL COSTADO) ================= */
+  .tiktok-video-modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    background: #000000;
+    z-index: 350;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .tiktok-video-top {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    pointer-events: none;
+  }
+  .tiktok-video-badge {
+    pointer-events: auto;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(12px);
+    color: #f8dfa1;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 800;
+    border: 1px solid rgba(201, 169, 97, 0.5);
+    max-width: 68%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tiktok-video-close {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
+  .tiktok-video-stage {
+    width: 100%;
+    height: 100%;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     background: #000;
+  }
+  .tiktok-video-stage video,
+  .tiktok-video-stage iframe {
+    width: 100%;
+    height: 100%;
+    max-height: 100dvh;
+    object-fit: cover;
+    aspect-ratio: 9 / 16;
     border: none;
+    background: #000;
+    display: block;
+  }
+  .tiktok-video-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .tiktok-video-add-btn {
+    pointer-events: auto;
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-size: 15.5px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 1.5px solid rgba(255,255,255,0.4);
   }
 
   .wcard-specs-list {
@@ -836,7 +957,7 @@
     gap: 6px;
   }
 
-  /* ================= CARRITO MEJORADO (SCROLL COMPLETO, LETRA GRANDE, NO SE TAPA CON EL TECLADO) ================= */
+  /* ================= CARRITO MEJORADO (CAJAS PERFECTAS SIN SALIRSE A LA DERECHA) ================= */
   .cart-drawer-overlay {
     position: fixed;
     inset: 0;
@@ -859,12 +980,13 @@
     max-width: 460px;
     height: 100%;
     max-height: 100dvh;
-    background: #f8faf9;
+    background: #f4f6f5;
     display: flex;
     flex-direction: column;
     box-shadow: -12px 0 44px rgba(15, 23, 42, 0.3);
     transform: translateX(102%);
     transition: transform 0.32s cubic-bezier(.2,.85,.25,1);
+    overflow-x: hidden;
   }
   .cart-drawer-overlay.open .cart-drawer {
     transform: translateX(0);
@@ -899,15 +1021,15 @@
     justify-content: center;
   }
 
-  /* CONTENEDOR UNICO SCROLLEABLE (LOS ITEMS + TOTAL + NOTA VAN EN FILA ADENTRO) */
   .cart-drawer-scroll {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    padding: 13px 14px 30px;
+    padding: 12px 12px 30px;
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 12px;
   }
 
   .cart-section-label {
@@ -925,42 +1047,53 @@
   .cart-items-stack {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 10px;
+    width: 100%;
   }
 
-  /* FILA DE CADA ARTÍCULO EN EL CARRITO */
+  /* TARJETA DE CADA ARTÍCULO CONTENIDA AL 100% DENTRO DE SU BORDE */
   .cart-item-row {
+    width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 11px;
     padding: 12px;
-    border-radius: 15px;
+    border-radius: 16px;
     background: #ffffff;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
-    position: relative;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
   }
-  .cart-item-index {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--wa-soft);
-    color: var(--wa-deep);
-    font-size: 13px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .cart-thumb-wrap {
+    position: relative;
+    width: 64px;
+    height: 78px;
     flex-shrink: 0;
   }
-  .cart-item-row img {
-    width: 58px;
-    height: 72px;
+  .cart-thumb-wrap img {
+    width: 64px;
+    height: 78px;
     object-fit: cover;
     border-radius: 10px;
     background: #f8fafc;
     border: 1px solid var(--border);
-    flex-shrink: 0;
+  }
+  .cart-item-index {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1db965, #0d7a4a);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(13, 122, 74, 0.4);
+    border: 1.5px solid #ffffff;
   }
   .cart-item-info {
     flex: 1;
@@ -981,20 +1114,25 @@
     color: var(--wa-dark);
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .cart-item-del {
     color: #dc2626;
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 800;
-    padding: 4px 8px;
+    padding: 3px 9px;
     border-radius: 7px;
     background: #fef2f2;
+    flex-shrink: 0;
   }
   .cart-item-name {
     font-size: 15px;
     font-weight: 800;
     color: var(--text);
-    line-height: 1.3;
+    line-height: 1.28;
+    word-break: break-word;
   }
   .cart-item-unit {
     font-size: 13.5px;
@@ -1005,7 +1143,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 6px;
+    flex-wrap: wrap;
+    margin-top: 7px;
+    padding-top: 7px;
+    border-top: 1px dashed #eef2f0;
     gap: 8px;
   }
   .cart-qty-box {
@@ -1016,6 +1157,7 @@
     border: 1px solid var(--border);
     border-radius: 999px;
     padding: 3px 6px;
+    flex-shrink: 0;
   }
   .cart-qty-btn {
     width: 30px;
@@ -1033,21 +1175,24 @@
   .cart-qty-num {
     min-width: 24px;
     text-align: center;
-    font-size: 14.5px;
+    font-size: 15px;
     font-weight: 800;
   }
   .cart-item-subtotal {
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 800;
     color: var(--wa-deep);
+    background: var(--wa-soft);
+    padding: 5px 10px;
+    border-radius: 8px;
     text-align: right;
-    white-space: nowrap;
+    max-width: 100%;
   }
 
   /* CAJA DE TOTALES DENTRO DEL SCROLL */
   .cart-summary-box {
     background: #ffffff;
-    border: 1.5px solid rgba(201, 169, 97, 0.4);
+    border: 1.5px solid rgba(201, 169, 97, 0.45);
     border-radius: 16px;
     padding: 14px 15px;
     display: flex;
@@ -1064,7 +1209,7 @@
     font-weight: 700;
   }
   .cart-summary-line.total {
-    font-size: 18px;
+    font-size: 17.5px;
     font-weight: 800;
     color: var(--text);
     padding-top: 9px;
@@ -1073,10 +1218,9 @@
   .cart-summary-line.total span:last-child {
     color: var(--wa-dark);
     text-align: right;
-    white-space: nowrap;
   }
 
-  /* CAJA DE DATOS Y NOTA DEL CLIENTE (NO LA TAPA EL TECLADO) */
+  /* CAJA DE DATOS Y NOTA DEL CLIENTE */
   .cart-buyer-card {
     background: #ffffff;
     border: 1px solid var(--border);
@@ -1110,7 +1254,6 @@
     background: #ffffff;
   }
 
-  /* BARRA FIJA INFERIOR DEL DRAWER (SOLO EL BOTON DE ENVIAR) */
   .cart-drawer-bottom-bar {
     padding: 12px 14px 15px;
     background: #ffffff;
@@ -1122,17 +1265,18 @@
   }
   .btn-wa-checkout {
     width: 100%;
-    padding: 16px;
+    padding: 15px 16px;
     border-radius: 14px;
     background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
     color: #ffffff;
-    font-size: 16.5px;
+    font-size: 16px;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     box-shadow: 0 8px 24px rgba(13, 122, 74, 0.35);
+    text-align: center;
   }
 
   /* ================= ADMIN PANEL ================= */
@@ -1403,7 +1547,7 @@
   .toast {
     position: fixed; top: 72px; left: 50%;
     transform: translateX(-50%) translateY(-10px);
-    z-index: 260;
+    z-index: 380;
     background: var(--wa-deep); color: #ffffff;
     padding: 12px 20px; border-radius: 999px;
     font-size: 14px; font-weight: 800;
@@ -1554,7 +1698,7 @@
   </div>
 </main>
 
-<!-- ================= FICHA BLANCA DE DETALLE + VIDEO ================= -->
+<!-- ================= FICHA BLANCA DE DETALLE + LANZADOR DE VIDEO 9:16 ================= -->
 <div class="detail-sheet-overlay" id="detailSheet">
   <div class="white-product-card">
     <div class="sheet-handle"></div>
@@ -1573,13 +1717,14 @@
         <span class="wcard-price" id="sheetPriceVal">Consultar</span>
       </div>
 
-      <!-- CAJA DE VIDEO DEL ARTÍCULO (SE MUESTRA SI TIENE VIDEO) -->
-      <div class="wcard-video-box hidden" id="sheetVideoBox">
-        <div class="wcard-video-head">
-          <span>▶ Video demostrativo del artículo</span>
+      <!-- BOTON GRANDE QUE ABRE EL VIDEO DIRECTO EN TAMAÑO 9:16 TIKTOK VERTICAL -->
+      <button type="button" class="wcard-video-launch hidden" id="sheetVideoLaunchBtn">
+        <div class="wcard-video-play-ico">▶</div>
+        <div class="wcard-video-txt">
+          <strong>Ver Video del Artículo (9:16)</strong>
+          <span>Tocá acá para reproducir en pantalla grande vertical</span>
         </div>
-        <div id="sheetVideoContainer"></div>
-      </div>
+      </button>
 
       <div class="wcard-specs-list">
         <div class="wcard-spec-line" id="sheetTallesRow">
@@ -1625,7 +1770,22 @@
   </div>
 </div>
 
-<!-- ================= DRAWER DEL CARRITO (TODO EN FILA + SCROLL LIBRE DE TECLADO) ================= -->
+<!-- ================= REPRODUCTOR VERTICAL 9:16 TIKTOK A PANTALLA COMPLETA ================= -->
+<div class="tiktok-video-modal hidden" id="tiktokVideoModal">
+  <div class="tiktok-video-top">
+    <div class="tiktok-video-badge" id="tiktokVideoTitle">Video del artículo</div>
+    <button type="button" class="tiktok-video-close" id="btnCloseTiktokVideo">✕ Cerrar video</button>
+  </div>
+  <div class="tiktok-video-stage" id="tiktokVideoStage"></div>
+  <div class="tiktok-video-bottom">
+    <button type="button" class="tiktok-video-add-btn" id="btnAddFromTiktokVideo">
+      <i data-lucide="shopping-cart" style="width:18px;height:18px"></i>
+      <span>+ Sumar este artículo a mi pedido</span>
+    </button>
+  </div>
+</div>
+
+<!-- ================= DRAWER DEL CARRITO (CAJAS ALINEADAS AL 100%) ================= -->
 <div class="cart-drawer-overlay" id="cartDrawerOverlay">
   <div class="cart-drawer">
     <div class="cart-drawer-header">
@@ -1636,7 +1796,6 @@
       <button type="button" class="cart-drawer-close" id="btnCloseCartDrawer">✕</button>
     </div>
 
-    <!-- TODO ESTE CUERPO HACE SCROLL JUNTO PARA QUE EL TECLADO NUNCA TAPE LAS NOTAS NI LA LISTA -->
     <div class="cart-drawer-scroll" id="cartDrawerScroll">
       <div class="cart-section-label" id="cartListHeaderLbl">
         <span>Artículos en tu pedido (en fila)</span>
@@ -1668,7 +1827,7 @@
         </div>
       </div>
 
-      <!-- CAJA DE NOMBRE Y NOTA DEL PEDIDO (SE DESPLAZA SUAVEMENTE AL ABRIR TECLADO) -->
+      <!-- CAJA DE NOMBRE Y NOTA DEL PEDIDO -->
       <div class="cart-buyer-card" id="cartNotesSection">
         <div>
           <label for="cartBuyerName">👤 Tu Nombre o Comercio (opcional)</label>
@@ -1684,7 +1843,7 @@
     <!-- BOTON FIJO ABAJO -->
     <div class="cart-drawer-bottom-bar" id="cartDrawerBottomBar">
       <button type="button" class="btn-wa-checkout" id="btnSendOrderFromModal">
-        <i data-lucide="message-circle" style="width:20px;height:20px"></i>
+        <i data-lucide="message-circle" style="width:20px;height:20px;flex-shrink:0"></i>
         <span>Enviar pedido completo a WhatsApp</span>
       </button>
       <button type="button" class="btn-top" id="btnContinueShopping" style="justify-content:center;font-size:13.5px">
@@ -1694,7 +1853,7 @@
   </div>
 </div>
 
-<!-- ================= BARRA FLOTANTE INFERIOR REDISEÑADA (2 FILAS LIMPIAS, CERO TEXTO APRETADO) ================= -->
+<!-- ================= BARRA FLOTANTE INFERIOR ================= -->
 <div class="floating-order-bar hidden" id="floatingOrderBar">
   <div class="fbar-summary-row" id="floatingBarInfoArea">
     <span class="fbar-badge-pill">
@@ -1739,7 +1898,7 @@
         <textarea id="editItemDesc" class="input-light" rows="3" placeholder="Detalle para el cliente..."></textarea>
       </div>
       <div style="background:var(--gold-soft);padding:10px;border-radius:12px;border:1px solid var(--gold)">
-        <label style="font-size:12.5px;font-weight:800;color:var(--gold-deep);display:block;margin-bottom:5px">🎬 Video del Artículo (Link o subir archivo MP4)</label>
+        <label style="font-size:12.5px;font-weight:800;color:var(--gold-deep);display:block;margin-bottom:5px">🎬 Video 9:16 del Artículo (Link o subir archivo MP4)</label>
         <input type="text" id="editItemVideoUrl" class="input-light" placeholder="Pegá link de video o subí archivo abajo..." style="margin-bottom:6px" />
         <label class="btn-attach-video">
           <i data-lucide="video" style="width:15px;height:15px"></i>
@@ -1796,7 +1955,7 @@
 
       <!-- SUBIR FOTOS + CAJA DE VIDEO OPCIONAL -->
       <div class="admin-card">
-        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir Artículos (con opción de Video en cada uno)</h3>
+        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir Artículos (con opción de Video 9:16 en cada uno)</h3>
         <p class="sub">Podés cargar datos generales para el lote o agregarle precio, descripción y <b>video</b> individual a cada artículo abajo antes de publicar.</p>
 
         <div class="step-box">
@@ -1817,7 +1976,7 @@
             <input type="text" id="batchColoresInput" class="input-light" placeholder="Colores / Variedad" />
           </div>
           <input type="text" id="batchDetailInput" class="input-light" placeholder="Descripción general (opcional)" style="margin-bottom:8px" />
-          <input type="text" id="batchVideoInput" class="input-light" placeholder="🎬 Link de video general opcional (YouTube, TikTok o MP4)" />
+          <input type="text" id="batchVideoInput" class="input-light" placeholder="🎬 Link de video general opcional (YouTube Shorts, TikTok o MP4)" />
           <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--muted);cursor:pointer">
             <input type="checkbox" id="chkAutoCrop" checked style="width:16px;height:16px;accent-color:var(--wa)" />
             Recortar automáticamente bordes negros de capturas de pantalla
@@ -1871,7 +2030,7 @@
   </div>
 </main>
 
-<!-- VISOR ZOOM -->
+<!-- VISOR ZOOM FOTOS -->
 <div class="lightbox hidden" id="lightbox">
   <button class="lightbox-close" id="btnCloseLightbox">✕ Cerrar zoom</button>
   <span class="lb-counter" id="lbCounter">1 / 1</span>
@@ -1908,6 +2067,7 @@ var state = {
   sb: null,
   admin: false,
   currentSheetItem: null,
+  currentVideoItemId: null,
   sheetTempQty: 1,
   lbIndex: 0
 };
@@ -1956,7 +2116,6 @@ function getProviderUrl(provName){
   return base + "?prov=" + encodeURIComponent(provName);
 }
 
-/* SOPORTE DE METADATOS + VIDEO (GUARDADO EN EL CAMPO NOMBRE SEPARADO POR || ) */
 function parseItemMeta(p){
   var rawName = (p.nombre || "").trim();
   if(/^\d+$/.test(rawName) || /^(Mayorista|Proveedor|Catálogo|Prenda|Modelo)\s*\d*\s*·?\s*(Foto|Prenda|Modelo)?\s*#?\d*$/i.test(rawName)){
@@ -1985,14 +2144,33 @@ function packItemName(desc, talles, colores, video, fallbackTitle){
   return d + " || " + t + " || " + c + (v ? (" || " + v) : "");
 }
 
-function renderVideoEmbedHtml(videoUrl){
-  if(!videoUrl) return "";
-  var u = videoUrl.trim();
+/* REPRODUCTOR VERTICAL 9:16 FULLSCREEN (ESTILO TIKTOK, NO ROTA LA PANTALLA AL COSTADO) */
+function openVerticalVideoModal(id){
+  var p = state.products.find(function(x){ return String(x.id) === String(id); });
+  if(!p) return;
+  var meta = parseItemMeta(p);
+  if(!meta.video) return;
+
+  state.currentVideoItemId = p.id;
+  var prov = getProvOf(p);
+  $("tiktokVideoTitle").textContent = prov + (meta.desc ? (" · " + meta.desc) : "");
+
+  var u = meta.video.trim();
   var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
   if(ytMatch){
-    return '<iframe height="260" src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'" allowfullscreen></iframe>';
+    $("tiktokVideoStage").innerHTML = '<iframe src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  } else {
+    // controlslist="nofullscreen" evita que el navegador gire el celular a horizontal
+    $("tiktokVideoStage").innerHTML = '<video src="'+esc(u)+'" controls autoplay playsinline webkit-playsinline controlslist="nofullscreen"></video>';
   }
-  return '<video controls playsinline preload="metadata" src="'+esc(u)+'"></video>';
+
+  $("tiktokVideoModal").classList.remove("hidden");
+  refreshIcons();
+}
+
+function closeVerticalVideoModal(){
+  $("tiktokVideoModal").classList.add("hidden");
+  $("tiktokVideoStage").innerHTML = "";
 }
 
 function getProvOf(p){
@@ -2195,12 +2373,14 @@ function renderCartDrawer(){
     var prov = getProvOf(p);
     var unitNumber = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
     var unitLabel = unitNumber > 0 ? ("AR" + fmtMoney(unitNumber) + " c/u") : "Precio a consultar";
-    var lineSubtotal = unitNumber > 0 ? ("AR" + fmtMoney(unitNumber * item.qty)) : "A confirmar";
+    var lineSubtotal = unitNumber > 0 ? ("Subtotal: AR" + fmtMoney(unitNumber * item.qty)) : "Subtotal: A confirmar";
     var title = meta.desc || meta.talles || ("Artículo " + (p.codigo || "#" + (index + 1)));
 
     return '<div class="cart-item-row">' +
-      '<div class="cart-item-index">' + (index + 1) + '</div>' +
-      '<img src="'+esc(p.imagen)+'" alt="Artículo" />' +
+      '<div class="cart-thumb-wrap">' +
+        '<span class="cart-item-index">' + (index + 1) + '</span>' +
+        '<img src="'+esc(p.imagen)+'" alt="Artículo" />' +
+      '</div>' +
       '<div class="cart-item-info">' +
         '<div class="cart-item-top">' +
           '<span class="cart-item-prov">'+esc(prov)+'</span>' +
@@ -2214,7 +2394,7 @@ function renderCartDrawer(){
             '<span class="cart-qty-num">'+item.qty+'</span>' +
             '<button type="button" class="cart-qty-btn" data-dplus="'+esc(p.id)+'">+</button>' +
           '</div>' +
-          '<div class="cart-item-subtotal">Subtotal: '+esc(lineSubtotal)+'</div>' +
+          '<div class="cart-item-subtotal">'+esc(lineSubtotal)+'</div>' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -2320,7 +2500,7 @@ function sendCartToWhatsApp(){
   window.open("https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
 }
 
-/* ================= SUPABASE STORE (+ SUBIDA DE VIDEOS) ================= */
+/* ================= SUPABASE STORE ================= */
 var Store = {
   init: async function(){
     if(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY && window.supabase){
@@ -2623,7 +2803,7 @@ function renderNextChunk(){
     return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
       '<div class="feed-img-wrap" data-opensheet="'+esc(p.id)+'" data-num="'+num+'">' +
         (num <= 12 ? '<span class="badge-new">Nuevo</span>' : '') +
-        (hasVideo ? '<span class="badge-video">▶ VIDEO</span>' : '') +
+        (hasVideo ? '<button type="button" class="badge-video" data-openvideo="'+esc(p.id)+'">▶ VER VIDEO</button>' : '') +
         '<span class="float-num">#'+num+'</span>' +
         '<img src="'+esc(p.imagen)+'" alt="Artículo #'+num+'" loading="lazy" />' +
         '<div class="float-bottom-bar">' +
@@ -2689,11 +2869,9 @@ function openDetailSheet(id, num){
   }
 
   if(meta.video){
-    $("sheetVideoBox").classList.remove("hidden");
-    $("sheetVideoContainer").innerHTML = renderVideoEmbedHtml(meta.video);
+    $("sheetVideoLaunchBtn").classList.remove("hidden");
   } else {
-    $("sheetVideoBox").classList.add("hidden");
-    $("sheetVideoContainer").innerHTML = "";
+    $("sheetVideoLaunchBtn").classList.add("hidden");
   }
 
   $("sheetTallesVal").textContent = meta.talles || "Disponible";
@@ -2707,15 +2885,23 @@ function openDetailSheet(id, num){
 
 function closeDetailSheet(){
   $("detailSheet").classList.remove("open");
-  $("sheetVideoContainer").innerHTML = "";
 }
 
 function bindFeedEvents(){
+  document.querySelectorAll("[data-openvideo]").forEach(function(vbtn){
+    if(vbtn.dataset.bound) return;
+    vbtn.dataset.bound = "1";
+    vbtn.addEventListener("click", function(e){
+      e.stopPropagation();
+      openVerticalVideoModal(vbtn.getAttribute("data-openvideo"));
+    });
+  });
+
   document.querySelectorAll("[data-opensheet]").forEach(function(el){
     if(el.dataset.bound) return;
     el.dataset.bound = "1";
     el.addEventListener("click", function(e){
-      if(e.target.closest(".feed-cart-action")) return;
+      if(e.target.closest(".feed-cart-action") || e.target.closest("[data-openvideo]")) return;
       e.stopPropagation();
       var id = el.getAttribute("data-opensheet");
       var num = el.getAttribute("data-num") || "1";
@@ -3035,6 +3221,18 @@ function bindEvents(){
     if(e.target === $("detailSheet")) closeDetailSheet();
   });
 
+  // Lanzar video vertical 9:16 desde la ficha
+  $("sheetVideoLaunchBtn").addEventListener("click", function(){
+    if(!state.currentSheetItem) return;
+    openVerticalVideoModal(state.currentSheetItem.p.id);
+  });
+  $("btnCloseTiktokVideo").addEventListener("click", closeVerticalVideoModal);
+  $("btnAddFromTiktokVideo").addEventListener("click", function(){
+    if(!state.currentVideoItemId) return;
+    addToCart(state.currentVideoItemId, 1);
+    updateSheetCartStatus();
+  });
+
   $("sheetQtyMinus").addEventListener("click", function(){
     state.sheetTempQty = Math.max(1, state.sheetTempQty - 1);
     updateSheetCartStatus();
@@ -3054,7 +3252,7 @@ function bindEvents(){
     openCartDrawer();
   });
 
-  // Auto-scroll suave cuando el cliente toca la caja de nombre o nota para que el teclado nunca lo tape
+  // Auto-scroll suave cuando el cliente toca la caja de nombre o nota
   ["cartBuyerName", "cartBuyerNote"].forEach(function(inpId){
     var el = $(inpId);
     if(!el) return;
