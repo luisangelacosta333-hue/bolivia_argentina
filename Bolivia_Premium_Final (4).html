@@ -1,0 +1,4051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>Mayorista Boliviano — Catálogo Oficial</title>
+<meta name="description" content="Mayorista Boliviano. Catálogo mayorista. Envíos desde Tucumán a todo el país. Pedidos por WhatsApp." />
+<!--__SB_INJECT__-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<style>
+  :root {
+    --bg: #fbf9f4;
+    --bg-soft: #f2f5f2;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --wa: #18a85e;
+    --wa-dark: #0d7a4a;
+    --wa-deep: #075E54;
+    --wa-soft: #e4f5ec;
+    --wa-border: rgba(24, 168, 94, 0.28);
+    --gold: #c9a961;
+    --gold-deep: #a8863f;
+    --gold-soft: #f7f0df;
+    --border: #e6e9e5;
+    --radius: 22px;
+    --glass: rgba(255, 255, 255, 0.85);
+    --glass-strong: rgba(255, 255, 255, 0.95);
+    --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(175deg, #f7f3ea 0%, #ffffff 32%, #f1f7f3 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  input, select, textarea { font-family: inherit; font-size: 16px; color: var(--text); }
+  img { max-width: 100%; display: block; }
+  .hidden { display: none !important; }
+
+  /* ================= HEADER BLANCO COMPACTO ================= */
+  header {
+    position: relative;
+    z-index: 80;
+    background: var(--glass-strong);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.22);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  }
+  .header-top {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 13px 14px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    user-select: none;
+    min-width: 0;
+  }
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    flex-shrink: 0;
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(13, 122, 74, 0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .brand-txt { display: flex; flex-direction: column; min-width: 0; }
+  .brand-txt span {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    color: #0f172a;
+    line-height: 1.15;
+    white-space: normal;
+    overflow: visible;
+  }
+  .brand-txt small {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-deep);
+    margin-top: 2px;
+    white-space: normal;
+    overflow: visible;
+    line-height: 1.3;
+  }
+
+  .header-cart-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1.5px solid rgba(24, 168, 94, 0.35);
+    color: var(--wa-deep);
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
+    flex-shrink: 0;
+    transition: transform 0.2s cubic-bezier(.2,.8,.2,1);
+  }
+  .header-cart-btn:active { transform: scale(0.95); }
+  .header-cart-badge {
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    min-width: 23px;
+    height: 23px;
+    padding: 0 6px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ================= TARJETA DE PRESENTACIÓN PREMIUM (MÁS GRANDE) ================= */
+  .business-card-section {
+    max-width: 760px;
+    margin: 16px auto 6px;
+    padding: 0 12px;
+  }
+  .business-card {
+    position: relative;
+    background:
+      radial-gradient(120% 90% at 0% 0%, rgba(201,169,97,0.14) 0%, rgba(201,169,97,0) 55%),
+      linear-gradient(155deg, #ffffff 0%, #fdf8ec 55%, #f6f1e2 100%);
+    border: 1.5px solid rgba(201, 169, 97, 0.55);
+    border-radius: 26px;
+    padding: 22px 20px 18px;
+    box-shadow:
+      0 18px 44px rgba(15, 23, 42, 0.10),
+      0 2px 0 0 rgba(255,255,255,0.9) inset,
+      0 3px 0 0 var(--gold) inset;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+  }
+  .business-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, #f0dc9e 50%, var(--gold) 70%, transparent 100%);
+    opacity: 0.9;
+  }
+  .bcard-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .bcard-wa-direct {
+    margin-top: 4px;
+  }
+  .bcard-crest {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    flex-shrink: 0;
+    background: linear-gradient(145deg, #e0c684 0%, var(--gold-deep) 100%);
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(168,134,63,0.45), inset 0 1px 0 rgba(255,255,255,0.4);
+    border: 1.5px solid rgba(255,255,255,0.45);
+  }
+  .bcard-title-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+  .bcard-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(145deg, var(--wa-soft), #d5f0e1);
+    color: var(--wa-deep);
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    border: 1px solid var(--wa-border);
+    box-shadow: 0 2px 8px rgba(24,168,94,0.12);
+  }
+  .bcard-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+  }
+  .bcard-desc {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .bcard-wa-direct {
+    background: linear-gradient(145deg, #22c36b 0%, #0d7a4a 100%);
+    color: #ffffff;
+    padding: 13px 18px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(13, 122, 74, 0.38), inset 0 1px 0 rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.35);
+    flex-shrink: 0;
+    transition: transform 0.2s cubic-bezier(.2,.8,.2,1);
+  }
+  .bcard-wa-direct:active { transform: scale(0.96); }
+  .bcard-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+  }
+  @media (max-width: 480px) {
+    .bcard-pills-grid { grid-template-columns: 1fr; gap: 7px; }
+    .bcard-name { font-size: 23px; }
+    .bcard-crest { width: 54px; height: 54px; font-size: 22px; }
+  }
+  .bcard-info-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.92);
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(201,169,97,0.25);
+    box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+  }
+  .bcard-info-item i {
+    color: var(--wa-dark);
+    flex-shrink: 0;
+  }
+  .bcard-info-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* ================= BARRA DE PROVEEDORES + BUSCADOR RÁPIDO ================= */
+  .prov-bar-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 75;
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.18);
+    padding: 8px 10px 9px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  }
+  .prov-bar-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+  .prov-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 700;
+    background: rgba(255,255,255,0.88);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: var(--muted);
+    transition: 0.25s cubic-bezier(.2,.8,.2,1);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  }
+  .prov-chip .cnt {
+    font-size: 11.5px;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.07);
+    color: var(--text);
+    font-weight: 800;
+  }
+  .prov-chip.active {
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(13, 122, 74, 0.35);
+  }
+  .prov-chip.active .cnt {
+    background: rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+  }
+
+  /* BUSCADOR INSTANTÁNEO */
+  .search-bar-box {
+    max-width: 740px;
+    margin: 7px auto 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-bar-box i.search-ico {
+    position: absolute;
+    left: 14px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .search-input {
+    width: 100%;
+    padding: 9px 38px 9px 40px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(201, 169, 97, 0.35);
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    outline: none;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    transition: border-color 0.2s;
+  }
+  .search-input:focus {
+    border-color: var(--wa);
+    background: #ffffff;
+  }
+  .search-clear-btn {
+    position: absolute;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ================= PORTADA DE CATÁLOGOS MAYORISTAS (TAMAÑO EQUILIBRADO) ================= */
+  .hub-section {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 10px 12px 4px;
+  }
+  .hub-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .hub-card {
+    position: relative;
+    background: #ffffff;
+    border: 1.5px solid rgba(201, 169, 97, 0.28);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 5px 16px rgba(15, 23, 42, 0.06);
+    transition: 0.22s ease;
+  }
+  .hub-card:active { transform: scale(0.98); }
+  .hub-card.active {
+    border: 2px solid var(--wa);
+    box-shadow: 0 8px 22px rgba(24, 168, 94, 0.24);
+  }
+  .hub-card-thumb {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    object-position: center;
+    background: #f8fafc;
+  }
+  .hub-card-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(8px);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .hub-card-body {
+    padding: 11px 13px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .hub-card-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .hub-card-arrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--wa-soft);
+    color: var(--wa-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* ================= FEED DE CATÁLOGO (IMÁGENES MÁS CHICAS Y ENMARCADAS SIN CORTARSE) ================= */
+  /* IMÁGENES A PANTALLA COMPLETA — SIN MARGEN BLANCO A LOS COSTADOS */
+  .catalog-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0 165px;
+  }
+  .feed-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 16px 9px;
+    font-size: 13.5px;
+    color: var(--muted);
+    font-weight: 700;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+  .feed-status b { color: var(--wa-dark); }
+
+  .photo-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .feed-card {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.22);
+  }
+
+  /* LA IMAGEN SE VE COMPLETA, GRANDE, BORDE A BORDE (NO SE CORTAN LOS BORDES) */
+  .feed-img-wrap {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .feed-img-wrap::after { display: none; }
+  /* BARRA DE INFORMACIÓN DEBAJO DE LA FOTO (NO TAPA LA IMAGEN) */
+  .feed-caption-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #fdfbf5 100%);
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  .caption-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+  .caption-title {
+    font-size: 15px; font-weight: 800; color: var(--text); line-height: 1.28; word-break: break-word;
+  }
+  .caption-sub {
+    font-size: 13px; font-weight: 700; color: var(--gold-deep); line-height: 1.35;
+  }
+  .caption-right {
+    flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 7px;
+  }
+  .caption-price {
+    font-size: 22px; font-weight: 800; color: var(--wa-dark); white-space: nowrap;
+  }
+  .caption-price.consult {
+    font-size: 13px; color: var(--gold-deep); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;
+  }
+  .feed-img-wrap img.feed-main-img {
+    width: 100%;
+    max-height: 82vh;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #ffffff;
+  }
+
+  /* CONTENEDOR DE VIDEO DIRECTO EN LA TARJETA */
+  .feed-inline-video-wrap {
+    position: relative;
+    width: 100%;
+    height: 58vh;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+  }
+  .feed-inline-video-wrap video,
+  .feed-inline-video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border: none;
+  }
+  .btn-close-inline-video {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.94);
+    color: #0f172a;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .float-num {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 5;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    pointer-events: none;
+  }
+
+  .badge-new {
+    position: absolute; top: 12px; left: 12px; z-index: 5; pointer-events: none;
+    background: linear-gradient(145deg, #d4b876, var(--gold-deep));
+    color: #ffffff; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(168,134,63,0.4);
+  }
+
+  .badge-video {
+    position: absolute; top: 46px; left: 12px; z-index: 6;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.92));
+    backdrop-filter: blur(10px);
+    color: #f8dfa1; font-size: 12.5px; font-weight: 800;
+    padding: 7px 14px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1.5px solid rgba(201, 169, 97, 0.85);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.35);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .badge-video:active { transform: scale(0.95); }
+
+  /* ZONA INFERIOR DE CADA TARJETA */
+  .float-bottom-stack {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    pointer-events: none;
+  }
+
+  .feed-info-pill {
+    pointer-events: auto;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 5px 13px;
+    border-radius: 11px;
+    max-width: 96%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .feed-info-pill .f-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .feed-info-pill .f-sub {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f8dfa1;
+  }
+  .feed-info-pill .f-price-chip {
+    background: linear-gradient(145deg, #22c36b 0%, #0d7a4a 100%);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 999px;
+    box-shadow: 0 3px 10px rgba(13, 122, 74, 0.45);
+    border: 1px solid rgba(255,255,255,0.3);
+    white-space: nowrap;
+  }
+
+  .float-bottom-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  .btn-open-detail {
+    pointer-events: auto;
+    background: #ffffff;
+    color: var(--text);
+    border: 1.5px solid rgba(201, 169, 97, 0.65);
+    padding: 9px 15px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.14);
+    max-width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .btn-open-detail:active { transform: scale(0.96); }
+  .btn-open-detail span.price-pill {
+    color: var(--wa-dark);
+    font-weight: 800;
+  }
+
+  .feed-cart-action {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .btn-quick-add {
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 6px 18px rgba(13, 122, 74, 0.35);
+    border: 1px solid rgba(255,255,255,0.4);
+    white-space: nowrap;
+  }
+  .btn-quick-add:active { transform: scale(0.95); }
+
+  .feed-qty-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #075E54;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(7, 94, 84, 0.4);
+  }
+  .feed-qty-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.22);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .feed-qty-val {
+    min-width: 34px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .load-more-btn {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: 708px;
+    margin: 18px auto 0;
+    padding: 15px;
+    border-radius: 14px;
+    background: var(--glass-strong);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    color: var(--wa-deep);
+    font-weight: 800;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  }
+
+  /* ================= BARRA FLOTANTE INFERIOR CENTRADA ================= */
+  .floating-order-bar {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    width: calc(100% - 20px);
+    max-width: 490px;
+    z-index: 95;
+    background: linear-gradient(165deg, rgba(8, 68, 55, 0.97) 0%, rgba(5, 46, 37, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    box-shadow: 0 18px 42px rgba(5, 46, 37, 0.55), inset 0 1px 0 rgba(255,255,255,0.22);
+    border: 1px solid rgba(201, 169, 97, 0.45);
+    overflow: hidden;
+  }
+  .fbar-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0 2px;
+    width: 100%;
+  }
+  .fbar-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.16);
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #f7e2b4;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .fbar-subtotal-val {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+  }
+  .fbar-buttons-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .fbar-btn-cart {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .fbar-btn-wa {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #22c36b 0%, #0f8a52 100%);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(15, 138, 82, 0.45);
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+
+  /* ================= FICHA BLANCA DE DETALLE COMERCIAL + VIDEO INTEGRADO ================= */
+  .detail-sheet-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 160;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .detail-sheet-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .white-product-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fdfbf5 100%);
+    color: #0f172a;
+    border-radius: 28px 28px 0 0;
+    max-width: 480px;
+    width: 100%;
+    padding: 10px 20px 24px;
+    box-shadow: 0 -10px 50px rgba(15, 23, 42, 0.35), inset 0 3px 0 0 var(--gold);
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    transform: translateY(102%);
+    transition: transform 0.38s cubic-bezier(.2,.85,.25,1);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .sheet-handle {
+    width: 46px;
+    height: 5px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    margin: 4px auto 14px;
+  }
+  .detail-sheet-overlay.open .white-product-card {
+    transform: translateY(0);
+  }
+
+  .wcard-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+  }
+  .wcard-thumb {
+    width: 72px;
+    height: 88px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    cursor: zoom-in;
+  }
+  .wcard-head-info { flex: 1; min-width: 0; padding-right: 36px; }
+  .wcard-prov-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--wa-soft);
+    color: var(--wa-deep);
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+  .wcard-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.28;
+  }
+  .wcard-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .wcard-body {
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .wcard-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+  .wcard-lbl {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .wcard-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--wa-dark);
+  }
+  .wcard-price.consult {
+    font-size: 19px;
+    color: var(--wa-deep);
+  }
+
+  .wcard-inline-video {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    background: #f8fafc;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  }
+  .wcard-inline-video video,
+  .wcard-inline-video iframe {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 56vh;
+    object-fit: cover;
+    display: block;
+    border: none;
+  }
+
+  .wcard-specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wcard-spec-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 15.5px;
+  }
+  .wcard-spec-line span.k {
+    color: #64748b;
+    font-weight: 700;
+    font-size: 14.5px;
+    flex-shrink: 0;
+  }
+  .wcard-spec-line span.v {
+    color: #0f172a;
+    font-weight: 800;
+    text-align: right;
+  }
+
+  .wcard-desc-section {
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+  }
+  .wcard-desc-text {
+    margin-top: 5px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+
+  .wcard-qty-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    padding: 11px 14px;
+    border-radius: 14px;
+  }
+  .wcard-qty-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 999px;
+  }
+  .wcard-qty-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--wa-soft);
+    color: var(--wa-deep);
+    font-weight: 800;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wcard-qty-input {
+    font-size: 16px;
+    font-weight: 800;
+    min-width: 28px;
+    text-align: center;
+  }
+
+  .wcard-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 6px;
+  }
+  .btn-add-to-cart-main {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 16.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 10px 26px rgba(13, 122, 74, 0.38);
+  }
+  .wcard-secondary-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .btn-wcard-outline {
+    padding: 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1.5px solid var(--wa);
+    color: var(--wa-dark);
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-wcard-soft {
+    padding: 12px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* ================= CARRITO MEJORADO ================= */
+  .cart-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 190;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.26s ease;
+  }
+  .cart-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .cart-drawer {
+    width: 100%;
+    max-width: 460px;
+    height: 100%;
+    max-height: 100dvh;
+    background: #f4f6f5;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -12px 0 44px rgba(15, 23, 42, 0.3);
+    transform: translateX(102%);
+    transition: transform 0.32s cubic-bezier(.2,.85,.25,1);
+    overflow-x: hidden;
+  }
+  .cart-drawer-overlay.open .cart-drawer {
+    transform: translateX(0);
+  }
+  .cart-drawer-header {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    flex-shrink: 0;
+  }
+  .cart-drawer-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 18.5px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .cart-drawer-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-drawer-scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 12px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cart-section-label {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
+
+  .cart-items-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .cart-item-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 12px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+  }
+  .cart-thumb-wrap {
+    position: relative;
+    width: 64px;
+    height: 78px;
+    flex-shrink: 0;
+  }
+  .cart-thumb-wrap img {
+    width: 64px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+  }
+  .cart-item-index {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1db965, #0d7a4a);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(13, 122, 74, 0.4);
+    border: 1.5px solid #ffffff;
+  }
+  .cart-item-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cart-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .cart-item-prov {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--wa-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cart-item-del {
+    color: #dc2626;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 7px;
+    background: #fef2f2;
+    flex-shrink: 0;
+  }
+  .cart-item-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.28;
+    word-break: break-word;
+  }
+  .cart-item-unit {
+    font-size: 13.5px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .cart-item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 7px;
+    padding-top: 7px;
+    border-top: 1px dashed #eef2f0;
+    gap: 8px;
+  }
+  .cart-qty-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px 6px;
+    flex-shrink: 0;
+  }
+  .cart-qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--wa-deep);
+    font-weight: 800;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .cart-qty-num {
+    min-width: 24px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+  }
+  .cart-item-subtotal {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--wa-deep);
+    background: var(--wa-soft);
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: right;
+    max-width: 100%;
+  }
+
+  .cart-summary-box {
+    background: #ffffff;
+    border: 1.5px solid rgba(201, 169, 97, 0.45);
+    border-radius: 16px;
+    padding: 14px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cart-summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 14.5px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .cart-summary-line.total {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: var(--text);
+    padding-top: 9px;
+    border-top: 1px dashed var(--border);
+  }
+  .cart-summary-line.total span:last-child {
+    color: var(--wa-dark);
+    text-align: right;
+  }
+
+  .cart-buyer-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cart-buyer-card label {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--text);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cart-buyer-card input,
+  .cart-buyer-card textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: #fcfdfd;
+    font-size: 15.5px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .cart-buyer-card input:focus,
+  .cart-buyer-card textarea:focus {
+    border-color: var(--wa);
+    background: #ffffff;
+  }
+
+  .cart-drawer-bottom-bar {
+    padding: 12px 14px 15px;
+    background: #ffffff;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn-wa-checkout {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #1db965 0%, #0d7a4a 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(13, 122, 74, 0.35);
+    text-align: center;
+  }
+
+  /* ================= ADMIN PANEL ================= */
+  .admin-wrap {
+    max-width: 980px;
+    margin: 20px auto 80px;
+    padding: 0 14px;
+    width: 100%;
+  }
+  .admin-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  }
+  .admin-card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+  }
+  .admin-card p.sub { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+  .btn-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13.5px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .links-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+  .link-prov-item {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .link-prov-item.master {
+    background: var(--wa-soft);
+    border-color: var(--wa-border);
+    grid-column: 1 / -1;
+  }
+  .btn-copy {
+    background: var(--wa);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .step-box {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .step-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--wa-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+  .prov-quick-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .prov-preset {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .prov-preset.active {
+    background: var(--wa);
+    color: #ffffff;
+    border-color: var(--wa);
+  }
+  .input-light {
+    width: 100%;
+    padding: 11px 13px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    color: var(--text);
+    font-size: 14.5px;
+    outline: none;
+  }
+  .input-light:focus { border-color: var(--wa); }
+
+  .dropzone {
+    border: 2px dashed var(--wa);
+    border-radius: 16px;
+    padding: 28px 16px;
+    text-align: center;
+    background: var(--wa-soft);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .dropzone h4 { font-size: 16px; font-weight: 800; margin: 8px 0 4px; color: var(--text); }
+  .dropzone p { font-size: 13px; color: var(--muted); }
+
+  .btn-big-upload {
+    width: 100%;
+    padding: 15px;
+    border-radius: 13px;
+    background: var(--wa);
+    color: #ffffff;
+    font-size: 15.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  }
+  .btn-big-upload:disabled { opacity: 0.5; }
+
+  .batch-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+    max-height: 480px;
+    overflow-y: auto;
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .batch-thumb-box {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+  .batch-thumb-box img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    background: #fff;
+  }
+  .batch-thumb-inputs {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .batch-thumb-inputs input {
+    width: 100%;
+    padding: 7px 8px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    color: var(--text);
+    font-size: 12.5px;
+  }
+  .btn-attach-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 8px;
+    border-radius: 7px;
+    background: var(--gold-soft);
+    border: 1px dashed var(--gold-deep);
+    color: var(--gold-deep);
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .batch-thumb-del {
+    position: absolute;
+    top: 5px; right: 5px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.92);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+
+  .admin-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .admin-item-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .admin-item-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #f8fafc; }
+  .admin-item-body { padding: 8px; font-size: 12.5px; display: flex; flex-direction: column; gap: 4px; }
+
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 195;
+    display: flex; align-items: center; justify-content: center;
+    padding: 14px;
+    opacity: 0; pointer-events: none;
+    transition: 0.2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .modal {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    max-width: 460px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+  }
+
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.96);
+    z-index: 210;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 10px;
+  }
+  .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+  .lightbox-close {
+    position: absolute; top: 14px; right: 14px;
+    background: #ffffff;
+    color: #0f172a; padding: 9px 16px;
+    border-radius: 999px; font-weight: 800; font-size: 13.5px;
+  }
+
+  .toast {
+    position: fixed; top: 72px; left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    z-index: 380;
+    background: var(--wa-deep); color: #ffffff;
+    padding: 12px 20px; border-radius: 999px;
+    font-size: 14px; font-weight: 800;
+    box-shadow: 0 10px 30px rgba(7, 94, 84, 0.4);
+    opacity: 0; pointer-events: none; transition: 0.25s;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  #scrollProgress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, var(--gold-deep), #e8cf94, var(--gold));
+    z-index: 220;
+    transition: width 0.12s linear;
+  }
+  #splash {
+    position: fixed; inset: 0; z-index: 400;
+    background: linear-gradient(160deg, #f7f3ea 0%, #f1f7f3 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 16px; transition: opacity 0.7s ease;
+  }
+  #splash.splash-out { opacity: 0; pointer-events: none; }
+  .splash-ring {
+    width: 96px; height: 96px; border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 12px 34px rgba(201,169,97,0.28);
+  }
+  .splash-mono {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px; font-weight: 700; color: var(--gold-deep);
+  }
+  .splash-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px; font-weight: 700; color: #0f172a;
+  }
+  .splash-sub {
+    font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--gold-deep); font-weight: 800;
+  }
+  @keyframes pop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.35); }
+    100% { transform: scale(1); }
+  }
+  .pop { display: inline-block; animation: pop 0.42s cubic-bezier(.34,1.56,.64,1); }
+
+  .back-to-top {
+    position: fixed; right: 14px; bottom: 122px; z-index: 85;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--glass-strong); backdrop-filter: blur(14px);
+    border: 1px solid rgba(201,169,97,0.5); color: var(--gold-deep);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.15); cursor: pointer;
+  }
+  .back-to-top.hidden { opacity: 0; pointer-events: none; }
+
+  .how-to-buy { max-width: 720px; margin: 36px auto 12px; padding: 0 16px; }
+  .htb-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; text-align: center; color: #0f172a; margin-bottom: 20px; }
+  .htb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 560px){ .htb-grid { grid-template-columns: 1fr; gap: 18px; } }
+  .htb-step { background: var(--glass); border: 1px solid rgba(255,255,255,0.65); border-radius: 18px; padding: 22px 16px 16px; text-align: center; position: relative; box-shadow: 0 8px 24px rgba(15,23,42,0.07); }
+  .htb-num { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(145deg, #d4b876, var(--gold-deep)); color: #fff; font-weight: 800; font-size: 13.5px; display: flex; align-items: center; justify-content: center; }
+  .htb-ico { color: var(--wa-dark); margin: 4px 0 10px; display: flex; justify-content: center; }
+  .htb-txt { font-size: 14px; color: var(--muted); font-weight: 600; line-height: 1.55; }
+  .htb-txt b { color: var(--wa-deep); font-weight: 800; }
+
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.2); color: #ffffff; display: flex; align-items: center; justify-content: center; z-index: 6; cursor: pointer; }
+  #lbPrev { left: 14px; }
+  #lbNext { right: 14px; }
+  .lb-counter { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); color: #ffffff; font-size: 13.5px; font-weight: 700; background: rgba(15,23,42,0.6); padding: 6px 16px; border-radius: 999px; z-index: 6; }
+
+  /* ================= REPRODUCTOR FULL SCREEN 9:16 ESTILO TIKTOK ================= */
+  .tiktok-overlay {
+    position: fixed; inset: 0; z-index: 600;
+    background: #000000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  .tiktok-overlay.open { opacity: 1; pointer-events: auto; }
+  .tiktok-stage {
+    position: relative;
+    height: 100dvh;
+    aspect-ratio: 9 / 16;
+    max-width: 100vw;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 0 0 80px rgba(0,0,0,0.8);
+  }
+  .tiktok-stage video,
+  .tiktok-stage iframe {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border: none; display: block;
+  }
+  .tiktok-brand {
+    position: absolute; top: max(16px, env(safe-area-inset-top)); left: 16px; z-index: 10;
+    color: rgba(255,255,255,0.9); font-size: 11.5px; font-weight: 800;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .tiktok-close {
+    position: absolute; top: max(14px, env(safe-area-inset-top)); right: 14px; z-index: 10;
+    background: rgba(255,255,255,0.14); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    color: #fff; padding: 9px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+  .tiktok-mute {
+    position: absolute; bottom: max(24px, env(safe-area-inset-bottom)); right: 16px; z-index: 10;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: rgba(255,255,255,0.14); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+  .tiktok-playhint {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.95); font-size: 72px; z-index: 8; pointer-events: none;
+    opacity: 0; transition: opacity 0.25s ease; text-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  }
+  .tiktok-playhint.show { opacity: 1; }
+  .tiktok-progress {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: rgba(255,255,255,0.18); z-index: 9;
+  }
+  .tiktok-progress-bar {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), #f4e0a8);
+  }
+</style>
+</head>
+<body>
+<div id="scrollProgress"></div>
+<div id="splash">
+  <div class="splash-ring"><span class="splash-mono">MB</span></div>
+  <div class="splash-name">Mayorista Boliviano</div>
+  <div class="splash-sub">Catálogo Oficial</div>
+</div>
+
+<div id="toast" class="toast">Listo</div>
+
+<!-- ================= HEADER ================= -->
+<header id="clientHeader">
+  <div class="header-top">
+    <div class="brand" id="brandSecretTrigger">
+      <span class="brand-mark"><i data-lucide="shopping-bag" style="width:20px;height:20px"></i></span>
+      <div class="brand-txt">
+        <span id="headerTitle">Mayorista Boliviano</span>
+        <small id="headerSub">Catálogo Oficial · Sumá artículos a tu pedido</small>
+      </div>
+    </div>
+    <button type="button" class="header-cart-btn" id="btnHeaderCart" aria-label="Abrir carrito">
+      <i data-lucide="shopping-cart" style="width:18px;height:18px;color:var(--wa-dark)"></i>
+      <span>Pedido</span>
+      <span class="header-cart-badge" id="headerCartBadge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= TARJETA DE PRESENTACIÓN OFICIAL DEL LOCAL EN PÁGINA PRINCIPAL ================= -->
+<section class="business-card-section" id="businessCardSection">
+  <div class="business-card">
+    <div class="bcard-top">
+      <span class="bcard-crest serif" id="bcardCrest">MB</span>
+      <div class="bcard-title-wrap">
+        <span class="bcard-verified">
+          <i data-lucide="shield-check" style="width:13px;height:13px"></i> Mayorista Verificado
+        </span>
+        <div class="bcard-name" id="bcardName">Mayorista Boliviano</div>
+        <div class="bcard-desc" id="bcardDesc">Venta mayorista directa. Surtido completo, presentaciones cerradas y atención personalizada por WhatsApp.</div>
+      </div>
+      <a href="#" target="_blank" rel="noopener" class="bcard-wa-direct" id="bcardWaBtn">
+        <i data-lucide="message-circle" style="width:15px;height:15px"></i> Consultar
+      </a>
+    </div>
+    <div class="bcard-pills-grid">
+      <div class="bcard-info-item" id="bcardAddressBox">
+        <i data-lucide="map-pin" style="width:16px;height:16px"></i>
+        <span id="bcardAddress">Tucumán, Argentina</span>
+      </div>
+      <div class="bcard-info-item" id="bcardPhoneBox">
+        <i data-lucide="phone" style="width:16px;height:16px"></i>
+        <span id="bcardPhone">+54 9 381 511-0171</span>
+      </div>
+      <div class="bcard-info-item" id="bcardShippingBox">
+        <i data-lucide="truck" style="width:16px;height:16px"></i>
+        <span id="bcardShipping">Envíos a todo el país</span>
+      </div>
+      <div class="bcard-info-item" id="bcardPresBox">
+        <i data-lucide="package-check" style="width:16px;height:16px"></i>
+        <span id="bcardPres">Venta por mayor y bulto cerrado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTONES DE PROVEEDORES + BUSCADOR INSTANTÁNEO -->
+<div class="prov-bar-wrap" id="provBarWrap">
+  <div class="prov-bar-inner" id="provChips"></div>
+  <div class="search-bar-box">
+    <i data-lucide="search" class="search-ico" style="width:17px;height:17px"></i>
+    <input type="search" id="catalogSearchInput" class="search-input" placeholder="Buscar artículo, nombre o #número..." />
+    <button type="button" id="btnClearSearch" class="search-clear-btn hidden" aria-label="Limpiar búsqueda">✕</button>
+  </div>
+</div>
+
+<!-- ================= VISTA CATÁLOGO ================= -->
+<main id="viewCatalog">
+  <section class="hub-section hidden" id="catalogHub">
+    <div class="hub-title">Tocá un catálogo mayorista para verlo por separado:</div>
+    <div class="hub-grid" id="hubGrid"></div>
+  </section>
+
+  <div class="catalog-container">
+    <div class="feed-status">
+      <span id="activeProvTitle">Cargando catálogo...</span>
+      <span id="totalPhotosBadge"></span>
+    </div>
+
+    <div class="photo-feed" id="photoFeed"></div>
+
+    <button id="btnLoadMore" class="load-more-btn hidden">Ver más artículos de este catálogo ↓</button>
+
+    <div class="how-to-buy">
+      <div class="htb-title">Cómo armar tu pedido</div>
+      <div class="htb-grid">
+        <div class="htb-step">
+          <div class="htb-num">1</div>
+          <div class="htb-ico"><i data-lucide="shopping-cart" style="width:26px;height:26px"></i></div>
+          <div class="htb-txt">Tocá <b>+ Agregar</b> en cada artículo para ir sumando a tu fila de pedido</div>
+        </div>
+        <div class="htb-step">
+          <div class="htb-num">2</div>
+          <div class="htb-ico"><i data-lucide="list-checks" style="width:26px;height:26px"></i></div>
+          <div class="htb-txt">Abrí <b>Ver mi pedido</b> para revisar todos tus artículos en fila y agregar una nota</div>
+        </div>
+        <div class="htb-step">
+          <div class="htb-num">3</div>
+          <div class="htb-ico"><i data-lucide="message-circle" style="width:26px;height:26px"></i></div>
+          <div class="htb-txt">Tocá <b>Enviar WhatsApp</b> y coordinamos pago y envío directo</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:24px 16px 12px">
+      <a href="#/admin" style="font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:0.1em;opacity:0.55">· Acceso administrador ·</a>
+    </div>
+  </div>
+</main>
+
+<!-- ================= FICHA BLANCA DE DETALLE + VIDEO DIRECTO INTEGRADO ================= -->
+<div class="detail-sheet-overlay" id="detailSheet">
+  <div class="white-product-card">
+    <div class="sheet-handle"></div>
+    <div class="wcard-header">
+      <img id="sheetThumb" class="wcard-thumb" src="" alt="Artículo" title="Tocá para ampliar foto" />
+      <div class="wcard-head-info">
+        <span class="wcard-prov-badge" id="sheetProvBadge">Mayorista 1 · Artículo #1</span>
+        <div class="wcard-title" id="sheetTitle">Ficha del Artículo</div>
+      </div>
+      <button type="button" class="wcard-close" id="btnCloseSheet">✕</button>
+    </div>
+
+    <div class="wcard-body">
+      <div class="wcard-price-row">
+        <span class="wcard-lbl">Precio Mayorista</span>
+        <span class="wcard-price" id="sheetPriceVal">Consultar</span>
+      </div>
+
+      <!-- VIDEO REPRODUCIÉNDOSE DIRECTO EN LA FICHA SIN FONDO NEGRO -->
+      <div class="wcard-inline-video hidden" id="sheetInlineVideoBox"></div>
+
+      <div class="wcard-specs-list">
+        <div class="wcard-spec-line" id="sheetTallesRow">
+          <span class="k">Talles / Presentación</span>
+          <span class="v" id="sheetTallesVal">Disponible</span>
+        </div>
+        <div class="wcard-spec-line" id="sheetColoresRow">
+          <span class="k">Colores / Variedad</span>
+          <span class="v" id="sheetColoresVal">Surtido según catálogo</span>
+        </div>
+      </div>
+
+      <div class="wcard-desc-section">
+        <span class="wcard-lbl">Descripción y Detalles</span>
+        <div class="wcard-desc-text" id="sheetDetailText">Mercadería directa mayorista.</div>
+      </div>
+
+      <div class="wcard-qty-box">
+        <div>
+          <div style="font-size:14.5px;font-weight:800;color:var(--text)">Cantidad a sumar</div>
+          <div id="sheetInCartHint" style="font-size:13px;color:var(--wa-dark);font-weight:700"></div>
+        </div>
+        <div class="wcard-qty-controls">
+          <button type="button" class="wcard-qty-btn" id="sheetQtyMinus">−</button>
+          <span class="wcard-qty-input" id="sheetQtyVal">1</span>
+          <button type="button" class="wcard-qty-btn" id="sheetQtyPlus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wcard-footer">
+      <button type="button" class="btn-add-to-cart-main" id="sheetAddToCartBtn">
+        <i data-lucide="shopping-cart" style="width:19px;height:19px"></i>
+        <span id="sheetAddToCartTxt">Agregar al pedido</span>
+      </button>
+      <div class="wcard-secondary-btns">
+        <button type="button" class="btn-wcard-outline" id="sheetOpenCartBtn">
+          📋 Ver fila de mi pedido
+        </button>
+        <button type="button" class="btn-wcard-soft" id="sheetZoomBtn">🔍 Ampliar foto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DRAWER DEL CARRITO ================= -->
+<div class="cart-drawer-overlay" id="cartDrawerOverlay">
+  <div class="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i data-lucide="shopping-cart" style="width:22px;height:22px;color:var(--wa-dark)"></i>
+        <span>Mi Carrito de Pedido</span>
+      </div>
+      <button type="button" class="cart-drawer-close" id="btnCloseCartDrawer">✕</button>
+    </div>
+
+    <div class="cart-drawer-scroll" id="cartDrawerScroll">
+      <div class="cart-section-label" id="cartListHeaderLbl">
+        <span>Artículos en tu pedido (en fila)</span>
+        <button type="button" id="btnClearOrder" style="color:#dc2626;font-weight:800;font-size:13px">Vaciar todo</button>
+      </div>
+
+      <div class="cart-items-stack" id="cartDrawerList"></div>
+
+      <div id="cartSummarySection">
+        <div class="cart-summary-box">
+          <div class="cart-summary-line">
+            <span>Total de artículos</span>
+            <span id="cartSummaryUnits">0 unidades</span>
+          </div>
+          <div class="cart-summary-line">
+            <span>Subtotal</span>
+            <span id="cartSummarySubtotal">$ 0</span>
+          </div>
+          <div class="cart-summary-line" id="cartSummaryConsultRow" style="display:none;color:var(--gold-deep)">
+            <span>Artículos con precio a confirmar</span>
+            <span id="cartSummaryConsultCnt">0 u.</span>
+          </div>
+          <div class="cart-summary-line total">
+            <span>Total estimado</span>
+            <span id="cartSummaryTotal">$ 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-buyer-card" id="cartNotesSection">
+        <div>
+          <label for="cartBuyerName">👤 Tu Nombre o Comercio (opcional)</label>
+          <input type="text" id="cartBuyerName" placeholder="Ej: Marcela - Tienda Norte" />
+        </div>
+        <div>
+          <label for="cartBuyerNote">📝 Nota o aclaración de tu pedido (opcional)</label>
+          <textarea id="cartBuyerNote" rows="2" placeholder="Escribí acá colores, talles, transporte o cualquier detalle para coordinar..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-bottom-bar" id="cartDrawerBottomBar">
+      <button type="button" class="btn-wa-checkout" id="btnSendOrderFromModal">
+        <i data-lucide="message-circle" style="width:20px;height:20px;flex-shrink:0"></i>
+        <span>Enviar pedido completo a WhatsApp</span>
+      </button>
+      <button type="button" class="btn-top" id="btnContinueShopping" style="justify-content:center;font-size:13.5px">
+        ← Seguir viendo el catálogo
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= BARRA FLOTANTE INFERIOR CENTRADA ================= -->
+<div class="floating-order-bar hidden" id="floatingOrderBar">
+  <div class="fbar-summary-row" id="floatingBarInfoArea">
+    <span class="fbar-badge-pill">
+      <i data-lucide="shopping-bag" style="width:14px;height:14px;flex-shrink:0"></i>
+      <span><span id="orderCount">0</span> en tu pedido</span>
+    </span>
+    <span class="fbar-subtotal-val" id="floatingSubtotalTxt">Subtotal: A confirmar</span>
+  </div>
+  <div class="fbar-buttons-row">
+    <button type="button" class="fbar-btn-cart" id="btnOpenOrderModal">
+      <i data-lucide="list" style="width:15px;height:15px;flex-shrink:0"></i>
+      <span>Ver mi pedido</span>
+    </button>
+    <button type="button" class="fbar-btn-wa" id="btnSendOrderDirect">
+      <i data-lucide="message-circle" style="width:15px;height:15px;flex-shrink:0"></i>
+      <span>Enviar WhatsApp</span>
+    </button>
+  </div>
+</div>
+
+<!-- ================= MODAL PARA EDITAR FICHA Y VIDEO EN ADMIN ================= -->
+<div class="modal-overlay" id="editItemModal">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <h3 style="font-size:17px;font-weight:800">Editar Ficha y Video del Artículo</h3>
+      <button class="btn-top" id="btnCloseEditModal">Cerrar</button>
+    </div>
+    <input type="hidden" id="editItemId" />
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div>
+        <label style="font-size:12.5px;font-weight:700;color:var(--muted)">Precio Mayorista $ (vacío = Consultar)</label>
+        <input type="number" id="editItemPrice" class="input-light" placeholder="Ej: 18500" />
+      </div>
+      <div>
+        <label style="font-size:12.5px;font-weight:700;color:var(--muted)">Talles / Presentación</label>
+        <input type="text" id="editItemTalles" class="input-light" placeholder="Ej: Caja x 30 unidades / Curva S al XL" />
+      </div>
+      <div>
+        <label style="font-size:12.5px;font-weight:700;color:var(--muted)">Colores / Variedad disponible</label>
+        <input type="text" id="editItemColores" class="input-light" placeholder="Ej: Surtido frutal / Negro, Blanco" />
+      </div>
+      <div>
+        <label style="font-size:12.5px;font-weight:700;color:var(--muted)">Descripción del artículo</label>
+        <textarea id="editItemDesc" class="input-light" rows="3" placeholder="Detalle para el cliente..."></textarea>
+      </div>
+      <div style="background:var(--gold-soft);padding:10px;border-radius:12px;border:1px solid var(--gold)">
+        <label style="font-size:12.5px;font-weight:800;color:var(--gold-deep);display:block;margin-bottom:5px">🎬 Video 9:16 del Artículo (Link o subir archivo MP4)</label>
+        <input type="text" id="editItemVideoUrl" class="input-light" placeholder="Pegá link de video o subí archivo abajo..." style="margin-bottom:6px" />
+        <label class="btn-attach-video">
+          <i data-lucide="video" style="width:15px;height:15px"></i>
+          <span id="editVideoFileLbl">Seleccionar video desde el celular</span>
+          <input type="file" id="editItemVideoFile" accept="video/*" class="hidden" />
+        </label>
+      </div>
+      <button type="button" class="btn-big-upload" id="btnSaveItemEdit" style="margin-top:6px">Guardar cambios en la ficha</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= VISTA ADMIN ================= -->
+<main id="viewAdmin" class="hidden">
+  <div class="admin-wrap">
+    <div id="loginBlock" class="admin-card" style="max-width:400px;margin:40px auto">
+      <h3><i data-lucide="lock" style="width:18px;height:18px;color:var(--wa-dark)"></i> Acceso Privado</h3>
+      <p class="sub">Entrá para administrar tus datos del local, catálogos, precios y videos.</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <input type="text" id="loginUser" class="input-light" value="admin" placeholder="Usuario" />
+        <input type="password" id="loginPass" class="input-light" placeholder="Contraseña (admin123)" />
+        <button class="btn-big-upload" id="btnLogin" style="margin-top:4px">Ingresar al Panel</button>
+        <div id="loginError" style="color:#dc2626;font-size:13px;font-weight:700"></div>
+        <button class="btn-top" id="btnBackFromLogin" style="justify-content:center">← Volver al catálogo</button>
+      </div>
+    </div>
+
+    <div id="dashboardBlock" class="hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+        <h2 style="font-size:20px;font-weight:800">Panel de Administración y Datos del Local</h2>
+        <div style="display:flex;gap:8px">
+          <button class="btn-top" id="btnBackCatalog"><i data-lucide="eye" style="width:14px;height:14px"></i> Ver Catálogo</button>
+          <button class="btn-top" id="btnLogout">Salir</button>
+        </div>
+      </div>
+
+      <!-- SECCIÓN: DATOS PERSONALES Y TARJETA DE PRESENTACIÓN DEL LOCAL -->
+      <div class="admin-card" style="border:1.5px solid var(--gold)">
+        <h3><i data-lucide="store" style="width:20px;height:20px;color:var(--gold-deep)"></i> Datos de tu Local y Tarjeta de Presentación (Página Principal)</h3>
+        <p class="sub">Cargá acá el nombre de tu negocio, dirección, celular, envíos y presentaciones. Aparecerá arriba de todo en la portada para todos tus clientes.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));gap:10px;margin-bottom:10px">
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Nombre de tu Local / Mayorista</label>
+            <input type="text" id="storeNameInput" class="input-light" placeholder="Ej: Mayorista Boliviano" maxlength="50" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Tu Celular / WhatsApp (con código país)</label>
+            <input type="text" id="storePhoneInput" class="input-light" placeholder="Ej: +54 9 381 511-0171" maxlength="35" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Dirección del Local / Ciudad</label>
+            <input type="text" id="storeAddressInput" class="input-light" placeholder="Ej: San Miguel de Tucumán, Argentina" maxlength="70" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Información de Envíos</label>
+            <input type="text" id="storeShippingInput" class="input-light" placeholder="Ej: Envíos a todo el país por transporte" maxlength="70" />
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:800;color:var(--muted)">Presentaciones / Modalidad de Venta</label>
+            <input type="text" id="storePresInput" class="input-light" placeholder="Ej: Venta por mayor, cajas y bulto cerrado" maxlength="70" />
+          </div>
+        </div>
+        <div style="margin-bottom:12px">
+          <label style="font-size:12px;font-weight:800;color:var(--muted)">Mensaje de presentación para tus clientes</label>
+          <textarea id="storeDescInput" class="input-light" rows="2" placeholder="Ej: Importadores directos. Surtido completo en golosinas, bazar, bicicletas e indumentaria. Atención inmediata por WhatsApp."></textarea>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn-top" id="btnSaveStoreProfile" style="background:linear-gradient(145deg,#1db965,#0d7a4a);color:#fff;border:none;padding:11px 20px;font-weight:800">
+            💾 Guardar Datos del Local en Portada
+          </button>
+          <button class="btn-top" id="btnResetStoreName">Restablecer valores por defecto</button>
+        </div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="admin-card">
+        <h3><i data-lucide="link-2" style="width:19px;height:19px;color:var(--wa-dark)"></i> Links para mandar por WhatsApp</h3>
+        <p class="sub">Copiá el link general o el de cada mayorista individual:</p>
+        <div class="links-grid" id="providerLinksGrid"></div>
+      </div>
+
+      <!-- SUBIR FOTOS + CAJA DE VIDEO OPCIONAL -->
+      <div class="admin-card">
+        <h3><i data-lucide="upload-cloud" style="width:19px;height:19px;color:var(--wa-dark)"></i> Subir Artículos (con opción de Video 9:16 en cada uno)</h3>
+        <p class="sub">Podés cargar datos generales para el lote o agregarle precio, descripción y <b>video</b> individual a cada artículo abajo antes de publicar.</p>
+
+        <div class="step-box">
+          <div class="step-title">Paso 1: Elegí el Mayorista y datos generales (opcional)</div>
+          <div class="prov-quick-btns" id="presetProvBtns">
+            <button type="button" class="prov-preset" data-prov="Mayorista 1">Mayorista 1</button>
+            <button type="button" class="prov-preset active" data-prov="Mayorista 2">Mayorista 2</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 3">Mayorista 3</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 4">Mayorista 4</button>
+            <button type="button" class="prov-preset" data-prov="Mayorista 5">Mayorista 5</button>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+            <input type="text" id="batchProvInput" class="input-light" value="Mayorista 2" placeholder="Nombre del mayorista..." />
+            <input type="number" id="batchPriceInput" class="input-light" placeholder="Precio Mayorista $ (opcional)" />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+            <input type="text" id="batchTallesInput" class="input-light" placeholder="Talles / Presentación" />
+            <input type="text" id="batchColoresInput" class="input-light" placeholder="Colores / Variedad" />
+          </div>
+          <input type="text" id="batchDetailInput" class="input-light" placeholder="Descripción general (opcional)" style="margin-bottom:8px" />
+          <input type="text" id="batchVideoInput" class="input-light" placeholder="🎬 Link de video general opcional (YouTube Shorts, TikTok o MP4)" />
+          <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--muted);cursor:pointer">
+            <input type="checkbox" id="chkAutoCrop" checked style="width:16px;height:16px;accent-color:var(--wa)" />
+            Recortar automáticamente bordes negros de capturas de pantalla
+          </label>
+        </div>
+
+        <div class="step-box" style="margin-bottom:0">
+          <div class="step-title">Paso 2: Seleccioná las fotos (y agregá video si querés)</div>
+          <div class="dropzone" id="dropzone">
+            <i data-lucide="images" style="width:40px;height:40px;color:var(--wa-dark)"></i>
+            <h4>Tocá acá para elegir las fotos de los artículos</h4>
+            <p>Abajo de cada foto te aparecerá la caja para ponerle precio y adjuntarle un video.</p>
+            <input type="file" id="fileInput" accept="image/*" multiple class="hidden" />
+          </div>
+
+          <div id="batchSummary" class="hidden">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+              <span id="batchCountLbl" style="font-weight:800;font-size:14px;color:var(--wa-dark)">0 fotos listas</span>
+              <button class="btn-top" id="btnClearBatch" style="color:#dc2626">Limpiar selección</button>
+            </div>
+            <div class="batch-preview-grid" id="batchPreviewGrid"></div>
+
+            <div id="progressBox" class="hidden" style="margin-top:14px;background:#ffffff;padding:14px;border-radius:12px;border:1px solid var(--border)">
+              <div id="progressText" style="font-size:13.5px;font-weight:800;margin-bottom:8px">Subiendo artículos...</div>
+              <div style="height:10px;background:#f1f5f9;border-radius:99px;overflow:hidden">
+                <div id="progressBar" style="height:100%;width:0%;background:var(--wa);transition:width 0.2s"></div>
+              </div>
+            </div>
+
+            <button class="btn-big-upload" id="btnStartUpload">
+              <i data-lucide="rocket" style="width:18px;height:18px"></i>
+              <span id="btnStartUploadTxt">Publicar en este mayorista ahora</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDITAR ARTÍCULOS SUBIDOS -->
+      <div class="admin-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <h3><i data-lucide="folder-kanban" style="width:19px;height:19px;color:var(--wa-dark)"></i> Editar Fichas / Precios / Videos (<span id="adminTotalCount">0</span> fotos)</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <select id="adminFilterProv" class="input-light" style="width:auto;padding:8px 12px"></select>
+            <button class="btn-top" id="btnRenameProv" style="color:var(--wa-dark);border-color:var(--wa-border)">Cambiar nombre</button>
+            <button class="btn-top" id="btnDeleteProvAll" style="color:#dc2626;border-color:#fecaca">Vaciar catálogo</button>
+          </div>
+        </div>
+        <div class="admin-list-grid" id="adminPhotosGrid"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- VISOR ZOOM FOTOS -->
+<div class="lightbox hidden" id="lightbox">
+  <button class="lightbox-close" id="btnCloseLightbox">✕ Cerrar zoom</button>
+  <span class="lb-counter" id="lbCounter">1 / 1</span>
+  <button class="lb-nav" id="lbPrev" aria-label="Anterior"><i data-lucide="chevron-left" style="width:22px;height:22px"></i></button>
+  <img id="lightboxImg" src="" alt="Zoom" />
+  <button class="lb-nav" id="lbNext" aria-label="Siguiente"><i data-lucide="chevron-right" style="width:22px;height:22px"></i></button>
+</div>
+<button id="backToTop" class="back-to-top hidden" aria-label="Volver arriba"><i data-lucide="arrow-up" style="width:20px;height:20px"></i></button>
+<!-- ================= REPRODUCTOR FULL SCREEN 9:16 ESTILO TIKTOK ================= -->
+<div class="tiktok-overlay" id="tiktokOverlay">
+  <div class="tiktok-stage" id="tiktokStage">
+    <span class="tiktok-brand" id="tiktokBrand">Mayorista Boliviano</span>
+    <button type="button" class="tiktok-close" id="tiktokClose">✕ Cerrar</button>
+    <button type="button" class="tiktok-mute" id="tiktokMute" aria-label="Activar sonido"><i data-lucide="volume-x" style="width:20px;height:20px"></i></button>
+    <span class="tiktok-playhint" id="tiktokPlayHint">▶</span>
+    <div class="tiktok-progress"><div class="tiktok-progress-bar" id="tiktokProgressBar"></div></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var DEFAULT_PROFILE = {
+  name: "Mayorista Boliviano",
+  phone: "+54 9 381 511-0171",
+  address: "Tucumán, Argentina",
+  shipping: "Envíos a todo el país",
+  pres: "Venta por mayor y bulto cerrado",
+  desc: "Venta mayorista directa. Surtido completo, presentaciones cerradas y atención personalizada por WhatsApp."
+};
+
+var CONFIG = {
+  BRAND: "Mayorista Boliviano",
+  WHATSAPP: "5493815110171",
+  ADMIN_USER: "admin",
+  ADMIN_PASS: "admin123",
+  SUPABASE_URL: (window.__SB_URL__ || "https://drpjcmznauposqlhaveo.supabase.co"),
+  SUPABASE_ANON_KEY: (window.__SB_ANON__ || "sb_publishable_xo7-uUQqtWvEWoLGqqlrsg_rxdroLx4"),
+  TABLE_NAME: "bolivia_argentina",
+  BUCKET_NAME: "bolivia_argentina",
+  PAGE_SIZE: 30,
+  CART_STORAGE_KEY: "mb_tiendanube_cart_v1",
+  PROFILE_STORAGE_KEY: "mb_business_profile_v1"
+};
+
+var state = {
+  products: [],
+  filtered: [],
+  renderedCount: 0,
+  activeProv: "",
+  searchQuery: "",
+  batchItems: [],
+  cart: [],
+  profile: Object.assign({}, DEFAULT_PROFILE),
+  profileRowId: null,
+  sb: null,
+  admin: false,
+  currentSheetItem: null,
+  sheetTempQty: 1,
+  lbIndex: 0
+};
+
+var $ = function(id){ return document.getElementById(id); };
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function fmtPrice(p){ if(p==null||p===""||Number(p)===0) return null; return "$ " + Number(p).toLocaleString("es-AR",{maximumFractionDigits:0}); }
+function fmtMoney(n){ return "$ " + Number(n||0).toLocaleString("es-AR",{maximumFractionDigits:0}); }
+
+function cleanDigits(phoneStr){
+  var d = String(phoneStr || "").replace(/\D+/g, "");
+  return d.length >= 8 ? d : CONFIG.WHATSAPP;
+}
+
+function getStoreName(){
+  return (state.profile && state.profile.name) || CONFIG.BRAND;
+}
+
+function getActiveWaNumber(){
+  return cleanDigits(state.profile && state.profile.phone);
+}
+
+function loadLocalProfile(){
+  try {
+    var raw = localStorage.getItem(CONFIG.PROFILE_STORAGE_KEY);
+    if(raw){
+      var parsed = JSON.parse(raw);
+      state.profile = Object.assign({}, DEFAULT_PROFILE, parsed);
+    } else {
+      var legacyName = localStorage.getItem("mb_store_name");
+      if(legacyName) state.profile.name = legacyName;
+    }
+  } catch(e){}
+}
+
+function applyProfileToUI(){
+  var p = state.profile || DEFAULT_PROFILE;
+  var name = (p.name || DEFAULT_PROFILE.name).trim();
+
+  if($("headerTitle")) $("headerTitle").textContent = name;
+  if($("bcardCrest")){
+    var initials = name.split(/\s+/).filter(Boolean).slice(0,2).map(function(w){ return (w[0]||"").toUpperCase(); }).join("");
+    $("bcardCrest").textContent = initials || "MB";
+  }
+  var sn = document.querySelector(".splash-name");
+  if(sn) sn.textContent = name;
+  document.title = name + " · Catálogo Oficial";
+
+  if($("bcardName")) $("bcardName").textContent = name;
+  if($("bcardDesc")) $("bcardDesc").textContent = p.desc || DEFAULT_PROFILE.desc;
+  if($("bcardAddress")) $("bcardAddress").textContent = p.address || DEFAULT_PROFILE.address;
+  if($("bcardPhone")) $("bcardPhone").textContent = p.phone || DEFAULT_PROFILE.phone;
+  if($("bcardShipping")) $("bcardShipping").textContent = p.shipping || DEFAULT_PROFILE.shipping;
+  if($("bcardPres")) $("bcardPres").textContent = p.pres || DEFAULT_PROFILE.pres;
+
+  var waNum = getActiveWaNumber();
+  if($("bcardWaBtn")){
+    $("bcardWaBtn").href = "https://wa.me/" + waNum + "?text=" + encodeURIComponent("Hola! Vi el catálogo de *" + name + "* y quiero hacer una consulta mayorista.");
+  }
+
+  // Rellenar inputs en el Admin
+  if($("storeNameInput")) $("storeNameInput").value = p.name || "";
+  if($("storePhoneInput")) $("storePhoneInput").value = p.phone || "";
+  if($("storeAddressInput")) $("storeAddressInput").value = p.address || "";
+  if($("storeShippingInput")) $("storeShippingInput").value = p.shipping || "";
+  if($("storePresInput")) $("storePresInput").value = p.pres || "";
+  if($("storeDescInput")) $("storeDescInput").value = p.desc || "";
+}
+
+function showToast(msg){
+  var t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(function(){ t.classList.remove("show"); }, 2300);
+}
+
+function copyText(text, msg){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ showToast(msg); });
+  } else {
+    var ta = document.createElement("textarea");
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); document.body.removeChild(ta);
+    showToast(msg);
+  }
+}
+
+function getProviderUrl(provName){
+  var base = location.origin + location.pathname;
+  if(!provName) return base;
+  return base + "?prov=" + encodeURIComponent(provName);
+}
+
+function parseItemMeta(p){
+  var rawName = (p.nombre || "").trim();
+  if(/^\d+$/.test(rawName) || /^(Mayorista|Proveedor|Catálogo|Prenda|Modelo)\s*\d*\s*·?\s*(Foto|Prenda|Modelo)?\s*#?\d*$/i.test(rawName)){
+    rawName = "";
+  }
+  var parts = rawName.split(" || ");
+  var desc = (parts[0] || "").trim();
+  var talles = (p.talles || parts[1] || "").trim();
+  var colores = (p.colores || parts[2] || "").trim();
+  var video = (p.video || parts[3] || "").trim();
+  return {
+    desc: desc,
+    talles: talles,
+    colores: colores,
+    video: video
+  };
+}
+
+function packItemName(desc, talles, colores, video, fallbackTitle){
+  var d = (desc || "").trim();
+  var t = (talles || "").trim();
+  var c = (colores || "").trim();
+  var v = (video || "").trim();
+  if(!d && !t && !c && !v) return fallbackTitle;
+  if(!t && !c && !v) return d;
+  return d + " || " + t + " || " + c + (v ? (" || " + v) : "");
+}
+
+function buildInlineVideoPlayerHtml(videoUrl){
+  var u = (videoUrl || "").trim();
+  var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+  if(ytMatch){
+    return '<iframe src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  }
+  return '<video src="'+esc(u)+'" controls autoplay playsinline webkit-playsinline controlslist="nofullscreen"></video>';
+}
+
+/* ================= REPRODUCTOR FULL SCREEN 9:16 ESTILO TIKTOK ================= */
+var tiktokState = { timer: null, videoEl: null, isYt: false };
+function buildTikTokPlayerHtml(videoUrl){
+  var u = (videoUrl || "").trim();
+  var ytMatch = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+  if(ytMatch){
+    tiktokState.isYt = true;
+    return '<iframe src="https://www.youtube.com/embed/'+esc(ytMatch[1])+'?autoplay=1&playsinline=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+  }
+  tiktokState.isYt = false;
+  return '<video id="tiktokVideoEl" src="'+esc(u)+'" autoplay playsinline webkit-playsinline loop muted></video>';
+}
+function updateMuteIcon(){
+  var btn = $("tiktokMute"); if(!btn) return;
+  var v = tiktokState.videoEl;
+  btn.innerHTML = (v && !v.muted)
+    ? '<i data-lucide="volume-2" style="width:20px;height:20px"></i>'
+    : '<i data-lucide="volume-x" style="width:20px;height:20px"></i>';
+  refreshIcons();
+}
+function toggleTikTokPlay(){
+  var v = tiktokState.videoEl; if(!v) return;
+  var hint = $("tiktokPlayHint");
+  if(v.paused){ v.play(); hint.textContent = "▶"; }
+  else { v.pause(); hint.textContent = "❚❚"; }
+  hint.classList.add("show");
+  setTimeout(function(){ hint.classList.remove("show"); }, 550);
+}
+function openTikTokVideo(id){
+  var p = state.products.find(function(x){ return String(x.id) === String(id); });
+  if(!p) return;
+  var meta = parseItemMeta(p);
+  if(!meta.video){ showToast("Este artículo no tiene video todavía"); return; }
+  var stage = $("tiktokStage");
+  var old = stage.querySelector("video, iframe"); if(old) old.remove();
+  $("tiktokBrand").textContent = getStoreName();
+  $("tiktokProgressBar").style.width = "0%";
+  stage.insertAdjacentHTML("beforeend", buildTikTokPlayerHtml(meta.video));
+  $("tiktokOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+  var v = document.getElementById("tiktokVideoEl");
+  tiktokState.videoEl = v;
+  if(v){
+    v.muted = true;
+    updateMuteIcon();
+    v.play().catch(function(){ v.muted = true; v.play().catch(function(){}); });
+    v.addEventListener("click", function(e){ e.stopPropagation(); toggleTikTokPlay(); });
+    if(tiktokState.timer) clearInterval(tiktokState.timer);
+    tiktokState.timer = setInterval(function(){
+      if(v.duration && !isNaN(v.duration)){
+        $("tiktokProgressBar").style.width = Math.min(100, (v.currentTime / v.duration) * 100) + "%";
+      }
+    }, 200);
+  } else {
+    $("tiktokMute").style.display = "none";
+  }
+  refreshIcons();
+}
+function closeTikTokVideo(){
+  $("tiktokOverlay").classList.remove("open");
+  document.body.style.overflow = "";
+  var stage = $("tiktokStage");
+  var old = stage.querySelector("video, iframe"); if(old) old.remove();
+  if(tiktokState.timer){ clearInterval(tiktokState.timer); tiktokState.timer = null; }
+  tiktokState.videoEl = null;
+  $("tiktokProgressBar").style.width = "0%";
+  $("tiktokMute").style.display = "";
+}
+
+function getProvOf(p){
+  var raw = (p.proveedor || p.categoria || "").trim();
+  if(!raw || raw === "Catálogo General" || raw === "General" || raw === "Sin categoría"){
+    return "Mayorista 1";
+  }
+  return raw;
+}
+
+/* ================= CARRITO ESTILO TIENDA NUBE ================= */
+function loadSavedCart(){
+  try {
+    var raw = localStorage.getItem(CONFIG.CART_STORAGE_KEY);
+    if(!raw) return;
+    var parsed = JSON.parse(raw);
+    if(Array.isArray(parsed)){
+      state.cart = parsed
+        .filter(function(it){ return it && it.id != null && Number(it.qty) > 0; })
+        .map(function(it){ return { id: String(it.id), qty: Math.max(1, Math.floor(Number(it.qty))) }; });
+    }
+  } catch(e){}
+}
+
+function saveCart(){
+  try {
+    localStorage.setItem(CONFIG.CART_STORAGE_KEY, JSON.stringify(state.cart));
+  } catch(e){}
+}
+
+function getCartQty(id){
+  var sid = String(id);
+  var item = state.cart.find(function(x){ return String(x.id) === sid; });
+  return item ? item.qty : 0;
+}
+
+function setCartQty(id, newQty, silent){
+  var sid = String(id);
+  var q = Math.floor(Number(newQty) || 0);
+  var idx = state.cart.findIndex(function(x){ return String(x.id) === sid; });
+
+  if(q <= 0){
+    if(idx >= 0) state.cart.splice(idx, 1);
+  } else {
+    if(idx >= 0){
+      state.cart[idx].qty = q;
+    } else {
+      state.cart.push({ id: sid, qty: q });
+    }
+    if(!silent) showToast("Pedido actualizado (" + q + " u.)");
+  }
+
+  saveCart();
+  updateFeedCardButtons(sid);
+  updateOrderBar();
+  if($("cartDrawerOverlay").classList.contains("open")){
+    renderCartDrawer();
+  }
+}
+
+function addToCart(id, addQty){
+  var current = getCartQty(id);
+  var next = current + Math.max(1, Number(addQty) || 1);
+  setCartQty(id, next, true);
+  showToast("✓ Sumado a tu pedido (" + next + " u.)");
+}
+
+function calculateCartTotals(){
+  var totalUnits = 0;
+  var subtotalMoney = 0;
+  var consultCount = 0;
+
+  state.cart.forEach(function(item){
+    var p = state.products.find(function(x){ return String(x.id) === String(item.id); });
+    var qty = Number(item.qty) || 1;
+    totalUnits += qty;
+    if(p && p.precio != null && p.precio !== "" && Number(p.precio) > 0){
+      subtotalMoney += Number(p.precio) * qty;
+    } else {
+      consultCount += qty;
+    }
+  });
+
+  return {
+    totalItems: state.cart.length,
+    totalUnits: totalUnits,
+    subtotalMoney: subtotalMoney,
+    consultCount: consultCount
+  };
+}
+
+function renderFeedCartControlHtml(id){
+  var qty = getCartQty(id);
+  if(qty <= 0){
+    return '<button type="button" class="btn-quick-add" data-qadd="'+esc(id)+'">' +
+      '<i data-lucide="shopping-cart" style="width:16px;height:16px"></i> + Agregar' +
+    '</button>';
+  }
+  return '<div class="feed-qty-pill">' +
+    '<button type="button" class="feed-qty-btn" data-qminus="'+esc(id)+'">−</button>' +
+    '<span class="feed-qty-val">' + qty + ' u.</span>' +
+    '<button type="button" class="feed-qty-btn" data-qplus="'+esc(id)+'">+</button>' +
+  '</div>';
+}
+
+function updateFeedCardButtons(id){
+  var sid = String(id);
+  document.querySelectorAll('[data-cartwrap="'+sid+'"]').forEach(function(wrap){
+    wrap.innerHTML = renderFeedCartControlHtml(sid);
+    bindCartButtonsIn(wrap);
+  });
+  refreshIcons();
+}
+
+function bindCartButtonsIn(root){
+  root.querySelectorAll("[data-qadd]").forEach(function(btn){
+    if(btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      addToCart(btn.getAttribute("data-qadd"), 1);
+    });
+  });
+  root.querySelectorAll("[data-qplus]").forEach(function(btn){
+    if(btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      var id = btn.getAttribute("data-qplus");
+      setCartQty(id, getCartQty(id) + 1);
+    });
+  });
+  root.querySelectorAll("[data-qminus]").forEach(function(btn){
+    if(btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      var id = btn.getAttribute("data-qminus");
+      setCartQty(id, getCartQty(id) - 1);
+    });
+  });
+}
+
+function updateOrderBar(){
+  var totals = calculateCartTotals();
+  $("orderCount").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " u." : " u.");
+  $("headerCartBadge").textContent = totals.totalUnits;
+
+  var subTxt = totals.subtotalMoney > 0
+    ? ("Subtotal: AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " + a conf." : ""))
+    : "Subtotal: A confirmar";
+  $("floatingSubtotalTxt").textContent = subTxt;
+
+  $("floatingOrderBar").classList.toggle("hidden", totals.totalUnits === 0);
+
+  var badge = $("headerCartBadge");
+  badge.classList.remove("pop");
+  void badge.offsetWidth;
+  badge.classList.add("pop");
+}
+
+function openCartDrawer(){
+  renderCartDrawer();
+  $("cartDrawerOverlay").classList.add("open");
+  refreshIcons();
+}
+
+function closeCartDrawer(){
+  $("cartDrawerOverlay").classList.remove("open");
+}
+
+function renderCartDrawer(){
+  var listEl = $("cartDrawerList");
+  var summarySec = $("cartSummarySection");
+  var notesSec = $("cartNotesSection");
+  var headerLbl = $("cartListHeaderLbl");
+  var totals = calculateCartTotals();
+
+  if(state.cart.length === 0){
+    headerLbl.classList.add("hidden");
+    summarySec.classList.add("hidden");
+    notesSec.classList.add("hidden");
+    listEl.innerHTML = '<div style="text-align:center;padding:50px 18px;color:var(--muted)">' +
+      '<i data-lucide="shopping-bag" style="width:48px;height:48px;margin:0 auto 10px;opacity:0.4"></i>' +
+      '<div style="font-size:17px;font-weight:800;color:var(--text);margin-bottom:4px">Tu carrito de pedido está vacío</div>' +
+      '<div style="font-size:14px">Tocá <b>+ Agregar</b> en cada artículo del catálogo para ir armando tu fila de compra.</div>' +
+    '</div>';
+    refreshIcons();
+    return;
+  }
+
+  headerLbl.classList.remove("hidden");
+  summarySec.classList.remove("hidden");
+  notesSec.classList.remove("hidden");
+
+  var html = state.cart.map(function(item, index){
+    var p = state.products.find(function(x){ return String(x.id) === String(item.id); });
+    if(!p) return "";
+    var meta = parseItemMeta(p);
+    var prov = getProvOf(p);
+    var unitNumber = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
+    var unitLabel = unitNumber > 0 ? ("AR" + fmtMoney(unitNumber) + " c/u") : "Precio a consultar";
+    var lineSubtotal = unitNumber > 0 ? ("Subtotal: AR" + fmtMoney(unitNumber * item.qty)) : "Subtotal: A confirmar";
+    var title = meta.desc || meta.talles || ("Artículo " + (p.codigo || "#" + (index + 1)));
+
+    return '<div class="cart-item-row">' +
+      '<div class="cart-thumb-wrap">' +
+        '<span class="cart-item-index">' + (index + 1) + '</span>' +
+        '<img src="'+esc(p.imagen)+'" alt="Artículo" />' +
+      '</div>' +
+      '<div class="cart-item-info">' +
+        '<div class="cart-item-top">' +
+          '<span class="cart-item-prov">'+esc(prov)+'</span>' +
+          '<button type="button" class="cart-item-del" data-delcart="'+esc(p.id)+'">Quitar</button>' +
+        '</div>' +
+        '<div class="cart-item-name">'+esc(title)+'</div>' +
+        '<div class="cart-item-unit">'+esc(unitLabel)+(meta.talles ? ' · '+esc(meta.talles) : '')+'</div>' +
+        '<div class="cart-item-controls">' +
+          '<div class="cart-qty-box">' +
+            '<button type="button" class="cart-qty-btn" data-dminus="'+esc(p.id)+'">−</button>' +
+            '<span class="cart-qty-num">'+item.qty+'</span>' +
+            '<button type="button" class="cart-qty-btn" data-dplus="'+esc(p.id)+'">+</button>' +
+          '</div>' +
+          '<div class="cart-item-subtotal">'+esc(lineSubtotal)+'</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  listEl.innerHTML = html;
+
+  $("cartSummaryUnits").textContent = totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades") + " (" + totals.totalItems + (totals.totalItems === 1 ? " artículo" : " artículos") + ")";
+  $("cartSummarySubtotal").textContent = totals.subtotalMoney > 0 ? ("AR" + fmtMoney(totals.subtotalMoney)) : "A confirmar";
+
+  if(totals.consultCount > 0){
+    $("cartSummaryConsultRow").style.display = "flex";
+    $("cartSummaryConsultCnt").textContent = totals.consultCount + " u.";
+  } else {
+    $("cartSummaryConsultRow").style.display = "none";
+  }
+
+  $("cartSummaryTotal").textContent = totals.subtotalMoney > 0
+    ? ("AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " + a confirmar" : ""))
+    : "A confirmar por WhatsApp";
+
+  listEl.querySelectorAll("[data-dplus]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var id = b.getAttribute("data-dplus");
+      setCartQty(id, getCartQty(id) + 1, true);
+    });
+  });
+  listEl.querySelectorAll("[data-dminus]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var id = b.getAttribute("data-dminus");
+      setCartQty(id, getCartQty(id) - 1, true);
+    });
+  });
+  listEl.querySelectorAll("[data-delcart]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var id = b.getAttribute("data-delcart");
+      setCartQty(id, 0, true);
+      showToast("Artículo quitado de tu fila");
+    });
+  });
+}
+
+function sendCartToWhatsApp(){
+  if(state.cart.length === 0){
+    showToast("Agregá al menos un artículo a tu pedido");
+    return;
+  }
+
+  var totals = calculateCartTotals();
+  var buyerName = ($("cartBuyerName") && $("cartBuyerName").value || "").trim();
+  var buyerNote = ($("cartBuyerNote") && $("cartBuyerNote").value || "").trim();
+
+  var lines = [];
+  lines.push("Hola! 👋 Quiero realizar el siguiente pedido en *" + getStoreName() + "*:");
+  if(buyerName) lines.push("👤 Cliente: *" + buyerName + "*");
+  lines.push("");
+  lines.push("📋 *LISTA DE ARTÍCULOS PEDIDOS:*");
+
+  state.cart.forEach(function(item, idx){
+    var p = state.products.find(function(x){ return String(x.id) === String(item.id); });
+    var qty = Number(item.qty) || 1;
+    if(!p){
+      lines.push((idx + 1) + ". Artículo ref. " + item.id + " — Cantidad: " + qty + " u.");
+      return;
+    }
+    var meta = parseItemMeta(p);
+    var prov = getProvOf(p);
+    var unitPrice = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
+    var subPrice = unitPrice * qty;
+    var title = meta.desc || ("Artículo " + (p.codigo || "#" + (idx + 1)));
+
+    var itemLine = (idx + 1) + ". *" + prov + "* — " + title;
+    itemLine += "\n   • Cantidad: *" + qty + (qty === 1 ? " unidad*" : " unidades*");
+    if(meta.talles) itemLine += " | Talles: " + meta.talles;
+    if(meta.colores) itemLine += " | Colores: " + meta.colores;
+    if(unitPrice > 0){
+      itemLine += "\n   • Unitario: AR" + fmtMoney(unitPrice) + " → *Subtotal: AR" + fmtMoney(subPrice) + "*";
+    } else {
+      itemLine += "\n   • Precio: *A confirmar*";
+    }
+    if(p.imagen && String(p.imagen).indexOf("http") === 0){
+      itemLine += "\n   • Foto: " + p.imagen;
+    }
+    lines.push(itemLine);
+  });
+
+  lines.push("");
+  lines.push("────────────────────");
+  lines.push("📦 *Total pedido:* " + totals.totalUnits + (totals.totalUnits === 1 ? " unidad" : " unidades") + " (" + totals.totalItems + (totals.totalItems === 1 ? " artículo" : " artículos") + ")");
+  if(totals.subtotalMoney > 0){
+    lines.push("💰 *SUBTOTAL:* AR" + fmtMoney(totals.subtotalMoney));
+    lines.push("✅ *TOTAL ESTIMADO:* AR" + fmtMoney(totals.subtotalMoney) + (totals.consultCount > 0 ? " (+ " + totals.consultCount + " u. a confirmar)" : ""));
+  } else {
+    lines.push("💰 *TOTAL:* A confirmar por WhatsApp");
+  }
+  if(buyerNote){
+    lines.push("📝 *Nota del cliente:* " + buyerNote);
+  }
+  lines.push("");
+  lines.push("Quedo a la espera para coordinar la compra. ¡Muchas gracias!");
+
+  var msg = lines.join("\n");
+  window.open("https://wa.me/" + getActiveWaNumber() + "?text=" + encodeURIComponent(msg), "_blank");
+}
+
+/* ================= SUPABASE STORE (+ SINCRONIZACIÓN DE DATOS DEL LOCAL) ================= */
+var Store = {
+  init: async function(){
+    if(CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY && window.supabase){
+      state.sb = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+      var first = await state.sb
+        .from(CONFIG.TABLE_NAME)
+        .select("*")
+        .order("created_at", {ascending: false})
+        .range(0, 499);
+
+      if(!first.error && first.data){
+        this.extractProfileAndProducts(first.data, true);
+        if(first.data.length === 500){
+          this.loadRemaining(500);
+        }
+      }
+    }
+  },
+  extractProfileAndProducts: function(rows, reset){
+    var valid = [];
+    rows.forEach(function(r){
+      if(r.codigo === "__STORE_PROFILE__"){
+        state.profileRowId = r.id;
+        try {
+          var remoteProf = JSON.parse(r.nombre || "{}");
+          state.profile = Object.assign({}, DEFAULT_PROFILE, remoteProf);
+          localStorage.setItem(CONFIG.PROFILE_STORAGE_KEY, JSON.stringify(state.profile));
+          applyProfileToUI();
+        } catch(e){}
+      } else if(r.estado !== "oculto"){
+        valid.push(r);
+      }
+    });
+    if(reset){
+      state.products = valid;
+    } else {
+      state.products = state.products.concat(valid);
+    }
+  },
+  saveStoreProfileToCloud: async function(profileObj){
+    state.profile = Object.assign({}, DEFAULT_PROFILE, profileObj);
+    try {
+      localStorage.setItem(CONFIG.PROFILE_STORAGE_KEY, JSON.stringify(state.profile));
+    } catch(e){}
+    applyProfileToUI();
+
+    if(!state.sb) return;
+    var payload = {
+      nombre: JSON.stringify(state.profile),
+      codigo: "__STORE_PROFILE__",
+      proveedor: "__SYSTEM__",
+      categoria: "__SYSTEM__",
+      precio: 0,
+      imagen: "",
+      estado: "oculto"
+    };
+    if(state.profileRowId){
+      await state.sb.from(CONFIG.TABLE_NAME).update(payload).eq("id", state.profileRowId);
+    } else {
+      var ins = await state.sb.from(CONFIG.TABLE_NAME).insert(payload).select();
+      if(!ins.error && ins.data && ins.data[0]){
+        state.profileRowId = ins.data[0].id;
+      }
+    }
+  },
+  loadRemaining: async function(startFrom){
+    var from = startFrom;
+    var step = 500;
+    while(from < 10000){
+      var res = await state.sb
+        .from(CONFIG.TABLE_NAME)
+        .select("*")
+        .order("created_at", {ascending: false})
+        .range(from, from + step - 1);
+      if(res.error || !res.data || res.data.length === 0) break;
+      this.extractProfileAndProducts(res.data, false);
+      renderProviderTabs();
+      applyFilterAndRender(false);
+      updateOrderBar();
+      if(res.data.length < step) break;
+      from += step;
+    }
+  },
+  uploadVideoFile: async function(videoFile){
+    if(!videoFile || !state.sb) return "";
+    showToast("Comprimiendo video (carga rápida)...");
+    var compressed = videoFile;
+    try { compressed = await compressVideoFile(videoFile); } catch(e){ compressed = videoFile; }
+    var ext = (compressed.name.split(".").pop() || "mp4").toLowerCase();
+    var vname = "vid-" + Date.now() + "-" + Math.random().toString(36).slice(2,7) + "." + ext;
+    var up = await state.sb.storage.from(CONFIG.BUCKET_NAME).upload(vname, compressed, {
+      contentType: compressed.type || "video/mp4",
+      upsert: true
+    });
+    if(!up.error){
+      return state.sb.storage.from(CONFIG.BUCKET_NAME).getPublicUrl(vname).data.publicUrl;
+    }
+    throw new Error(up.error.message || "No se pudo subir el video");
+  },
+  uploadAndInsert: async function(item, provName, seqNum, autoCrop){
+    var blob = await compressAndCleanScreenshot(item.file, 1280, 0.85, autoCrop);
+    var fname = "cat-" + Date.now() + "-" + seqNum + "-" + Math.random().toString(36).slice(2,7) + ".jpg";
+    var imgUrl = "";
+
+    var up = await state.sb.storage.from(CONFIG.BUCKET_NAME).upload(fname, blob, {
+      contentType: "image/jpeg",
+      upsert: true
+    });
+    if(!up.error){
+      imgUrl = state.sb.storage.from(CONFIG.BUCKET_NAME).getPublicUrl(fname).data.publicUrl;
+    } else {
+      imgUrl = await blobToDataURL(blob);
+    }
+
+    var finalVideoUrl = (item.videoUrl || "").trim();
+    if(item.videoFile){
+      try {
+        finalVideoUrl = await this.uploadVideoFile(item.videoFile);
+      } catch(err){
+        console.warn("Error subiendo video:", err);
+      }
+    }
+
+    var packedName = packItemName(item.detail, item.talles, item.colores, finalVideoUrl, provName + " · Modelo #" + seqNum);
+    var payload = {
+      nombre: packedName,
+      codigo: "M-" + seqNum,
+      proveedor: provName,
+      categoria: provName,
+      precio: item.price === "" || item.price == null ? null : Number(item.price),
+      imagen: imgUrl,
+      estado: "activo"
+    };
+
+    var ins = await state.sb.from(CONFIG.TABLE_NAME).insert(payload).select();
+    if(!ins.error && ins.data && ins.data[0]){
+      state.products.unshift(ins.data[0]);
+      return ins.data[0];
+    }
+    throw new Error(ins.error ? ins.error.message : "Error al guardar fila");
+  },
+  updateItemInfo: async function(id, newPrice, newDesc, newTalles, newColores, newVideoUrl){
+    var p = state.products.find(function(x){ return String(x.id) === String(id); });
+    var packed = packItemName(newDesc, newTalles, newColores, newVideoUrl, p ? (getProvOf(p) + " · Artículo") : "Artículo");
+    var patch = {
+      precio: newPrice === "" || newPrice == null ? null : Number(newPrice),
+      nombre: packed
+    };
+    await state.sb.from(CONFIG.TABLE_NAME).update(patch).eq("id", id);
+    if(p){
+      p.precio = patch.precio;
+      p.nombre = patch.nombre;
+      p.talles = newTalles;
+      p.colores = newColores;
+      p.video = newVideoUrl;
+    }
+  },
+  renameProvider: async function(oldName, newName){
+    var ids = state.products.filter(function(p){ return getProvOf(p) === oldName; }).map(function(p){ return p.id; });
+    if(ids.length > 0){
+      await state.sb.from(CONFIG.TABLE_NAME).update({proveedor: newName, categoria: newName}).in("id", ids);
+    }
+    state.products.forEach(function(p){
+      if(getProvOf(p) === oldName){
+        p.proveedor = newName;
+        p.categoria = newName;
+      }
+    });
+  },
+  remove: async function(id){
+    await state.sb.from(CONFIG.TABLE_NAME).delete().eq("id", id);
+    state.products = state.products.filter(function(x){ return x.id !== id; });
+  },
+  removeByProvider: async function(prov){
+    var ids = state.products.filter(function(p){ return getProvOf(p) === prov; }).map(function(p){ return p.id; });
+    if(ids.length > 0){
+      await state.sb.from(CONFIG.TABLE_NAME).delete().in("id", ids);
+    }
+    state.products = state.products.filter(function(x){ return getProvOf(x) !== prov; });
+  }
+};
+
+/* ================= COMPRESIÓN DE VIDEO (BAJA MEGAPÍXELES, CARGA RÁPIDA) ================= */
+function compressVideoFile(file){
+  return new Promise(function(resolve){
+    if(!file || !window.MediaRecorder || !document.createElement("canvas").captureStream){ resolve(file); return; }
+    var MAX_H = 1280; // vertical 9:16 en HD (720x1280) — reduce megapíxeles sin perder calidad apreciable
+    var vid = document.createElement("video");
+    vid.muted = true; vid.playsInline = true; vid.preload = "auto";
+    var url = URL.createObjectURL(file);
+    vid.src = url;
+    var cleanup = function(){ try{ URL.revokeObjectURL(url); }catch(e){} };
+    vid.onloadedmetadata = function(){
+      var vw = vid.videoWidth, vh = vid.videoHeight;
+      if(!vw || !vh || vh <= MAX_H){ cleanup(); resolve(file); return; }
+      var outH = MAX_H;
+      var outW = Math.round(vw * outH / vh);
+      outW = outW - (outW % 2); outH = outH - (outH % 2);
+      var canvas = document.createElement("canvas");
+      canvas.width = outW; canvas.height = outH;
+      var ctx = canvas.getContext("2d");
+      var stream = canvas.captureStream(30);
+      try {
+        var AC = window.AudioContext || window.webkitAudioContext;
+        var actx = new AC();
+        var src = actx.createMediaElementSource(vid);
+        var dest = actx.createMediaStreamDestination();
+        src.connect(dest);
+        dest.stream.getAudioTracks().forEach(function(t){ stream.addTrack(t); });
+      } catch(e){}
+      var mime = "video/webm;codecs=vp9,opus";
+      if(!MediaRecorder.isTypeSupported(mime)) mime = "video/webm;codecs=vp8,opus";
+      if(!MediaRecorder.isTypeSupported(mime)) mime = "video/mp4";
+      var recorder;
+      try {
+        recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 2800000, audioBitsPerSecond: 128000 });
+      } catch(e){ cleanup(); resolve(file); return; }
+      var chunks = [];
+      recorder.ondataavailable = function(e){ if(e.data && e.data.size > 0) chunks.push(e.data); };
+      recorder.onstop = function(){
+        cleanup();
+        try {
+          var blob = new Blob(chunks, { type: mime.split(";")[0] });
+          if(blob.size >= file.size * 0.95){ resolve(file); return; }
+          var ext = mime.indexOf("mp4") >= 0 ? "mp4" : "webm";
+          var base = (file.name || "video").replace(/\.[^.]+$/, "");
+          var cfile = new File([blob], base + "_hd." + ext, { type: blob.type });
+          resolve(cfile);
+        } catch(err){ resolve(file); }
+      };
+      var rafId = null;
+      function draw(){
+        if(recorder.state !== "recording") return;
+        try { ctx.drawImage(vid, 0, 0, outW, outH); } catch(e){}
+        rafId = requestAnimationFrame(draw);
+      }
+      vid.onended = function(){
+        try { recorder.stop(); } catch(e){}
+        if(rafId) cancelAnimationFrame(rafId);
+      };
+      vid.play().then(function(){
+        try { recorder.start(250); draw(); }
+        catch(e){ cleanup(); resolve(file); }
+      }).catch(function(){ cleanup(); resolve(file); });
+    };
+    vid.onerror = function(){ cleanup(); resolve(file); };
+  });
+}
+function compressAndCleanScreenshot(file, maxW, quality, autoCrop){
+  return new Promise(function(resolve){
+    var reader = new FileReader();
+    reader.onload = function(e){
+      var img = new Image();
+      img.onload = function(){
+        var origW = img.width, origH = img.height;
+        var tempCanvas = document.createElement("canvas");
+        tempCanvas.width = origW;
+        tempCanvas.height = origH;
+        var tCtx = tempCanvas.getContext("2d");
+        tCtx.drawImage(img, 0, 0);
+
+        var topY = 0, bottomY = origH;
+
+        if(autoCrop && origH > origW * 1.3){
+          try {
+            var data = tCtx.getImageData(0, 0, origW, origH).data;
+            var maxTopScan = Math.floor(origH * 0.22);
+            for(var y = 0; y < maxTopScan; y += 2){
+              var brightPixels = 0;
+              for(var x = Math.floor(origW * 0.1); x < origW * 0.9; x += 8){
+                var idx = (y * origW + x) * 4;
+                if(data[idx] > 38 || data[idx+1] > 38 || data[idx+2] > 38) brightPixels++;
+              }
+              var totalSamples = Math.floor((origW * 0.8) / 8);
+              if(brightPixels > totalSamples * 0.25){
+                topY = y;
+                break;
+              }
+            }
+            var minBottomScan = Math.floor(origH * 0.82);
+            for(var by = origH - 1; by > minBottomScan; by -= 2){
+              var brightBot = 0;
+              for(var bx = Math.floor(origW * 0.1); bx < origW * 0.9; bx += 8){
+                var bIdx = (by * origW + bx) * 4;
+                if(data[bIdx] > 38 || data[bIdx+1] > 38 || data[bIdx+2] > 38) brightBot++;
+              }
+              var botSamples = Math.floor((origW * 0.8) / 8);
+              if(brightBot > botSamples * 0.25){
+                bottomY = by + 1;
+                break;
+              }
+            }
+          } catch(err){}
+        }
+
+        var cropH = Math.max(100, bottomY - topY);
+        var outW = origW, outH = cropH;
+        if(outW > maxW){
+          outH = Math.round(outH * maxW / outW);
+          outW = maxW;
+        }
+
+        var finalCanvas = document.createElement("canvas");
+        finalCanvas.width = outW;
+        finalCanvas.height = outH;
+        var fCtx = finalCanvas.getContext("2d");
+        fCtx.drawImage(tempCanvas, 0, topY, origW, cropH, 0, 0, outW, outH);
+        finalCanvas.toBlob(function(b){ resolve(b || file); }, "image/jpeg", quality || 0.85);
+      };
+      img.onerror = function(){ resolve(file); };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function blobToDataURL(blob){
+  return new Promise(function(resolve){
+    var r = new FileReader();
+    r.onload = function(e){ resolve(e.target.result); };
+    r.readAsDataURL(blob);
+  });
+}
+
+function getUniqueProviders(){
+  var map = {};
+  var cover = {};
+  state.products.forEach(function(p){
+    var pv = getProvOf(p);
+    map[pv] = (map[pv] || 0) + 1;
+    if(!cover[pv] && p.imagen) cover[pv] = p.imagen;
+  });
+  return Object.keys(map).map(function(k){ return {name: k, count: map[k], thumb: cover[k] || ""}; });
+}
+
+function renderProviderTabs(){
+  var provs = getUniqueProviders();
+  var total = state.products.length;
+
+  if(state.activeProv && !provs.some(function(pr){ return pr.name === state.activeProv; })){
+    state.activeProv = "";
+  }
+
+  var chipsHtml = '<button class="prov-chip'+(state.activeProv===""?" active":"")+'" data-p="">Ver Todo Junto <span class="cnt">'+total+'</span></button>';
+  provs.forEach(function(pr){
+    chipsHtml += '<button class="prov-chip'+(state.activeProv===pr.name?" active":"")+'" data-p="'+esc(pr.name)+'">'+esc(pr.name)+' <span class="cnt">'+pr.count+'</span></button>';
+  });
+  $("provChips").innerHTML = chipsHtml;
+
+  if(provs.length <= 1){
+    $("catalogHub").classList.add("hidden");
+  } else {
+    $("catalogHub").classList.remove("hidden");
+    var hubHtml = provs.map(function(pr){
+      var isAct = state.activeProv === pr.name;
+      return '<button type="button" class="hub-card'+(isAct?" active":"")+'" data-p="'+esc(pr.name)+'">' +
+        '<span class="hub-card-count">'+pr.count+' artículos</span>' +
+        (pr.thumb ? '<img class="hub-card-thumb" src="'+esc(pr.thumb)+'" loading="lazy" />' : '') +
+        '<div class="hub-card-body">' +
+          '<div class="hub-card-name">'+esc(pr.name)+'</div>' +
+          '<span class="hub-card-arrow">→</span>' +
+        '</div>' +
+      '</button>';
+    }).join("");
+    $("hubGrid").innerHTML = hubHtml;
+  }
+
+  document.querySelectorAll("[data-p]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      state.activeProv = btn.getAttribute("data-p");
+      renderProviderTabs();
+      applyFilterAndRender(true);
+    });
+  });
+
+  refreshIcons();
+}
+
+function applyFilterAndRender(resetScroll){
+  var q = (state.searchQuery || "").toLowerCase().trim();
+
+  state.filtered = state.products.filter(function(p, idx){
+    if(state.activeProv && getProvOf(p) !== state.activeProv) return false;
+    if(q){
+      var meta = parseItemMeta(p);
+      var haystack = (getProvOf(p) + " " + meta.desc + " " + meta.talles + " " + meta.colores + " " + (p.codigo || "") + " #" + (idx + 1)).toLowerCase();
+      if(haystack.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+
+  $("activeProvTitle").innerHTML = state.activeProv
+    ? ('Viendo: <b>' + esc(state.activeProv) + '</b>')
+    : 'Viendo: <b>Todos los catálogos juntos</b>';
+  $("totalPhotosBadge").textContent = state.filtered.length + (state.filtered.length === 1 ? " artículo" : " artículos");
+
+  if(resetScroll){
+    state.renderedCount = 0;
+    $("photoFeed").innerHTML = "";
+    renderNextChunk();
+  }
+}
+
+function renderNextChunk(){
+  var feed = $("photoFeed");
+  if(state.filtered.length === 0){
+    feed.innerHTML = '<div style="text-align:center;padding:60px 20px;margin:14px;background:#ffffff;border-radius:18px;border:1px dashed var(--border)"><p style="font-size:17px;font-weight:800;margin-bottom:6px">No se encontraron artículos</p><p style="font-size:14px;color:var(--muted)">Probá con otra palabra o limpiá el buscador.</p></div>';
+    $("btnLoadMore").classList.add("hidden");
+    return;
+  }
+
+  var nextSlice = state.filtered.slice(state.renderedCount, state.renderedCount + CONFIG.PAGE_SIZE);
+  var html = nextSlice.map(function(p, idx){
+    var num = state.renderedCount + idx + 1;
+    var price = fmtPrice(p.precio);
+    var meta = parseItemMeta(p);
+    var hasVideo = Boolean(meta.video);
+    var captionTitle = meta.desc ? meta.desc.split("\n")[0].slice(0, 60) : (getProvOf(p) + " · Artículo #" + num);
+    var captionSub = meta.talles ? meta.talles : (meta.colores || "");
+    var priceHtml = price ? ('<div class="caption-price">AR' + esc(price) + '</div>') : '<div class="caption-price consult">Consultar</div>';
+
+    return '<article class="feed-card" data-id="'+esc(p.id)+'">' +
+      '<div class="feed-img-wrap">' +
+        (num <= 12 ? '<span class="badge-new">Nuevo</span>' : '') +
+        (hasVideo ? '<button type="button" class="badge-video" data-openvideo="'+esc(p.id)+'">▶ Reproducir Video</button>' : '') +
+        '<span class="float-num">#'+num+'</span>' +
+        '<img class="feed-main-img" src="'+esc(p.imagen)+'" alt="Artículo #'+num+'" loading="lazy" />' +
+      '</div>' +
+      '<div class="feed-caption-bar">' +
+        '<div class="caption-text">' +
+          '<div class="caption-title">'+esc(captionTitle)+'</div>' +
+          (captionSub ? '<div class="caption-sub">'+esc(captionSub)+'</div>' : '') +
+        '</div>' +
+        '<div class="caption-right">' +
+          priceHtml +
+          '<div class="feed-cart-action" data-cartwrap="'+esc(p.id)+'">' +
+            renderFeedCartControlHtml(p.id) +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }).join("");
+
+  feed.insertAdjacentHTML("beforeend", html);
+  state.renderedCount += nextSlice.length;
+
+  $("btnLoadMore").classList.toggle("hidden", state.renderedCount >= state.filtered.length);
+  bindFeedEvents();
+  refreshIcons();
+}
+
+function updateSheetCartStatus(){
+  if(!state.currentSheetItem) return;
+  var p = state.currentSheetItem.p;
+  var inCartQty = getCartQty(p.id);
+  $("sheetQtyVal").textContent = state.sheetTempQty;
+
+  if(inCartQty > 0){
+    $("sheetInCartHint").textContent = "Ya tenés " + inCartQty + " u. en tu fila de pedido";
+  } else {
+    $("sheetInCartHint").textContent = "Seleccioná cuántas unidades sumar";
+  }
+
+  var unitPrice = (p.precio != null && p.precio !== "" && Number(p.precio) > 0) ? Number(p.precio) : 0;
+  if(unitPrice > 0){
+    $("sheetAddToCartTxt").textContent = "Sumar " + state.sheetTempQty + " u. al pedido (AR" + fmtMoney(unitPrice * state.sheetTempQty) + ")";
+  } else {
+    $("sheetAddToCartTxt").textContent = "Sumar " + state.sheetTempQty + (state.sheetTempQty === 1 ? " unidad" : " unidades") + " al pedido";
+  }
+}
+
+function openDetailSheet(id, num){
+  var p = state.products.find(function(x){ return String(x.id) === String(id); });
+  if(!p) return;
+  state.currentSheetItem = {p: p, num: num};
+  state.sheetTempQty = 1;
+
+  var prov = getProvOf(p);
+  var price = fmtPrice(p.precio);
+  var meta = parseItemMeta(p);
+
+  $("sheetThumb").src = p.imagen || "";
+  $("sheetProvBadge").textContent = prov + " · Artículo #" + num;
+  $("sheetTitle").textContent = meta.desc ? meta.desc.split("\n")[0].slice(0, 48) : ("Artículo #" + num + " — " + prov);
+
+  if(price){
+    $("sheetPriceVal").textContent = "AR" + price;
+    $("sheetPriceVal").classList.remove("consult");
+  } else {
+    $("sheetPriceVal").textContent = "Consultar por mayor";
+    $("sheetPriceVal").classList.add("consult");
+  }
+
+  if(meta.video){
+    $("sheetInlineVideoBox").classList.remove("hidden");
+    $("sheetInlineVideoBox").innerHTML = buildInlineVideoPlayerHtml(meta.video);
+  } else {
+    $("sheetInlineVideoBox").classList.add("hidden");
+    $("sheetInlineVideoBox").innerHTML = "";
+  }
+
+  $("sheetTallesVal").textContent = meta.talles || "Disponible";
+  $("sheetColoresVal").textContent = meta.colores || "Surtido según catálogo";
+  $("sheetDetailText").textContent = meta.desc || "Mercadería directa mayorista. Sumá este artículo a tu carrito para armar tu pedido completo.";
+
+  updateSheetCartStatus();
+  $("detailSheet").classList.add("open");
+  refreshIcons();
+}
+
+function closeDetailSheet(){
+  $("detailSheet").classList.remove("open");
+  $("sheetInlineVideoBox").innerHTML = "";
+}
+
+function bindFeedEvents(){
+  document.querySelectorAll("[data-openvideo]").forEach(function(vbtn){
+    if(vbtn.dataset.bound) return;
+    vbtn.dataset.bound = "1";
+    vbtn.addEventListener("click", function(e){
+      e.stopPropagation();
+      openTikTokVideo(vbtn.getAttribute("data-openvideo"));
+    });
+  });
+
+  document.querySelectorAll("[data-opensheet]").forEach(function(el){
+    if(el.dataset.bound) return;
+    el.dataset.bound = "1";
+    el.addEventListener("click", function(e){
+      if(e.target.closest(".feed-cart-action") || e.target.closest("[data-openvideo]") || e.target.closest(".feed-inline-video-wrap")) return;
+      e.stopPropagation();
+      var id = el.getAttribute("data-opensheet");
+      var num = el.getAttribute("data-num") || "1";
+      openDetailSheet(id, num);
+    });
+  });
+
+  bindCartButtonsIn($("photoFeed"));
+}
+
+/* ================= ADMIN PANEL ================= */
+function renderAdminDashboard(){
+  applyProfileToUI();
+  var provs = getUniqueProviders();
+  $("adminTotalCount").textContent = state.products.length;
+
+  var linksHtml = '<div class="link-prov-item master">' +
+    '<div>' +
+      '<div style="font-weight:800;font-size:14.5px;color:var(--wa-deep)">🌟 LINK PRINCIPAL (Muestra todos los mayoristas)</div>' +
+      '<div style="font-size:12px;color:var(--muted)">Mandá este link para que vean todo el catálogo</div>' +
+    '</div>' +
+    '<button class="btn-copy" data-copylink=""><i data-lucide="copy" style="width:14px;height:14px"></i> Copiar Link</button>' +
+  '</div>';
+
+  provs.forEach(function(pr){
+    linksHtml += '<div class="link-prov-item">' +
+      '<div style="min-width:0">' +
+        '<div style="font-weight:800;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">📁 ' + esc(pr.name) + '</div>' +
+        '<div style="font-size:11.5px;color:var(--muted)">' + pr.count + ' artículos</div>' +
+      '</div>' +
+      '<button class="btn-copy" data-copylink="'+esc(pr.name)+'"><i data-lucide="link" style="width:13px;height:13px"></i> Copiar link</button>' +
+    '</div>';
+  });
+  $("providerLinksGrid").innerHTML = linksHtml;
+
+  $("providerLinksGrid").querySelectorAll("[data-copylink]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var pv = btn.getAttribute("data-copylink");
+      var url = getProviderUrl(pv);
+      copyText(url, pv ? ("Link de " + pv + " copiado") : "Link Principal copiado");
+    });
+  });
+
+  var baseNames = ["Mayorista 1","Mayorista 2","Mayorista 3","Mayorista 4","Mayorista 5"];
+  provs.forEach(function(p){ if(baseNames.indexOf(p.name)===-1) baseNames.unshift(p.name); });
+  $("presetProvBtns").innerHTML = baseNames.slice(0, 8).map(function(n){
+    var act = $("batchProvInput").value === n ? " active" : "";
+    return '<button type="button" class="prov-preset'+act+'" data-prov="'+esc(n)+'">'+esc(n)+'</button>';
+  }).join("");
+  bindPresetButtons();
+
+  var curFilter = $("adminFilterProv").value;
+  $("adminFilterProv").innerHTML = '<option value="">Todos los mayoristas ('+state.products.length+' total)</option>' +
+    provs.map(function(p){ return '<option value="'+esc(p.name)+'">'+esc(p.name)+' ('+p.count+' fotos)</option>'; }).join("");
+  $("adminFilterProv").value = curFilter;
+  renderAdminPhotosList();
+  refreshIcons();
+}
+
+function renderAdminPhotosList(){
+  var pf = $("adminFilterProv").value;
+  var list = state.products.filter(function(p){ return !pf || getProvOf(p) === pf; }).slice(0, 100);
+  $("adminPhotosGrid").innerHTML = list.map(function(p){
+    var pr = fmtPrice(p.precio) || "Consultar";
+    var meta = parseItemMeta(p);
+    return '<div class="admin-item-card">' +
+      (meta.video ? '<span style="position:absolute;top:6px;left:6px;background:#0f172a;color:#f8dfa1;font-size:10px;font-weight:800;padding:3px 8px;border-radius:99px">▶ CON VIDEO</span>' : '') +
+      '<img src="'+esc(p.imagen)+'" loading="lazy" />' +
+      '<div class="admin-item-body">' +
+        '<div style="font-weight:800;color:var(--wa-dark)">'+esc(pr)+'</div>' +
+        '<div style="color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(meta.desc || meta.talles || "Sin descripción")+'</div>' +
+        '<button class="btn-top" data-editid="'+esc(p.id)+'" style="color:var(--wa-deep);border-color:var(--wa-border);background:var(--wa-soft);justify-content:center;margin-top:4px;padding:6px">✏️ Ficha / Video</button>' +
+        '<button class="btn-top" data-delid="'+esc(p.id)+'" style="color:#dc2626;justify-content:center;padding:5px">Borrar</button>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  $("adminPhotosGrid").querySelectorAll("[data-editid]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = btn.getAttribute("data-editid");
+      var p = state.products.find(function(x){ return String(x.id) === String(id); });
+      if(!p) return;
+      var meta = parseItemMeta(p);
+      $("editItemId").value = p.id;
+      $("editItemPrice").value = p.precio || "";
+      $("editItemTalles").value = meta.talles || "";
+      $("editItemColores").value = meta.colores || "";
+      $("editItemDesc").value = meta.desc || "";
+      $("editItemVideoUrl").value = meta.video || "";
+      $("editItemVideoFile").value = "";
+      $("editVideoFileLbl").textContent = "Seleccionar video desde el celular";
+      $("editItemModal").classList.add("open");
+      refreshIcons();
+    });
+  });
+
+  $("adminPhotosGrid").querySelectorAll("[data-delid]").forEach(function(btn){
+    btn.addEventListener("click", async function(){
+      var id = btn.getAttribute("data-delid");
+      await Store.remove(id);
+      renderProviderTabs();
+      applyFilterAndRender(true);
+      renderAdminDashboard();
+      showToast("Artículo eliminado");
+    });
+  });
+}
+
+function bindPresetButtons(){
+  document.querySelectorAll(".prov-preset").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".prov-preset").forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      $("batchProvInput").value = btn.getAttribute("data-prov");
+      renderBatchPreview();
+    });
+  });
+}
+
+function handleBatchSelect(files){
+  var arr = Array.from(files).filter(function(f){ return f.type.indexOf("image/") === 0; });
+  if(arr.length === 0) return;
+  var defPrice = $("batchPriceInput").value.trim();
+  var defTalles = $("batchTallesInput").value.trim();
+  var defColores = $("batchColoresInput").value.trim();
+  var defDetail = $("batchDetailInput").value.trim();
+  var defVideo = $("batchVideoInput").value.trim();
+  arr.forEach(function(f){
+    state.batchItems.push({
+      file: f,
+      price: defPrice,
+      talles: defTalles,
+      colores: defColores,
+      detail: defDetail,
+      videoUrl: defVideo,
+      videoFile: null
+    });
+  });
+  renderBatchPreview();
+}
+
+function renderBatchPreview(){
+  var total = state.batchItems.length;
+  $("batchSummary").classList.toggle("hidden", total === 0);
+  var prov = $("batchProvInput").value.trim() || "Mayorista 2";
+  $("batchCountLbl").textContent = total + " artículos listos para subir a \"" + prov + "\"";
+  $("btnStartUploadTxt").textContent = "Publicar " + total + " artículos en \"" + prov + "\"";
+
+  var previewSlice = state.batchItems.slice(0, 36);
+  $("batchPreviewGrid").innerHTML = previewSlice.map(function(item, idx){
+    var url = URL.createObjectURL(item.file);
+    var vFileName = item.videoFile ? ("✓ " + item.videoFile.name.slice(0, 18)) : "🎬 Adjuntar archivo de video";
+    return '<div class="batch-thumb-box" data-bidx="'+idx+'">' +
+      '<img src="'+url+'" />' +
+      '<div class="batch-thumb-inputs">' +
+        '<input type="number" data-bfield="price" placeholder="Precio $ (opcional)" value="'+esc(item.price)+'" />' +
+        '<input type="text" data-bfield="talles" placeholder="Talles / Presentación" value="'+esc(item.talles)+'" />' +
+        '<input type="text" data-bfield="detail" placeholder="Descripción..." value="'+esc(item.detail)+'" />' +
+        '<input type="text" data-bfield="videoUrl" placeholder="Link de video (opcional)" value="'+esc(item.videoUrl)+'" />' +
+        '<label class="btn-attach-video">' +
+          '<span>'+esc(vFileName)+'</span>' +
+          '<input type="file" accept="video/*" data-bvideo="'+idx+'" class="hidden" />' +
+        '</label>' +
+      '</div>' +
+      '<button type="button" class="batch-thumb-del" data-rmbatch="'+idx+'">✕</button>' +
+    '</div>';
+  }).join("") + (total > 36 ? '<div style="display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--wa-dark);padding:10px;text-align:center">+' + (total - 36) + ' fotos más</div>' : '');
+
+  $("batchPreviewGrid").querySelectorAll("[data-bfield]").forEach(function(inp){
+    inp.addEventListener("input", function(){
+      var idx = Number(inp.closest("[data-bidx]").getAttribute("data-bidx"));
+      var field = inp.getAttribute("data-bfield");
+      state.batchItems[idx][field] = inp.value;
+    });
+  });
+
+  $("batchPreviewGrid").querySelectorAll("[data-bvideo]").forEach(function(fInp){
+    fInp.addEventListener("change", function(e){
+      var idx = Number(fInp.getAttribute("data-bvideo"));
+      if(e.target.files && e.target.files[0]){
+        state.batchItems[idx].videoFile = e.target.files[0];
+        renderBatchPreview();
+        showToast("Video adjuntado al artículo #" + (idx + 1));
+      }
+    });
+  });
+
+  $("batchPreviewGrid").querySelectorAll("[data-rmbatch]").forEach(function(b){
+    b.addEventListener("click", function(){
+      state.batchItems.splice(Number(b.getAttribute("data-rmbatch")), 1);
+      renderBatchPreview();
+    });
+  });
+}
+
+async function startMassUpload(){
+  var total = state.batchItems.length;
+  if(total === 0) return;
+  var provName = $("batchProvInput").value.trim() || "Mayorista 2";
+  var defPrice = $("batchPriceInput").value.trim();
+  var defTalles = $("batchTallesInput").value.trim();
+  var defColores = $("batchColoresInput").value.trim();
+  var defDetail = $("batchDetailInput").value.trim();
+  var defVideo = $("batchVideoInput").value.trim();
+  var autoCrop = $("chkAutoCrop").checked;
+
+  state.batchItems.forEach(function(it){
+    if(it.price === "" && defPrice !== "") it.price = defPrice;
+    if(it.talles === "" && defTalles !== "") it.talles = defTalles;
+    if(it.colores === "" && defColores !== "") it.colores = defColores;
+    if(it.detail === "" && defDetail !== "") it.detail = defDetail;
+    if(it.videoUrl === "" && defVideo !== "") it.videoUrl = defVideo;
+  });
+
+  $("progressBox").classList.remove("hidden");
+  $("btnStartUpload").disabled = true;
+
+  var done = 0;
+  var concurrency = 3;
+  var queue = state.batchItems.slice();
+  var existingInProv = state.products.filter(function(p){ return getProvOf(p) === provName; }).length;
+
+  async function worker(){
+    while(queue.length > 0){
+      var item = queue.shift();
+      done++;
+      var currentSeq = existingInProv + done;
+      try {
+        await Store.uploadAndInsert(item, provName, currentSeq, autoCrop);
+      } catch(e) {
+        console.warn("Error subiendo archivo:", e);
+      }
+      var pct = Math.round((done / total) * 100);
+      $("progressBar").style.width = pct + "%";
+      $("progressText").textContent = "Subiendo a \"" + provName + "\": " + done + " de " + total + " (" + pct + "%)...";
+    }
+  }
+
+  var workers = [];
+  for(var w = 0; w < concurrency; w++) workers.push(worker());
+  await Promise.all(workers);
+
+  state.batchItems = [];
+  $("progressBox").classList.add("hidden");
+  $("btnStartUpload").disabled = false;
+  renderBatchPreview();
+  state.activeProv = provName;
+  renderProviderTabs();
+  applyFilterAndRender(true);
+  renderAdminDashboard();
+  showToast("¡Se publicaron " + total + " artículos en " + provName + "!");
+}
+
+function route(){
+  var hash = location.hash || "#/";
+  if(hash.indexOf("#/admin") === 0){
+    $("viewCatalog").classList.add("hidden");
+    $("clientHeader").classList.add("hidden");
+    $("businessCardSection").classList.add("hidden");
+    $("provBarWrap").classList.add("hidden");
+    $("viewAdmin").classList.remove("hidden");
+    if(sessionStorage.getItem("catalogo_admin") === "1"){
+      state.admin = true;
+      $("loginBlock").classList.add("hidden");
+      $("dashboardBlock").classList.remove("hidden");
+      renderAdminDashboard();
+    } else {
+      $("loginBlock").classList.remove("hidden");
+      $("dashboardBlock").classList.add("hidden");
+    }
+  } else {
+    $("viewCatalog").classList.remove("hidden");
+    $("clientHeader").classList.remove("hidden");
+    $("businessCardSection").classList.remove("hidden");
+    $("provBarWrap").classList.remove("hidden");
+    $("viewAdmin").classList.add("hidden");
+  }
+  refreshIcons();
+}
+
+function refreshIcons(){
+  if(window.lucide && lucide.createIcons){ try{ lucide.createIcons(); }catch(e){} }
+}
+
+function bindEvents(){
+  $("btnBackCatalog").addEventListener("click", function(){ location.hash = "#/"; });
+  $("btnBackFromLogin").addEventListener("click", function(){ location.hash = "#/"; });
+  window.addEventListener("hashchange", route);
+
+  var tapCount = 0, tapTimer = null;
+  $("brandSecretTrigger").addEventListener("click", function(){
+    tapCount++;
+    clearTimeout(tapTimer);
+    if(tapCount >= 5){
+      tapCount = 0;
+      location.hash = "#/admin";
+    } else {
+      tapTimer = setTimeout(function(){ tapCount = 0; }, 1200);
+    }
+  });
+
+  // Buscador instantáneo
+  var sInp = $("catalogSearchInput");
+  var sClear = $("btnClearSearch");
+  sInp.addEventListener("input", function(){
+    state.searchQuery = sInp.value;
+    sClear.classList.toggle("hidden", !state.searchQuery);
+    applyFilterAndRender(true);
+  });
+  sClear.addEventListener("click", function(){
+    sInp.value = "";
+    state.searchQuery = "";
+    sClear.classList.add("hidden");
+    applyFilterAndRender(true);
+  });
+
+  $("btnLoadMore").addEventListener("click", renderNextChunk);
+  window.addEventListener("scroll", function(){
+    var h = document.documentElement;
+    var denom = h.scrollHeight - h.clientHeight;
+    var pct = denom > 0 ? (h.scrollTop / denom) * 100 : 0;
+    $("scrollProgress").style.width = pct + "%";
+    $("backToTop").classList.toggle("hidden", window.scrollY < 500);
+    if($("viewCatalog").classList.contains("hidden")) return;
+    if((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 900)){
+      if(state.renderedCount < state.filtered.length){
+        renderNextChunk();
+      }
+    }
+  });
+  $("backToTop").addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
+
+  $("btnCloseSheet").addEventListener("click", closeDetailSheet);
+  $("detailSheet").addEventListener("click", function(e){
+    if(e.target === $("detailSheet")) closeDetailSheet();
+  });
+
+  $("sheetQtyMinus").addEventListener("click", function(){
+    state.sheetTempQty = Math.max(1, state.sheetTempQty - 1);
+    updateSheetCartStatus();
+  });
+  $("sheetQtyPlus").addEventListener("click", function(){
+    state.sheetTempQty = state.sheetTempQty + 1;
+    updateSheetCartStatus();
+  });
+  $("sheetAddToCartBtn").addEventListener("click", function(){
+    if(!state.currentSheetItem) return;
+    addToCart(state.currentSheetItem.p.id, state.sheetTempQty);
+    state.sheetTempQty = 1;
+    updateSheetCartStatus();
+  });
+  $("sheetOpenCartBtn").addEventListener("click", function(){
+    closeDetailSheet();
+    openCartDrawer();
+  });
+
+  // Auto-scroll suave cuando el cliente toca la caja de nombre o nota
+  ["cartBuyerName", "cartBuyerNote"].forEach(function(inpId){
+    var el = $(inpId);
+    if(!el) return;
+    el.addEventListener("focus", function(){
+      setTimeout(function(){
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 280);
+    });
+  });
+
+  // Lightbox zoom
+  function updateLightboxImg(){
+    var p = state.filtered[state.lbIndex];
+    if(p && p.imagen){ $("lightboxImg").src = p.imagen; }
+    $("lbCounter").textContent = (state.lbIndex + 1) + " / " + state.filtered.length;
+  }
+  function lbNav(dir){
+    var n = state.filtered.length;
+    if(n === 0) return;
+    state.lbIndex = (state.lbIndex + dir + n) % n;
+    updateLightboxImg();
+  }
+  var openZoomFromSheet = function(){
+    if(!state.currentSheetItem) return;
+    var currentId = state.currentSheetItem.p.id;
+    closeDetailSheet();
+    var idx = state.filtered.findIndex(function(x){ return String(x.id) === String(currentId); });
+    state.lbIndex = idx >= 0 ? idx : 0;
+    updateLightboxImg();
+    $("lightbox").classList.remove("hidden");
+  };
+  $("sheetZoomBtn").addEventListener("click", openZoomFromSheet);
+  $("sheetThumb").addEventListener("click", openZoomFromSheet);
+  $("lbPrev").addEventListener("click", function(e){ e.stopPropagation(); lbNav(-1); });
+  $("lbNext").addEventListener("click", function(e){ e.stopPropagation(); lbNav(1); });
+
+  var lbTouchX = null;
+  $("lightbox").addEventListener("touchstart", function(e){ lbTouchX = e.touches[0].clientX; }, {passive:true});
+  $("lightbox").addEventListener("touchend", function(e){
+    if(lbTouchX == null) return;
+    var dx = e.changedTouches[0].clientX - lbTouchX;
+    lbTouchX = null;
+    if(Math.abs(dx) > 50){ lbNav(dx > 0 ? -1 : 1); }
+  });
+
+  // Edición de artículo y subida de video desde modal Admin
+  $("editItemVideoFile").addEventListener("change", function(e){
+    if(e.target.files && e.target.files[0]){
+      $("editVideoFileLbl").textContent = "✓ Video listo: " + e.target.files[0].name;
+    }
+  });
+
+  $("btnCloseEditModal").addEventListener("click", function(){ $("editItemModal").classList.remove("open"); });
+  $("btnSaveItemEdit").addEventListener("click", async function(){
+    var id = $("editItemId").value;
+    if(!id) return;
+    var btn = $("btnSaveItemEdit");
+    btn.disabled = true;
+    btn.textContent = "Guardando...";
+    try {
+      var pr = $("editItemPrice").value.trim();
+      var ta = $("editItemTalles").value.trim();
+      var co = $("editItemColores").value.trim();
+      var de = $("editItemDesc").value.trim();
+      var vidUrl = $("editItemVideoUrl").value.trim();
+      var vidFile = $("editItemVideoFile").files && $("editItemVideoFile").files[0];
+      if(vidFile){
+        showToast("Subiendo video...");
+        vidUrl = await Store.uploadVideoFile(vidFile);
+      }
+      await Store.updateItemInfo(id, pr, de, ta, co, vidUrl);
+      $("editItemModal").classList.remove("open");
+      applyFilterAndRender(true);
+      updateOrderBar();
+      renderAdminPhotosList();
+      showToast("Ficha y video actualizados ✓");
+    } catch(err){
+      alert("Error al guardar: " + (err.message || err));
+    }
+    btn.disabled = false;
+    btn.textContent = "Guardar cambios en la ficha";
+  });
+
+  $("btnCloseLightbox").addEventListener("click", function(){ $("lightbox").classList.add("hidden"); });
+  $("lightbox").addEventListener("click", function(e){ if(e.target === $("lightbox")) $("lightbox").classList.add("hidden"); });
+  // Reproductor TikTok full screen 9:16
+  $("tiktokClose").addEventListener("click", closeTikTokVideo);
+  $("tiktokOverlay").addEventListener("click", function(e){ if(e.target === $("tiktokOverlay")) closeTikTokVideo(); });
+  $("tiktokMute").addEventListener("click", function(e){
+    e.stopPropagation();
+    var v = tiktokState.videoEl; if(!v) return;
+    v.muted = !v.muted;
+    if(!v.muted){ v.play().catch(function(){}); }
+    updateMuteIcon();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && $("tiktokOverlay").classList.contains("open")) closeTikTokVideo();
+  });
+
+  // Eventos del Carrito
+  $("btnHeaderCart").addEventListener("click", openCartDrawer);
+  $("btnOpenOrderModal").addEventListener("click", openCartDrawer);
+  $("floatingBarInfoArea").addEventListener("click", openCartDrawer);
+  $("btnCloseCartDrawer").addEventListener("click", closeCartDrawer);
+  $("btnContinueShopping").addEventListener("click", closeCartDrawer);
+  $("cartDrawerOverlay").addEventListener("click", function(e){
+    if(e.target === $("cartDrawerOverlay")) closeCartDrawer();
+  });
+
+  $("btnSendOrderDirect").addEventListener("click", sendCartToWhatsApp);
+  $("btnSendOrderFromModal").addEventListener("click", sendCartToWhatsApp);
+  $("btnClearOrder").addEventListener("click", function(){
+    state.cart = [];
+    saveCart();
+    updateOrderBar();
+    renderCartDrawer();
+    applyFilterAndRender(true);
+    showToast("Pedido vaciado");
+  });
+
+  // Guardar todos los Datos del Local en Portada y en Supabase
+  $("btnSaveStoreProfile").addEventListener("click", async function(){
+    var newProf = {
+      name: ($("storeNameInput").value || "").trim() || DEFAULT_PROFILE.name,
+      phone: ($("storePhoneInput").value || "").trim() || DEFAULT_PROFILE.phone,
+      address: ($("storeAddressInput").value || "").trim() || DEFAULT_PROFILE.address,
+      shipping: ($("storeShippingInput").value || "").trim() || DEFAULT_PROFILE.shipping,
+      pres: ($("storePresInput").value || "").trim() || DEFAULT_PROFILE.pres,
+      desc: ($("storeDescInput").value || "").trim() || DEFAULT_PROFILE.desc
+    };
+    var btn = $("btnSaveStoreProfile");
+    btn.disabled = true;
+    btn.textContent = "Guardando...";
+    try {
+      await Store.saveStoreProfileToCloud(newProf);
+      showToast("Datos del local guardados en portada ✓");
+    } catch(e){
+      showToast("Guardado en este dispositivo ✓");
+    }
+    btn.disabled = false;
+    btn.textContent = "💾 Guardar Datos del Local en Portada";
+  });
+
+  $("btnResetStoreName").addEventListener("click", async function(){
+    try { localStorage.removeItem(CONFIG.PROFILE_STORAGE_KEY); } catch(e){}
+    await Store.saveStoreProfileToCloud(DEFAULT_PROFILE);
+    showToast("Datos restablecidos");
+  });
+
+  $("btnLogin").addEventListener("click", function(){
+    if($("loginUser").value.trim() === CONFIG.ADMIN_USER && $("loginPass").value === CONFIG.ADMIN_PASS){
+      sessionStorage.setItem("catalogo_admin", "1");
+      state.admin = true;
+      route();
+    } else {
+      $("loginError").textContent = "Credenciales incorrectas (admin / admin123)";
+    }
+  });
+  $("btnLogout").addEventListener("click", function(){
+    sessionStorage.removeItem("catalogo_admin");
+    state.admin = false;
+    location.hash = "#/";
+  });
+
+  bindPresetButtons();
+  $("batchProvInput").addEventListener("input", renderBatchPreview);
+  var dz = $("dropzone"), fi = $("fileInput");
+  dz.addEventListener("click", function(){ fi.click(); });
+  fi.addEventListener("change", function(e){ handleBatchSelect(e.target.files); fi.value = ""; });
+  ["dragover","dragenter"].forEach(function(ev){ dz.addEventListener(ev, function(e){ e.preventDefault(); }); });
+  dz.addEventListener("drop", function(e){ e.preventDefault(); handleBatchSelect(e.dataTransfer.files); });
+
+  $("btnClearBatch").addEventListener("click", function(){
+    state.batchItems = [];
+    renderBatchPreview();
+  });
+  $("btnStartUpload").addEventListener("click", startMassUpload);
+
+  $("adminFilterProv").addEventListener("change", renderAdminPhotosList);
+
+  $("btnRenameProv").addEventListener("click", async function(){
+    var pf = $("adminFilterProv").value;
+    if(!pf){ alert("Primero seleccioná en la lista desplegable cuál mayorista querés renombrar."); return; }
+    var nuevo = prompt("Escribí el nuevo nombre para \"" + pf + "\":", pf);
+    if(!nuevo || !nuevo.trim() || nuevo.trim() === pf) return;
+    await Store.renameProvider(pf, nuevo.trim());
+    renderProviderTabs();
+    applyFilterAndRender(true);
+    renderAdminDashboard();
+    showToast("Catálogo renombrado a " + nuevo.trim());
+  });
+
+  $("btnDeleteProvAll").addEventListener("click", async function(){
+    var pf = $("adminFilterProv").value;
+    if(!pf){ alert("Elegí primero qué mayorista querés vaciar en el selector."); return; }
+    if(confirm("¿Seguro que querés borrar TODAS las fotos de \"" + pf + "\"?")){
+      await Store.removeByProvider(pf);
+      renderProviderTabs();
+      applyFilterAndRender(true);
+      renderAdminDashboard();
+      showToast("Se vació " + pf);
+    }
+  });
+}
+
+async function init(){
+  loadLocalProfile();
+  applyProfileToUI();
+  loadSavedCart();
+  bindEvents();
+  await Store.init();
+
+  var params = new URLSearchParams(location.search);
+  var provParam = params.get("prov");
+  if(provParam){
+    state.activeProv = provParam;
+  }
+
+  renderProviderTabs();
+  applyFilterAndRender(true);
+  updateOrderBar();
+  route();
+  refreshIcons();
+  hideSplash();
+}
+function hideSplash(){
+  var s = $("splash");
+  if(!s || s.classList.contains("splash-out")) return;
+  s.classList.add("splash-out");
+  setTimeout(function(){ s.classList.add("hidden"); }, 750);
+}
+setTimeout(hideSplash, 4500);
+
+init();
+
+})();
+</script>
+</body>
+</html>
